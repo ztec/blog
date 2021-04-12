@@ -1,0 +1,45 @@
+{{ define "main" }}
+    {{ $data := .Data }}
+    {{ if .Content}}
+      <article class="pa3 pa4-ns nested-copy-line-height nested-img sans-serif">
+        <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+          {{- .Content -}}
+        </section>
+      </article>
+    {{end}}
+  <div class="mw8 center">
+    <section class="ph0">
+      {{ range $key, $value := .Data.Terms }}
+        <h2 class="f2 sans-serif bb b--light-silver">
+          {{ $.Data.Singular | humanize }}: <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="">{{ $key }}</a>
+        </h2>
+        <div class="pl4 pr4 mw8 center sans-serif ">
+          {{  range  $index, $currentPage := $value.Pages }}
+          <h1 class="f3 b mb0 ml0 "><a href="{{ .Permalink }}" class="link">{{ .Title }}</a></h1>
+          <time class="f7 ml1 dib tracked" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+          {{- .Date.Format "January 2, 2006" -}}
+          </time>
+          {{if .Summary}}- <span class="f7 dib tracked" >{{ .ReadingTime}} minutes read</span>{{end}}
+          - <span class="f7 dib tracked" ><a href="{{  $currentPage.Type | relLangURL }}" class="">{{ .Type}}</a> </span>
+          - <span class="tracked dib f7">
+            {{ range $index, $val := .Params.tags }}
+            {{if gt $index 0 }}<span class=""> - </span>{{end}}
+            <a href="{{ "/tags/" | relLangURL }}{{ $val | urlize }}" class="">{{- $val -}}</a>
+          {{ end }}
+        </span>
+          <p class="ml1 near-black mb4">
+            {{ if .Description}}
+            {{.Description}}
+            {{else}}
+            {{if .Summary}}{{ .Summary  }} […]{{end}}
+            {{end}}
+          </p>
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+  </div>
+{{- template "_internal/pagination.html" . -}}
+{{ end }}
+
+

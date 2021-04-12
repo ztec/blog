@@ -1,0 +1,200 @@
+pre {
+    background-color: rgb(200, 200, 200);
+}
+
+article img{
+    display:block;
+    margin:auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+html {
+    min-height: 100%;
+}
+
+/** Light theme colors **/
+/* will be applied on body */
+.z-theme-light {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e9e9e9;
+    background-image: linear-gradient(315deg, #e9e9e9 0%, #f6f6f6 74%);
+    background-repeat: no-repeat;
+    color: rgb(40, 40, 41);
+}
+
+/* LINKS */
+.z-theme-light a:after {
+    content: ' ';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: hsl(248, 42%, 44%);
+    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
+    border-radius: 2px;
+    opacity: 0;
+    z-index: 100;
+}
+.z-theme-light a {
+    color: hsl(248, 42%, 44%);
+    text-decoration-line: none;
+}
+
+.z-theme-light a:hover {
+    color: hsl(248, 42%, 44%);
+    text-decoration-line: none;
+    position: relative;
+}
+
+.z-theme-light a:hover:after {
+    transition: 0.1s all ease-in-out;
+    opacity: 1.00;
+    width: 100%;
+}
+
+.z-theme-light a.hidden-link {
+    color: inherit;
+    text-decoration-line: none;
+}
+.z-theme-light a.hidden-link:hover:after {
+    display: none;
+}
+
+/* COMMENTO */
+
+.commento-root .commento-submit-button {
+    background-color: hsl(248, 42%, 44%);
+    transition: 0.1s all ease-in-out;
+}
+.commento-root .commento-submit-button:hover{
+    background-color: hsl(98, 58%, 57%);
+}
+
+.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-email-button{
+    background-color: hsl(248, 42%, 44%);
+    color: white;
+    transition: 0.1s all ease-in-out;
+}
+.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-email-button:hover {
+    background-color: hsl(98, 58%, 57%);
+    color: white;
+}
+
+.commento-root .commento-round-check input[type="checkbox"]:checked + label::before, .commento-root .commento-round-check input[type="radio"]:checked + label::before{
+    background-color: hsl(248, 42%, 44%);
+}
+
+.commento-root .commento-login .commento-login-text {
+    color: hsl(248, 42%, 44%);
+}
+
+/* HEADER */
+.z-theme-light .z-header-bar {
+    height:20px;
+    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: 0;
+}
+.z-theme-light header {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.z-theme-light .z-menu-item {
+    background-color: hsl(248, 42%, 44%);
+    color: white;
+    padding-top: 0.2em;
+    transition: 0.1s all ease-in-out;
+}
+
+.z-theme-light .z-menu-item-selected {
+    background-color: hsl(4, 100%, 64%);
+
+}
+.z-theme-light .z-menu-item:hover {
+    background-color: hsl(98, 58%, 57%);
+    color: white;
+}
+
+/** Dark theme colors **/
+
+.z-theme-dark {
+}
+
+/** Base colors */
+.z-purple {
+    color: hsl(248, 42%, 51%);
+    color: #5c4eb7;
+}
+
+.z-purple-aaa-accessible {
+    color: hsl(248, 42%, 44%);
+    color: #4e419f;
+}
+
+.z-blue {
+    color: hsl(192, 54%, 52%);
+    color: #43acc7;
+}
+
+.z-green {
+    color: hsl(98, 58%, 57%);
+    color: #80d152;
+}
+
+.z-yellow {
+    color: hsl(59, 88%, 67%);
+    color: #f5f261;
+}
+
+.z-orange {
+    color: hsl(27, 100%, 65%);
+    color: #ff9d4d;
+}
+
+.z-red {
+    color: hsl(4, 100%, 64%);
+    color: #ff5447;
+}
+
+
+.z-b-purple {
+    background-color: hsl(248, 42%, 51%);
+    background-color: #5c4eb7;
+}
+
+.z-b-purple-aaa-accessible {
+    background-color: hsl(248, 42%, 44%);
+    background-color: #4e419f;
+}
+
+.z-b-blue {
+    background-color: hsl(192, 54%, 52%);
+    background-color: #43acc7;
+}
+
+.z-b-green {
+    background-color: hsl(98, 58%, 57%);
+    background-color: #80d152;
+}
+
+.z-b-yellow {
+    color: hsl(59, 88%, 67%);
+    background-color: #f5f261;
+}
+
+.z-b-orange {
+    background-color: hsl(27, 100%, 65%);
+    background-color: #ff9d4d;
+}
+
+.z-b-red {
+    background-color: hsl(4, 100%, 64%);
+    background-color: #ff5447;
+}

@@ -1,0 +1,66 @@
+[more]
+other = "More"
+
+[allTitle]
+other = "All {{.Title }}"
+
+[recentTitle]
+other = "Recent {{.Title }}"
+
+[readMore]
+other = "read more"
+
+[whatsInThis]
+other = "What's in this {{ .Type }}"
+
+[related]
+other = "Related"
+
+[yourName]
+other = "Your Name"
+
+[emailAddress]
+other = "Email Address"
+
+[message]
+other = "Message"
+
+[emailRequiredNote]
+other = "An email address is required."
+
+[send]
+other = "Send"
+
+[taxonomyPageList]
+other = "Below you will find pages that utilize the taxonomy term “{{ .Title }}”"
+
+
+[readingTime]
+other = "minutes read"
+
+[words]
+other = "words"
+
+[publishAt]
+other = "Published at"
+
+[updatedAt]
+other = "Last modified on"
+
+[availableTranslation]
+other = "Available translation"
+
+[publishIn]
+other = "Published in"
+
+[copyright]
+other = "Á l'exception des oeuvres citées qui concervent leur droits et attribution originaux, article et son contenu publié sous la licence <a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr\" ><b>Creative Commons</b></a><sup>(CC BY-NC-SA 4.0)</sup>"
+
+[foundATypo]
+other = "Found a typo, or something bigger that probably killed a grammar nazy ?"
+
+[suggestAFix]
+other = "suggest a fix via github"
+
+[subescribeRss]
+other = "You can subescribe via <a href=\"/page/flux-rss/\">RSS</a> to get new articles as son as they are published"

@@ -1,0 +1,17 @@
+<nav class="pv0 ph3 ph4-ns" role="navigation">
+
+  {{ if .Site.Menus.main }}
+  <ul class="mw6 pl0 mr0 br3 br--bottom bb bl br bw1 flex ml4 mt0 bg-white">
+      {{ range .Site.Menus.main }}
+
+      <li class="list f5 f4-ns fw4 dib pr0 mr0 w-50 tc">
+        <a class="no-underline black-90" href="{{ .URL }}" title="{{ .Name }} page">
+          {{ .Name }}
+        </a>
+      </li>
+      {{end}}
+</ul>
+
+{{ end }}
+</nav>
+
