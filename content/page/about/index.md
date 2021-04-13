@@ -60,3 +60,13 @@ Ils ne l'ont pas lu, mais ils en parlent quand même:
 > Je voulais un bon blog pour offrir à ma nièce, j'ai pris ça. On verra ce qu'elle en pense.
 > Je l'ai reçu rapidement, et l'emballage était de qualité. Aucun dommages à déclaré. Bravo internet. 
 > 
+
+---
+
+Noms : Zed, Ztec, Loïc
+Email : BianIsInTheKitchen@riper.fr
+Twitter : [@ztec6](https://twitter.com/ztec6)
+Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
+Flickr : [Loïc](https://www.flickr.com/photos/ztec/)
+Github : [ztec](github.com/ztec/)
+Planet : Terre
