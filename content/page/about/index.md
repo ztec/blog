@@ -1,5 +1,5 @@
 ---
-title: "Le blog de Zed"
+title: "Chez Zed"
 slug: a-propos
 comments: 'none'
 ---

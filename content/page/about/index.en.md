@@ -1,5 +1,5 @@
 ---
-title: "Zed's blog"
+title: "Zed's place"
 slug: about
 comments: 'none'
 ---
