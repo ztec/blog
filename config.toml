@@ -55,6 +55,7 @@ DefaultContentLanguage = "fr"
 [params]
   commentoEnable = "true"
   favicon = ""
+  images = ["graph-logo.jpg"]
   site_logo = ""
   description = "3615 my life"
   facebook = ""
