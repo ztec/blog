@@ -139,6 +139,8 @@ le bout de code qui fera la publication automatiquement car je suis trop flemmar
 
 Ça sera comme mes bookmark publiques.
 
+Pour ceux qui connaissent, c'est un peu le principe de [Shaarli](https://github.com/shaarli/Shaarli)
+
 ### Le site
 
 J'ai construit ce blog assez simplement. Pas de php, ni de development pour le faire tourner. J'ai utilisé un 
