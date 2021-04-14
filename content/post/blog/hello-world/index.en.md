@@ -68,14 +68,14 @@ Why share my opinion on a blog ? will you ask. Why not ?
 
 Also, for me, big platforms should not be the only one to control advices, opinions and reviews
 
-For example, todays Amazon is almost a mandatory place to get review on "things". Even I give too much credits to the 
+For example, today Amazon is almost a mandatory place to get review on "things". Even I give too many credits to the 
 yellow stars of the website, and their corresponding reviews.
 Steam concentrate most of the Video games reviews, Imdb for movies, Youtube also for movies, game, music, lifestyle, ...
 
 Af course there is specialized website doing a wonderful job.
 
-Basicaly, everything that is hosted on a big platform is available to us on the conditions it make money to the platfom
-it's on, it does not go against sacred TOS. As I alrady contributes enouth to them, I wish to contribute to the free
+Basically, everything that is hosted on a big platform is available to us on the conditions it makes money to the platform
+it's on, it does not go against sacred TOS. As I already contributes enough to them, I wish to contribute to the free
 internet.
 
 I will write in English and / or in French. I may translate some posts. I do not wish tha impose rules on me on this
@@ -95,7 +95,7 @@ futur self. I would be funny to find my blog during a search 😂
 
 I'm an unspecialized "tech" and like a lots of technologies and stuffs, here an incomplete list I think I will talk about.
 
- - Linux / Windows (Gaming is still a windows thing 😭)
+ - Linux / Windows (Gaming is still a Windows thing 😭)
  - Développement Backend
     - PHP (Nut I think everything has already been told)
     - Go
@@ -117,7 +117,7 @@ I'm on [Twitter - @ztec6](twitter.com/ztec6/) and [Mastodon - @ztec@mamot.fr](ht
 When I wish to comment an article I read I will publish it on the blog as a Quick. They will not be visible except via
 their tags.
 
-Quicks will be published to Tiwtter, and maybe Mamot too. I "Just" need to write a script that do that automatically. 
+Quicks will be published to Twitter, and maybe Mamot too. I "Just" need to write a script that do that automatically. 
 I'm too lazy to do it manually.
 
 I'll be like public bookmarks.Like [Shaarli](https://github.com/shaarli/Shaarli) for those who knows. 
@@ -152,7 +152,7 @@ My server availability is high enough for me right now.
 
 ### Conclusion
 
-This post is way longer than I anticipated first. Predominatingly after translating it 🤣. 
+This post is way longer than I anticipated first. Predominately after translating it 🤣. 
 It helped me a lot clarifying my motivations and what I plan. Obviously, the futur is an known place, for now, and a lot
 will change. I want this blog to be alive and a good representation of myself. It will evolve with me, I hope.
 
