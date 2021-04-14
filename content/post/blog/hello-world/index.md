@@ -88,7 +88,7 @@ Par exemple, Amazon à aujourd'hui le presque monopole des avis sur les "Choses"
 aux étoiles jaunes du site, et les avis correspondant.
 Steam c'est les avis sur les jeux vidéos ; Imdb le cinéma ; Youtube le cinéma, les jeux vidéo, la music, le style de vie …
 
-Il ya a heureusement des sites spécialisé et des associations de consommateur qui font a travail remarquable.
+Il ya a heureusement des sites spécialisé et des associations de consommateur qui font un travail remarquable.
 
 En gros, tout contenu hébergé sur une plateforme est disponible tant qu'il rapporte de l'argent à la plateforme, 
 et qu'il ne la dérange pas. Contribuant volontairement a leur enrichissement, je souhaite contribuer à l'internet 
@@ -146,7 +146,7 @@ Pour ceux qui connaissent, c'est un peu le principe de [Shaarli](https://github.
 J'ai construit ce blog assez simplement. Pas de php, ni de development pour le faire tourner. J'ai utilisé un 
 générateur de site statique qui s'appelle [Hugo](https://gohugo.io/).
 
-Les sources sont disponibles sur github : https://github.com/ztec/blog/
+Les sources sont disponibles sur github : [https://github.com/ztec/blog/](https://github.com/ztec/blog/)
 
 Je suis parti du theme utilisé dans la doc pour faire le miens. Je ne suis pas 100% satisfait du résultat et
 l'apparence de ce blog risque de beaucoup changer dans le temps.
