@@ -112,7 +112,7 @@ specifically.
 #### Quicks
 
 I also with to use this blog as a relay to my social media shares. 
-I'm on [Twitter - @ztec6](twitter.com/ztec6/) and [Mastodon - @ztec@mamot.fr](https://mamot.fr/web/accounts/23814) (well, twitter mostly)
+I'm on [Twitter - @ztec6](https://twitter.com/ztec6/) and [Mastodon - @ztec@mamot.fr](https://mamot.fr/web/accounts/23814) (well, twitter mostly)
 
 When I wish to comment an article I read I will publish it on the blog as a Quick. They will not be visible except via
 their tags.
