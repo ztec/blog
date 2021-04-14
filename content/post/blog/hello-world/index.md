@@ -14,7 +14,7 @@ Je vous explique tout ça.
 ![En sueur ! GIF](swetty.gif "En sueur")
 
 Je lis beaucoup sur internet. Avec mon [lecteur de flux RSS](https://fr.wikipedia.org/wiki/RSS) j'essaie de limiter les bulles sociales. Bon je sais 
-que je ne fais qu'en re créer une autre, mais je me dis qu'au moins c'est moi qui décide et pas un algorithme 
+que je ne fais qu'en re-créer une autre, mais je me dis qu'au moins c'est moi qui décide et pas un algorithme 
 conçu pour faire gagner de l'argent à quelqu'un. À force de profiter de tous ces précieux contenus que je trouve 
 partout sur internet je me suis dit que je pourrais essayer d'y contribuer. 
 
