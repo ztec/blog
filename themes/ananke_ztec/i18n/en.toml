@@ -54,7 +54,7 @@ other = "Available translation"
 other = "Published in"
 
 [copyright]
-other = "Á l'exception des oeuvres citées qui concervent leur droits et attribution originaux, article et son contenu publié sous la licence <a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr\" ><b>Creative Commons</b></a><sup>(CC BY-NC-SA 4.0)</sup>"
+other = "Except for quoted materials, which keep their original rights and attributions, post and its content published under the <a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en\" ><b>Creative Commons</b></a><sup>(CC BY-NC-SA 4.0)</sup> liscence"
 
 [foundATypo]
 other = "Found a typo, or something bigger that probably killed a grammar nazy ?"
@@ -63,4 +63,4 @@ other = "Found a typo, or something bigger that probably killed a grammar nazy ?
 other = "suggest a fix via github"
 
 [subescribeRss]
-other = "You can subescribe via <a href=\"/page/flux-rss/\">RSS</a> to get new articles as son as they are published"
+other = "You can subscribe via <a href=\"/page/flux-rss/\">RSS</a> to get new articles as son as they are published"
