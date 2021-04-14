@@ -46,7 +46,7 @@
                   "
     >
       {{if .Params.RefLink}}
-      <div class="tc mb4"><a href="" target="_blank">{{.Params.RefLink}}</a></div>
+      <div class="tc mb4"><a href="{{.Params.RefLink}}" target="_blank">{{.Params.RefLink}}</a></div>
       {{end}}
     {{- .Content -}}
 
@@ -97,12 +97,12 @@
             </li>
           </ul>
         </div>
-        {{end}}
         {{ if .Site.Params.commentoEnable }}
           <div class="instapaper_ignoref ph3 ">
           <div class="mt5 mb4 bt b--light-silver w-50 center"></div>
                 {{- partial "commento.html" . -}}
           </div>
         {{ end }}
+    {{end}}
   </article>
 {{ end }}
