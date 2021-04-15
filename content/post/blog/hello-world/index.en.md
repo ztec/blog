@@ -153,7 +153,7 @@ My server availability is high enough for me right now.
 ### Conclusion
 
 This post is way longer than I anticipated first. Predominately after translating it 🤣. 
-It helped me a lot clarifying my motivations and what I plan. Obviously, the futur is an known place, for now, and a lot
+It helped me a lot clarifying my motivations and what I plan. Obviously, the futur is an unknown place, for now, and a lot
 will change. I want this blog to be alive and a good representation of myself. It will evolve with me, I hope.
 
 Thanks reading me,\
