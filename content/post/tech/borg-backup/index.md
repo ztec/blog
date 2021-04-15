@@ -5,7 +5,7 @@ tags: ["linux", "raspberry pi"]
 ---
 
 Vous avez surement entendu parler de [l'incendie d'un datacenter d'OVH à Strasbourg](https://twitter.com/olesovhcom/status/1369478732247932929). Il a remis les pendule de beaucoup
-de monde a l'heure. En effet, beaucoup de sites on été coupé quand leurs serveurs ont tout simplement brulé. Si certains
+de monde à l'heure. En effet, beaucoup de sites on été coupé quand leurs serveurs ont tout simplement brulé. Si certains
 on réussi à remettre en ligne leur site et service, voir même n'avoir aucune interruption pendant l'incident, on en a 
 vus qui on mit beaucoup plus de temps. [Certain on même tout perdu](https://twitter.com/playrust/status/1369611688539009025), rien n'a survécu.
 
@@ -17,9 +17,9 @@ Aujourd'hui, je vais parler Backup, et expliquer un peu comment je sauvegarde me
 ## La base
 Dans le monde du backup, on dit souvent qu'il y a 3 règles à respecter
 
-- avoir 3 copies
+- avoir 3 copies au moins
 - utiliser au moins deux supports de stockage différents
-- La troisième copie géographiquement ailleurs (pas là où sont les deux premières donc)
+- la troisième copie géographiquement ailleurs (pas là où sont les deux premières donc)
 
 Le point le plus important, et souvent mis de coté, c'est le 3ᵉ. Si tous 
 vos backup sont chez vous et sont tous volé ou détruit, ils ne seront pas très utiles.
@@ -75,11 +75,11 @@ En gros, voici comment j'ai construit mes backup.
 
 ##### Borg server 
 Un serveur est dédié a la réception des backup borg. En réalité c'est une Machine virtuel, mais cela pourrais très bien 
-être un raspberry pi aussi. L'élément important, c'est qu'il possède un disque dure de taille suffisante pour réceptionner 
-ensemble de mes backup. 
+être un raspberry pi aussi. L'élément important, c'est qu'il possède un disque dur de taille suffisante pour réceptionner 
+l'ensemble de mes backup. 
 
 J'ai reservé 1TB sur des disques en [RAID 5](https://fr.wikipedia.org/wiki/RAID_(informatique)#RAID_5_:_volume_agr%C3%A9g%C3%A9_par_bandes_%C3%A0_parit%C3%A9_r%C3%A9partie)
-Si je doit sauvgarder plus, je vais soit devoir racheter des disques, soit faire du ménage dans les archives.
+Si je doit sauvegarder plus, je vais soit devoir racheter des disques, soit faire du ménage dans les archives.
 
 Il est à noté que les backup sont incrémental et conservent les historiques des fichiers. Un fichier supprimé à la source
 ne le sera pas dans les archives. Pas avant une période assez longue (qui se configure).
@@ -104,7 +104,7 @@ drwxrwx---  3 locutus locutus 4096 Nov  8 01:53 pouet-home-old
 L'ensemble des données de backup sont accessible par un utilisateur dédié nommé `locutus`. C'est l'utilisateur ssh
 que les serveur et ordinateur utiliserons pour faire les sauvegarde.
 
-Les dépots sont chiffré et utilisent tous une clé différente que seul la machine à sauvegarder (et moi-même connaissons).
+Les dépots sont chiffré et utilisent tous une clé différente que seul la machine à sauvegarder (et moi-même) connaissons.
 
 ##### Linux server
 
@@ -132,7 +132,7 @@ Configuré ainsi via un [CRON](https://fr.wikipedia.org/wiki/Cron)
 ```
 
 Dans le `.bashrc` de root, il y a des variable d'environment qui contiennent les secret et emplacements de sauvegarde.
-Il faut bien penser a le sécurisé pouet que seul root puisse y accéder.
+Il faut bien penser à le sécurisé pour que seul root puisse y accéder.
 
 ```bash
 BORG_OPTS=""
@@ -149,21 +149,21 @@ supprimé.
 borg prune -v --list --keep-within=10d --keep-weekly=4 --keep-monthly=12 --keep-yearly=-1
 ```
  - Toutes les archives sont conservées pendant 10 jours (une par jour via le CRON)
- - Au dela seul 4 sont conservé par semaine pendant 1 mois
- - Au dela seul 12 sont conservé par mois
- - Au dela d'un an, tout conservé. 
+ - Au delà de 10 jours, seul 4 sont conservé par semaine pendant 1 mois
+ - Au delà, seul 12 sont conservés par mois
+ - Au delà d'un an, tout est conservé. (Ca vas péter!)
 
 On voit qu'il y a un soucis, je risque de manquer de place après quelques années si je ne change pas le dernier paramètre. 
-j'attends d'en avoir besoin pour tester différentes valeurs, `-1` indiquant, `tout conserver`
+J'attends d'en avoir besoin pour tester différentes valeurs, `-1` indiquant, `tout conserver`
 
-##### Windows server
+##### Windows
 
 Sous windows, je n'ai pas encore de cron de configuré, mais j'ai fait des sauvegardes ponctuelles en exécutant la commande à la main.
 
 [Une fois Debian installé en tant que sous système linux](https://docs.microsoft.com/en-us/windows/wsl/install-manual), la démarche est rigoureusement identique à linux. Via les points
 de montage de Windows, on peut donc sauvegarder les disques et répertoires qu'on souhaite, 
 
-Par example, Je sauvegarde mes photos personne via cette commande
+Par example, Je sauvegarde mes photos personnelles via cette commande
 
 ```bash
 ARCHIVE_NAME="Photos"
@@ -189,13 +189,15 @@ Comme je l'ai dit au début de l'article, il faut au moins 3 copie, dont une ail
 Les deux sont physiquement au même endroit, chez moi. J'ai donc décidé d'utiliser des Raspberry PI pour faire 
 des copies supplémentaires. J'en ai pris deux (raspberry pi 3).
 
-Dessus, j'ai installé un raspbian classique et j'ai configuré un VPN. Ce VPN est dédié au backup de sorte 
-que seul les resources utiles pour le backup sont accessible une foi connectée. J'ai utilisé OpenVPN. Je ferais surement
-un article dessus plus tard.
+Dessus, j'ai installé un raspbian classique et j'ai configuré un VPN. Ce VPN est dédié aux backups de sorte 
+que seul les resources utiles pour le backup soit accessible une foi connecté. J'ai utilisé OpenVPN. Je ferais surement
+un article dessus plus tard. (Dites moi si ça vous intéresse, je le fait avec PfSense)
 
 Chaque raspbery PI est associé avec un disque dur USB de taille au moins égale à la capacité du serveur BORG.
+(On doit faire une copie, donc prévoyez les disques a l'avance, sinon vous allez vous retrouvé vite limité)
 
-Grace au VPN, je peux placer ce raspberry pi avec son disque dur n'importe où avec un accès internet.
+Grace au VPN, je peux placer ce raspberry pi avec son disque dur n'importe où tant qu'aun un accès internet est disponible. Soit en ethernet, le mieux, soit en wifi.
+
 
 ###### borg archive in borg archive
 
@@ -204,13 +206,13 @@ si jamais je détruis complètement les archives sur borg-serveur (volontairemen
 copies.
 
 Je fait donc un backup borg sur les raspbery pi. Pour chaque dépot, j'ai créé un dépot identique sur chaque raspberry pi
-dans lequel je backup le répo sur le serveur borg.
+dans lequel je backup le répo du serveur borg.
 
 De cette façon je conserve les fonctionnalités de borg avec plusieurs versions de mes archives. 
 La fonctionnalité de déduplication de borg fait qu'il y a très peu de perte de place car les objets dans les archives 
 borg son quasiment immutable.
 
- - Mes serveurs créent des archives sur le server borg via ssh
+ - Mes serveurs a sauvegarder créent des archives sur le server borg via ssh
  - Le serveur borg crée des archives de ses archives sur les raspberry pi via ssh en passant par le VPN
  - Les depots borg sur les raspberry pi ne sont pas chiffré (les originaux le sont déjà)
 
@@ -257,11 +259,11 @@ done <<< "$LIST"
 ```
 
 Je me retrouve avec deux raspberry pi qui contiennent une copie de mes archives borg avec 1 jour de décalage. 
-J'en garde un chez moi, ça créer un second support de stockage,
-J'en ai mis un chez un membre de ma famille qui à la fibre, ce qui me fait une copie ailleurs à un cout relativement faible.
+J'en garde un chez moi, ça créée un second support de stockage,
+J'en ai mis un chez un membre de ma famille qui a la fibre, ce qui me fait une copie ailleurs à un cout relativement faible.
 
 Un raspberry pi ne consomme pas beaucoup d'énergie, et pourrais même est modifié pour se réveiller une fois par jours juste pour 
-faire le backup et se coupé. Le plus gros du budget se trouve être le ou les disques dur usb. 
+faire le backup et se couper. Le plus gros du budget se trouve être le ou les disques dur usb. 
 
 ## Monitoring
 
@@ -270,7 +272,7 @@ c'est d'être averti quand un truc tourne pas rond.
 
 Quand un cron se termine en erreur, un mail d'alerte est suffisant.
 
-L'espace disque est suivis avec [prométheus](https://prometheus.io/) dans mon cas. D'ailleur, je doit résoudre celle qui est actuellement levé
+L'espace disque est suivis avec [prométheus](https://prometheus.io/) dans mon cas. D'ailleur, je doit résoudre l'alerte qui est actuellement levée
 
 ![Alerte espace dique](alert-grafana.png "Image montrant qu'une alerte est levé sur l'éspace disque depuis un mois")
 
@@ -278,7 +280,8 @@ L'espace disque de mes backup ne bouge pas énormément, voici 14 jours d'histor
 
 ![Espace disque](disk-space-used.png "Image montrant L'utilisation des disques sur le serveur borg, et les deux raspberry pi")
 
-Depuis peu, j'ai même déplacer le cron de syncronisation des raspberry pi sur [GoCD](https://www.gocd.org/) pour tester.
+Depuis peu, j'ai même déplacé le cron de syncronisation des raspberry pi sur [GoCD](https://www.gocd.org/) pour tester. Si ca fonctionne bien je pourrais alors profiter d'une interface web facile d'accès pour déclancher des synchronisation,
+ ou regarder d'un coup d'œil si tout se passe bien. GoCD etant dans ma boite à outils de toute façon. 
 
 ![GoCD dashboard](gocd-borg-raspberry-sync.png "Dashboard de GoCD avec le job de syncrhonisation terminé et vert")
 
