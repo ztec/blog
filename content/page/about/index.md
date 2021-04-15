@@ -4,7 +4,7 @@ slug: a-propos
 comments: 'none'
 ---
 Zed est un homme [cisgenre](https://fr.wikipedia.org/wiki/Cisgenre) blanc, athée, fils de professeur des écoles et d'artisan, absolument opposé à la publicité et
-libriste dans l'âme. Tombé dans l'informatique étant petit Zed est un ce qu'on appelle un développeur
+libriste dans l'âme. Tombé dans l'informatique étant petit Zed est ce qu'on appelle un développeur
 [WEB](https://fr.wikipedia.org/wiki/World_Wide_Web), un "Tech" comme on dit dans le milieu.
  
 Politiquement penché, voir complètement affalé à gauche, Zed rêve d'une société où le travail n'est plus nécessaire et
