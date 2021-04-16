@@ -53,6 +53,7 @@ nvim "$FILE"
 
 git add "$FILE"
 echo "PRESS ENTER TO COMMIT $TYPE $TITLE"
+read
 git commit "$FILE" -m "Publish $TYPE $TITLE"
 echo "PRESS ENTER TO PUSH"
 read
