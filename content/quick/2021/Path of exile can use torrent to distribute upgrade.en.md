@@ -6,6 +6,6 @@ refLink: "https://www.pathofexile.com/forum/view-thread/3080527"
 ---
 
 I recently discovered that Path of Exile can be upgraded using Torrents. 
-This Is probably not true for Steam users, but it's a neat possiblity.
+This Is probably not true for Steam users, but it's a neat possibility.
 I wish this protocol be more used for this kind of stuff. Maybe we would
 not have to wait hours for Call of Dutty updates when they are released for example
