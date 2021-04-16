@@ -1,0 +1,59 @@
+#!/bin/bash
+#set -x
+set -e
+LANG=$1
+TYPE=$2
+TITLE=$3
+REFLINK=$4
+
+if [ "$LANG" = "" ]; then
+        echo "You must provide a lang [en/fr] as first argument"
+        exit 1
+fi
+
+if [ "$TYPE" = "" ]; then
+	echo "You must provide a type [post/quick] as second argument"
+	exit 1
+fi
+
+if [ "$TITLE" == "" ]; then
+	echo "You must provide a title as third argument"
+	exit 1
+fi
+
+
+if [ "$TYPE" = "post" ]; then
+	FOLD="content/post/$TITLE"
+	if [ "$LANG" = "en" ]; then
+		hugo new "post/$TITLE/index.md"
+		FILE="$FOLD/index.md"
+	else
+		hugo new "post/$TITLE/index.en.md"
+		FILE="$FOLD/index.en.md"
+	fi
+else
+
+	if [ "$REFLINK" == "" ]; then
+ 		echo "You must provide a reflinik as 4th argument"
+       		exit 1
+	fi
+
+	FOLD="content/quick/2021/"
+        if [ "$LANG" = "en" ]; then
+                hugo new "quick/2021/$TITLE.md"
+                FILE="$FOLD/$TITLE.md"
+        else
+                hugo new "quick/2021/$TITLE.en.md"
+                FILE="$FOLD/$TITLE.en.md"
+        fi
+
+fi
+
+nvim "$FILE"
+
+git add "$FILE"
+echo "PRESS ENTER TO COMMIT $TYPE $TITLE"
+git commit "$FILE" -m "Publish $TYPE $TITLE"
+echo "PRESS ENTER TO PUSH"
+read
+git push origin main
