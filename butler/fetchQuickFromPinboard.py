@@ -17,7 +17,7 @@ def parseFeedAndCreateQuick(lang, feedUrl):
            print("Skipping \""+entry.title+'"')
         else:
             print("Creating new quick in "+lang+" for "+entry.title)
-            res = subprocess.call("hugo new \""+file+"\"", shell="true")
+            res = subprocess.call("hugo --cacheDir /tmp/butler-fetch-pinboard/ new \""+file+"\"", shell="true")
             if res != 0 :
                 print("Unable to create file")
                 break
