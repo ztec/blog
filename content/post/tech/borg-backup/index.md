@@ -1,13 +1,15 @@
 ---
 title: "Backup avec Borg"
 date: 2021-04-14T16:50:00+02:00
-tags: ["linux", "raspberry pi"]
+tags: ["linux", "Raspberry pi"]
 ---
 
 Vous avez surement entendu parler de [l'incendie d'un datacenter d'OVH à Strasbourg](https://twitter.com/olesovhcom/status/1369478732247932929). Il a remis les pendule de beaucoup
 de monde à l'heure. En effet, beaucoup de sites on été coupé quand leurs serveurs ont tout simplement brulé. Si certains
 on réussi à remettre en ligne leur site et service, voir même n'avoir aucune interruption pendant l'incident, on en a 
 vus qui on mit beaucoup plus de temps. [Certain on même tout perdu](https://twitter.com/playrust/status/1369611688539009025), rien n'a survécu.
+
+![OVH en feu](OVH-Datacenter-On-Fire.jpg "Image du datacenter d'OVH de strasbourg aux prise des flames")
 
 Ne pas subir interruption ou être capable de remonter son service en quelques heure c'est souvent une question de
 "haute disponibilité". Je ne vais pas parler de ça aujourd’hui. 
@@ -75,7 +77,7 @@ En gros, voici comment j'ai construit mes backup.
 
 ##### Borg server 
 Un serveur est dédié a la réception des backup borg. En réalité c'est une Machine virtuel, mais cela pourrais très bien 
-être un raspberry pi aussi. L'élément important, c'est qu'il possède un disque dur de taille suffisante pour réceptionner 
+être un Raspberry pi aussi. L'élément important, c'est qu'il possède un disque dur de taille suffisante pour réceptionner 
 l'ensemble de mes backup. 
 
 J'ai reservé 1TB sur des disques en [RAID 5](https://fr.wikipedia.org/wiki/RAID_(informatique)#RAID_5_:_volume_agr%C3%A9g%C3%A9_par_bandes_%C3%A0_parit%C3%A9_r%C3%A9partie)
@@ -179,7 +181,7 @@ borg create \
 borg prune -v --list --keep-within=10d --keep-weekly=4 --keep-monthly=12 --keep-yearly=-1
 ```
 
-##### Les raspberry PI
+##### Les Raspberry PI
 
 Comme je l'ai dit au début de l'article, il faut au moins 3 copie, dont une ailleurs. Pour le moment j'ai
 
@@ -187,25 +189,25 @@ Comme je l'ai dit au début de l'article, il faut au moins 3 copie, dont une ail
  - Une copie sur le serveur BORG
 
 Les deux sont physiquement au même endroit, chez moi. J'ai donc décidé d'utiliser des Raspberry PI pour faire 
-des copies supplémentaires. J'en ai pris deux (raspberry pi 3).
+des copies supplémentaires. J'en ai pris deux (Raspberry pi 3).
 
 Dessus, j'ai installé un raspbian classique et j'ai configuré un VPN. Ce VPN est dédié aux backups de sorte 
 que seul les resources utiles pour le backup soit accessible une foi connecté. J'ai utilisé OpenVPN. Je ferais surement
 un article dessus plus tard. (Dites moi si ça vous intéresse, je le fait avec PfSense)
 
-Chaque raspbery PI est associé avec un disque dur USB de taille au moins égale à la capacité du serveur BORG.
+Chaque Raspberry PI est associé avec un disque dur USB de taille au moins égale à la capacité du serveur BORG.
 (On doit faire une copie, donc prévoyez les disques a l'avance, sinon vous allez vous retrouvé vite limité)
 
-Grace au VPN, je peux placer ce raspberry pi avec son disque dur n'importe où tant qu'aun un accès internet est disponible. Soit en ethernet, le mieux, soit en wifi.
+Grace au VPN, je peux placer ce Raspberry pi avec son disque dur n'importe où tant qu'aun un accès internet est disponible. Soit en ethernet, le mieux, soit en wifi.
 
 
 ###### borg archive in borg archive
 
-Ma première idée a été de configurer un script qui `rsync` les archive borg sur chaque raspberry pi. Mais attention, 
+Ma première idée a été de configurer un script qui `rsync` les archive borg sur chaque Raspberry pi. Mais attention, 
 si jamais je détruis complètement les archives sur borg-serveur (volontairement ou non), je risque de répliquer mes erreurs et perdre les autres
 copies.
 
-Je fait donc un backup borg sur les raspbery pi. Pour chaque dépot, j'ai créé un dépot identique sur chaque raspberry pi
+Je fait donc un backup borg sur les Raspberry pi. Pour chaque dépot, j'ai créé un dépot identique sur chaque Raspberry pi
 dans lequel je backup le répo du serveur borg.
 
 De cette façon je conserve les fonctionnalités de borg avec plusieurs versions de mes archives. 
@@ -213,14 +215,14 @@ La fonctionnalité de déduplication de borg fait qu'il y a très peu de perte d
 borg son quasiment immutable.
 
  - Mes serveurs a sauvegarder créent des archives sur le server borg via ssh
- - Le serveur borg crée des archives de ses archives sur les raspberry pi via ssh en passant par le VPN
- - Les depots borg sur les raspberry pi ne sont pas chiffré (les originaux le sont déjà)
+ - Le serveur borg crée des archives de ses archives sur les Raspberry pi via ssh en passant par le VPN
+ - Les depots borg sur les Raspberry pi ne sont pas chiffré (les originaux le sont déjà)
 
 J'ai configuré un cron pour faire ces copies automatiquement
 
 ```bash
-57 13 * * * /home/locutus/borg/mirror-borg.sh IP-RASPBERRY-PI-1 >> /var/log/borg/IP-RASPBERRY-PI-1 2>&1
-57 13 * * * /home/locutus/borg/mirror-borg.sh IP-RASPBERRY-PI-2 >> /var/log/borg/IP-RASPBERRY-PI-2 2>&1
+57 13 * * * /home/locutus/borg/mirror-borg.sh IP-Raspberry-PI-1 >> /var/log/borg/IP-Raspberry-PI-1 2>&1
+57 13 * * * /home/locutus/borg/mirror-borg.sh IP-Raspberry-PI-2 >> /var/log/borg/IP-Raspberry-PI-2 2>&1
 ```
 
 ```bash
@@ -258,11 +260,11 @@ do
 done <<< "$LIST"
 ```
 
-Je me retrouve avec deux raspberry pi qui contiennent une copie de mes archives borg avec 1 jour de décalage. 
+Je me retrouve avec deux Raspberry pi qui contiennent une copie de mes archives borg avec 1 jour de décalage. 
 J'en garde un chez moi, ça créée un second support de stockage,
 J'en ai mis un chez un membre de ma famille qui a la fibre, ce qui me fait une copie ailleurs à un cout relativement faible.
 
-Un raspberry pi ne consomme pas beaucoup d'énergie, et pourrais même est modifié pour se réveiller une fois par jours juste pour 
+Un Raspberry pi ne consomme pas beaucoup d'énergie, et pourrais même est modifié pour se réveiller une fois par jours juste pour 
 faire le backup et se couper. Le plus gros du budget se trouve être le ou les disques dur usb. 
 
 ## Monitoring
@@ -276,14 +278,14 @@ L'espace disque est suivis avec [prométheus](https://prometheus.io/) dans mon c
 
 ![Alerte espace dique](alert-grafana.png "Image montrant qu'une alerte est levé sur l'éspace disque depuis un mois")
 
-L'espace disque de mes backup ne bouge pas énormément, voici 14 jours d'historique respectivement sur le serveur borg et les deux raspberry pi (les disques des raspberry sont de 1.7Tb et 2.6TB contre 1TB pour le serveur borg).
+L'espace disque de mes backup ne bouge pas énormément, voici 14 jours d'historique respectivement sur le serveur borg et les deux Raspberry pi (les disques des Raspberry sont de 1.7Tb et 2.6TB contre 1TB pour le serveur borg).
 
-![Espace disque](disk-space-used.png "Image montrant L'utilisation des disques sur le serveur borg, et les deux raspberry pi")
+![Espace disque](disk-space-used.png "Image montrant L'utilisation des disques sur le serveur borg, et les deux Raspberry pi")
 
-Depuis peu, j'ai même déplacé le cron de syncronisation des raspberry pi sur [GoCD](https://www.gocd.org/) pour tester. Si ca fonctionne bien je pourrais alors profiter d'une interface web facile d'accès pour déclancher des synchronisation,
+Depuis peu, j'ai même déplacé le cron de syncronisation des Raspberry pi sur [GoCD](https://www.gocd.org/) pour tester. Si ca fonctionne bien je pourrais alors profiter d'une interface web facile d'accès pour déclancher des synchronisation,
  ou regarder d'un coup d'œil si tout se passe bien. GoCD etant dans ma boite à outils de toute façon. 
 
-![GoCD dashboard](gocd-borg-raspberry-sync.png "Dashboard de GoCD avec le job de syncrhonisation terminé et vert")
+![GoCD dashboard](gocd-borg-Raspberry-sync.png "Dashboard de GoCD avec le job de syncrhonisation terminé et vert")
 
 ## Conclusions
 
