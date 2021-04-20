@@ -56,5 +56,5 @@ They did not read it but have comments anyway:
 - Twitter : [@ztec6](https://twitter.com/ztec6)
 - Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
 - Flickr : [Loïc](https://www.flickr.com/photos/ztec/)
-- Github : [ztec](github.com/ztec/)
+- Github : [ztec](https://github.com/ztec/)
 - Planet : Earth
