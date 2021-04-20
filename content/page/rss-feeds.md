@@ -12,4 +12,6 @@ Ce blog possède plusieurs flux RSS :
  - [Articles en anglais](/en/post/index.xml)
  - [Quicks en français](/quick/index.xml)
  - [Quicks en français](/en/quick/index.xml)
+
+
  Si vous voulez les deux langues, vous devez vous abonner aux deux langues.
