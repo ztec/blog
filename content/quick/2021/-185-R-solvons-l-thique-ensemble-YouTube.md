@@ -1,7 +1,7 @@
 ---
 title: "(185) Résolvons l'éthique ensemble !! - YouTube"
 date: 2021-04-20T10:20:25Z
-tags: [""]
+tags: ["ethique", "IA", "politique"]
 refLink: "https://www.youtube.com/watch?v=TgB9pHZ0YPM"
 ---
 
