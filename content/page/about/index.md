@@ -68,5 +68,5 @@ Ils ne l'ont pas lu, mais ils en parlent quand même:
 - Twitter : [@ztec6](https://twitter.com/ztec6)
 - Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
 - Flickr : [Loïc](https://www.flickr.com/photos/ztec/)
-- Github : [ztec](github.com/ztec/)
+- Github : [ztec](https://github.com/ztec/)
 - Planet : Terre
