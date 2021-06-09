@@ -51,7 +51,7 @@ They did not read it but have comments anyway:
 
 ---
 
-- Names : Zed, Ztec, Loïc
+- Names : Zed, Ztec, Zed Teque, Loïc
 - Email : ILoveAnanasPizza@riper.fr
 - Twitter : [@ztec6](https://twitter.com/ztec6)
 - Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
