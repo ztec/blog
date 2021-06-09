@@ -63,7 +63,7 @@ Ils ne l'ont pas lu, mais ils en parlent quand même:
 
 ---
 
-- Noms : Zed, Ztec, Loïc
+- Noms : Zed, Ztec, Zed Teque, Loïc
 - Email : BrianIsInTheKitchen@riper.fr
 - Twitter : [@ztec6](https://twitter.com/ztec6)
 - Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
