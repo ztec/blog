@@ -7,7 +7,7 @@ Paginate = 99
 googleAnalytics = ""
 enableGitInfo = true
 staticDir = ["static"]
-
+timeout = 120
 languageCode = "fr-fr"
 DefaultContentLanguage = "fr"
 
