@@ -2,11 +2,23 @@ pre {
     background-color: rgb(200, 200, 200);
 }
 
-article img{
+article figure{
+    display:inline-block;
+    width: 340px;
+    text-align: center;
+    margin: 10px
+}
+
+article figure img{
+    display: block;
+    margin-left:10px;
+    border-radius: 10px;
+}
+article figure figcaption{
     display:block;
     margin:auto;
+    text-align: center;
     max-width: 100%;
-    border-radius: 10px;
 }
 
 html {
@@ -198,3 +210,4 @@ html {
     background-color: hsl(4, 100%, 64%);
     background-color: #ff5447;
 }
+

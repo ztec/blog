@@ -1,0 +1,13 @@
+{{ $image := .Page.Resources.GetMatch .Destination }}
+{{ if gt $image.Width 320 }}
+{{ $image = $image.Resize "320x" }}
+{{ end }}
+
+{{ $image_wide := .Page.Resources.GetMatch .Destination }}
+{{ if gt $image_wide.Width 1024 }}
+{{ $image_wide = $image_wide.Resize "1024x" }}
+{{ end }}
+<figure>
+    <a href="{{ $image_wide.RelPermalink  | safeURL }}" target="_blank"><img src="{{ $image.RelPermalink | safeURL }}" {{ with .Text }} alt="{{ . }}" {{ end }} {{ with .Title }} title="{{ . }}" {{ end }}/></a>
+    {{ with .Title}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
+</figure>
