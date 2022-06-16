@@ -24,7 +24,7 @@ Ce quartier est très ... animé. De jour comme de nuit. C'est pas non plus la r
 Rendez-vous le jour de la fête de la music, c'est toujours animé. Le samedi en été vous aurez peut-être la chance
 d'entendre la fanfare (ou le "bonheur" d'etre réveillé aux sons des trompettes)
 
-![Clap](photos/clap.jpg "Femme illuminée clappant des mains derrière un Corp")
+![Clap](photos/clap.jpg "Femme illuminée clappant des mains derrière un cor")
 ![Saxo](photos/Saxo.jpg "Joueur de saxophone")
 ![Trompette](photos/Trompette.jpg "Joueur de trompette")
 ![Dacing](photos/dancing.gif "Un homme et une femme s'éloignant au loin en dansant de joie")
@@ -115,7 +115,7 @@ et des pellicules. À l'ancienne! Saurez-vous les retrouver ?
 ![Le métro parisien](photos/MétroParisien.JPG "Métro Parisien")
 ![StairwayToFlotte](photos/StairwayToFlotte.JPG "Escalier qui mène dans l'eau")
 ![TGV](photos/TGV.JPG "Un TGV a quai Gare de lyon")
-![Tourists](photos/Tourists.JPG "Deux Tourist qui se prennent en photo devant la tour Eiffel")
+![Tourists](photos/Tourists.JPG "Deux touristes qui se prennent en photo devant la tour Eiffel")
 ![Vilette](photos/Vilette.jpg "Batiment de La vilette")
 
 
