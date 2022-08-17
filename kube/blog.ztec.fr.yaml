@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: blog
+    tier: front
+  name: blog
+  namespace: trantor
+spec:
+  replicas: 4
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: blog
+      tier: front
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: blog
+        tier: front
+    spec:
+      containers:
+      - env:
+        - name: TZ
+          value: Europe/paris
+        image: nginx:stable
+        imagePullPolicy: IfNotPresent
+        name: nginx
+        livenessProbe:
+          httpGet:
+            path: /
+            scheme: HTTP
+            port: http
+          initialDelaySeconds: 20
+          periodSeconds: 3
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          subPath: public
+          name: blog-volume
+        - mountPath: /var/log/nginx
+          subPath: logs
+          name: blog-volume
+        - mountPath: /etc/nginx/nginx.conf
+          name: nginx-config
+          subPath: nginx.conf
+        - mountPath: /etc/nginx/templates/default.conf.template
+          name: nginx-config
+          subPath: default.conf
+      restartPolicy: Always
+      volumes:
+      - name: blog-volume
+        persistentVolumeClaim:
+          claimName: blog-pvc
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: blog-pvc
+  namespace: trantor
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: blog
+    tier: front
+  name: blog
+  namespace: trantor
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: blog
+    tier: front
+  type: NodePort
