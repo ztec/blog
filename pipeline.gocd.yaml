@@ -1,0 +1,141 @@
+format_version: 10
+pipelines:
+  blog-update-and-deployment:
+    group: ztec.fr
+    materials:
+      blog-ztec-fr:
+        git: ssh://git@git.riper.fr:22023/ztec/blog.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+        destination: "riper"
+    stages:
+      - build:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: true
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            build:
+              timeout: 0
+              resources:
+                - hugo
+              tasks:
+                - exec:
+                    arguments:
+                      - --minify
+                      - --cacheDir
+                      - /tmp/go_hugo_cache
+                    command: hugo
+                    run_if: passed
+                    working_directory: "riper"
+                - exec:
+                    arguments:
+                      - -R
+                      - a=rwX
+                      - ./
+                    command: chmod
+                    run_if: passed
+                    working_directory: "riper"
+              artifacts:
+                - build:
+                    source: "riper/public/**"
+                    destination: ""
+                - build:
+                    source: "riper/public/*"
+                    destination: ""
+            stats:
+              timeout: 0
+              resources:
+                - kube-blog-ztec-fr
+                - goaccess
+              tasks:
+                - exec:
+                    command: butler/stats.sh
+                    run_if: passed
+                    working_directory: "riper"
+              artifacts:
+                - build:
+                    source: "riper/*"
+                    destination: ""
+      - deploy:
+          fetch_materials: false
+          keep_artifacts: false
+          clean_workspace: true
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            rsync:
+              timeout: 0
+              resources:
+                - kube-blog-ztec-fr
+                - rsync
+              tasks:
+                - fetch:
+                    stage: build
+                    job: build
+                    source: ./
+                    destination: "public"
+                  run_if: passed
+                - fetch:
+                    stage: build
+                    job: stats
+                    source: ./
+                    destination: "public"
+                  run_if: passed
+                - exec:
+                    arguments:
+                      - -vha
+                      - --no-perms
+                      - --no-p
+                      - --no-g
+                      - --chmod=ugo=rwX
+                      - --delete
+                      - --partial
+                      - ./public
+                      - /riper/kube/blog.ztec.fr/
+                    command: rsync
+                    run_if: passed
+  blog-sync-github:
+    group: ztec.fr
+    materials:
+      blog-ztec-fr:
+        git: ssh://git@git.riper.fr:22023/ztec/blog.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+        destination: "riper"
+    stages:
+      - sync-to-github:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: true
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            sync-to-github:
+              timeout: 0
+              tasks:
+                - exec:
+                    command: butler/syncToGithub.sh
+                    run_if: passed
+                    working_directory: "riper"
+      - sync-from-github:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: true
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            sync-from-github:
+              timeout: 0
+              tasks:
+                - exec:
+                    command: butler/syncFromGithub.sh
+                    run_if: passed
+                    working_directory: "riper"
