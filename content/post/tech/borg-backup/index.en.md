@@ -1,7 +1,7 @@
 ---
 title: "Backup with Borg"
 date: 2021-04-18T17:59:00+02:00
-tags: ["linux", "raspberry pi"]
+tags: ["linux", "raspberry pi", "tech"]
 aliases:
   - /en/post/tech/borg-backup/
 ---

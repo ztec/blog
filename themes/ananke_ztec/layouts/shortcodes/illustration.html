@@ -6,15 +6,19 @@
     {{$alt = $name}}
 {{ end }}
 
-{{ if gt $image.Width 700 }}
-{{ $image = $image.Resize "720x" }}
+{{ if ne (.Get "resize") "no"}}
+    {{ if gt $image.Width 700 }}
+        {{ $image = $image.Resize "720x" }}
+    {{ end }}
 {{ end }}
-
 
 {{ $image_wide := .Page.Resources.GetMatch (.Get "src") }}
-{{ if gt $image_wide.Width 1024 }}
-{{ $image_wide = $image_wide.Resize "1024x" }}
+{{ if ne (.Get "resize") "no"}}
+    {{ if gt $image_wide.Width 1024 }}
+        {{ $image_wide = $image_wide.Resize "1024x" }}
+    {{ end }}
 {{ end }}
+
 <figure class="illustration">
     <a
             class="hidden-link"

@@ -1,0 +1,18 @@
+{{ $image := .Page.Resources.GetMatch .Destination }}
+
+
+
+<figure class="illustration">
+    <a
+            class="hidden-link"
+            href="{{ $image.RelPermalink  | safeURL }}"
+            target="_blank"
+    >
+        <img
+                src="{{ $image.RelPermalink | safeURL }}"
+                {{ with .Title }} alt="{{ . }}" {{ end }}
+                {{ with .Text }} title="{{ . }}" {{ end }}
+        />
+    </a>
+    {{ with .Title}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
+</figure>
