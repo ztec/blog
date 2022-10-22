@@ -78,5 +78,5 @@ DefaultContentLanguage = "fr"
   body_classes = "z-theme-light"
 
 [permalinks]
-  quick = "/:year/:month/:title/"
-
+  quick = "/:year/:month/:slug/"
+  post = "/:year/:section/:slug/"

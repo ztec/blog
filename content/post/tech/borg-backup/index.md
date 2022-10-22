@@ -2,6 +2,8 @@
 title: "Backup avec Borg"
 date: 2021-04-14T16:50:00+02:00
 tags: ["linux", "Raspberry pi"]
+aliases:
+  - /post/tech/borg-backup/
 ---
 
 Vous avez surement entendu parler de [l'incendie d'un datacenter d'OVH à Strasbourg](https://twitter.com/olesovhcom/status/1369478732247932929). Il a remis les pendule de beaucoup
@@ -9,7 +11,7 @@ de monde à l'heure. En effet, beaucoup de sites on été coupé quand leurs ser
 on réussi à remettre en ligne leur site et service, voir même n'avoir aucune interruption pendant l'incident, on en a 
 vus qui on mit beaucoup plus de temps. [Certain on même tout perdu](https://twitter.com/playrust/status/1369611688539009025), rien n'a survécu.
 
-![OVH en feu](OVH-Datacenter-On-Fire.jpg "Image du datacenter d'OVH de strasbourg aux prise des flames")
+{{< illustration src="OVH-Datacenter-On-Fire.jpg"        name="OVH en feu"            alt="Image du datacenter d'OVH de strasbourg aux prise des flames" >}}
 
 Ne pas subir interruption ou être capable de remonter son service en quelques heure c'est souvent une question de
 "haute disponibilité". Je ne vais pas parler de ça aujourd’hui. 

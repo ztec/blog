@@ -2,13 +2,15 @@
 title: "Backup with Borg"
 date: 2021-04-18T17:59:00+02:00
 tags: ["linux", "raspberry pi"]
+aliases:
+  - /en/post/tech/borg-backup/
 ---
 
 You probably already heard of the [OVH's recent fire](https://twitter.com/olesovhcom/status/1369478732247932929).
 It was a hard reminder for many people and companies. Many websites and services had big outage consequently and some 
 [lost everything in the fire](https://twitter.com/playrust/status/1369611688539009025)
 
-![OVH is on fire](OVH-Datacenter-On-Fire.jpg "Picture of OVH's strasbourg datacenter burning")
+{{< illustration src="OVH-Datacenter-On-Fire.jpg"        name="OVH is on fire"            alt="Picture of OVH's strasbourg datacenter burning" >}}
 
 Most website went down for few hours. Avoiding service interruption when a whole datacenter disappear is not something easy. Some already had everything in place
 for this kind of scenario. I won't talk about that today.
@@ -71,7 +73,7 @@ There is a lot of ways to do it, I won't go in details.
 
 Basically, here is how I built my backup system:
 
-![Schéma global](schema.png)
+![Global schematics](schema.png)
 
 ##### Borg server 
 

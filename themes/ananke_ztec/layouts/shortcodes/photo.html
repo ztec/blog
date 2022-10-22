@@ -1,0 +1,31 @@
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
+{{ $mediaPermalink := ($.Page.Resources.GetMatch (.Get "src")).RelPermalink}}
+{{ $alt := (.Get "alt")}}
+{{ $name := (.Get "name")}}
+{{ if eq $alt ""}}
+    {{$alt = $name}}
+{{ end }}
+
+{{ if gt $image.Width 320 }}
+{{ $image = $image.Resize "320x" }}
+{{ end }}
+
+
+{{ $image_wide := .Page.Resources.GetMatch (.Get "src") }}
+{{ if gt $image_wide.Width 1024 }}
+{{ $image_wide = $image_wide.Resize "1024x" }}
+{{ end }}
+<figure class="photo">
+    <a
+            class="hidden-link"
+            href="{{ $image_wide.RelPermalink  | safeURL }}"
+            target="_blank"
+    >
+        <img
+                src="{{ $image.RelPermalink | safeURL }}"
+                {{ with $alt }} alt="{{ . }}" {{ end }}
+                {{ with $name }} title="{{ . }}" {{ end }}
+        />
+    </a>
+    {{ with $alt}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
+</figure>

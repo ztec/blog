@@ -2,6 +2,8 @@
 title: "Hello world"
 date: 2021-04-14T14:00:00+02:00
 tags: ["announcement"]
+aliases:
+  - /en/post/blog/hello-world/
 ---
 
 Hello world
@@ -9,7 +11,7 @@ Hello world
 Here I am. I finally decide to open a blog. I do so with a bit of apprehensiveness but ambitions too.
 Let me explain.
 
-![Sweating person ! GIF](swetty.gif "Sweating")
+{{< illustration src="swetty.gif"  name="Sweating person ! GIF"   alt="Sweating" >}}
 
 I read a lot on the internet. With my [RSS reader](https://en.wikipedia.org/wiki/RSS) I try to stay out of socials bubble prisons. 
 I'm aware I'm only creating another one of my own, but this way I have the pretense of owning it myself instead of an algorithm
@@ -35,7 +37,7 @@ those lines, it mean I went over my fears. I don't know how long it'll last, A l
 I'm convinced form should not block access to substance. Only the meaning of a text should matter. Obviously there are 
 limits where bother are intertwined, but as long as the original meaning is successfully transmitted it's ok.
 
-![When you realize you made a typo GIF](typo.gif "Two people on their phone, writing each other texts. One made a typo, the other look at him astonished.")
+{{< illustration src="typo.gif"  name="When you realize you made a typo GIF"   alt="Two people on their phone, writing each other texts. One made a typo, the other look at him astonished." >}}
 
 I do not wish to deliver messages in a box broken by choice, but do my best to craft a beautiful enough box around my
 messages. I'm not an artist, I acknowledge some may not like my imperfect boxes. Too bade for them, but I have to play the game
@@ -133,7 +135,7 @@ definitely evolve a lot in futur.
 
 Message to actual CSS developers :
 
-> NO NOT LOOK AT HTML CODE 🙏
+> NO DO NOT LOOK AT HTML CODE 🙏
 
 #### Accessibility
 
