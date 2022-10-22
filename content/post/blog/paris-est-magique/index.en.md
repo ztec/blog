@@ -2,6 +2,8 @@
 title: "Paris is beautiful"
 date: 2022-06-14T01:03:51+02:00
 tags: [ www.my-life.com, photo]
+aliases:
+  - /en/post/blog/paris-est-magique/
 ---
 
 I love Paris, since the dawn of my memory.
