@@ -15,9 +15,9 @@ J'ai sorti une lib go pour lire les données Téléinfo des compteurs EDF élect
 Depuis 2018, j'ai un raspbery-pi accrocher à coter de mon compteur [EDF](https://fr.wikipedia.org/wiki/%C3%89lectricit%C3%A9_de_France). 
 En suivant quelques tutoriels sur le net, je les ai connectés de façon à pouvoir suivre en temps réel ma consommation électrique.
 
-Pour la faire courte, les compteurs électroniques d'EDF (même avant le linky), on trois bornes en bas à droite. Sur les 3, il y en 
-a deux qu'on peut utiliser pour recevoir un flux série constant de donnée en provenance du compteur. 
-Je ne vais pas detailer la procédure  car il y a pleins d'autre gens qui l'on fait bien mieux que je ne le ferais. Une petite recherche
+Pour la faire courte, les compteurs électroniques d'EDF (même avant le linky), ont trois bornes en bas à droite. Sur les 3, il y en 
+a deux qu'on peut utiliser pour recevoir un flux (série) constant de donnée en provenance du compteur. 
+Je ne vais pas detailer la procédure, car il y a pleins d'autres gens qui l'on fait bien mieux que je ne le ferais. Une petite recherche
 DuckDucGo sur "EDF téléinfo raspbery-pi" donnera de bons résultats.
 
 {{< photo-gallery >}}
@@ -29,7 +29,7 @@ DuckDucGo sur "EDF téléinfo raspbery-pi" donnera de bons résultats.
 En realité, j'ai pété toute la partie réception des données fin 2019, donc j'ai plus d'historique (sadFace), mais 
 je n'ai jamais enlevé le raspbery-pi pour autant. La flem quoi!
 
-Entre temps, ENEDIS est passer changer mon compteur. Le technicien était un peu surpis de voir deux fils sortir du compteur,
+Entre temps, ENEDIS est passé changer mon compteur. Le technicien était un peu surpis de voir deux fils sortir du compteur,
 mais apres explications, il a vite compris et a meme pris le temps de remettre soigneusement les fils sur les bonnes 
 bornes sur le nouveau compteur de couleur verte affreuse ! Ensuite, le raspbery-pi est resté là, sans que je fasse quoi que ce soit. 
 La flem quoi!
@@ -38,9 +38,9 @@ Avec les récentes evolutions des tarifs électriques, m'est revenu l'envie de v
 A ce stade, je ne sais meme pas si la Téléinfo est activé sur mon compteur et si mon code marche toujours. D'ailleurs, il est ou mon code ? (thinking face)
 
 Je fouine dans de vieux backups (merci les backup (happy face), hesitez pas à lire [comment je gère mes backups]({{< ref "/post/tech/borg-backup" >}} "Borg backup"))
-et je retrouve mon code de l'époque. Je le remets dans un dépot, rajoute quelques lignes de debug, compile et je test sur le raspbery-pi.
+et je retrouve mon code de l'époque. Je le remets dans un dépot, rajoute quelques lignes de debug, compile et je teste sur le raspbery-pi.
 
-Miracle, ça marche du premier coup. J'ai rien eu à changer.
+Miracle, ça marche du premier coup. Je n'ai rien eu à changer.
 
 ```
 Oct 26 19:27:31 compteur plumbus[3960]: time="2022-10-26T19:27:31+02:00" level=info msg="EDF PAYLOAD" HCHC=5605491 HCHP=12906199 HHPHC=A IINST=3 IMAX=90 ISOUSC=30 OPTARIF=HC.. PAPP=750 PTEC=HP..
