@@ -242,7 +242,7 @@ I professionally work with it as a simple message broker (same as RabitMQ or Zer
 the streaming aspect of Kafka, or all the glorious things it can do in a "Big data" or [Event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) context. 
 
 Thanks reading me,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:
 
 ---
 

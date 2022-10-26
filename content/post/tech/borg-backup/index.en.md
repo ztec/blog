@@ -301,7 +301,7 @@ I use this setup for less than a year, and a lots of details are not perfect, ho
  - A good monitoring is required, mostly on disk space, to know quickly when to do some cleaning or buy new drives.
 
 Thank you reading this,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:
 
 
 

@@ -148,4 +148,4 @@ Un jour, mes sentiments changerons peut-être, d'ici là Paris est magnifique.
 Vous retrouverez quelques une de ces photos, et bien plus dans mon album Paris sur Flickr à l'adresse suivante : https://www.flickr.com/photos/ztec/albums/72177720295387877
 
 Merci infiniment de m'avoir lu,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:

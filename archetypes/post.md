@@ -7,4 +7,4 @@ tags: []
 
 
 Merci infiniment de m'avoir lu,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:

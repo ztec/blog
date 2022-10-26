@@ -17,7 +17,7 @@ Between strait opinions and technical expertise, the reader is unaware of what's
 really hard to guess in advance what's the next page will be.
 Be prepared, all topics are in this epic and endless (we hope) story.
 
-The reader may have to learn french to read all chapters as the author write randomly in english and french.
+The reader may have to learn French to read all chapters as the author write randomly in english and French.
 
 This blog is not for grammar-nazy (even a little). English writing rules are not stricly followed here as the 
 author entrusted us with details about his disability in the regard. The author has 70% spelling and 90% grammar 

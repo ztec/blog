@@ -147,4 +147,4 @@ toujours le moi future qui va surement tous pété à nouveau dans 6 mois et qui
 
 
 Merci infiniment de m'avoir lu,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:

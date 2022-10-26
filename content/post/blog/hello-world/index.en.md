@@ -43,7 +43,7 @@ I do not wish to deliver messages in a box broken by choice, but do my best to c
 messages. I'm not an artist, I acknowledge some may not like my imperfect boxes. Too bade for them, but I have to play the game
 by the rule, I have no choice.
 
-I'm completely open to criticism (with all my bias 😉, I can react badly sometimes). However, for all comment about form,
+I'm completely open to criticism (with all my bias :wink:, I can react badly sometimes). However, for all comment about form,
 spelling, grammar, typos I will have only one answer:
 
 > Spelling, grammar, typo errors on each word ? I'm deeply sorry for that. Help me fix it.
@@ -53,7 +53,7 @@ spelling, grammar, typos I will have only one answer:
 
 I know internet is a ruthless jungle, let's hope bad lions stays in their idea's desert.
 
-Who knows, maybe it will help me improve myself.🤷
+Who knows, maybe it will help me improve myself.:shrug:
 
 ### Substance
 
@@ -93,11 +93,11 @@ I do not know  I will have always enough courage and time, but I wish to contrib
 
 I said "tutorials", but I think it will take a lot of different forms. Sometimes real tutorials, sometimes simple pages
 with what I find relevant information, what made me walk to the solution. I might even publish selfish posts to help my 
-futur self. I would be funny to find my blog during a search 😂
+futur self. I would be funny to find my blog during a search :joy:
 
 I'm an unspecialized "tech" and like a lots of technologies and stuffs, here an incomplete list I think I will talk about.
 
- - Linux / Windows (Gaming is still a Windows thing 😭)
+ - Linux / Windows (Gaming is still a Windows thing :sob:)
  - Développement Backend
     - PHP (Nut I think everything has already been told)
     - Go
@@ -135,7 +135,7 @@ definitely evolve a lot in futur.
 
 Message to actual CSS developers :
 
-> NO DO NOT LOOK AT HTML CODE 🙏
+> NO DO NOT LOOK AT HTML CODE :pray:
 
 #### Accessibility
 
@@ -154,12 +154,12 @@ My server availability is high enough for me right now.
 
 ### Conclusion
 
-This post is way longer than I anticipated first. Predominately after translating it 🤣. 
+This post is way longer than I anticipated first. Predominately after translating it :joy:. 
 It helped me a lot clarifying my motivations and what I plan. Obviously, the futur is an unknown place, for now, and a lot
 will change. I want this blog to be alive and a good representation of myself. It will evolve with me, I hope.
 
 Thanks reading me,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:
 
 
 

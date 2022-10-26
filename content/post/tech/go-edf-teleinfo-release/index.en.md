@@ -147,4 +147,4 @@ he will probably break everything again, and start from scratch again like today
 (I suspecte he does not learn from mistakes)
 
 Thank you reading this,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:

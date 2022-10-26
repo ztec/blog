@@ -145,4 +145,4 @@ One day my feeling towards this city may fade away. Until then, Paris is beautif
 You can find some of the pictures, and much more, on my Flickr Paris Album here : https://www.flickr.com/photos/ztec/albums/72177720295387877
 
 Thanks reading me,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:

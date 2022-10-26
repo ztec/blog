@@ -243,7 +243,7 @@ Je l'utilise dans le cadre pro, principalement en tant que simple message broker
 
 
 Merci infiniment de m'avoir lu,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:
 
 ---
 

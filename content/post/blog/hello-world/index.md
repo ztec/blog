@@ -46,7 +46,7 @@ Mon souhait n'est pas de livrer un message dans une boîte volontairement cassé
 faire une belle boîte autour de mon message. N'étant pas un artiste, je comprendrais que des gens n'aiment pas mes boîtes.
 Ça serait dommage mais c'est le jeu, tans pis. 
 
-Je suis totalement ouvert à la critique (avec tous mes biais hein, je peux aussi prendre mal une remarque à chaud). 
+Je suis totalement ouvert à la critique (avec tous mes biais hein :wink:, je peux aussi prendre mal une remarque à chaud). 
 Cependant je ne répondrai aux remarques et commentaires qui concernent la forme et l'orthographe qu'une chose :
 
 > Il y a une faute à chaque mot ? J'en suis désolé. Aidez-moi à corriger cela.
@@ -56,7 +56,7 @@ Cependant je ne répondrai aux remarques et commentaires qui concernent la forme
 
 Je sais qu'internet est une jungle impitoyable, espérons que les méchants lions resteront dans leur désert d'idées. 
 
-Et qui sait, peut-être que ça m'aidera à m'améliorer 🤷
+Et qui sait, peut-être que ça m'aidera à m'améliorer :shrug:
 
 #### Écriture inclusive
 
@@ -111,11 +111,11 @@ résumant mes recherches.
 
 J'ai dit "Tuto", mais je pense que ça prendra plein de formes. Parfois des tutoriels pas à pas, parfois des pages simples
 avec quelques lignes contenant l'information qui m'a fait avancer. Parfois je posterai des articles purement égoïstement
-pour aider mon moi du futur. Ça me ferait drôle de tomber sur mon blog au détour d'une recherche 😂
+pour aider mon moi du futur. Ça me ferait drôle de tomber sur mon blog au détour d'une recherche :joy:
 
 Je suis un "tech" touche à tout, mais voici une petite liste non exhaustive des domaines que je pense aborder.
 
- - Linux / Windows (bien obligé pour jouer 😭)
+ - Linux / Windows (bien obligé pour jouer :sob:)
  - Développement Backend
     - PHP (mais je pense que tout a été déjà dit)
     - Go
@@ -156,7 +156,7 @@ l'apparence de ce blog risque de beaucoup changer dans le temps.
 
 Message à l'attention des développeurs qui savent vraiment faire du CSS:
 
-> Ne regardez pas le code HTML 🙏
+> Ne regardez pas le code HTML :pray:
 
 #### Accessibilité
 Bien que je n'ai pas encore testé en profondeur, j'ai attaché beaucoup d'importance à l'accessibilité. Cela se retrouve
@@ -181,7 +181,7 @@ je prévois. Évidemment, l'avenir m'est inconnu, pour le moment, et beaucoup de
 Je veux que ce blog soit vivant et me représente. Il évoluera avec moi, j'espère. 
 
 Merci infiniment de m'avoir lu,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:
 
 
 

@@ -303,7 +303,7 @@ J'utilise ce système depuis moins d'un an, et il y a plein de détails qui ne s
 
 
 Merci infiniment de m'avoir lu,\
-[Bisoux](/page/bisoux) 😗
+[Bisoux](/page/bisoux) :kissing:
 
 
 

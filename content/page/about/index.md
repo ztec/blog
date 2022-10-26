@@ -11,7 +11,7 @@ Politiquement penché, voir complètement affalé à gauche, Zed rêve d'une soc
 où les gens vivent heureux dans de bonnes conditions tout en faisant ce qu'ils veulent. 
 Surement un résultat de ses rêveries dans l'univers de [Patrouille du cosmos](https://fr.wikipedia.org/wiki/Star_Trek). 
  
-Zed à une vie relativement facile de privilégié, **Mais ça ca c'était avant qu'il ne décide d'ouvrir un blog personnel !** 
+Zed à une vie relativement facile de privilégié, **Mais ça, c'était avant qu'il ne décide d'ouvrir un blog personnel !** 
  
 {{< figure src="author.jpeg" height="200px" width="188" class="fl mt0 pt3 ml0 mb0 mr3 mr4-ns " >}} 
 L'auteur nous livre ici un récit résolument personnel. 
@@ -44,8 +44,8 @@ Ils ne l'ont pas lu, mais ils en parlent quand même:
  
 > Émanuel Macron: 
 > 
-> L'auteur devrais traverser la rue, il confond le sens des mots et tente de nous cacher ses liens évident avec 
-> les terroriste islamo-gauchiste. Non, la lutte des classes c'est révolu, on est plus en 1789 jeune home.
+> L'auteur devrait traverser la rue, il confond le sens des mots et tente de nous cacher ses liens évident avec 
+> le terroriste islamo-gauchiste. Non, la lutte des classes, c'est révolu, on est plus en 1789 jeune home.
  
 > Johnny Hallyday 
 > 
@@ -58,7 +58,7 @@ Ils ne l'ont pas lu, mais ils en parlent quand même:
 > Anonymous:
 >
 > Je voulais un bon blog pour offrir à ma nièce, j'ai pris ça. On verra ce qu'elle en pense.
-> Je l'ai reçu rapidement, et l'emballage était de qualité. Aucun dommages à déclaré. Bravo internet. 
+> Je l'ai reçu rapidement et l'emballage était de qualité. Aucuns dommages a déclaré. Bravo internet. 
 > 
 
 ---
