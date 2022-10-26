@@ -1,5 +1,5 @@
 ---
-title: "Recevoir et analyser les données des compteurs EDF numérique (linky inclus)"
+title: "Recevoir et analyser les données des compteurs EDF"
 date: 2022-10-26T19:09:19+02:00
 slug: recevoir_analyser_edf_teleinfo_linky
 tags: [ "tech", "go", "Raspberry pi", "Thésaurisation compulsive des données"]
