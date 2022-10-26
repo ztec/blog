@@ -59,7 +59,7 @@ Vous pouvez maintenant vous moquer de moi et de ma consommation électrique, car
 ## Librarie Go
 
 Bon, pourquoi je vous raconte ma vie comme ça là-dessus ? Car j'ai décidé de publier le bout de code
-que j'utilise que j'ai ~volé je ne sais plus où~ fait il y a quelques années sur internet. 
+que j'utilise que j'ai {{< strike >}}volé je ne sais plus où{{< /strike >}} fait il y a quelques années sur internet. 
 Si jamais vous faites, vous aussi, votre domotique maison en GO vous aurez un peu de code en mois à écrire.
 
 [https://git2.riper.fr/ztec/go_edf_teleinfo](https://git2.riper.fr/ztec/go_edf_teleinfo) aussi sur [github](https://github.com/ztec/go_edf_teleinfo)
@@ -135,7 +135,7 @@ edfHCHP.Set(float64(teleinfo.HCHP))
 
 ### Contribution ?
 
-Si vous voulez contribuer et ~corriger mes erreurs~ améliorer le truc, c'est avec grand plaisir. Ouvrez une PR
+Si vous voulez contribuer et {{< strike >}}corriger mes erreurs{{< /strike >}} améliorer le truc, c'est avec grand plaisir. Ouvrez une PR
 sur Github et vous recevrez plein de câlins virtuels.
 
 

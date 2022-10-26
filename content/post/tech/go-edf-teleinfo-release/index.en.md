@@ -59,7 +59,7 @@ You can now make fun of me and my outrageous energy consumption. It's not pretty
 ## Go library 
 
 So, why do I invite you in my life like that ? I decided to publish the code that works and that 
-I ~stole I don't remember where~ did years ago.
+I {{< strike >}}stole I don't remember where{{< /strike >}} did years ago.
 Maybe you to build a personal home automation "platform" using go as your main language. With this
 library, you will have less to write I hope.
 
@@ -137,7 +137,7 @@ edfHCHP.Set(float64(teleinfo.HCHP))
 
 ### Contributions ?
 
-If you want to participate and ~fix my ugly code~ improve the library, please do. Open a PR on github and 
+If you want to participate and {{< strike >}}fix my ugly code{{< /strike >}} improve the library, please do. Open a PR on github and 
 you will receive tons of virtual hugs as thanks. 
 
 ---
