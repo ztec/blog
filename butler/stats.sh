@@ -1,7 +1,8 @@
 #!/bin/sh
-cat /riper/kube/blog.ztec.fr/logs/access*.log |grep -v ping \
+tail -n 999999 /riper/kube/blog.ztec.fr/logs/access*.log |grep -v ping \
  |grep -v uptimerobot |grep -v StatusCake | grep -v kube-probe \
- | goaccess /tmp/all.log \
+ | goaccess \
+ -o stats.html \
 --log-format='%^ %^[%d:%t %^] "%r" %s %b"%R" "%u" "%h" %^ %^ "%T" %^ ' \
 --date-format=%d/%b/%Y --time-format=%T \
 --anonymize-ip --exclude-ip 10.0.0.0-10.25.255.255 \
