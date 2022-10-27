@@ -1,7 +1,7 @@
 ---
 title: "Paris est magique"
 date: 2022-06-14T01:03:51+02:00
-tags: [ 3615 my life, photo]
+tags: [ 3615-my-life, photo]
 aliases:
   - /post/blog/paris-est-magique
 ---

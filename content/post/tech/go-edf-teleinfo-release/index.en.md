@@ -2,7 +2,7 @@
 title: "Go Library to Parse EDF Teleinfo Data"
 date: 2022-10-26T19:09:19+02:00
 slug: go_edf_teleinfo_release
-tags: [ "tech", "go", "Raspberry pi", "data hoarding"]
+tags: [ "tech", "go", "Raspberry pi", "data-hoarding"]
 ---
 
 ## TL;DR:

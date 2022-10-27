@@ -11,7 +11,9 @@
     <section class="ph0">
       {{ range $key, $value := .Data.Terms }}
         <h2 class="f2 sans-serif bb b--light-silver">
-          {{ $.Data.Singular | humanize }}: <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="">{{ $key }}</a>
+          {{ with $.Site.GetPage (printf "/%ss/%s" $.Data.Singular $key) -}}
+            {{ $.Data.Singular | humanize }}: <a href="{{ .Permalink }}" >{{ .Title }}</a>
+          {{end}}
         </h2>
         <div class="pl4 pr4 mw8 center sans-serif ">
           {{  range  $index, $currentPage := $value.Pages }}

@@ -15,10 +15,12 @@
   - <span class="f7 dib tracked" >{{ .ReadingTime}} minutes read</span>
   - <span class="f7 dib tracked" ><a href="{{  $currentPage.Type | relLangURL }}" class="">{{ .Type}}</a> </span>
   {{if .Params.tags }}- <span class="tracked dib f7">
-          {{ range $index, $val := .Params.tags }}
-                  {{if gt $index 0 }}<span class=""> - </span>{{end}}
-                  <a href="{{ "/tags/" | relLangURL }}{{ $val | urlize }}" class="">{{- $val -}}</a>
-          {{ end }}
+            {{ range $index, $val := .Params.tags }}
+                {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                    {{if gt $index 0 }}<span class=""> - </span>{{end}}
+                    <a href="{{ .Permalink }}" >{{ .Title }}</a>
+                {{end}}
+           {{ end }}
       </span>
   {{end}}
   <p class="ml1 near-black mb4">

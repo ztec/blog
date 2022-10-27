@@ -1,7 +1,7 @@
 ---
 title: "Paris is beautiful"
 date: 2022-06-14T01:03:51+02:00
-tags: [ www.my-life.com, photo]
+tags: [ 3615-my-life, photo]
 aliases:
   - /en/post/blog/paris-est-magique/
 ---

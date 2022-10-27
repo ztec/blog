@@ -1,7 +1,7 @@
 ---
 title: "Bonjour le monde"
 date: 2021-04-12T20:00:00+02:00
-tags: ["annonce"]
+tags: ["announcement"]
 slug: "bonjour-monde"
 aliases:
   - /post/blog/bonjour-monde/

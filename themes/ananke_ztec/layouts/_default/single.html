@@ -30,8 +30,10 @@
           <line x1="7" y1="7" x2="7.01" y2="7"></line>
         </svg> 
         {{ range $index, $val := .Params.tags }}
-        {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
-        <a href="{{ "/tags/" | relLangURL }}{{ $val | urlize }}" class="f7 h100 dib v-top">{{- $val -}}</a>
+          {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                  {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
+                  <a href="{{ .Permalink }}" class="f7 h100 dib v-top">{{ .Title }}</a>
+          {{end}}
         {{ end }}
       </div>
       {{end}}
