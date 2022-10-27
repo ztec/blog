@@ -15,7 +15,7 @@
         </h2>
         <div class="pl4 pr4 mw8 center sans-serif ">
           {{  range  $index, $currentPage := $value.Pages }}
-          <h1 class="f3 b mb0 ml0 "><a href="{{ .Permalink }}" class="link">{{ .Title }}</a></h1>
+          <h1 class="f3 l mb0 ml0 "><a href="{{ .Permalink }}" class="link">{{ .Title }}</a></h1>
           <time class="f7 ml1 dib tracked" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
           {{- .Date.Format "January 2, 2006" -}}
           </time>
