@@ -7,6 +7,11 @@ html {
     min-height: 100%;
 }
 
+h2, h3, h4 ,h5 {
+    font-weight: 100;
+}
+
+
 /** Light theme colors **/
 /* will be applied on body */
 .z-theme-light {
