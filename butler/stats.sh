@@ -11,4 +11,4 @@ tail -n 999999 /riper/kube/blog.ztec.fr/logs/access*.log |grep -v ping \
 --hide-referrer="blog.ztec.fr" \
 --ignore-panel "KEYPHRASES" \
 --date-spec=hr \
---geoip-database /home/zed/geoip/dbip-city-lite-2021-04.mmdb
+--geoip-database /home/zed/geoip/dbip-city-lite-2021-04.mmdb -
