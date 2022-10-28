@@ -267,3 +267,23 @@ article figure.illustration:hover figcaption{
     background-color: #ff5447;
 }
 
+
+
+.small-media-player{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.small-media-player audio{
+    width: 90%;
+    margin-left: 5%;
+    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
+    border-radius: 5px;
+}
+.small-media-player p{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2px;
+    text-align: center;
+}

@@ -1,0 +1,13 @@
+{{ $mediaPermalink := ($.Page.Resources.GetMatch (.Get "src")).RelPermalink}}
+{{ $title := (.Get "title")}}
+
+<div class="small-media-player">
+    <audio controls >
+        <source src="{{ $mediaPermalink | safeHTML }}" type="audio/mpeg">
+    </audio>
+    {{ if $title }}
+    <p>
+        <a href="{{ $mediaPermalink | safeHTML }}" target="_blank"> {{ $title | safeHTML}} </a>
+    </p>
+    {{end}}
+</div>
