@@ -109,7 +109,7 @@ pipelines:
         branch: main
         destination: "riper"
     stages:
-      - sync-to-github:
+      - sync:
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: true
@@ -124,17 +124,6 @@ pipelines:
                     command: butler/syncToGithub.sh
                     run_if: passed
                     working_directory: "riper"
-      - sync-from-github:
-          fetch_materials: true
-          keep_artifacts: false
-          clean_workspace: true
-          approval:
-            type: success
-            allow_only_on_success: false
-          jobs:
-            sync-from-github:
-              timeout: 0
-              tasks:
                 - exec:
                     command: butler/syncFromGithub.sh
                     run_if: passed
