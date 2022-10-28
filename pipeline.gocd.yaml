@@ -108,6 +108,12 @@ pipelines:
         auto_update: true
         branch: main
         destination: "riper"
+      blog-ztec-fr-github:
+        git: git@github.com:ztec/blog.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+        destination: "gh"
     stages:
       - sync:
           fetch_materials: true
