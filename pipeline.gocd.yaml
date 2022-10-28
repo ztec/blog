@@ -127,10 +127,6 @@ pipelines:
               timeout: 0
               tasks:
                 - exec:
-                    command: butler/syncToGithub.sh
-                    run_if: passed
-                    working_directory: "riper"
-                - exec:
-                    command: butler/syncFromGithub.sh
+                    command: butler/sync.sh
                     run_if: passed
                     working_directory: "riper"
