@@ -124,7 +124,7 @@ ce n'est pas très utile finalement.
 De plus, souvent, un des écouteurs ne se connecte pas. Je dois les remettre dans leur boite et recommencer en espérant que ça marche
 cette fois-ci. C'est pas le plus grave, c'est juste pénible, car fréquent.
 
-{{< illustration src="turn-it-off-and-on-again2.webp"  name="Avez vous essayer de l'éteindre et le rallumer ?"  
+{{< illustration src="turn-it-off-and-on-again.gif"  name="Avez vous essayer de l'éteindre et le rallumer ?"  
 alt="Extrait de la série IT-Crowd, un homme au téléphone demande si [la personne à l'autre bout du fil] a essayé de l'éteindre et le rallumer ?" >}}
 
 Tous ces détails montre clairement que le produit a été fini dans de si mauvaises conditions que ne n'ose imaginer comment les personnes
