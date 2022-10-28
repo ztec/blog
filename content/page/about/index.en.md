@@ -4,7 +4,7 @@ slug: about
 comments: 'none'
 ---
 Zed is a white cisgender man, atheist, son of a school teacher and an artisan, completely against advertisement and 
-having an open source mind. Soon glued to computers, Zed is a WEB developer, often called a tech guy in teh tech industry.   
+having an open source mind. Soon glued to computers, Zed is a WEB developer, often called a tech guy in the tech industry.   
 
 Completely left-handed politically speaking, Zed dreams about a society with not requirement for having a job, and where
 people can be happy in good conditions doing what they want. Zed may have had too much of Star Trek in his life. 
