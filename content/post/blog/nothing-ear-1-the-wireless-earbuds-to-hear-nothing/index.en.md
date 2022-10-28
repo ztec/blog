@@ -109,7 +109,7 @@ It's better to make a call and listen to the crappy waiting music than listen to
 Often, one of the buds does not connect properly. It just does not connect at all. 
 Putting them in the case again and retrying the connection always solved the issue. Not a big deal, just annoying because frequent.
 
-{{< illustration src="turn-it-off-and-on-again2.webp"  name="Did you tried turning it off and on again ?"   alt="From IT-Crowd, a guy on the phone doing helpdesk, asking Have you tried turning it off and on again ?" >}}
+{{< illustration src="turn-it-off-and-on-again.webp"  name="Did you tried turning it off and on again ?"   alt="From IT-Crowd, a guy on the phone doing helpdesk, asking Have you tried turning it off and on again ?" >}}
 
 All those details clearly show this product was finished in soo bad conditions that I do not wish to know how badly people were treated.
 
