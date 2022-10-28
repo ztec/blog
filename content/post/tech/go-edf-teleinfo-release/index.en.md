@@ -12,33 +12,33 @@ I just released a library to read and parse data from french electronic energy m
 [https://git2.riper.fr/ztec/go_edf_teleinfo](https://git2.riper.fr/ztec/go_edf_teleinfo) also on [github](https://github.com/ztec/go_edf_teleinfo)
 
 ## Once upon a time
-Since 2018, I have a raspbery-pi hanging near my [EDF](https://en.wikipedia.org/wiki/%C3%89lectricit%C3%A9_de_France) energy meter. 
+Since 2018, I have a raspberry-pi hanging near my [EDF](https://en.wikipedia.org/wiki/%C3%89lectricit%C3%A9_de_France) energy meter. 
 Following some tutorials back then, I have connected them to follow my energy consumption in real time.
 
 Without going into the details, EDF electronic meter (even before the ugly linky was imposed) have 3 connector on the right lower hand side.
 Two of them allow to receive constant data about the meter and the instantaneous state such as power consumption.
 I won't detail how I did it because there is a lot of better content that go in details online. Just do some 
-duckduckgo search with "EDF, teleinfo, raspbery-pi" for example.
+duckduckgo search with "EDF, teleinfo, raspberry-pi" for example.
 
 {{< photo-gallery >}}
-{{< photo src="linky.jpg"       name="Linky with raspbery-pi on the side" >}}
+{{< photo src="linky.jpg"       name="Linky with raspberry-pi on the side" >}}
 {{< photo src="connection.jpg"  name="Linky connection" >}}
 {{</photo-gallery>}}
 
 Unfortunately, I broke all my data platform end of 2019. No mor history (visage triste). However, I never removed the
-raspbery-pi. So, it is still there, hanging and connected to the meter, powered down. 
+raspberry-pi. So, it is still there, hanging and connected to the meter, powered down. 
 
 Meanwhilem [ENEDIS](https://fr.wikipedia.org/wiki/Enedis) the French electrical grid operator, changed my meter by one of the
 new Linky. The technician that installed was a bit surprised at first to see two wire connected to the meter like that.
 After some explanation he understood, and even re-installed them carefully on the new meter.
-After that, the raspbery-pi stayed there, connected, but off. 
+After that, the raspberry-pi stayed there, connected, but off. 
 
 With recent european electricity price "changes", I was curious again to see my electrical trend (Visage innocent)
 At this point, I don't even know if the new meter have a working Téléinfo. I don't know either if my code still works.
 Speaking of code… (tête en pleine réflexion)
 
 I search in my old backups (thanks backups (visage heureux). You can read more about them on [Borg backup]({{< ref "/post/tech/borg-backup" >}}))
-I'm lucky and find my old code. I put it in a repository, add some debug lines, compile and test int on the raspbery-pi I switch on again for the ocasion.
+I'm lucky and find my old code. I put it in a repository, add some debug lines, compile and test int on the raspberry-pi I switch on again for the ocasion.
 
 It works! Nothing to update, re-write. It worked on the first try. I now have logs like this:
 
@@ -85,13 +85,13 @@ More information on the [readme.md](https://git2.riper.fr/ztec/go_edf_teleinfo/s
 ### What does it need ?
 
 Basically, you need to get the teleinfo data sent by the EDF meter.
-The simplest way, is ti use the raspbery-pi [UART](https://fr.wikipedia.org/wiki/UART), configure it with the proper
+The simplest way, is ti use the raspberry-pi [UART](https://fr.wikipedia.org/wiki/UART), configure it with the proper
 parameters then open and read the interface in you program.
 
 ```
 /!\ WARNING /!\ /!\ WARNING /!\ /!\ WARNING /!\ /!\ WARNING /!\ 
 
-Do not connect the raspbery-pi to the metter directly!
+Do not connect the raspberry-pi to the metter directly!
 Please check onlines tutorials based on optocoupler, 
 or use secial purpose equipment such as the one you can find for 15e
 
