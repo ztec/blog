@@ -56,7 +56,7 @@ They did not read it but have comments anyway:
 - Email : ILoveAnanasPizza@riper.fr
 - Twitter : [@ztec6](https://twitter.com/ztec6)
 - Mastodon : [@ztec@mamot.fr](https://mamot.fr/@ztec)
-- Matrix : @ztec:matrix.org
+- Matrix : [@ztec:matrix.org](https://matrix.to/#/@ztec:matrix.org)
 - Flickr : [Loïc](https://www.flickr.com/photos/ztec/)
 - Github : [ztec](https://github.com/ztec/)
 - Planet : Earth
