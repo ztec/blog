@@ -51,10 +51,12 @@ They did not read it but have comments anyway:
 
 ---
 
-- Names : Zed, Ztec, Zed Teque, Loïc
+- Firstname : Loïc 
+- Pseudonym: Zed, Ztec, Zed Teque (Any numbers added are under constraints and does not mean anything)
 - Email : ILoveAnanasPizza@riper.fr
 - Twitter : [@ztec6](https://twitter.com/ztec6)
-- Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
+- Mastodon : [@ztec@mamot.fr](https://mamot.fr/@ztec)
+- Matrix : @ztec:matrix.org
 - Flickr : [Loïc](https://www.flickr.com/photos/ztec/)
 - Github : [ztec](https://github.com/ztec/)
 - Planet : Earth

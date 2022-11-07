@@ -58,15 +58,17 @@ Ils ne l'ont pas lu, mais ils en parlent quand même:
 > Anonymous:
 >
 > Je voulais un bon blog pour offrir à ma nièce, j'ai pris ça. On verra ce qu'elle en pense.
-> Je l'ai reçu rapidement et l'emballage était de qualité. Aucuns dommages a déclaré. Bravo internet. 
+> Je l'ai reçu rapidement et l'emballage était de qualité. Aucuns dommages à déclarer. Bravo internet. 
 > 
 
 ---
 
-- Noms : Zed, Ztec, Zed Teque, Loïc
+- Pseudo : Zed, Ztec, Zed Teque (Tous numéros ajoutés ne l'est que par obligation et ne signifie rien)
+- Prénom : Loïc
 - Email : BrianIsInTheKitchen@riper.fr
 - Twitter : [@ztec6](https://twitter.com/ztec6)
-- Mastodon : [@ztec@mamot.fr](https://mamot.fr/web/accounts/23814)
+- Mastodon : [@ztec@mamot.fr](https://mamot.fr/@ztec)
+- Matrix : @ztec:matrix.org
 - Flickr : [Loïc](https://www.flickr.com/photos/ztec/)
 - Github : [ztec](https://github.com/ztec/)
 - Planet : Terre
