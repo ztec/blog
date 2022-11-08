@@ -1,0 +1,21 @@
+app: blog
+
+image:
+  #repository: ztec.fr/blog
+  #tag: Voluntarily left commented. The real value will be passed at deployment time
+  #name: Voluntarily left commented. The real value will be passed at deployment time
+  pullPolicy: IfNotPresent # You can put Always in case of a moving tag (eg: latest)
+
+service:
+  name: blog
+  type: NodePort
+  port: 80
+
+resources:
+  limits:
+    memory: 512Mi
+  requests:
+    memory: 128Mi
+    cpu: 0.1
+
+replicas: 3
