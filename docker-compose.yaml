@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  dev:
+    image: klakegg/hugo:0.105.0-ext
+    command: "server -p 8080"
+    volumes:
+      - "./:/src/"
+    ports:
+      - "8080:8080"
+  prod:
+    build:
+     context: ./
+     dockerfile: Dockerfile
+    volumes:
+      - "./logs:/var/log/nginx/"
+    ports:
+      - "8080:80"

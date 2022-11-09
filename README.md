@@ -18,11 +18,26 @@ it. If you want to suggest modification anonymously, send me a git patch via mai
 
 ### Development
 
+#### directly with hugo
 To run the server, simply [install hugo](https://gohugo.io/getting-started/quick-start/) and then execute this command
 in the blog folder.
 
 ```cmd
-hugo server
+hugo server -p 8080
 ```
 
-then go to [http://localhost:1313](http://localhost:1313)
+#### with docker
+
+You need docker and docker compose.
+
+```cmd
+docker compose up dev
+```
+
+You can also test the final version with
+
+```cmd
+docker compose up prod
+```
+
+then go to [http://localhost:8080](http://localhost:8080)
