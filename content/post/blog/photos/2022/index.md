@@ -88,4 +88,4 @@ Merci infiniment {{< strike >}}de m'avoir lu{{< /strike >}} d'avoir regarder mes
 
 ---
 
-Cette page peu être mise à jour avec de nouvelles photos. Pour être informé, suivez-moi via [twitter.com](twitter.com/ztec6/) ou [mamot.fr](https://mamot.fr/@ztec)
+Cette page peu être mise à jour avec de nouvelles photos. Pour être informé, suivez-moi via [twitter.com](https://twitter.com/ztec6/) ou [mamot.fr](https://mamot.fr/@ztec)

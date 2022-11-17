@@ -89,4 +89,4 @@ Thanks {{< strike >}}reading me{{< /strike >}} watching my pictures,\
 
 ---
 
-This page may be updated with new pictures. To get the news, follow me on [twitter.com](twitter.com/ztec6/) or [mamot.fr](https://mamot.fr/@ztec)
+This page may be updated with new pictures. To get the news, follow me on [twitter.com](https://twitter.com/ztec6/) or [mamot.fr](https://mamot.fr/@ztec)
