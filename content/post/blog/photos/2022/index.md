@@ -7,7 +7,7 @@ tags: [ "3615-my-life", "photo"]
 
 je prend beaucoup de photos, et 2022 n'a pas été exception. La majorité sont privée, mais j'aime bien en partager quelques une.
 
-Vous pouvez les vois ici ou sur Flickr. Je poste sur les réseaux sociaux celles que je préféré. 
+Vous pouvez les voirs ici ou sur Flickr. Je poste sur les réseaux sociaux celles que je préfére. 
 
 Il n'y a pas de règles ni dans les groupes, sujets et types de photos.
 Cette page sera mise a jour avec de nouvelle photo quand j'en ai envie.
