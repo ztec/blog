@@ -1,6 +1,6 @@
 ---
 title: "2022 though lenses"
-date: 2022-06-14T01:03:51+02:00
+date: 2022-11-17T01:00:00+02:00
 slug: "2022-though-lenses"
 tags: [ "3615-my-life", "photo"]
 ---
