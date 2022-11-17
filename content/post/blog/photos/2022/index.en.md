@@ -68,8 +68,8 @@ Sometimes, even if the file quality is far from perfect, results feel good anywa
 {{< photo src="photos/Isolation.jpg" name="[Isolation](https://www.flickr.com/photos/ztec/52163301779/in/dateposted/)" alt="Someone is sit in a char turning their back to us. Only shoes are visible" >}}
 {{< photo src="photos/Sunset.jpg" name="[Sunset](https://www.flickr.com/photos/ztec/52166383763)" alt="The neon light logo of the Sunset Jazz club" >}}
 
-{{< photo src="photos/French XP.jpg" name="[French XP](https://www.flickr.com/photos/ztec/52232455659)" alt="Like the famous windows XP wallpaper, but in France" >}}
-{{< photo src="photos/Qui vas la.jpg" name="[Qui vas la](https://www.flickr.com/photos/ztec/52505015959)" alt="A CCTV camera in a subway. it is pointing right. It is attached to a rode comming from the top of the frame, like it comes from nowhere, or is it ?" >}}
+{{< photo src="photos/French XP.jpg" name="[French XP](https://www.flickr.com/photos/ztec/52232455659)" alt="Like the famous Windows XP wallpaper, but in France" >}}
+{{< photo src="photos/Qui vas la.jpg" name="[Qui vas la](https://www.flickr.com/photos/ztec/52505015959)" alt="A CCTV camera in a subway. it is pointing right. It is attached to a rode coming from the top of the frame, like it comes from nowhere, or is it ?" >}}
 {{< photo src="photos/Selfi.jpg" name="Selfi" alt="A picture of myself reflecting on a window glass. We can see the eiffel tower in the background" >}}
 
 {{</photo-gallery>}}
