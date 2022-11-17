@@ -27,5 +27,5 @@
                 {{ with $name }} title="{{ . }}" {{ end }}
         />
     </a>
-    {{ with $alt}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
+    {{ with $name}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
 </figure>
