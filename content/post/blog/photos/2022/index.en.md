@@ -5,7 +5,7 @@ slug: "2022-though-lenses"
 tags: [ "3615-my-life", "photo"]
 ---
 
-I take a lot of picture, and 2022 does not make any exception. Most of them stay private but I like sharing a few.
+I take a lot of picture, and 2022 does not make any exception. Most of them stay private, but I like sharing a few.
 You can see them on this post, and on Flickr. I will post on social platforms the one I like the most.
 
 There is no rules either regarding topics, groups or themes.
@@ -18,7 +18,7 @@ I find it really hard to take pictures of plants that are relevant and pleasant 
 Often, the light is hard to catch, and the dynamic make it hard to capture the scene, moreover when I only have my phone on me. 
 
 {{< photo-gallery >}}
-{{< photo src="photos/Duck hunt.jpg" name="[Duck hunt](https://www.flickr.com/photos/ztec/52505190808)" alt="Un c" >}}
+{{< photo src="photos/Duck hunt.jpg" name="[Duck hunt](https://www.flickr.com/photos/ztec/52505190808)" alt="A duck hiding the foliage" >}}
 {{< photo src="photos/Greening.jpg" name="[Greening](https://www.flickr.com/photos/ztec/52505113115)" alt="Some green plants round shaped like a pinecone" >}}
 
 {{< photo src="photos/wall.jpg" name="[Wall](https://www.flickr.com/photos/ztec/52504636676)" alt="The sun shine through hanging brown/orange plants creating contrast between the dark core, and the light edges" >}}
@@ -39,20 +39,20 @@ Often, the light is hard to catch, and the dynamic make it hard to capture the s
 {{</photo-gallery>}}
 
 {{< photo-gallery >}}
-{{< photo src="photos/Palette.jpg" name="[Palette](https://www.flickr.com/photos/ztec/52504148307)" alt="Side of a museum with 4 floor visible. Color goees from dark orange at the bottom to magenta on top. Building style remind of old buildings in the virtoran age" >}}
+{{< photo src="photos/Palette.jpg" name="[Palette](https://www.flickr.com/photos/ztec/52504148307)" alt="Side of a museum with 4 floor visible. Color goes from dark orange at the bottom to magenta on top. Building style remind of old buildings in the virtoran age" >}}
 {{</photo-gallery>}}
 
-## Phylarmonie de paris
-I really love this building. It always catch my eye. You can enjoy it by being close or far away. Its always a different expérience. Reflections always amaze me and I really like the way the tiles on the walls are shaped. It create mouvements following curves, shaping the reflections in all directions. 
+## Philharmonie de paris
+I really love this building. It always catches my eye. You can enjoy it by being close or far away. It's always a different expérience. Reflections always amaze me and I really like the way the tiles on the walls are shaped. It creates mouvements following curves, shaping the reflections in all directions. 
 
 {{< photo-gallery >}}
-{{< photo src="photos/Slide 1.jpg" name="[Side 1](*https://www.flickr.com/photos/ztec/52504636736)" alt="Picture of the philharmonie in Paris, a concert hall. Warm colors of the sun reflects on the cold mirror texture of the building walls. A man is standing and loking closely at one wall" >}}
-{{< photo src="photos/Migrating to slide 2.jpg" name="[Side 2](https://www.flickr.com/photos/ztec/52504636781)" alt="Picture of the philharmonie in Paris, a concert hall. Warm colours of the sun reflects on the cold mirror texture of the building walls. A man is in the middle walking towards the other side" >}}
+{{< photo src="photos/Slide 1.jpg" name="[Side 1](*https://www.flickr.com/photos/ztec/52504636736)" alt="Picture of the Philharmonie in Paris, a concert hall. Warm colors of the sun reflects on the cold mirror texture of the building walls. A man is standing and looking closely at one wall" >}}
+{{< photo src="photos/Migrating to slide 2.jpg" name="[Side 2](https://www.flickr.com/photos/ztec/52504636781)" alt="Picture of the Philharmonie in Paris, a concert hall. Warm colours of the sun reflects on the cold mirror texture of the building walls. A man is in the middle walking towards the other side" >}}
 {{</photo-gallery>}}
 
 
 ## Concerts
-Often, Concerts pictures are awful. Not because the subject or composition is bad, but mostly because it need good hardware to have decent results.
+Often, Concerts pictures are awful. Not because the subject or composition is bad, but mostly because it needs good hardware to have decent results.
 Sometimes, even if the file quality is far from perfect, results feel good anyway.
 
 

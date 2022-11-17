@@ -42,12 +42,12 @@ Souvent, la lumière est difficile à capter et la dynamique en fait des sujets 
 {{< photo src="photos/Palette.jpg" name="[Palette](https://www.flickr.com/photos/ztec/52504148307)" alt="La vue interne d'un bâtiment avec 4 étages qui vont de l'orange au magenta. Le style est proche de l’époque victorienne" >}}
 {{</photo-gallery>}}
 
-## Phylarmonie de paris
+## Philharmonie de paris
 J'aime beaucoup ce bâtiment. Il attire toujours mon regard. On peut l'apprécier de pres comme de loin. C'est toujours different, les reflections me fascine et j'aime beaucoup les formes des tuiles et les effets qu'elle donne. Ça crée une sorte de mouvement qui suit les courbes, aidant les reflections à partir dans toutes les directions.
 
 {{< photo-gallery >}}
-{{< photo src="photos/Slide 1.jpg" name="[Side 1](*https://www.flickr.com/photos/ztec/52504636736)" alt="La philharmonie de Paris, une salle de concert moderne. Un homme se tient pres du mur et l'observe attentivement." >}}
-{{< photo src="photos/Migrating to slide 2.jpg" name="[Side 2](https://www.flickr.com/photos/ztec/52504636781)" alt="La philharmonie de Paris, une salle de concert moderne. Un homme traverse pour se rendre de l'autre cote" >}}
+{{< photo src="photos/Slide 1.jpg" name="[Side 1](*https://www.flickr.com/photos/ztec/52504636736)" alt="La Philharmonie de Paris, une salle de concert moderne. Un homme se tient pres du mur et l'observe attentivement." >}}
+{{< photo src="photos/Migrating to slide 2.jpg" name="[Side 2](https://www.flickr.com/photos/ztec/52504636781)" alt="La Philharmonie de Paris, une salle de concert moderne. Un homme traverse pour se rendre de l'autre cote" >}}
 {{</photo-gallery>}}
 
 
