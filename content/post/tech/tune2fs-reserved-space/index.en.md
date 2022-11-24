@@ -46,7 +46,7 @@ I check with a reliable calculator (my brain isn't) and yes: 24-20=4 not 2.4.
 I know there is always some loss in filesystem to hold for maps, journals, or whatnot.
 But 1.6To seems excessive.
 
-After some search on the great library of Internet, I found that ext4 filesystem, by default, reserve a small portion of 
+After some [search](https://www.linuxquestions.org/questions/linux-general-1/reserved-space-on-ext4-database-file-system-4175564363/) on the great library of Internet, I found that ext4 filesystem, by default, reserve a small portion of 
 any partition made to ensure there is always free space on a volume. 
 
 This seems at the utmost importance for system partitions because no space mean no shell. 
@@ -76,14 +76,7 @@ And voilà !
 I manage my NAS by hand, and learn with it. Today I learned. Goal achieved. 
  - Now there is safety to avoid being locked away from a servers (when you have credentials)
  - Ext4 reserve 5% of a volume and this is not really useful if the volume is not used as root, or fragmentation is not a concern.
- - `e4defrag` exist and can be used to report on fragmentation and de-fragment a volume, but is really really really long.
+ - [e4defrag](https://manpages.ubuntu.com/manpages/bionic/man8/e4defrag.8.html) exist and can be used to report on fragmentation and de-fragment a volume, but is really really really long.
 
 Thanks reading me,\
 [Bisoux](/page/bisoux) :kissing:
-
----
-
-References
- - [Reserved block count for Large Filesystem](https://listman.redhat.com/archives/ext3-users/2009-January/msg00026.html)
- - [Reserved space on ext4 database file system](https://www.linuxquestions.org/questions/linux-general-1/reserved-space-on-ext4-database-file-system-4175564363/)
- - [man e4defrag](https://manpages.ubuntu.com/manpages/bionic/man8/e4defrag.8.html)
