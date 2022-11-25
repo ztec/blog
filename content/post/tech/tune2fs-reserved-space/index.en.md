@@ -20,7 +20,7 @@ I have a personal NAS that I manage myself. No TrueNAS or anything pre-made.
 I manage it myself on a computer. It's a Debian based distribution (proxmox to be exact) 
 with hardware RAID drives attached.
 
-I have a big LVM volume with an ext4 partition where I put all my files inside. I have this exact volume for 3-4 years now. 
+I have a big [LVM](https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29) volume with an ext4 partition where I put all my files inside. I have this exact volume for 3-4 years now. 
 It grew whenever I add drives to it. From few TeraBytes it is 24To large now. 
 
 I have a monitoring in place to follow its usage. And you guessed it, empty drive space does stay empty very long. 
@@ -69,7 +69,7 @@ sudo tune2fs -m 0.05 /dev/vda
 
 And voilà !
 {{< illustration src="img/dfAfter.png"  name="df after"   alt="command `sudo tune2fs -m 0.05 /dev/vda` and results of the `df` command showing size=24T, used=20T, Available=3.6T use=86%" resize="no" >}}
-{{< illustration src="img/notSoFullCargo.png"  name="Cargo is not full anymore"   alt="A gauge showing that the cargo volume is not full anymore at 85.a%" resize="no" >}}
+{{< illustration src="img/notSoFullCargo.png"  name="Cargo is not full anymore"   alt="A gauge showing that the cargo volume is not full anymore at 85.1%" resize="no" >}}
 
 ## So what ?
 
