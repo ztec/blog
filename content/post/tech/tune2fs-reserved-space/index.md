@@ -77,7 +77,8 @@ TaDa !
 
 ## Conclusions
 
-Je gère mon NAS à la main, et j'apprends en le faisant. Aujourd'hui j'ai appris des choses. Objectif attain.
+Je gère mon NAS à la main, et j'apprends en le faisant. Aujourd'hui j'ai appris des choses. Objectif attaint.
+
 aussi: 
  - Maintenant, il y a des securitée pour éviter de se trouver bloqué a l'extérieur de son serveur.
  - Ext4 réserve 5% d'un volume et c'est pas forcément utile dans tous les cas, surtout si la partition n'est finalement pas utilisée pour monter la racine ou un dossier système. 
