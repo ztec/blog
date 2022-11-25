@@ -69,7 +69,7 @@ sudo tune2fs -m 0.05 /dev/vda
 
 And voilà !
 {{< illustration src="img/dfAfter.png"  name="df after"   alt="command `sudo tune2fs -m 0.05 /dev/vda` and results of the `df` command showing size=24T, used=20T, Available=3.6T use=86%" resize="no" >}}
-{{< illustration src="img/notSoFullCargo.png"  name="Cargo is not full anymore"   alt="A gauge showing that the cargo volume is full red at 85.a%" resize="no" >}}
+{{< illustration src="img/notSoFullCargo.png"  name="Cargo is not full anymore"   alt="A gauge showing that the cargo volume is not full anymore at 85.a%" resize="no" >}}
 
 ## So what ?
 
