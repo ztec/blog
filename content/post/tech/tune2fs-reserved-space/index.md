@@ -80,8 +80,8 @@ TaDa !
 Je gère mon NAS à la main, et j'apprends en le faisant. Aujourd'hui j'ai appris des choses. Objectif attain.
 aussi: 
  - Maintenant, il y a des securitée pour éviter de se trouver bloqué a l'extérieur de son serveur.
- - Ext4 réserve 5% d'un volume et c'est pas forcément utile dans tous les cas, surtout si la partition n'est finalement pas utiliser pour monté la racine ou un dossier système. 
- - [e4defrag](https://manpages.ubuntu.com/manpages/bionic/man8/e4defrag.8.html) existe, et peu être utliser pour calculer la framentation et faire de la défragmentation, mais c'est très très très long.
+ - Ext4 réserve 5% d'un volume et c'est pas forcément utile dans tous les cas, surtout si la partition n'est finalement pas utilisée pour monter la racine ou un dossier système. 
+ - [e4defrag](https://manpages.ubuntu.com/manpages/bionic/man8/e4defrag.8.html) existe, et peu être utlisé pour calculer la fragmentation et faire de la défragmentation, mais c'est très très très long.
 
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
