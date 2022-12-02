@@ -19,7 +19,7 @@ sudo tune2fs -m 0.05 /dev/vda
 
 ## J'ai un NAS
 
-J'ai un NAS hcez moi, et je le gère à la main. Ça veut dire que je n'utilise ni TrueNas et que c'est pas un NAS tout fait comme un Synology par exemple.
+J'ai un NAS chez moi, et je le gère à la main. Ça veut dire que je n'utilise ni TrueNas et que c'est pas un NAS tout fait comme un Synology par exemple.
 C'est un ordinateur avec une distribution basée sur Debian (Proxmox en vrais), avec des disques en RAID matériel dessus. 
 
 J'ai un gros volume [LVM](https://fr.wikipedia.org/wiki/Gestion_par_volumes_logiques) avec une partition ext4 ou je mets tous mes fichiers.
