@@ -6,7 +6,7 @@ disable_share = true
 Paginate = 99 
 googleAnalytics = ""
 enableGitInfo = true
-staticDir = ["static"]
+staticDir = ["assets"]
 timeout = "120s"
 languageCode = "fr-fr"
 DefaultContentLanguage = "fr"
@@ -75,9 +75,8 @@ enableEmoji = true
   featured_image = ""
   recent_posts_number = 2
   post_content_classes = "avenir"
-  custom_css = []
+  custom_css = ["zed.css"]
   body_classes = "z-theme-light"
-  ananke_process_css="yes"
 
 [permalinks]
   quick = "/:year/:month/:slug/"
