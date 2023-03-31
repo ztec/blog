@@ -56,8 +56,42 @@
         {{ if .Content}}
         <div class="mt5 bt b--light-silver w-50 center">
         </div>
+
+
+    <div class="mt5 ph3 tc">
+      <div class="pl0 f4 list sans-serif avenir lh-copy ">
+        {{i18n "commentAndDiscuss" .}}<br/>
+
+        {{ if .Params.promotions }}
+          <div class="f12 tc mt3">
+            {{ range $network, $promo := .Params.promotions }}
+              <a href="{{ $promo }}" class="h100 dib v-top ml2" target="_blank">
+                {{ if eq $network "twitter" }}
+                <img style="height: 1em" src="/twitter.svg" alt="Twitter logo" /> Twitter
+                {{else if eq $network "mastodon" }}
+                <img style="height: 1em" src="/mastodon.svg" alt="Mastodon logo" /> Mastodon
+                {{else }}
+                <img style="height: 1em" src="/social.svg" alt="Share icon" />
+                {{ $network }}
+                {{end}}
+              </a>
+            {{end}}
+          </div>
+        {{else}}
+          <div class="f12 tc mt3">
+            <a href="https://mamot.fr/@ztec"><img style="height: 1em" src="/mastodon.svg" alt="Twitter logo" /> @ztec@mamot.fr</a>
+            <a href="https://twitter.com/ztec6"  class="ml2"><img style="height: 1em" src="/twitter.svg" alt="Twitter logo" /> @ztec6</a>
+          </div>
+        {{end}}
+      </div>
+    </div>
+
+
+    <div class="mt5 bt b--light-silver w-50 center">
+    </div>
         <div class="mt5 ph3">
           <ul class="pl0 list f7 sans-serif avenir lh-copy  tracked">
+
             {{if .Date}}
             <li >
               {{i18n "publishAt" .}}
@@ -79,14 +113,34 @@
             {{end}}
 
             {{ if .Params.tags }}
-              <li class="">
-                {{i18n "publishIn" .}} :
-                {{ range $index, $val := .Params.tags }}
-                {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
-                <a href="{{ "/tags/" | relLangURL }}{{ $val | urlize }}" class="f7 h100 dib v-top">{{- $val -}}</a>
-                {{ end }}
-              </li>
+            <li class="">
+              {{i18n "publishIn" .}} :
+              {{ range $index, $val := .Params.tags }}
+                {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                        {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
+                        <a href="{{ .Permalink }}" class="f7 h100 dib v-top">{{ .Title }}</a>
+                {{end}}
+              {{ end }}
+            </li>
+            {{end}}
+
+            {{ if .Params.promotions }}
+            <li class="">
+              {{i18n "promotion" .}} :
+              {{ range $network, $promo := .Params.promotions }}
+              <a href="{{ $promo }}" class="h100 dib v-top" target="_blank">
+                {{ if eq $network "twitter" }}
+                <img style="height: 1em" src="/twitter.svg" alt="Twitter logo" /> Twitter
+                {{else if eq $network "mastodon" }}
+                <img style="height: 1em" src="/mastodon.svg" alt="Mastodon logo" /> Mastodon
+                {{else }}
+                <img style="height: 1em" src="/social.svg" alt="Share icon" />
+                {{ $network }}
+                {{end}}
+              </a>
               {{end}}
+            </li>
+            {{end}}
 
             <li >
                {{i18n "copyright" | safeHTML }} <img width="80" height="15" class="dib" src="/CCANSA80x15.png" />
@@ -99,12 +153,6 @@
             </li>
           </ul>
         </div>
-        {{ if .Site.Params.commentoEnable }}
-          <div class="instapaper_ignoref ph3 ">
-          <div class="mt5 mb4 bt b--light-silver w-50 center"></div>
-                {{- partial "commento.html" . -}}
-          </div>
-        {{ end }}
     {{end}}
   </article>
 {{ end }}

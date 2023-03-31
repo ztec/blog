@@ -3,6 +3,9 @@ title: "Webcam on = Lumière allumé (Philips Hue)"
 date: 2023-03-31T03:00:00+02:00
 slug: "lumiere-webcam-automatic-a-l-usage"
 tags: ["linux", "philips-hue", "tech", "bash", "IA-helped"]
+promotions:
+    mastodon: https://mamot.fr/@ztec/110117222380055606
+    twitter: https://twitter.com/Ztec6/status/1641740101049876480
 ---
 
 

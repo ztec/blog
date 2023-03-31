@@ -3,10 +3,13 @@ title: "Webcam on = Lights on (Philips Hue)"
 date: 2023-03-31T11:00:00+02:00
 slug: "auto-light-when-using-webcam"
 tags: ["linux", "philips-hue", "tech", "bash", "IA-helped"]
+promotions:
+    mastodon: https://mamot.fr/@ztec/110118599202415170
+    twitter: https://twitter.com/Ztec6/status/1641827403587518466
 ---
 
 
-On my desk at home, while teleworking and doing a video call, I turn on my webcam.
+On my desk at home, while working remotely and doing a video call, I turn on my webcam.
 I find it more pleasant for others to be able to see me.
 I also appreciate it when others do the same, but everyone has their preferences on this subject.
 
@@ -50,13 +53,13 @@ curl --insecure -X PUT -d '{"on": true}'  "https://${HUE_BRIDGE_IP}/api/${HUE_US
 
 To access the API on the bridge itself, this page describes the steps to follow: https://developers.meethue.com/develop/get-started-2/
 
-There is a procedure to obtain the "username" which serves as a secret code.
+There is a process to obtain the "username" which serves as a secret code.
 To put it briefly, you need to send the following request:
 ```bash
 curl -X POST -d '{"devicetype":"nom_de_votre_script"}'
 ```
 Quickly press the button on the bridge and start again.
-The code is then given, and I write it down, notably in the HUE_USER_NAME variable.
+The code is then returned, and I write it down, notably in the HUE_USER_NAME variable.
 This code must then be inserted in the URL between /api/ and the "resources" path.
 
 Next, I had to understand how the API works. In summary:

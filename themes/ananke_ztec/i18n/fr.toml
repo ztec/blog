@@ -37,6 +37,13 @@ other = "Ci dessous vous trouverez la liste de toutes les pages qui utilisent le
 [noTaxonomyPageList]
 other = "Il n'y a aucune page  écrite en français qui utilise le tag “{{ .Title }}”"
 
+[commentAndDiscuss]
+other = "Bien qu'il ne soit pas possible de commenter sur ce blog, vous pouvez me joindre sur les réseaux sociaux via l'une des publications suivantes que j'ai faites "
+
+[promotion]
+other = "Promotions"
+
+
 [readingTime]
 other = "minutes de lecture"
 
@@ -65,4 +72,4 @@ other = "Si vous avez trouvé une faute d'ortographe, d'accord, ou une coquille"
 other = "suggerez moi directement une correction via Github"
 
 [subescribeRss]
-other = "Vous pouvez vous abonné à ce blog par <a href=\"/page/flux-rss/\">RSS</a> pour recevoir les nouveaux articles dès leur parution"
+other = "Vous pouvez vous abonné à ce blog par <a href=\"/page/flux-rss/\"><img style=\"height: 1em\" src=\"/rss-feed.svg\" alt=\"RSS icon\" /> RSS</a> pour recevoir les nouveaux articles dès leur parution"
