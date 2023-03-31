@@ -2,7 +2,7 @@
 title: "Webcam on = Lumière allumé (Philips Hue)"
 date: 2023-03-31T03:00:00+02:00
 slug: "lumiere-webcam-automatic-a-l-usage"
-tags: ["linux", "philips-hue", "tech", "bash"]
+tags: ["linux", "philips-hue", "tech", "bash", "IA-helped"]
 ---
 
 
@@ -18,7 +18,7 @@ J'oubliais souvent d'allumer ou pire, de l'éteindre. J'ai donc automatisé le p
 {{< photo src="img/light.jpg" name="Lumière et webcam" alt="Une webcam poser au dessus d'une lampe entre deux écrants" >}}
 {{</photo-gallery>}}
 
-La lampe que j'utilise est une Philips Hue Play, qui peut être contrôlée via l'ensemble de l'écosystème Philips Hue.
+La lampe que j'utilise est une [Philips Hue Play](https://www.philips-hue.com/fr-fr/p/hue-white-and-color-ambiance-hue-play-pack-x2/7820230P7), qui peut être contrôlée via l'ensemble de l'écosystème Philips Hue.
 
 J'ai également une tablette sur mon bureau avec des gros boutons pour allumer et éteindre la lampe. 
 C'est pratique, mais cela nécessite tout de même un geste de trop.

@@ -1,8 +1,41 @@
 {{ define "main" }}
-<article class="pa3 pa4-ns nested-copy-line-height nested-img sans-serif">
+<article class="mw8 center sans-serif">
   <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    {{i18n "taxonomyPageList" .}}
+
   </section>
+
+
+
+    <header class="">
+        <h1 class="f2 f2-m f1-ns mt3 mb1 tc fw1">
+            Tag: <a href="{{ .Permalink }}" class="hidden-link">{{- .Title -}}</a>
+        </h1>
+    </header>
+
+    <div  class=" mt4 ph3
+                  nested-copy-line-height
+                  sans-serif avenir lh-copy
+                  f4
+                  tl
+                  cf
+                  "
+    >
+        {{if .Params.RefLink}}
+        <div class="tc mb4"><a href="{{.Params.RefLink}}" target="_blank">{{.Params.RefLink}}</a></div>
+        {{end}}
+        {{ if .Content }}
+            {{- .Content -}}
+        <div class="mt5 bt b--light-silver w-50 center">
+        </div>
+        <div class="mt5 ph3">
+            {{ if len .Paginator.Pages }}
+                {{i18n "taxonomyPageList" .}}
+            {{ else }}
+                {{i18n "noTaxonomyPageList" .}}
+            {{end}}
+        </div>
+        {{ end }}
+    </div>
 </article>
 <div class="pl4 pr4 mw8 center sans-serif ">
   {{  range  $index, $currentPage := .Paginator.Pages }}

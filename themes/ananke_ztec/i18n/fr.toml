@@ -32,8 +32,10 @@ other = "Une adresse e-mail est requise."
 other = "Envoyer"
 
 [taxonomyPageList]
-other = "Below you will find pages that utilize the taxonomy term “{{ .Title }}”"
+other = "Ci dessous vous trouverez la liste de toutes les pages qui utilisent le tag “{{ .Title }}”"
 
+[noTaxonomyPageList]
+other = "Il n'y a aucune page  écrite en français qui utilise le tag “{{ .Title }}”"
 
 [readingTime]
 other = "minutes de lecture"
