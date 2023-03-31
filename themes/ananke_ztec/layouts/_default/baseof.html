@@ -20,7 +20,7 @@
       {{ partialCached "site-favicon.html" . }}
     {{ end }}
 
-  
+
 
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} Français" />
     <link href="/index.xml" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }} Français" />
@@ -36,7 +36,7 @@
       <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
       {{ end }}
     {{ end }}
-    
+
     {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates */}}
     {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/schema.html" . -}}
@@ -46,6 +46,69 @@
   </head>
 
   <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+    <div id="modeChanger" class="modeChanger">
+        <input id="on" name="mode" type="radio" checked="" />
+        <label for="on" onclick="setBody('dark')">Dark</label>
+
+        <input id="auto" name="mode" type="radio" checked="checked" />
+        <label for="auto" class="disabled" onclick="setBody('auto')">auto</label>
+
+        <input id="off" name="mode" type="radio" />
+        <label for="off" onclick="setBody('light')">Light</label>
+    </div>
+    <script>
+
+
+        var possibleModes = ["auto","dark","light"];
+        var currentMode = 0
+        /* Handle dark/light mode auto & memory */
+        var savedMode = localStorage.getItem("mode")
+        var osMode = 'light'
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            osMode = 'dark'
+        }
+
+
+        function setBody(mode){
+
+            saveMode(mode)
+            if (mode == 'auto'){
+              mode = osMode
+            }
+            if (mode === 'dark') {
+                window.document.body.classList.replace('z-theme-light', '.z-theme-dark')
+                window.document.body.classList.add('z-theme-dark')
+            }else if (mode==='light') {
+                window.document.body.classList.replace('z-theme-dark', '.z-theme-light')
+                window.document.body.classList.add('z-theme-light')
+            }
+        }
+
+        function saveMode(mode){
+          if (mode === "auto"){
+            localStorage.removeItem('mode')
+          }else{
+            localStorage.setItem('mode', mode)
+          }
+        }
+
+      if ( savedMode === 'light' || savedMode === 'dark' ){
+          setBody(savedMode)
+          currentMode = possibleModes.indexOf(savedMode)
+      }else {
+          setBody(osMode)
+      }
+
+      function toggleMode(){
+          currentMode++
+          if (currentMode >= possibleModes.length ){
+              currentMode = 0
+          }
+          setBody(possibleModes[currentMode])
+          saveMode(possibleModes[currentMode])
+      }
+
+    </script>
 
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
     <main class="pb7  " role="main">

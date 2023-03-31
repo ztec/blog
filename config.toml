@@ -75,8 +75,8 @@ enableEmoji = true
   featured_image = ""
   recent_posts_number = 2
   post_content_classes = "avenir"
-  custom_css = ["zed.css"]
-  body_classes = "z-theme-light"
+  custom_css = ["zed.css", "zed-light.css", "zed-dark.css"]
+  body_classes = "z-theme-dark"
 
 [permalinks]
   quick = "/:year/:month/:slug/"

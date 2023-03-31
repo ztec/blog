@@ -1,8 +1,3 @@
-pre {
-    background-color: rgb(200, 200, 200);
-}
-
-
 html {
     min-height: 100%;
 }
@@ -15,55 +10,37 @@ h2, h3, h4 ,h5 {
     font-weight: 100;
 }
 
-
-/** Light theme colors **/
-/* will be applied on body */
-.z-theme-light {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #e9e9e9;
-    background-image: linear-gradient(315deg, #e9e9e9 0%, #f6f6f6 74%);
-    background-repeat: no-repeat;
-    color: rgb(40, 40, 41);
-}
-
 /* LINKS */
-.z-theme-light a:after {
+a:after {
     content: ' ';
     position: absolute;
     bottom: 0px;
     left: 0;
     width: 0%;
     height: 2px;
-    background: hsl(248, 42%, 44%);
-    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
     border-radius: 2px;
     opacity: 0;
     z-index: 100;
 }
-.z-theme-light a {
-    color: hsl(248, 42%, 44%);
+a {
     text-decoration-line: none;
 }
 
-.z-theme-light a:hover {
-    color: hsl(248, 42%, 44%);
+a:hover {
     text-decoration-line: none;
     position: relative;
 }
-
-.z-theme-light a:hover:after {
+ a:hover:after {
     transition: 0.1s all ease-in-out;
     opacity: 1.00;
     width: 100%;
 }
 
-.z-theme-light a.hidden-link {
+a.hidden-link {
     color: inherit;
     text-decoration-line: none;
 }
-.z-theme-light a.hidden-link:hover:after {
+a.hidden-link:hover:after {
     display: none;
 }
 
@@ -85,10 +62,6 @@ article figure.photo {
 
 article figure.photo img{
     border-radius: 10px;
-}
-
-article figure.photo>a{
-    text-decoration: #cdecff solid overline;
 }
 
 article figure.photo figcaption{
@@ -123,78 +96,51 @@ article figure.illustration:hover figcaption{
     opacity: 1;
 }
 
-/*Illustration*/
-
-/* COMMENTO */
-
-.commento-root .commento-submit-button {
-    background-color: hsl(248, 42%, 44%);
-    transition: 0.1s all ease-in-out;
-}
-.commento-root .commento-submit-button:hover{
-    background-color: hsl(98, 58%, 57%);
-}
-
-.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-email-button{
-    background-color: hsl(248, 42%, 44%);
-    color: white;
-    transition: 0.1s all ease-in-out;
-}
-.commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-email-button:hover {
-    background-color: hsl(98, 58%, 57%);
-    color: white;
-}
-
-.commento-root .commento-round-check input[type="checkbox"]:checked + label::before, .commento-root .commento-round-check input[type="radio"]:checked + label::before{
-    background-color: hsl(248, 42%, 44%);
-}
-
-.commento-root .commento-login .commento-login-text {
-    color: hsl(248, 42%, 44%);
-}
-
 /* HEADER */
-.z-theme-light .z-header-bar {
+.z-header-bar {
     height:20px;
-    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
     position: absolute;
     top:0;
     width: 100%;
     z-index: 0;
 }
-.z-theme-light header {
+header {
     overflow: hidden;
     z-index: 1;
     position: relative;
 }
-.z-theme-light .z-menu-item {
-    background-color: hsl(248, 42%, 44%);
-    color: white;
+.z-menu-item {
     padding-top: 0.2em;
     transition: 0.1s all ease-in-out;
 }
 
-.z-theme-light .z-menu-item-selected {
-    background-color: hsl(4, 100%, 64%);
-
-}
-.z-theme-light .z-menu-item:hover {
-    background-color: hsl(98, 58%, 57%);
-    color: white;
-}
-
-
-.z-theme-light code, .z-theme-light pre {
-    background-color : rgb(40, 40, 41);
-    color: #e9e9e9;
+ code, pre {
     border-radius: 5px;
 }
 
 
     /** Dark theme colors **/
 
-.z-theme-dark {
+
+.small-media-player{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
+
+.small-media-player audio{
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+}
+.small-media-player p{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2px;
+    text-align: center;
+}
+
+
 
 /** Base colors */
 .z-purple {
@@ -268,23 +214,10 @@ article figure.illustration:hover figcaption{
     background-color: #ff5447;
 }
 
-
-
-.small-media-player{
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-.small-media-player audio{
-    width: 90%;
-    margin-left: 5%;
-    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
-    border-radius: 5px;
-}
-.small-media-player p{
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 2px;
-    text-align: center;
+.modeChanger {
+    display:none;
+    position:fixed;
+    bottom:0px;
+    right:30px;
+    margin-top: 20px;
 }
