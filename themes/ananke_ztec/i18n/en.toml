@@ -36,7 +36,6 @@ other = "Below you will find pages that utilize the tag “{{ .Title }}”"
 
 [noTaxonomyPageList]
 other = "There is no page in english using the tag “{{ .Title }}”"
-other = "There is no page in english using the tag “{{ .Title }}”"
 
 
 [readingTime]
