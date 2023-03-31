@@ -18,12 +18,12 @@ enableEmoji = true
     weight = 45
 [[menu.main]]
     name = "Tags"
-    url = "/tags"
+    url = "/tags/"
     weight = 50
 
 [[menu.main]]
     name = "À propos"
-    url = "/page/a-propos"
+    url = "/page/a-propos/"
     weight = 90
 
 
@@ -37,15 +37,15 @@ enableEmoji = true
 
         [[languages.en.menu.main]]
             name = "Posts"
-            url = "/en"
+            url = "/en/"
             weight = 45
         [[languages.en.menu.main]]
             name = "Tags"
-            url = "/en/tags"
+            url = "/en/tags/"
             weight = 50
         [[languages.en.menu.main]]
             name = "About"
-            url = "/en/page/about"
+            url = "/en/page/about/"
             weight = 90
 
 [sitemap]
