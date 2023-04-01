@@ -73,6 +73,6 @@ pipelines:
                 - exec:
                     arguments:
                       - -c
-                      - helm3 upgrade --install --set-string image.name="$ARTIFACT_IMAGE" blog ./helm -f helm/values.yaml --wait
+                      - helm3 upgrade --wait --install --set-string image.name="$ARTIFACT_IMAGE" blog ./helm -f helm/values.yaml --wait
                     command: /bin/bash
                     run_if: passed
