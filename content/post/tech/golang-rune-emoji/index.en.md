@@ -9,12 +9,11 @@ For a project of mine, I had to handle emoji. The goal was to do a little search
 I'm not starting from scratch and have to include my code into an already existing program in go.
 So lets go and see how to build a little search engine for emojis in go.
 
-TL;DR; the full results is available here: [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go)
+TL;DR: The full result is available here: [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go)
 
 ## :boar: Emoji! Get them all! 
 
-First, I had to find the list of all emoji available. Easy ! You can
-see it on hte official Unicode website
+First, I had to find the list of all available emojis. Easy! You can find it on the official Unicode website.
 
 https://unicode.org/Public/emoji/15.0/emoji-test.txt
 
@@ -34,21 +33,22 @@ This file look like this
 […]
 ```
 
-Basically, there is the unicode code, the character itself and a description. The file is
-dedicated for machines, so it should not be hard to load it and parse it.
+Basically, there is the Unicode code, the character itself, and a description. The file is 
+dedicated for machines, so it should not be hard to load and parse it.
 
-Before starting heads down, lets do our due diligence and check what the community already done.
+Before starting head down, let's do our due diligence and check what the community has already done.
 
-I found
 
-- [github.com/enescakir/emoji](https://github.com/enescakir/emoji) last update 2020
-- [AkinAD/emoji](https://github.com/AkinAD/emoji) last update 2022 (fork of the first)
-- [github.com/kenshaw/emoji](ttps://github.com/kenshaw/emoji) last update 2021
+I found:
+ - [github.com/enescakir/emoji](https://github.com/enescakir/emoji), last updated in 2020.
+ - [AkinAD/emoji](https://github.com/AkinAD/emoji), last updated in 2022 (a fork of the first).
+ - [github.com/kenshaw/emoji](https://github.com/kenshaw/emoji), last updated in 2021.
 
-Looking to the code of those library, I find something
-fascinating : https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json
-This file, updated regularly, is perfect and can be parsed with less effort. Moreover, it already contains some metadata
-like aliases.
+Looking at the code of those libraries, I found something 
+fascinating: https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json
+
+This file, which is regularly updated, is perfect and can be parsed with less effort. 
+Moreover, it already contains some metadata like aliases.
 
 It's decide, lets load this file
 
@@ -86,8 +86,8 @@ I used `github.com/go-zoox/fetch` to fetch the file just because I'm a lounger
 
 ## :llama: Emoji, Index them all! 
 
-In my program, I already use [Bleve](https://blevesearch.com/) to index and search though other things, so I will
-do the same here. The operation is pretty simple as I do not have to store anything and can keep an in memory index.
+In my program, I already use [Bleve](https://blevesearch.com/) to index and search through other things, so I will 
+do the same here. The operation is pretty simple as I do not have to store anything and can keep an in-memory index.
 
 ```go
 package pouet
@@ -105,15 +105,15 @@ var (
 	emojis []EmojiDescription
 )
 
-func indexEmojies() error {
-	// we create a new indexMaping. I used the default one that will index all fields of my EmojiDescription
+func indexEmojis() error {
+	// we create a new indexMapping. I used the default one that will index all fields of my EmojiDescription
 	mapping := bleve.NewIndexMapping()
 	// we create the index instance
 	bleveIndex, err := bleve.NewMemOnly(mapping)
 	if err != nil {
 		return err
 	}
-	// we fetch the emoji from the internet. This can fail, and may be embeded for better performance
+	// we fetch the emoji from the internet. This can fail, and may be embedded for better performance
 	e, err := fetchEmojiFromGithub()
 	if err != nil {
 		logrus.WithError(err).Error("Could fetch emoji list")
@@ -121,7 +121,7 @@ func indexEmojies() error {
 	}
 	emojis = e
 	for eNumber, eDescription := range emojis {
-		// this will index each item one by one. No need to be quick here for me, I can wait few ms for the program to start.
+		// this will index each item one by one. No need to be quick here for me, I can wait few ms for the program to start
 		err = bleveIndex.Index(fmt.Sprintf("%d", eNumber), eDescription)
 		if err != nil {
 			logrus.WithError(err).Error("Could not index an emoji")
@@ -131,7 +131,7 @@ func indexEmojies() error {
 }
 ```
 
-Once `indexEmojies` is called, I have an `index` ready to be used to search for emoji. Let's test it
+Once `indexEmojis` is called, I have an `index` ready to be used to search for emojis. Let's test it.
 
 ```go
 package pouet
@@ -175,12 +175,12 @@ func Search(q string) (results []EmojiDescription) {
 }
 ```
 
-I decided to use the `NewQueryStringQuery` as it allow [many option](https://blevesearch.com/docs/Query-String-Query/) of search directly from the query string.
-I will be able to search within fields, or add modifier. I use it a lot for my other purpose, it might be less useful here but 
-do not cost a lot, so I kept it.
+I decided to use the `NewQueryStringQuery` as it allows for [many options](https://blevesearch.com/docs/Query-String-Query/) of searching directly from the query string. 
+I will be able to search within fields or add modifiers. I use it a lot for my other purposes; it might be less useful here, but it does not cost a lot, so I kept it.
 
-> Open you mind and imagine a clip-show of me adding the above code in my program and creating the interface to send the query and display 
-> the results.
+> Open your mind and imagine a clip-show of me adding the above code in my program and creating the interface to send the 
+> query and display the results.
+
 
 {{< photo-gallery >}}
 {{< photo src="img/search-ok-grin.png"        name="Search results for grin"            alt="Search result for the query `grin` displaying the `grin` emoji as expected" >}}
@@ -189,18 +189,19 @@ do not cost a lot, so I kept it.
 
 ## :bubble_tea: Fuzzy search 
 
-Cool, the results seems promising. Bet there is a problem
+Cool, the results seem promising. But there seems to be a problem.
 
 {{< illustration src="img/search-ko-hug.png"        name="Search results for hug"            alt="Search result for the query `hug` displaying no results" >}}
 
-I should have an emoji here, :hugs: to be exact. If I add the `s` to the query it finds it, but not without it. Lets try
-to enhance the search for this kind of purpose by adding a bit of Fuzziness to the search.
+I should have an emoji here, :hugs: to be exact. If I add the `s` to the query, it finds it, but not without it. Let's try
+to enhance the search for this kind of purpose by adding a bit of fuzziness to the search.
 
-The idea is to allow some inexact work to match the query. For that we will use what's called [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
-In fact, as I already said, I'm a slacker so bleve will do it for me. Unfortunately, I could not find any way
-to add a default fuzzy parameter to `query` search. I still can add `~` to words of my search to enable fuzzy search on it.
-As my expectation are not hight, I will do it `just hack it` way. If I have no results from the query I will do specific
+The idea is to allow some inexact work to match the query. For that, we will use what's called [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
+In fact, as I already said, I'm a slacker, so Bleve will do it for me. Unfortunately, I could not find any way
+to add a default fuzzy parameter to `query` search. I still can add `~` to words of my search to enable fuzzy search on them.
+As my expectations are not high, I will do it the "just hack it" way. If I have no results from the query, I will do a specific
 fuzzy search instead.
+
 
 ```go
 func Search(q string) (results []EmojiDescription) {
@@ -240,29 +241,30 @@ func Search(q string) (results []EmojiDescription) {
 ```
 {{< illustration src="img/search-ok-hug.png"        name="Search results for hug"            alt="Search result for the query `hug` now displaying multiple emoji including hugs" >}}
 
-This time, I have my `hugs` emoji when I search for `hug`. I also have other results, but that's fine for me. I don't expect
-to have only one results and picking the right one as long as it is visible on screen with few to no scroll it's ok for me. 
+This time, I have my `hugs` emoji when I search for `hug`. I also have other results, but that's fine for me. I don't expect 
+to have only one result and picking the right one as long as it is visible on screen with few to no scrolls is ok for me.
 
-> side note: I could have also used prefix search, but I don't always search using the beginning of emojis name, so I prefer using the fuzzy search.
+> side note: I could have also used prefix search, but I don't always search using the beginning of an emoji's name, so I prefer using the fuzzy search.
 
 ## :purple_square: Skin tones
 
-If I search for `ok hand` I find the emoji right. But as you can see, there is only the standard variation. The yellow one.
-I would like to have the skin tone variation as well. 
+If I search for `ok hand` I find the emoji, right? But as you can see, there is only the standard variation - the yellow one.
+I would like to have the skin tone variation as well.
 
-{{< illustration src="img/search-ok-hand-no-black.png"        name="Search results for ok hand"            alt="Search result for the query `ok hand` displaying only the yellow emoji" >}}
+{{< illustration src="img/search-ok-hand-no-black.png" name="Search results for ok hand" alt="Search result for the query `ok hand` displaying only the yellow emoji" >}}
 
-> Open your mind again and imagine a narrator with a deep voice pop in your head and says the following:
-> "Zed did not know hard it will be to include those fancy skin toned emojis. Hours will pass before he finally understands"
+> Open your mind again and imagine a narrator with a deep voice popping in your head and saying the following:
+> "Zed did not know how hard it would be to include those fancy skin toned emojis. Hours would pass before he finally understands."
 
-Before continuing, I need to explain (what I understood) how emoji and UTF8 works for skin tone variations.
-UTF8 characters can be composed together. This allows to create what we call [ligatures](https://en.wikipedia.org/wiki/Ligature_(writing)).
-Basically, you take the code of two character, and you smash them together in one UTF8 character. On your screen, if you reader and font is compatible
-you will see a different character in place of the two characters. The beauty of the thing is that even if your reader or font are not compatible, you
-will see the originals characters anyway. Cool right.
+Before continuing, I need to explain (what I understood) how emojis and UTF-8 works for skin tone variations.
+UTF-8 characters can be composed together. This allows to create what we call [ligatures](https://en.wikipedia.org/wiki/Ligature_(writing)).
+Basically, you take the code of two characters, and you smash them together into one UTF-8 character. On your screen, if your reader and font are compatible,
+you will see a different character in place of the two characters. The beauty of it is that even if your reader or font are not compatible, you
+will still see the original characters anyway. Cool, right?
 
-Emoji skin tone is handle like this. You "smash" together the original emoji and the skin tone color to create a new emoji of the original one but the 
+Emoji skin tone is handled like this. You "smash" together the original emoji and the skin tone color to create a new emoji of the original one, but the
 yellow is replaced by the skin tone.
+
 
 ```
 1F44C                                                  ; fully-qualified     # 👌 E0.6 OK hand
@@ -272,8 +274,8 @@ yellow is replaced by the skin tone.
 1F44C 1F3FE                                            ; fully-qualified     # 👌🏾 E1.0 OK hand: medium-dark skin tone
 1F44C 1F3FF                                            ; fully-qualified     # 👌🏿 E1.0 OK hand: dark skin tone
 ```
-The first column contains the UTF8 code for each emoji. As you can read, the first one is the same and is the `ok_hand` emoji
-itself. The second code, is the skin tone. So we have the list of each skin tone available.
+The first column contains the UTF-8 code for each emoji. As you can read, the first one is the same and is the `ok_hand` emoji
+itself. The second code is for the skin tone, so we have a list of each available skin tone.
 
 ```go
 	tones := map[string][]rune{
@@ -284,13 +286,12 @@ itself. The second code, is the skin tone. So we have the list of each skin tone
       "dark skin tone" : []rune("\U0001F3FF"),
 	}
 ```
-Original library, and most library I saw handle emoji as string and play with them with string using the `\Uxxxxxxxx` format.
-Golang has a type dedicated to UTF8 character management, the `rune`. I decided to use it. Unfortunately, this is not really coming and
-there is really few example online of rune usage; even less with ligatures.
-I used the string representation to easily make the connection between the UF8 code and the runes in go.
+The original library, and most libraries I've seen, handle emojis as strings and manipulate them with string methods using the `\Uxxxxxxxx` format.
+Golang has a type dedicated to UTF-8 character management: the `rune`. I decided to use it. Unfortunately, there are not many examples online of rune usage, especially with ligatures.
+I used the string representation to easily make the connection between the UTF-8 code and the runes in Go.
 
-Now, we need to create a new emoji for each skin tone. Not all emoji can support skin tone. I could parse the original
-unicode file, but, if you paid attention, the json file I fetch already have this information.
+Now, we need to create a new emoji for each skin tone. Not all emojis can support skin tone. I could parse the original
+Unicode file, but if you paid attention, the JSON file I fetched already has this information.
 
 ```go
 func enhanceEmojiListWithVariations(list []EmojiDescription) []EmojiDescription {
@@ -339,42 +340,41 @@ The key :key: here is this line:
 ```go
 currentEmojiWithSkinTone.Emoji = string(append([]rune(currentEmojiWithSkinTone.Emoji), tone...))
 ```
-I'm no expert in go, and I probably missed something, but after hours playing with `fmt` to print the emoji with ligature
-and failing with always two characters displayed, I inadvertently used the type conversion, and it worked. I have
-no idea why it took me two :fu-dark-skin-tone: hours to do it. 
+I'm no expert in Go, and I probably missed something, but after hours of playing with `fmt` to print the emoji with ligatures
+and failing, always two characters were displayed. I inadvertently used type conversion, and it worked. I have no idea why it took me two :fu-dark-skin-tone: hours to do it.
 
-We now have our skin tone variation :tada:
+We now have our skin tone variations! :tada:
 
 {{< illustration src="img/search-ok-hand-black.png"        name="Search results for ok hand"            alt="Search result for the query `ok hand` now displaying all the color variations" >}}
 
 ## :no_entry_sign: Unsupported Emoji
 
-My computer and my phone does not support well emoji version 14 and higher. But as I said earlier, the beauty of UTF8 ligatures
-is that even if you cannot process them fully, you get the characters. This way you can still understand the intention.
+My computer and my phone do not support Emoji version 14 and higher well. But, as I said earlier, the beauty of UTF8 ligatures
+is that even if you cannot process them fully, you get the characters. This way, you can still understand the intention.
 
-{{< illustration src="img/search-ok-no-ligature.png"        name="Search results with unsupported skin toned emoji"            alt="Multiple emoji `couple with heart man man` with skin tone displayed as two emoji. The original one + the skin tone itself as a square" >}}
+{{< illustration src="img/search-ok-no-ligature.png"        name="Search results with unsupported skin-toned emoji"            alt="Multiple emojis `couple with heart man man` with skin tone displayed as two emojis. The original one + the skin tone itself as a square" >}}
 
-If you want to test is yourself and tinker with it, you can find the full working example ins this repository [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go)
+If you want to test it yourself and tinker with it, you can find the full working example in this repository [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go).
 
 
 ## :interrobang: Why did I do all of that ? 
 
-First of all, why not. Just playing with emoji is fun, sort of. But mostly, my goal was to have on hand an emoji finder to easily copy them elsewhere. 
-Every system I found online had flaws that were annoying. 
+First of all, why not. Just playing with emoji is fun, sort of. But mostly, my goal was to have on hand an emoji finder to easily copy them elsewhere.
+Every system I found online had flaws that were annoying.
  - way too slow to load or search
- - way too useless. I don't want to search for my emoji in a huge list of yellow icons 
+ - way too useless. I don't want to search for my emoji in a huge list of yellow icons
 
 The best solution I had was a shortcut to the unicode list itself. Not all common names are present,
 so I had to learn some official names. The big reason I decided to build my own search "engine" on that is "unicode website was down!" :arrow_down:
 
-Yeah, I might be the only one in the world that know that the unicode website sometime does not respond, and be impacted by that! :rofl:
+Yeah, I might be the only one in the world that knows that the unicode website sometimes does not respond, and be impacted by that! :rofl:
 
 ## :next_track_button: What's next ? 
 
-This engine is really simple and stupid. There is already ways to improve it. I already have included a reverse search even if 
-I did not talk about that here. The indexing engine is somewhat powerful and cool, but still miss some obvious cases. I'll
-see upon usage what's bothering me the most and improve it. Maybe the result will be open-sourced but for that I have 
-a lot to do. Emoji are not the only things I have in my little search engine :wink:
+This engine is really simple and basic. There are already ways to improve it. I have already included a reverse search, even if
+I did not talk about it here. The indexing engine is somewhat powerful and cool, but still misses some obvious cases. I'll
+see what's bothering me the most upon usage and improve it. Maybe the result will be open-sourced, but for that, I have
+a lot to do. Emojis are not the only things I have in my little search engine. :wink:
 
 Thank you reading this,\
 [Bisoux](/page/bisoux) :kissing:
