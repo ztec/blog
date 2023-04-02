@@ -2,7 +2,7 @@
 title: "🐙 Search engine for emoji in go"
 date: 2023-04-02T01:00:00+02:00
 slug: "emoji-search-engine"
-tags: ["tech", "go", "emoji"]
+tags: ["tech", "go", "emoji", "IA-helped"]
 ---
 
 For a project of mine, I had to handle emojis. The goal was to create a search engine to find emojis. 
