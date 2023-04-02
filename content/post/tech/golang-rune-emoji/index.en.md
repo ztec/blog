@@ -3,6 +3,9 @@ title: "🐙 Search engine for emoji in go"
 date: 2023-04-02T01:00:00+02:00
 slug: "emoji-search-engine"
 tags: ["tech", "go", "emoji", "IA-helped"]
+promotions:
+    mastodon: https://mamot.fr/@ztec/110126905998815685
+    twitter: https://twitter.com/Ztec6/status/1642354192411918336
 ---
 
 For a project of mine, I had to handle emojis. The goal was to create a search engine to find emojis. 
