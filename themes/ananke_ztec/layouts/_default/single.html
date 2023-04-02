@@ -57,34 +57,8 @@
         <div class="mt5 bt b--light-silver w-50 center">
         </div>
 
+    {{ partial "social-content-footer.html" . }}
 
-    <div class="mt5 ph3 tc">
-      <div class="pl0 f4 list sans-serif avenir lh-copy ">
-        {{i18n "commentAndDiscuss" .}}<br/>
-
-        {{ if .Params.promotions }}
-          <div class="f12 tc mt3">
-            {{ range $network, $promo := .Params.promotions }}
-              <a href="{{ $promo }}" class="h100 dib v-top ml2" target="_blank">
-                {{ if eq $network "twitter" }}
-                <img style="height: 1em" src="/twitter.svg" alt="Twitter logo" /> Twitter
-                {{else if eq $network "mastodon" }}
-                <img style="height: 1em" src="/mastodon.svg" alt="Mastodon logo" /> Mastodon
-                {{else }}
-                <img style="height: 1em" src="/social.svg" alt="Share icon" />
-                {{ $network }}
-                {{end}}
-              </a>
-            {{end}}
-          </div>
-        {{else}}
-          <div class="f12 tc mt3">
-            <a href="https://mamot.fr/@ztec"><img style="height: 1em" src="/mastodon.svg" alt="Twitter logo" /> @ztec@mamot.fr</a>
-            <a href="https://twitter.com/ztec6"  class="ml2"><img style="height: 1em" src="/twitter.svg" alt="Twitter logo" /> @ztec6</a>
-          </div>
-        {{end}}
-      </div>
-    </div>
 
 
     <div class="mt5 bt b--light-silver w-50 center">
