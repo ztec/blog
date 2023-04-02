@@ -3,6 +3,9 @@ title: "🐙 un moteur de recherche d'émojis"
 date: 2023-04-02T15:00:00+02:00
 slug: "moteur-de-recherche-emojis"
 tags: ["tech", "go", "emoji", "IA-helped"]
+promotions:
+    mastodon: https://mamot.fr/@ztec/110130206712339632
+    twitter: https://twitter.com/Ztec6/status/1642570030654304259
 ---
 
 Pour l'un de mes projets, j'ai dû gérer des emojis. Le but était de créer un moteur de recherche d'emojis.
