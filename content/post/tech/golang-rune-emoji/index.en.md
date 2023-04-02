@@ -84,7 +84,7 @@ func fetchEmojiFromGithub() (results []EmojiDescription, err error) {
 
 I used `github.com/go-zoox/fetch` to fetch the file just because I'm a lounger
 
-## :llama: Emoji, Index them all! 
+## :zebra: Emoji, Scan them all! 
 
 In my program, I already use [Bleve](https://blevesearch.com/) to index and search through other things, so I will 
 do the same here. The operation is pretty simple as I do not have to store anything and can keep an in-memory index.
