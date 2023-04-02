@@ -53,7 +53,7 @@ fascinating: https://raw.githubusercontent.com/github/gemoji/master/db/emoji.jso
 This file, which is regularly updated, is perfect and can be parsed with less effort. 
 Moreover, it already contains some metadata like aliases.
 
-It's decide, lets load this file
+This is the way, lets load this file
 
 ```go
 package pouet
@@ -199,7 +199,7 @@ Cool, the results seem promising. But there seems to be a problem.
 I should have an emoji here, :hugs: to be exact. If I add the `s` to the query, it finds it, but not without it. Let's try
 to enhance the search for this kind of purpose by adding a bit of fuzziness to the search.
 
-The idea is to allow some inexact work to match the query. For that, we will use what's called [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
+The idea is to allow some inexact words to match the query. For that, we will use what's called [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
 In fact, as I already said, I'm a slacker, so Bleve will do it for me. Unfortunately, I could not find any way
 to add a default fuzzy parameter to `query` search. I still can add `~` to words of my search to enable fuzzy search on them.
 As my expectations are not high, I will do it the "just hack it" way. If I have no results from the query, I will do a specific
@@ -344,7 +344,7 @@ The key :key: here is this line:
 currentEmojiWithSkinTone.Emoji = string(append([]rune(currentEmojiWithSkinTone.Emoji), tone...))
 ```
 I'm no expert in Go, and I probably missed something, but after hours of playing with `fmt` to print the emoji with ligatures
-and failing, always two characters were displayed. I inadvertently used type conversion, and it worked. I have no idea why it took me two :fu-dark-skin-tone: hours to do it.
+and failing, always two characters were displayed. I inadvertently used type conversion, and it worked. I have no idea why it took me two 🖕🏿 hours to do it.
 
 We now have our skin tone variations! :tada:
 
