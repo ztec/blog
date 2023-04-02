@@ -5,9 +5,9 @@ slug: "emoji-search-engine"
 tags: ["tech", "go", "emoji"]
 ---
 
-For a project of mine, I had to handle emoji. The goal was to do a little search engine to find emoji because reasons. 
-I'm not starting from scratch and have to include my code into an already existing program in go.
-So lets go and see how to build a little search engine for emojis in go.
+For a project of mine, I had to handle emojis. The goal was to create a search engine to find emojis. 
+I am not starting from scratch and have to include my code into an already existing Go program.
+So, let's see how to build a little search engine for emojis in Go.
 
 TL;DR: The full result is available here: [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go)
 
