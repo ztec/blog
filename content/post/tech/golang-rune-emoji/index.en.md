@@ -14,6 +14,8 @@ So, let's see how to build a little search engine for emojis in Go.
 
 TL;DR: The full result is available here: [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go)
 
+You can also test and see the final result. All details here: [poulpe.ztec.fr - The emoji search engine open-sourced]({{< ref "poulpe-emoji-search-engine" >}})
+
 ## :boar: Emoji! Get them all! 
 
 First, I had to find the list of all available emojis. Easy! You can find it on the official Unicode website.
@@ -359,6 +361,7 @@ is that even if you cannot process them fully, you get the characters. This way,
 
 If you want to test it yourself and tinker with it, you can find the full working example in this repository [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go).
 
+You can also test and see the final result. All details here: [poulpe.ztec.fr]({{< ref "poulpe-emoji-search-engine" >}})
 
 ## :interrobang: Why did I do all of that ? 
 

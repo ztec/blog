@@ -14,6 +14,7 @@ Regardons ensemble comment construire un petit moteur de recherche en Go.
 
 Pour les plus impatients, l'ensemble des exemples de code de cet article se trouve ici : [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go)
 
+Vous pouvez aussi tester et voir le résulta final. Tous les détails son ici: [poulpe.ztec.fr - Le moteur de recherche d'emoji open-sourcé]({{< ref "poulpe-emoji-search-engine" >}})
 ## :boar: Émojis! Attrapez-les tous!
 
 En premier lieu, il m'a fallu trouver la liste de tous les emojis qui existent. Le site de l'Unicode
@@ -354,6 +355,7 @@ c'est que malgré cela, je vois quand même les différents composants. De cette
 
 Si vous voulez tester par vous-même et bidouiller le code, vous pouvez trouver le code complet et fonctionnel sur ce repository : [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go).
 
+Vous pouvez aussi tester et voir le résulta final. Tous les détails son ici: [poulpe.ztec.fr]({{< ref "poulpe-emoji-search-engine" >}})
 ## :interrobang: Pourquoi j'ai fait tout ça ?
 
 Déjà, pourquoi pas ? Juste jouer avec des émojis, c'est fun. Mais surtout, mon but était d'avoir un moteur de recherche d'émojis sous la main pour pouvoir copier les émojis ailleurs. 
