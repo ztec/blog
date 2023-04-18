@@ -3,6 +3,10 @@ title: "Custom package name for go libraries"
 date: 2023-04-18T02:00:00+02:00
 slug: "remove-github-com-from-golang-package-name"
 tags: ["tech", "go", "IA-helped"]
+images: ["img/promotion-material.png"] 
+promotions:
+    mastodon: https://mamot.fr/@ztec/110217173420271662
+    twitter: https://twitter.com/Ztec6/status/1648134533412159489
 ---
 
 I recently released a small project called [poulpe.ztec.fr](https://poulpe.ztec.fr). 
@@ -10,7 +14,7 @@ I personally use this repository as a library in one of my other projects. When 
 
 ```go
 // main.go
-import gt2.riper.fr/ztec/poulpe
+import git2.riper.fr/ztec/poulpe
 ```
 
 I have two issues with this approach:
