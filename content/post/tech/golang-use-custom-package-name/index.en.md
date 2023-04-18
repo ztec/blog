@@ -1,7 +1,7 @@
 ---
 title: "Custom package name for go libraries"
 date: 2023-04-18T02:00:00+02:00
-slug: "remote-github-com-from-golang-package-name"
+slug: "remove-github-com-from-golang-package-name"
 tags: ["tech", "go", "IA-helped"]
 ---
 
