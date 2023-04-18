@@ -18,7 +18,7 @@ import git2.riper.fr/ztec/poulpe
 ```
 
 I have two issues with this approach:
- - It ugly, right ?
+ - It's ugly, right ?
  - If I ever change the location of my library, the import statement will break. (You may have already noticed the '2' in the name.)
 
 Most open-source projects rely on GitHub and simply use 'github.com' imports. 
