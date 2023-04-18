@@ -109,3 +109,5 @@ More detailed informations:
  - [are-there-always-on-module-repositories-and-enterprise-proxies](https://github.com/golang/go/wiki/Modules#are-there-always-on-module-repositories-and-enterprise-proxies)
  - [how-to-use-a-private-go-module-in-your-own-project](https://www.digitalocean.com/community/tutorials/how-to-use-a-private-go-module-in-your-own-project)
  - [private-module-repo-auth](https://go.dev/ref/mod#private-module-repo-auth)
+ - https://pkg.go.dev/rsc.io/go-import-redirector
+ - [Remote_import_paths](https://pkg.go.dev/cmd/go#hdr-Remote_import_paths)
