@@ -3,7 +3,7 @@ title: "Un nom personnalisé pour les lib Go"
 date: 2023-04-20T16:00:00+02:00
 slug: "enlever-github-de-vos-nom-de-package"
 tags: ["tech", "go", "IA-helped"]
-images: [/en/2023/post/remove-github-com-from-golang-package-name/img/promotion-material.png]
+images: [/2023/post/enlever-github-de-vos-nom-de-package/img/promotion-material.png]
 ---
 
 Récemment, j'ai sorti un petit projet appelé [poulpe.ztec.fr](https://poulpe.ztec.fr).
