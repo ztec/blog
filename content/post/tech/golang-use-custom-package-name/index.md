@@ -1,5 +1,5 @@
 ---
-title: "Nom personnalisé pour vos lib Go"
+title: "Un nom personnalisé pour les lib Go"
 date: 2023-04-20T16:00:00+02:00
 slug: "enlever-github-de-vos-nom-de-package"
 tags: ["tech", "go", "IA-helped"]
