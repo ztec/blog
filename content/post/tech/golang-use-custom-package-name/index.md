@@ -4,6 +4,9 @@ date: 2023-04-20T16:00:00+02:00
 slug: "enlever-github-de-vos-nom-de-package"
 tags: ["tech", "go", "IA-helped"]
 images: [/2023/post/enlever-github-de-vos-nom-de-package/img/promotion-material.png]
+promotions:
+    mastodon: https://mamot.fr/@ztec/110231770931273963
+    twitter: https://twitter.com/Ztec6/status/1649069222197182466
 ---
 
 Récemment, j'ai sorti un petit projet appelé [poulpe.ztec.fr](https://poulpe.ztec.fr).
