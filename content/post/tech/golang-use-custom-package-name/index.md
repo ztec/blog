@@ -30,7 +30,7 @@ Avoir des milliers d'imports qui citent spécifiquement Github n'est pas la bonn
 
 
 
-## [Trop long, j'ai pas le temps](#custom-name)
+## [Trop long, j'ai pas le temps](#nom-personalisé)
 En Go, il est possible de définir le nom d'un package avec un nom de domaine dont on gère l'hébergement.
 ```text
 // main.go
