@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/ztec
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://blog.ztec.fr
+  * I am ztec (https://keybase.io/ztec) on keybase.
+  * I have a public key with fingerprint 2435 74F7 3C24 4365 3F0D  B22A 6276 A29A 4AC0 A343
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01012318ba10f6fc6c928aa15218e6efa81a9de7506bfaaa20414a1cfdc57d33edc50a",
+      "fingerprint": "243574f73c2443653f0db22a6276a29a4ac0a343",
+      "host": "keybase.io",
+      "key_id": "6276a29a4ac0a343",
+      "kid": "01012318ba10f6fc6c928aa15218e6efa81a9de7506bfaaa20414a1cfdc57d33edc50a",
+      "uid": "5e483bf13274a0564c4364d362c56219",
+      "username": "ztec"
+    },
+    "service": {
+      "hostname": "blog.ztec.fr",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1683465518,
+  "expire_in": 157680000,
+  "prev": "e3b8b6ff99498ac9be09ceaf1a466df3b40c7ea16ff2f5f557599f214fcfb02f",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtkmtMHFUYhncXSgoU07RRWlpSGG0NusDcd2Yt1QgoEm1Sw8UKspyZObOMbHeW
+3S1Xl9oUWCE1RZBSiFgbWi/1AjZWbBOK6BaQlYpKXAoIlVCFpISbyLb04gxp//nT
+8+fL+c7zvuf9Tk5tWIAmRDs1/9nJpkUPpvXOcBoh8wxWhnCyUIIYy5B8uFagRYAO
+pylfEhAjgmIohhMYwwEMFWmRp3kWZwDAKBxjIA1FwGCAFaCBQmlOBADgKImRAONF
+gacMAkFApaIA0SOiZDVDu80uWZ2KLU4SlIEUDQSPkyRBU4SIChyOAxo30ABnAQl4
+FBAkoQjzZIeqUMJxwAHjJFnpKRvTWrz/4P/n3AfX7ChIMgQnYgRuIAFK0SSvpCYF
+gsZ5isYxVgUd0G4FB6BClzohj7j0iNIplHioPqo6xf1TziKb41QkTrQrOptddsq8
+bFFO8pxOm8OoKp0lNhUtgpzpvomJk6yC8oaKohDaHZJsRYyYQvJOSXXFaIYgaYrC
+GD0Ci22SHZoklaAMNIMqS70HFiqWkOAYjhZFliXTWQbwLAdRlodAxABJ04JIcCTK
+GyDAFAYXKZGiDBTLijhGirzIobiIqHMVWGXFHFOCArNi6pDMVuA8aIeIK6RaRwRq
+tCGayEeiAxcvxQ5/k/Oru7euVn7w8dbp1F+nCQne+KCT3bxRUz/ZVq735oRaPHNf
+zk+dG8+SA172DYtXCn6xpe3x8Xg2szDneXPMk3rnA+kh6XZMvCd28e+4KL9uX5Hc
+Rlftv1tVbnbDHdtmr/x5dyjeUlapS+j6p/atFuMf1zZ3ZT8bM9R4vGnTOt/QapS/
++MnWPcuWJTCRA7eF5h47X1a15XTxe/2Bq8auhtFrXv3hA9svXs1/bPTG+izh3k9n
+R7ZMaj95akjPbWjT9QR2z+j2Hu7GMpZ8KeEDw0uN79cwm8Y7KgW43d03+F3YhbfD
+QHCre/Rm6s/VN0K179wpLW1oH3xmKkLf7/rYHlC/Nzt498A4aL/pnXOHR+i7oneU
+XdpsSz+xu6H5yNb4pFcer5mx88m9HTFpvba0XROPdvZXnvKxrpTc6pyKQyuLP07U
+HDp/Jyta22LKbL3anlR6dNmVXzJ2ESIVL3V0vSvPLn5ri0i/9eFM0an+wci+48fO
+tg769jcFTY9MJbVk40cv9Jg7F05HXl74Omg5/NzsBDcSm+pdDk2ruB6xIYP6wmp2
+TSK3V6eC9mmHx6ZPfD7ek5vQ0Px0nd/7/AsvBk6Y9F8lr4b21F1Ppoan51d6wxKj
+up/46LlO/29HsJM/9Pu9g2+kJHx/qy+xUfpd09SQV5Sxc+v6M/Jfr93rLnm1e+DT
+h/0JpTsLTIme8r7X41z1lzPdK7tcBe0CF1xh+xc=
+=WC1o
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ztec
+
+==================================================================
