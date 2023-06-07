@@ -6,7 +6,7 @@ images: [/2023/post/deez-is-la-tech-podcast-termine-sa-saison-1/img/Deez_is_la t
 tags: ["podcast", "deezer", "tech", "IA-helped"]
 promotions:
   mastodon: https://mamot.fr/@ztec/110501586903677948
-  twitter: 
+  twitter: https://twitter.com/Ztec6/status/1666369706578542592
 ---
 
 Depuis quelque temps, grâce à la brillante [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048), j'anime avec [zibok](https://pouet.chapril.org/@zibok) un podcast tech.
