@@ -3,8 +3,8 @@ pipelines:
   blog-build:
     group: ztec.fr
     materials:
-      blog-ztec-fr:
-        git: ssh://git@git.riper.fr:22023/ztec.fr/blog.git
+      blog-ztec:
+        git: ssh://git@git.riper.fr:22023/ztec/blog.git
         shallow_clone: false
         auto_update: true
         branch: main
@@ -25,7 +25,7 @@ pipelines:
                 - exec:
                     arguments:
                       - -c
-                      - docker build -t git2.riper.fr/ztec.fr/blog:$GO_PIPELINE_LABEL .
+                      - docker build -t git2.riper.fr/ztec/blog:$GO_PIPELINE_LABEL .
                     command: /bin/bash
                     run_if: passed
               artifacts:
@@ -34,7 +34,7 @@ pipelines:
                   store_id: ztec
                   configuration:
                     options:
-                      Image: git2.riper.fr/ztec.fr/blog
+                      Image: git2.riper.fr/ztec/blog
                       Tag: ${GO_PIPELINE_LABEL}
   blog-deploy:
     group: ztec.fr
@@ -43,8 +43,8 @@ pipelines:
         ignore_for_scheduling: false
         pipeline: blog-build
         stage: build
-      blog-ztec-fr:
-        git: ssh://git@git.riper.fr:22023/ztec.fr/blog.git
+      blog-ztec:
+        git: ssh://git@git.riper.fr:22023/ztec/blog.git
         shallow_clone: false
         auto_update: true
         branch: main
