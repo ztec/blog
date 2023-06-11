@@ -7,20 +7,19 @@ This repository contains source code of my personal blog https://blog.ztec.fr
 ### Contribution
 
 Contribution are welcome as long as they do not alter the meaning
-of the content. If you rather comment, you can go directly on https://blog.ztec.fr, find the page and use the comment 
-section.
+of the content. If you rather comment, you can go directly on https://blog.ztec.fr, find the page and use social media link at the end to engage discussion either on Twitter or Mastodon.
 
-If you want to suggest a grammar, spelling or typo fix, this is the place. Please open a PullRequest. I will be
-happy to merge it as long as you do not alter the original meaning of the text.
+If you want to suggest a grammar, spelling or typo fix, this is the place. Please open a PullRequest (on the Github mirror). 
+I will be happy to merge it as long as you do not alter the original meaning of the text.
 
 I plan to add contributors names on article pages where they contributed. This is not in place for now, but consider
-it. If you want to suggest modification anonymously, send me a git patch via mail using patch.blog@riper.fr 
+it. If you want to suggest modification anonymously (specify it) or do not wish to use Github, send me a git patch via mail to `patch.blog@riper.fr` 
 
 ### Development
 
 #### directly with hugo
 To run the server, simply [install hugo](https://gohugo.io/getting-started/quick-start/) and then execute this command
-in the blog folder.
+in the root blog folder.
 
 ```cmd
 hugo server -p 8080
