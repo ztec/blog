@@ -3,7 +3,7 @@ title: "Les couilles sur la table - Nous faire justice"
 date: 2023-06-12T17:00:00+02:00
 slug: "nous-fare-justice-les-couilles-sur-la-table"
 images: [/2023/post/nous-fare-justice-les-couilles-sur-la-table/img/banner_hu91d32f8d4506d6ccfecd879042abfa1e_6302578_1024x0_resize_box_3.png]
-tags: ["podcast", "reco", "feminism"]
+tags: ["podcast", "reco", "feminism", "IA-helped"]
 promotions:
   mastodon: 
   twitter: 
@@ -11,29 +11,30 @@ promotions:
 
 ## Je vous recommande d'écouter le podcast "Les couilles sur la table" par Victoire Tuaillon
 
-J'écoute depuis longtemps le podcast [Les couilles sur la table](https://www.binge.audio/podcast/les-couilles-sur-la-table/), 
-et je le recommande à tous le monde, surtout aux hommes !
+J'écoute depuis longtemps le podcast [Les couilles sur la table](https://www.binge.audio/podcast/les-couilles-sur-la-table/),
+et je le recommande à tout le monde, surtout aux hommes !
 
 {{< illustration src="img/banner.png"        
     name="Les couilles sur la table"
     alt="Bannière et logo du podcast Les couilles sur la table. Un collage de visages fait avec des coupures de journaux, et le titre du podcast au centre" 
 >}}
 
-Récemment, une série d'épisodes me semble encore plus importante: "Nous faire justice"
+Récemment, une série d'épisodes me semble encore plus importante : "Nous faire justice"
 
-Le "Nous" ici en fait pas référence à moi, ou "nous" en general, mais renvois aux Femmes et aux victimes de violences sexistes et sexuelles.
-Chaque épisode aborde un thème différent autour de la notion de justice avec des clés de compréhension, de recherche et
-aussi des idées d'actions et de comportement à adopter.
+Le "Nous" ici ne fait pas référence à moi ou "nous" en général, mais renvoie aux Femmes et aux victimes de violences sexistes et sexuelles.
+Chaque épisode aborde un thème différent autour de la notion de justice, en fournissant des clés de compréhension, de recherche,
+ainsi que des idées d'actions et de comportements à adopter.
 
-Pluto que d'essayer de paraphraser en moins bien l'autrice, je copie ici les résumés des épisodes et vous invite 
+Plutôt que d'essayer de paraphraser l'autrice en moins bien, je copie ici les résumés des épisodes et vous invite
 très fortement à tous les écouter dans l'ordre si possible.
 
-En tant qu'homme, nous avons le devoir de nous informer sur ces sujets. N'étant pas la cible de ces violences, nous ne 
-somme pas nécessairement en mesure de les comprendre de manière intuitive, ni même, souvent, de les voir. Nous avons besoins d'écouter 
-les personnes qui en savent le plus sur ce sujet, et statistiquement les Femmes sont bien plus avancé que nous.
+En tant qu'homme, nous avons le devoir de nous informer sur ces sujets. N'étant pas la cible de ces violences, nous ne
+sommes pas nécessairement en mesure de les comprendre de manière intuitive, ni même, souvent, de les voir. 
+Nous avons besoin d'écouter les personnes qui en savent le plus sur ce sujet, et statistiquement, 
+les Femmes sont bien plus avancées que nous.
 
-Les épisodes qui suivent sont un très bon moyen de commencer si vous n'êtes pas familiarisé avec ces sujets, mais 
-surtout d'aller plus loins que la simple prise de conscience.
+Les épisodes qui suivent sont un très bon moyen de commencer si vous n'êtes pas familiarisé avec ces sujets, mais
+surtout d'aller plus loin que la simple prise de conscience.
 
 ## [#01 | Comprendre](https://www.binge.audio/podcast/les-couilles-sur-la-table/01-comprendre)
 
