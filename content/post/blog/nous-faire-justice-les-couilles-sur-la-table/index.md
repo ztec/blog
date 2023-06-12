@@ -5,8 +5,8 @@ slug: "nous-fare-justice-les-couilles-sur-la-table"
 images: [/2023/post/nous-fare-justice-les-couilles-sur-la-table/img/banner_hu91d32f8d4506d6ccfecd879042abfa1e_6302578_1024x0_resize_box_3.png]
 tags: ["podcast", "reco", "feminism", "IA-helped"]
 promotions:
-  mastodon: 
-  twitter: 
+  mastodon: https://mamot.fr/@ztec/110532258437864324
+  twitter: https://twitter.com/Ztec6/status/1668298986803871744
 ---
 
 ## Je vous recommande d'écouter le podcast "Les couilles sur la table" par Victoire Tuaillon
