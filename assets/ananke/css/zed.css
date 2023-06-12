@@ -221,3 +221,37 @@ header {
     right:30px;
     margin-top: 20px;
 }
+
+
+blockquote {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+    border-radius: 5px;
+    padding-top:1px;
+}
+/*blockquote p:first-child {*/
+/*    margin-top: 0;*/
+/*}*/
+/*blockquote p:last-child {*/
+/*    margin-bottom: 0;*/
+/*}*/
+
+blockquote:before,blockquote:after  {
+    display: block;
+    top: 0;
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+blockquote:before {
+    content: '«';
+    left: 0;
+    float:left;
+}
+blockquote:after {
+    content: '»';
+    display: block;
+    width:100%;
+    text-align: right;
+    margin-top: -4rem;
+}

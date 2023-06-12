@@ -1,13 +1,22 @@
-{{ $mediaPermalink := ($.Page.Resources.GetMatch (.Get "src")).RelPermalink}}
+{{ $mediaPermalink := "MISSING"}}
+{{ if ($.Page.Resources.GetMatch (.Get "src"))}}
+    {{ $mediaPermalink = ($.Page.Resources.GetMatch (.Get "src")).Permalink }}
+{{else if (.Get "href")}}
+    {{ $mediaPermalink = (.Get "href") }}
+{{end}}
 {{ $title := (.Get "title")}}
 
 <div class="small-media-player">
-    <audio controls >
+    <audio controls {{ if (.Get "save_position")}}data-save-position="true" {{end}}  {{ if (.Get "start_position")}}data-start-position="{{(.Get "start_position")}}" {{end}}>
         <source src="{{ $mediaPermalink | safeHTML }}" type="audio/mpeg">
     </audio>
     {{ if $title }}
     <p>
-        <a href="{{ $mediaPermalink | safeHTML }}" target="_blank"> {{ $title | safeHTML}} </a>
+        <a href="{{if (.Get "title_href")}}
+        {{(.Get "title_href") | safeHTML}}
+        {{else}}
+        {{ $mediaPermalink | safeHTML }}
+        {{end}}" target="_blank"> {{ $title | safeHTML}} </a>
     </p>
     {{end}}
 </div>

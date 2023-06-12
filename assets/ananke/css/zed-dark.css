@@ -73,3 +73,7 @@ a.hidden-link:hover:after {
 .z-theme-dark .small-media-player audio{
     background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
 }
+
+.z-theme-dark blockquote {
+    background-color: rgba(255, 255, 255, .1);
+}

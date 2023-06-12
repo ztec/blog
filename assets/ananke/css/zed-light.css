@@ -75,3 +75,7 @@ a.hidden-link:hover:after {
 .z-theme-dark .summary {
     color: #111;
 }
+
+.z-theme-light blockquote {
+    background-color: rgba(0, 0, 0, .1);
+}
