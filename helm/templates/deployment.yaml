@@ -26,7 +26,7 @@ spec:
             claimName: blog-pvc
       containers:
         - name: {{ .Release.Name }}
-          image: "{{ required "image.name is required, specify it with --set-string image.nametoto:label" .Values.image.name }}"
+          image: "{{ required "image.name is required, specify it with --set-string image.name:toto" .Values.image.name }}"
           imagePullPolicy: {{ .Values.image.pullPolicy | default "Always" }}
           ports:
             - name: http
