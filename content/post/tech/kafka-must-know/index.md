@@ -6,17 +6,17 @@ tags: ["kafka", "tech"]
 ---
 
 
-{{< illustration src="img/kafka-logo.png"  name="Apache Kafka"   alt="Logo of Apache Kafka" resize="no" >}}
+{{< illustration src="img/kafka-logo.png"  name="Apache Kafka"   alt="Logo of Apache Kafka" resize="no" dark-protection="yes" >}}
 
-Vous êtes un développeur et vous avez entendu parler de Apache [Kafka](https://fr.wikipedia.org/wiki/Franz_Kafka), le broker de message. 
+Vous êtes un développeur et vous avez entendu parler d'Apache [Kafka](https://fr.wikipedia.org/wiki/Franz_Kafka), le broker de message. 
 Vous trouvez que kafka est complexe et qu'il est difficile de l'utiliser.
 
 Cette page contient ce que je considère comme le minimum vital pour comprendre et utiliser Kafka au quotidien. C'est
 une vue simplifiée que j'utilise souvent comme référence (la version anglaise le plus souvent), pour expliquer Kafka à mes compères. 
 
-Je ne suis pas le premier à écrire sur Kafka, il y a beaucoup d'article ne ligne dont certains sont cité en source à la fin de cet article,
+Je ne suis pas le premier à écrire sur Kafka, il y a beaucoup d'article en ligne dont certains sont cité en source à la fin de cet article,
 car je m'en suis très inspiré. 
-Si vous souhaitez plus de détails ou aller plus loins, n'hésitez pas à les consulter.
+Si vous souhaitez plus de détails où aller plus loins, n'hésitez pas à les consulter.
 
 Note concernant les termes anglais :
 Afin de mieux faire le lien avec les noms "officiel" en anglais, je vais souvent traduire leur signification, mais j'utiliserais souvent leur
@@ -46,9 +46,9 @@ L'utilisation de Kafka offre certaines garanties quant à sa mission :
 Comme kafka est conçu pour fonctionner en Cluster, certains aspects de son fonctionnement sont typiquement lié à cet aspect architectural. 
 
 Les deux parties suivantes décrivent le fonctionnement global de Kafka, de manière succinct. Je vous recommande les relire régulièrement au fur-et-a-mesure que vous parcourez cet article. 
-À force d'avancer vous devriez commencer à mieux comprendre ce que veulent dire les phrases, qui risque d'etre bien abscond à votre première lecture.
+À force d'avancer, vous devriez commencer à mieux comprendre ce que veulent dire les phrases, qui risque d'etre bien abscond à votre première lecture.
 
-![Overview Apache Kafka](img/OverviewApacheKafka.png "Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers" )
+{{< illustration src="img/OverviewApacheKafka.png"        name="Overview Apache Kafka"            alt="Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers"  dark-protection="yes" >}}
 
 ### Production de messages :
 
@@ -61,7 +61,7 @@ Le **Chef de partition** décide soit :
 
 Le **Consommateur** ou **Consumer** en anglais, se connecte à un des serveurs kafka dit **Kafka broker node**. Il s'enregistre en tant que consommateur d'un topic avec un **id de group**.
 Le nœud renvois la liste des partitions qui lui sont assignées et la liste des nœuds auquel le consommateur doit se connecter pour recevoir les messages.
-Le Consommateur se connecte à tous les serveurs qui concerne ses partitions et commence à recevoir les messages pour les traiter.
+Le Consommateur se connecte à tous les serveurs qui concernent ses partitions et commence à recevoir les messages pour les traiter.
 
 Au bout d'un moment, le Consommateur enregistre son état d'avancement en envoyant l'index du dernier message traité, appeler **Commit offset** en anglais, pour chaques partitions qui lui sont assigné.
 
@@ -80,11 +80,11 @@ Un producteur "produit" des messages et les envois dans le cluster kafka. Le pro
  - De manière optionel, il peut aussi forger l'ID du message en suivant ses propres règles cependant vous devriez laisser Kafka le faire pour vous.
 
 Le Producteur se connecte à un des server (n'importe lequel), et envois les messages. Le producteur peu aussi spécifier le niveau d'acquittement suivant ces posibilitées. 
- - Pas d'acquittement. Pas de réponse du server est attendu. Rapide, mais aucune garantie que le message a bien été reçut. 
- - Attente de l'acquittement du chef de partition. Celui-ci l'envera quand il aura fini de stocké le message localement. C'est toujours rapide, mais la perte du Chef de partition signifie la perte du message = Perte de données.
- - Attente de l'acquittement du chef de partition ET de tous les replicas. Les réplicats renvoyant leur acquittement qu'une fois le message bien stocké. C'est le plus lent, mais aussi le plus sûe car on a la garantie d'avoir plusieurs serveur avec le message stocké.
+ - Pas d'acquittement. Pas de réponse du server est attendu. Rapide, mais aucune garantie que le message a bien été reçu. 
+ - Attente de l'acquittement du chef de partition. Celui-ci l'enverra quand il aura fini de stocker le message localement. C'est toujours rapide, mais la perte du Chef de partition signifie la perte du message = Perte de données.
+ - Attente de l'acquittement du chef de partition ET de tous les replicas. Les réplicats renvoyant leur acquittement qu'une fois le message bien stocké. C'est le plus lent, mais aussi le plus sûe car on a la garantie d'avoir plusieurs serveurs avec le message stocké.
 
-![Producing to partition](img/producing-to-partition.png "Path taken by a message though topic & partitions")
+{{< illustration src="img/producing-to-partition.png"        name="Producing to partition"            alt="Path taken by a message though topic & partitions" >}}
 
 ### Consommateur / Consumer
 
@@ -94,7 +94,7 @@ Un consommateur se connecte d'abord à l'un des nœuds kafka, et recevra alors l
 
 Un consommateur a toujours un Id de group ou **group.id**, et peu avoir d'autre métadata comme l'id de client ou **client.id** qui est un peu comme un UserAgent. 
 
-![Consumer group](img/consumer-groups.png "Connection schematic of Consumer groups to Partitions")
+{{< illustration src="img/consumer-groups.png"        name="Consumer group"            alt="Connection schematic of Consumer groups to Partitions" >}}
 
 ### group.id 
 
@@ -118,7 +118,7 @@ Les consommateurs doivent alors attendre que les élections soient terminées af
 Les élections peuvent prendre de quelques secondes à plusieurs minutes. Les délais sont configurables en fonction des besoins.
 Une fois les élections terminées, le cluster re-attribue les partitions aux consommateurs en fonction de leur nombre et de leurs demandes.
 
-Quand la topologie des consommateurs change (Un nouveau consommateur apparais ou disparais), le même message d'arrêt est envoyé
+Quand la topologie des consommateurs change (Un nouveau consommateur apparait ou disparait), le même message d'arrêt est envoyé
 et tous les consommateur se voit dé assigné leurs partitions. Un délai de carence est alors observé (configurable, mais de 60 seconds par défaut, je crois).
 Kafka effectue ensuite une attribution des partitions selon la nouvelle topologie, les consommateurs peuvent ainsi reprendre
 leur tâches.
@@ -127,12 +127,12 @@ leur tâches.
 Toute la procédure d'arrêt des consommateurs, parfois d'élection, et de re-assignation des partitions est appelée **rebalance**. 
 
 Un reblance peu se produire dans bien des situations dont par exemple :
- - Un chef de partition est plus disponible ou ne rempli plus sa mission (Tous les consommateurs enregistrer sur les partitions associés, peu importe le group.id, devrons attendre la fin des élections)
+ - Un chef de partition est plus disponible ou ne rempli plus sa mission (Tous les consommateurs enregistrés sur les partitions associés, peu importe le group.id, devrons attendre la fin des élections)
  - un nœud est ajouté, enlever du cluster Kafka. (Idem)
  - Un consommateur avec un group.id s'enregistre pour consommer des messages. (Tous les consommateurs avec le **même group.id** sont alors stopé, et doivent attendre la fin de la réattribution de partition)
- - Un consommateur avec un group.id s'arête ou ne répond plus. (Idem)
+ - Un consommateur avec un group.id s'arrête ou ne répond plus. (Idem)
 
-Les deux derniers cas sont vraiment important à garder à l'esprit. En effet, le démarage ou l'arêt d'un consommateur aura pour 
+Les deux derniers cas sont vraiment important à garder à l'esprit. En effet, le démarage ou l'arrêt d'un consommateur aura pour 
 conséquence l'arrêt de tous les consommateurs avec le même group.id pendant le délai de carence configuré.
 
 ### Message
@@ -141,7 +141,7 @@ Un message Kafka est composé notamment de :
  - Id, un identifiant unique
  - payload, le contenu du message
 
-Le payload peu être au format texte ou binaire. Les messsages sont totalement agnostique du format du payload. 
+Le payload peu être au format texte ou binaire. Les messages sont totalement agnostique du format du payload. 
 Il peut être de toute taille. La limite est principalement fixée par la capacité du cluster a stocké les messages, et la 
 vitesse du réseau pour les faire transiter et donc les délais de traitement souhaité.
 
@@ -158,7 +158,7 @@ dépend complètement votre utilisation.
 
 Les topic sont ensuite découpé en partitions suivant les configurations
 
-![Log anatomy](img/log-anatomy.png "Representation of how messages stored, in  order by Partitions")
+{{< illustration src="img/log-anatomy.png"        name="Log anatomy"            alt="Representation of how messages stored, in  order by Partitions" >}}
 
 ### Partition
 
@@ -166,8 +166,9 @@ Chaque topic est stocké physiquement sous forme de partition. Au minimum un top
 
 Quand un message est reçu dans un topic, une partition est choisie pour stocker le message. Le message est alors dans cette partition de manière **définitive**.
 
-![Producing to second partition](img/producing-to-second-partition.png "A producer sending a message to a partitions leader, showing replcias")
-![Producing to partition](img/producing-to-partition.png "A producer sending a message on one partitions, showing replcias")
+{{< illustration src="img/producing-to-second-partition.png"        name="Producing to second partition"            alt="A producer sending a message to a partitions leader, showing replcias" >}}
+{{< illustration src="img/producing-to-partition.png"        name="Producing to partition"            alt="A producer sending a message on one partitions, showing replcias" >}}
+
 
 ### Partition replica / réplique
 
@@ -179,25 +180,25 @@ C'est grâce à ces répliques que kafka peu garantir qu'un message n'est pas pe
 
 ### Partition leader / Chef de partition
 
-Quand il y a plsuieurs réplique de partition, un serveur est élu pour servir de référence. Il sera alors considéré comme le Chef de partition ou Partition leader.
+Quand il y a plusieurs répliques de partition, un serveur est élu pour servir de référence. Il sera alors considéré comme le Chef de partition ou Partition leader.
 C'est ainsi lui qui coordonne les inscriptions des messages dans les répliques et qui sert de point d'entrée pour les producer.
 
 Le serveur chef peu changer à tout moment. Des élections sont alors organisée pour définir le chef suivant. C'est souvent le cas quand
 la topologie du cluster ou des consommateurs change.
 
-![Partitions](img/partitions.png "Partitions with replicas and leader in different colors")
+{{< illustration src="img/partitions.png"        name="Partitions"            alt="Partitions with replicas and leader in different colors" >}}
 
 ### Offset
 
-Tous les messages dans une partition se voient associé un "nombre". Cet identifiant est sequentiel
+Tous les messages dans une partition se voient associé un "nombre". Cet identifiant est séquentiel.
 
 Les consommateurs enregistreront leur progression de traitement des messages avec la position du message dans la partition.
-Le numéro enregistré est simplement celui du dernier message traiter.
+Le numéro enregistré est simplement celui du dernier message traité.
 
 Quand plusieurs consommatrices traitent le meme topic, avec chacun un group.id différent, ils enregistreront leur progression
 indépendamment les un des autres. 
 
-![consumer-groups.png](img/consumer-groups.png "Connection schematic of Consumer groups to Partitions")
+{{< illustration src="img/consumer-groups.png"        name="consumer-groups.png"            alt="Connection schematic of Consumer groups to Partitions" >}}
 
 L'offset est juste un compteur par message et par partition, par exemple :
  - message 1 : counter = 4
@@ -207,11 +208,11 @@ L'offset est juste un compteur par message et par partition, par exemple :
 
 Cette façon de procéder a pour conséquence que **tous** les consommateurs doivent traiter les messages **dans l'ordre**.
 
-![Data log](img/data-log.png "One datalog with two read offset at different places")
+{{< illustration src="img/data-log.png"        name="Data log"            alt="One datalog with two read offset at different places" >}}
 
 Contrairement à d'autre solution de message broking (nsq, RabbitMQ), il n'est pas possible d'acquitter le traitement
 d'un message en particulier.
-C'est fondamental de bien le garder a l'espris car ça aura des conséquences sur la stratégie de traitement des erreurs que vous aurez à mettre en place.
+C'est fondamental de bien le garder à l'esprit, car ça aura des conséquences sur la stratégie de traitement des erreurs que vous aurez à mettre en place.
 
 
 ###  Durée de rétention des messages
@@ -229,7 +230,7 @@ Quand des élections doivent se faire pour décider d'un nouveau chef de partiti
 
 ## Conclusion & avis personnel
 
-Cette ne permet pas de comprendre tous les aspects d'Apache Kafka. Après quelque temps à l'utiliser, vous allez probablement
+Cette page ne permet pas de comprendre tous les aspects d'Apache Kafka. Après quelque temps à l'utiliser, vous allez probablement
 avoir besoin de creuser davantage. Dans ce cas, allez lire la [documentation officiel](https://kafka.apache.org/documentation/), elle est très bien si vous comprenez bien l'anglais.
 
 Kafka est un outil vraiment cool à utiliser, mais vous devez avoir de bons ingénieurs pour l'installer et le maintenir.
@@ -239,7 +240,7 @@ C'est comparable à la gestion de base de données.
 Cependant, en tant que simple utilisateur, il est pratique à utiliser et ses performances m'étonnerons toujours.
 
 Je l'utilise dans le cadre pro, principalement en tant que simple message broker (comme RabbitMQ ou ZeroMQ). C'est pour
-ça que j'ai pas du tout abordé l'aspect flux ou streaming ou tous les trucs chouettes que kafka permet dans un contexte "Big Data" ou d'[Event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)
+ça que je n'ai pas du tout abordé l'aspect flux ou streaming ou tous les trucs chouettes que kafka permet dans un contexte "Big Data" ou d'[Event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)
 
 
 Merci infiniment de m'avoir lu,\

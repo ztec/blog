@@ -75,7 +75,7 @@ Il y a plein de façon de le faire, je ne rentrerais pas dans les détails.
 
 En gros, voici comment j'ai construit mes backup.
 
-![Schéma global](schema.png)
+{{< illustration src="schema.png"        name="Global schematics"            alt="Global schematics"  resize="no" dark-protection="yes" >}}
 
 ##### Borg server 
 Un serveur est dédié a la réception des backup borg. En réalité c'est une Machine virtuel, mais cela pourrais très bien 

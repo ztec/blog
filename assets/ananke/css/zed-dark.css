@@ -77,3 +77,8 @@ a.hidden-link:hover:after {
 .z-theme-dark blockquote {
     background-color: rgba(255, 255, 255, .1);
 }
+
+.dark-protection img{
+    background-color: white;
+    padding:3px;
+}

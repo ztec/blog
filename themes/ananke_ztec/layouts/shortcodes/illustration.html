@@ -19,7 +19,7 @@
     {{ end }}
 {{ end }}
 
-<figure class="illustration">
+<figure class="illustration {{if (.Get "dark-protection") }}dark-protection{{ end }}" >
     <a
             class="hidden-link"
             href="{{ $image_wide.RelPermalink  | safeURL }}"

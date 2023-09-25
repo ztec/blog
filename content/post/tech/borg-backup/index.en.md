@@ -73,7 +73,7 @@ There is a lot of ways to do it, I won't go in details.
 
 Basically, here is how I built my backup system:
 
-![Global schematics](schema.png)
+{{< illustration src="schema.png"        name="Global schematics"            alt="Global schematics"  resize="no" dark-protection="yes" >}}
 
 ##### Borg server 
 

@@ -6,7 +6,7 @@ tags: ["kafka", "tech"]
 ---
 
 
-{{< illustration src="img/kafka-logo.png"  name="Apache Kafka"   alt="Logo of Apache Kafka" resize="no" >}}
+{{< illustration src="img/kafka-logo.png"  name="Apache Kafka"   alt="Logo of Apache Kafka" resize="no" dark-protection="yes" >}}
 
 You are a developer, and you heard of Apache [Kafka](https://en.wikipedia.org/wiki/Franz_Kafka), the message broker, and you find it probably complex and difficult to work with.
 Today, I will try to give you the basic knowledge about kafka you need to know to be able to work with it on a daily basis.
@@ -41,7 +41,7 @@ Kafka is designed to be clustered. This mean its internal construction was creat
 The next two section describe what I will describe in this article. I strongly suggest you to read them once, then read them again 
 after each section of this post. You should understand it completely once you've read the whole post. 
 
-![Overview Apache Kafka](img/OverviewApacheKafka.png "Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers" )
+{{< illustration src="img/OverviewApacheKafka.png"        name="Overview Apache Kafka"            alt="Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers"  dark-protection="yes" >}}
 
 ### Production of message:
 
@@ -80,7 +80,7 @@ Producer will connect to a broker of the cluster and send the message. Producer 
  - Leader acknowledgement (will wait for the partition leader to secure the message on its own local store) Still fast, but losing the partition leader = losing the data
  - Leader AND replica acknowledgement (will wait for the partition leader AND all replica to secure the message on their own local store). Slowest, but most secure 
 
-![Producing to partition](img/producing-to-partition.png "Path taken by a message though topic & partitions")
+{{< illustration src="img/producing-to-partition.png"        name="Producing to partition"            alt="Path taken by a message though topic & partitions" >}}
 
 ### Consumer
 
@@ -90,7 +90,7 @@ A consumer starts by connecting to a broker node and will receive back metadata 
 
 A consumer has one property **group.id** and can have metadata such as **client.id** (like user-agent).
 
-![Consumer group](img/consumer-groups.png "Connection schematic of Consumer groups to Partitions")
+{{< illustration src="img/consumer-groups.png"        name="Consumer group"            alt="Connection schematic of Consumer groups to Partitions" >}}
 
 ### group.id 
 
@@ -144,15 +144,15 @@ A topic in Kafka is a logical place where you send message. Topics are split in 
 
 It is usual to hear, "send those message to the playlist topic" or "Consume the topic playlist".
 
-![Log anatomy](img/log-anatomy.png "Representation of how messages stored, in  order by Partitions")
+{{< illustration src="img/log-anatomy.png"        name="Log anatomy"            alt="Representation of how messages stored, in  order by Partitions" >}}
 
 ### Partition
 
 Each topic is stored physically by partition. At minimum, a topic has 1 (one) partition, but can have much more.
 
 When a message is received into a topic, a partition is selected and the message is stored inside. **The message will never be in another partition.**
-![Producing to second partition](img/producing-to-second-partition.png "A producer sending a message to a partitions leader, showing replcias")
-![Producing to partition](img/producing-to-partition.png "A producer sending a message on one partitions, showing replcias")
+{{< illustration src="img/producing-to-second-partition.png"        name="Producing to second partition"            alt="A producer sending a message to a partitions leader, showing replcias" >}}
+{{< illustration src="img/producing-to-partition.png"        name="Producing to partition"            alt="A producer sending a message on one partitions, showing replcias" >}}
 
 ### Partition replica
 
@@ -168,7 +168,7 @@ When having multiple partitions, a single node will be elected as Partition lead
 
 Partition leader can change when some events occurred. For example when a node is added/removed, or when partition configuration is changed.
 
-![Partitions](img/partitions.png "Partitions with replicas and leader in different colors")
+{{< illustration src="img/partitions.png"        name="Partitions"            alt="Partitions with replicas and leader in different colors" >}}
 
 ### Offset
 
@@ -178,7 +178,7 @@ Consumer will record process status on partition by committing offset, the numbe
 Each consumer's group.id will have its own offset. They all consume the same messages, but does not process them at 
 the same rate and need to record their progress independently.
 
-![consumer-groups.png](img/consumer-groups.png "Connection schematic of Consumer groups to Partitions")
+{{< illustration src="img/consumer-groups.png"        name="consumer-groups.png"            alt="Connection schematic of Consumer groups to Partitions" >}}
 
 The offset is a simple per-partition atomic counter. For example,
 
@@ -189,7 +189,7 @@ The offset is a simple per-partition atomic counter. For example,
 
 By design, it has one implication: **Consumer must process message in order.** This is intended, as designed like they said.
 
-![Data log](img/data-log.png "One datalog with two read offset at different places")
+{{< illustration src="img/data-log.png"        name="Data log"            alt="One datalog with two read offset at different places" >}}
 
 Unlike other message broker (nsq, rabbitMQ), it is not possible to acknowledge a particular message. 
 This is fundamental to understand because it will have a huge impact on retry/error strategies you will have to implements.
