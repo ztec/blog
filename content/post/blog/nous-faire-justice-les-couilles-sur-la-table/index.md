@@ -121,6 +121,24 @@ surtout d'aller plus loin que la simple prise de conscience.
     title_href="https://www.binge.audio/podcast/les-couilles-sur-la-table/04-prendre-en-charge"
 >}}
 
+
+## [#05 | Sortir de la justice punitive](https://www.binge.audio/podcast/les-couilles-sur-la-table/05-sortir-de-la-justice-punitive)
+
+> Si les institutions policières et judiciaires peinent à répondre à notre besoin de justice face à l’ampleur des violences sexistes et sexuelles, il existe d’autres manières de les réparer. Depuis plusieurs siècles, de multiples communautés progressistes s’y essayent, et se heurtent à un obstacle de taille : la logique punitive de la justice. L’idée que toute violence, ou toute erreur commise devrait être punie d’une sanction.
+>
+> Comment réparer les violences sexistes et sexuelles sans reproduire ces logiques punitives, venues des institutions policières et pénales ? À quoi sert le conflit, et comment y répondre sereinement ? Qu’est-ce que les pratiques punitives produisent au sein des milieux féministes, LGBTI+, antiracistes ou encore écolos ?
+>
+> [Plus d'info](https://www.binge.audio/podcast/les-couilles-sur-la-table/05-sortir-de-la-justice-punitive)
+
+
+{{<
+    mp3player href="https://sphinx.acast.com/p/acast/s/les-couilles-sur-la-table/e/65143c0d7e15ff0011010f98/media.mp3"
+    title="#05 | Sortir de la justice punitive" 
+    save_position="true"
+    start_position="40"
+    title_href="https://www.binge.audio/podcast/les-couilles-sur-la-table/05-sortir-de-la-justice-punitive"
+>}}
+
 Je rajouterais les nouveaux épisodes à l'occasion, cependant je vous recommande de vous abonner directement au podcast
 via votre application préférés ou via le [flux rss du podcast](https://feeds.acast.com/public/shows/aa928f4a-8155-4b36-b190-4dfd32da8a84)
 
