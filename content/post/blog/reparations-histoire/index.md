@@ -1,32 +1,34 @@
 ---
-title: "Réparation - un podcast poignant et essentiel"
+title: "Réparations - un podcast poignant et essentiel"
 date: 2023-12-08T00:00:00+02:00
 slug: "reparations-histoire-podcast"
-images: [/2023/post/reparations-histoire-podcast/img/]
-tags: ["podcast", "reco", "slavery"]
+images: [/2023/post/reparations-histoire-podcast/img/banner.png]
+sources: ["Insee/2022-ip1911-2-sentiment-discrimination", "SSMSI/2021-Interstats-45" ]
+tags: ["podcast", "reco", "slavery", "IA-helped"]
 ---
 
 ## Je vous recommande d'écouter le podcast "**Réparations**"
 
-Découvert grâce à binge audio lorsqu'ils ont repris les épisodes de ce podcast sur les flux de celui de "Kiffe ta race" 
-(Un autre podcast que je vous recommande chaudement d'écouter), cette série du podcast Histoire de [Paradiso Media](https://paradisomedia.io/) 
-est presque un impératif si vous voulez comprendre ou découvrir ce que Réparation veut dire pour les descendants d'esclavagisé. 
+Découvert grâce à Binge Audio lorsqu'ils ont repris les épisodes de ce podcast sur les flux de celui de "Kiffe ta race" (un autre podcast que je vous recommande chaudement d'écouter),
+cette série du podcast Histoire de [Paradiso Media](https://paradisomedia.io/) est presque un impératif si vous voulez comprendre ou découvrir ce
+que la Réparation veut dire pour les descendants d'esclavagisé.
 
 {{< illustration src="img/banner.png"        
     name="Réparations"
-    alt="Bannière et logo des épisodes de la série Réparation du podcast Histoire. Le titre de la série est au centre en noir sur fond orange. En haut a gauche un poing fermé de résistance; En bas a gauche on devine des chaines/entraves d'esclavagisé sur fond bleu; En haut a droite, un extrai de journal avec le titre \"Quinze avocat pour obtenir réparation\"; en bas a droite une vielle photo d'une manifestation avec une banderole ou l'on devine le texte \"Esclavage: Crime contre l'humanité\" " 
+    alt="Bannière et logo des épisodes de la série **Réparation** du podcast *Histoire*. Le titre de la série est centré en noir sur fond orange. En haut à gauche, un poing fermé de résistance. En bas à gauche, on devine des chaînes/entraves d'esclavagisé sur fond bleu. En haut à droite, un extrait de journal avec le titre \"Quinze avocats pour obtenir réparation\". En bas à droite, une vieille photo d'une manifestation avec une banderole où l'on devine le texte \"Esclavage : Crime contre l'humanité\"." 
 >}}
 
-Je découvre les combats militants et l'histoire, toujours en cours, de la reconnaissance des crimes commis
-par la France et les puissances coloniales. Mais surtout je découvre l'importance de quelque chose que je n'ai jamais vraiment
-appréhendé; Qui ne m'a jamais été enseigné; Que j'ai parfois survolé sans y prétter plus d'attention que ça ; 
-Les Réparations des crimes commis, lié à l'esclavage, par les puissances colloniales tels que la France.
+Je découvre les combats militants et l'histoire, toujours en cours, de la reconnaissance des crimes commis par la France
+et les puissances coloniales. Mais surtout, je découvre l'importance de quelque chose que je n'ai jamais vraiment appréhendé;
+qui ne m'a jamais été enseigné; que j'ai parfois survolé sans y prêter plus d'attention que ça; les Réparations des crimes commis, 
+liés à l'esclavage, par les puissances coloniales telles que la France.
 
-Considéré comme un crime contre l'humanité aux yeux de la loi française ([Loi Taubira](https://fr.wikipedia.org/wiki/Loi_tendant_%C3%A0_la_reconnaissance_de_la_traite_et_de_l%27esclavage_en_tant_que_crime_contre_l%27humanit%C3%A9)), 
-l'organisation de l'esclavage par la france parait si loin, et pourtant si près de nous historiquement. 
+Considéré comme un crime contre l'humanité aux yeux de la loi française 
+([Loi Taubira](https://fr.wikipedia.org/wiki/Loi_tendant_%C3%A0_la_reconnaissance_de_la_traite_et_de_l%27esclavage_en_tant_que_crime_contre_l%27humanit%C3%A9)), 
+l'organisation de l'esclavage par la France paraît si loin, et pourtant si près de nous historiquement.
 
-Dès les premiers épisodes, je me sens bien bête de découvrir les termes d'esclavagisé et esclavisé. Je vous laisse écouter pour comprendre
-pourquoi le terme d'esclave ne suffit pas et n'est pas approprié (épisode 2). 
+Dès les premiers épisodes, je me sens bien bête de découvrir les termes d'esclavagisé et esclavisé. 
+Je vous laisse écouter pour comprendre pourquoi le terme d'esclave ne suffit pas et n'est pas approprié (épisode 2). 
 C'est avec beaucoup d'émotions que j'écoute les témoignages, les récits et l'histoire de ces luttes.
 
 Récemment, je suis allé au [musée d'Aquitaine](https://www.musee-aquitaine-bordeaux.fr/fr/article/bordeaux-au-xviiie-siecle-le-commerce-triangulaire-et-lesclavage) à Bordeaux, 
@@ -45,13 +47,14 @@ Cette série résonne aussi beaucoup avec un documentaire qui m'avait été reco
 (en anglais "[Exterminate all the brutes](https://www.hbo.com/exterminate-all-the-brutes)"), que je vous recommande de visionner.
 
 ## S'éduquer
-Encore aujourd'hui, le racisme et les discriminations en général sont toujours présente et [semblent progresser](https://www.insee.fr/fr/statistiques/6473349). 
-Beaucoup ne s'en rendent pas compte (moi le premier), et se cachent derrière une illusion ~~de tolérance~~ (même ce mot est glaçant), d'acceptation et 
-d'indifférence. S'en extraire est difficile, même quand on en est conscient et on à pas forcément de prise sur toutes les formes de 
-racisme qui nous profite.
+Encore aujourd'hui, le racisme et les discriminations en général sont toujours présents et semblent progresser 
+( {{<source-link "/sources/insee/2022-ip1911-2-sentiment-discrimination">}}, {{<source-link "/sources/SSMSI/2021-Interstats-45">}} ). 
+Beaucoup ne s'en rendent pas compte (moi le premier) et se cachent derrière une illusion de tolérance (même ce mot est glaçant), 
+d'acceptation et d'indifférence. S'en extraire est difficile, même quand on en est conscient, 
+et on n'a pas forcément prise sur toutes les formes de racisme qui nous affectent.
 
-Ce documentaire est donc très instructif, et permet d'apprendre sur des sujets qui, soit-disant,
-ne me touche pas directement et dont la société, la république, décide d'en faire l'impasse.
+Ce documentaire est donc très instructif et permet d'apprendre sur des sujets qui, soi-disant, 
+ne me touchent pas directement et dont la société, la République, décide d'en faire l'impasse.
 
 ## Les Épisodes
 
@@ -178,8 +181,8 @@ ne me touche pas directement et dont la société, la république, décide d'en 
     title_href="https://shows.acast.com/652e7b982681ee0012ef75f6/episodes/652e7b9e0dec9b0012cad03f"
 >}}
 
-Après l'écoute de ces episode, je vais m'empresser de m'abonné au podcast [Histoire](https://lnk.to/lhistoire) et écouter les autres séries. Et vous ?
-
+Après l'écoute de ces épisodes, je vais m'empresser de m'abonner au podcast [Histoire](https://lnk.to/lhistoire) et écouter les autres séries. 
+Et vous ?
 
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:

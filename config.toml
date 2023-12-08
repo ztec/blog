@@ -81,7 +81,7 @@ enableEmoji = true
 [permalinks]
   quick = "/:year/:month/:slug/"
   post = "/:year/:section/:slug/"
-  sources = "/:section/:slug/"
+  sources = "/:sections/:slug/"
 
 
 [taxonomies]
