@@ -1,0 +1,4 @@
+{{ $origParams := .Params }}
+{{ with $.Site.GetPage (.Get 0) -}}
+   <a href="{{ ref . $origParams}}">{{ .Title }}</a>
+{{ end }}

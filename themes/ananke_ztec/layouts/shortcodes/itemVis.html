@@ -1,0 +1,5 @@
+{{ $style := (string (.Get "style"))}}
+
+<div class="itemVis" style="{{$style}}">
+    {{.Inner}}
+</div>

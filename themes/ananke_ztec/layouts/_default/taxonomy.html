@@ -1,15 +1,37 @@
 {{ define "main" }}
 <article class="mw8 center sans-serif">
-  <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy softerText">
-
-  </section>
-
-
 
     <header class="">
         <h1 class="f2 f2-m f1-ns mt3 mb1 tc fw1">
-            Tag: <a href="{{ .Permalink }}" class="hidden-link">{{- .Title -}}</a>
+            <a href="{{ .Permalink }}" class="hidden-link">{{- .Title -}}</a>
         </h1>
+        <div class="tc">
+            {{if .Date}}
+            <time class="f7 ml1 dib tracked" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+            {{- .Date.Format "January 2, 2006" -}}
+            </time>
+            {{ if .Content}}<span class="f7 dib tracked"> - </span>{{end}}
+            {{end}}
+            {{ if .Content}}
+            <span class="f7 dib tracked" >{{ .ReadingTime}} {{i18n "readingTime" .}}</span>
+            <span class="f7 dib tracked"> - </span>
+            <span class="f7 dib tracked">{{ .WordCount}} {{i18n "words" .}}</span>{{end}}
+        </div>
+        {{ if .Params.sources }}
+        <div class="tc tracked  mt1 ">
+            <svg title="Tag icon" class="dib h1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <title>Tags</title>
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+            {{ range $index, $val := .Params.sources }}
+            {{ with $.Site.GetPage (printf "/sources/%s" $val) -}}
+            {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
+            <a href="{{ .Permalink }}" class="f7 h100 dib v-top">{{ .Title }}</a>
+            {{end}}
+            {{ end }}
+        </div>
+        {{end}}
     </header>
 
     <div  class=" mt4 ph3
@@ -25,19 +47,58 @@
         {{end}}
         {{ if .Content }}
             {{- .Content -}}
-        <div class="mt5 bt b--light-silver w-50 center">
-        </div>
-        <div class="mt5 ph3">
-            {{ if len .Paginator.Pages }}
-                {{i18n "taxonomyPageList" .}}
-            {{ else }}
-                {{i18n "noTaxonomyPageList" .}}
-            {{end}}
-        </div>
+
         {{ end }}
     </div>
 </article>
+
+<ul class="pl4 pr4 mw8 center sans-serif ">
+    <div class="mt5 bt b--light-silver w-50 center">
+    </div>
+    <div class="mt5 f4">
+        {{ if len .Paginator.Pages }}
+        {{i18n "taxonomyPageList" .}}
+        {{ else }}
+        {{i18n "noTaxonomyPageList" .}}
+        {{end}}
+    </div>
+    <div class="mt3 ">
+    </div>
+    {{ $titleToMatch := .Title }}
+    {{ range $key, $source := .Site.Taxonomies.sources }}
+    {{ with $.Site.GetPage (path.Join "sources" $key) -}}
+    {{ $sourcePage := . }}
+    {{ range $key2, $sourceSource := .Params.Sources}}
+    {{ with $.Site.GetPage (path.Join "sources" $sourceSource) -}}
+    {{ if eq $titleToMatch .Title }}
+        <li class="f5 b mb0 ml0 "><a href="{{ $sourcePage.Permalink }}" class="link">{{ $sourcePage.Title }}</a></li>
+<!--        <p class="ml1 summary mb4">-->
+<!--            {{ if $sourcePage.Description}}-->
+<!--            {{$sourcePage.Description}}-->
+<!--            {{else}}-->
+<!--            {{if $sourcePage.Summary}}{{ $sourcePage.Summary  }} […]{{end}}-->
+<!--            {{end}}-->
+<!--        </p>-->
+
+    {{ end }}
+    {{end}}
+    {{end}}
+    {{end}}
+    {{ end }}
+</ul>
+
+
+
 <div class="pl4 pr4 mw8 center sans-serif ">
+<div class="mt5 bt b--light-silver w-50 center">
+</div>
+<div class="mt5 f4">
+    {{ if len .Paginator.Pages }}
+    {{i18n "taxonomyPageList" .}}
+    {{ else }}
+    {{i18n "noTaxonomyPageList" .}}
+    {{end}}
+</div>
   {{  range  $index, $currentPage := .Paginator.Pages }}
     <h1 class="f2 b mb0 ml0 "><a href="{{ .Permalink }}" class="link">{{ .Title }}</a></h1>
     <time class="f7 ml1 dib tracked" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
@@ -65,4 +126,5 @@
 </div>
 {{- template "_internal/pagination.html" . -}}
 {{ end }}
+
 

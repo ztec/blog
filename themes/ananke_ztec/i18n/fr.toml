@@ -32,10 +32,10 @@ other = "Une adresse e-mail est requise."
 other = "Envoyer"
 
 [taxonomyPageList]
-other = "Ci dessous vous trouverez la liste de toutes les pages qui utilisent le tag “{{ .Title }}”"
+other = "Ci dessous vous trouverez la liste de toutes les pages qui utilisent “{{ .Title }}”"
 
 [noTaxonomyPageList]
-other = "Il n'y a aucune page  écrite en français qui utilise le tag “{{ .Title }}”"
+other = "Il n'y a aucune page  écrite en français qui utilise “{{ .Title }}”"
 
 [commentAndDiscuss]
 other = "Bien qu'il ne soit pas possible de commenter sur ce blog, vous pouvez me joindre sur les réseaux sociaux via l'une des publications suivantes que j'ai faites "

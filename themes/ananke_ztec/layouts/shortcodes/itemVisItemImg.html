@@ -1,0 +1,13 @@
+{{ $image := .Page.Resources.GetMatch (.Get "img") }}
+{{ $repeat := (int (.Get "nb"))}}
+{{ $stylee := (.Get "stylee")}}
+{{ $alt := (.Get "alt")}}
+{{ $itemPerLine := (int (.Parent.Get "nbPerLine")) }}
+
+
+{{ range $i, $sequence := (seq $repeat) }}
+    <div class="itemVisItem" style="{{$stylee}}; width: calc((100% - ({{$itemPerLine}} * 2px) ) / ( {{$itemPerLine}}));">
+        <img alt="{{$alt}}" title="{{$alt}}"  src="{{$image.RelPermalink | safeURL }}"  />
+    </div>
+{{end}}
+

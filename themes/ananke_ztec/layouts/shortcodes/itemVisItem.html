@@ -1,0 +1,9 @@
+{{ $repeat := (int (.Get "nb"))}}
+{{ $stylee := (.Get "style")}}
+{{ $itemPerLine := (int (.Parent.Get "nbPerLine")) }}
+
+{{ range $i, $sequence := (seq $repeat) }}
+    <div class="itemVisItem" style="{{$stylee}}; width: calc(100% / {{$itemPerLine}});">
+        {{.Inner}}
+    </div>
+{{end}}
