@@ -4,6 +4,9 @@ date: 2024-03-06T12:00:00+02:00
 slug: "semi-saga/le-debut-serre-kallax"
 images: [/2024/post/semi-saga/le-debut-serre-kallax/img/serre-kallax-04_hue723daa16d9678c917ee276e55afa68d_7452447_1024x0_resize_q75_box.jpg]
 tags: ["3615-my-life", "plants", "semi", "ikehack", "IA-helped"]
+promotions:
+  mastodon: https://mamot.fr/@ztec/112049606427702322
+  twitter: https://twitter.com/Ztec6/status/1765409130305442144
 ---
 
 > Lecteur : Je n'ai pas le temps, tu parles de quoi ?
