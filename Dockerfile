@@ -1,4 +1,4 @@
-FROM klakegg/hugo:0.105.0-ext as builder
+FROM floryn90/hugo:0.123.7-ext as builder
 WORKDIR /app
 ENV HUGO_ENV="production"
 ADD ./ /app

@@ -46,7 +46,7 @@ Often, the light is hard to catch, and the dynamic make it hard to capture the s
 I really love this building. It always catches my eye. You can enjoy it by being close or far away. It's always a different expérience. Reflections always amaze me and I really like the way the tiles on the walls are shaped. It creates mouvements following curves, shaping the reflections in all directions. 
 
 {{< photo-gallery >}}
-{{< photo src="photos/Slide 1.jpg" name="[Side 1](*https://www.flickr.com/photos/ztec/52504636736)" alt="Picture of the Philharmonie in Paris, a concert hall. Warm colors of the sun reflects on the cold mirror texture of the building walls. A man is standing and looking closely at one wall" >}}
+{{< photo src="photos/Slide 1.jpg" name="[Side 1](https://www.flickr.com/photos/ztec/52504636736)" alt="Picture of the Philharmonie in Paris, a concert hall. Warm colors of the sun reflects on the cold mirror texture of the building walls. A man is standing and looking closely at one wall" >}}
 {{< photo src="photos/Migrating to slide 2.jpg" name="[Side 2](https://www.flickr.com/photos/ztec/52504636781)" alt="Picture of the Philharmonie in Paris, a concert hall. Warm colours of the sun reflects on the cold mirror texture of the building walls. A man is in the middle walking towards the other side" >}}
 {{</photo-gallery>}}
 
