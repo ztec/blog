@@ -1,22 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ .Values.app }}"
+  name: "blog"
   labels:
-    app: {{ .Values.app }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app: "blog"
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: 3
   selector:
     matchLabels:
-      app: {{ .Values.app }}
-      release: {{ .Release.Name }}
+      app: "blog"
   template:
     metadata:
       labels:
-        app: {{ .Values.app }}
-        release: {{ .Release.Name }}
+        app: "blog"
     spec:
       imagePullSecrets:
         - name: git2.riper.fr-key
@@ -25,12 +21,12 @@ spec:
           persistentVolumeClaim:
             claimName: blog-pvc
       containers:
-        - name: {{ .Release.Name }}
-          image: "{{ required "image.name is required, specify it with --set-string image.name:toto" .Values.image.name }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy | default "Always" }}
+        - name: "nginx"
+          image: "git2.riper.fr/ztec/blog:102"
+          imagePullPolicy: "IfNotPresent"
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: 80
           livenessProbe:
             httpGet:
               path: /
@@ -47,6 +43,4 @@ spec:
             - mountPath: /var/log/nginx
               subPath: logs
               name: blog-volume
-          resources:
-{{ toYaml .Values.resources | indent 12 }}
 

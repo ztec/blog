@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          path: blog
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          registry: git2.riper.fr
+          username: ${{ vars.DOCKER_LOGIN }}
+          password: ${{ vars.DOCKER_TOKEN }}
+      - name: Docker build
+        run: docker buildx build -t git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }} blog
+      - name: Docker push
+        run: docker push git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }}
+  Deploy:
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Get kubectl
+        run: |
+          curl -LO "https://dl.k8s.io/release/v1.27.15/bin/linux/amd64/kubectl"
+          chmod +x kubectl
+      - name: Set Kubectl context
+        uses: https://github.com/Azure/k8s-set-context@v3
+        with:
+          kubeconfig: ${{ vars.KUBE_CONFIG_TRANTOR }}
+      - name: "Deploy"
+        run: |
+          cat <<EOF > ./kustomization.yaml
+          apiVersion: kustomize.config.k8s.io/v1beta1
+          kind: Kustomization
+          resources:
+            - k8s/          
+          images:
+            - name: git2.riper.fr/ztec/blog
+              newName: git2.riper.fr/ztec/blog
+              newTag: "${{ github.ref_name }}-${{ github.run_id }}"
+          EOF
+          ./kubectl apply -k ./
