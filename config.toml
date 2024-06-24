@@ -23,7 +23,7 @@ enableEmoji = true
 
 [[menu.main]]
     name = "À propos"
-    url = "/page/a-propos/"
+    url = "https://www.ztec.fr/qui-suis-je/#article"
     weight = 90
 
 
@@ -45,7 +45,7 @@ enableEmoji = true
             weight = 50
         [[languages.en.menu.main]]
             name = "About"
-            url = "/en/page/about/"
+            url = "https://www.ztec.fr/en/whoami/#article"
             weight = 90
 
 [sitemap]
