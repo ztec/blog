@@ -115,6 +115,7 @@ article figure.illustration{
 
 article figure.illustration img{
     border-radius: 5px;
+    max-height: 500px;
 }
 
 article figure.illustration figcaption{
@@ -151,6 +152,10 @@ header {
     border-radius: 5px;
 }
 
+code {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
 
     /** Dark theme colors **/
 

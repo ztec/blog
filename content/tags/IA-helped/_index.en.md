@@ -1,9 +1,10 @@
 ---
-title: "IA helped"
+title: "Proofread by an LLM"
 ---
 
 Article with this tag mean I used an IA tool to help me. 
-I mostly use them to fix my text and remove typos. IA is of great help for that.
+Or more precisely a Large Language Model (LLM).
+I mostly use them to fix my text and remove typos. LLMs are of great help for that.
 
 I also use it to find other ways to translate when I'm short of ideas and not pleased with my first version.
 Rarely as first translation.

@@ -1,8 +1,9 @@
 ---
-title: "Aidé d'une IA"
+title: "Corrigé par un LLM"
 ---
 
 Les articles portant ce tag ont bénéficié de l'aide d'une IA. 
+Ou plus précisément d'un gros modèle de langage (LLM).
 Je l'utilise principalement pour corriger les fautes et erreurs de frappe. 
 Les outils de ce genre sont très efficaces pour cela.
 

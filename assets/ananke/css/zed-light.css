@@ -1,6 +1,3 @@
-pre {
-    background-color: rgb(200, 200, 200);
-}
 
 /** Light theme colors **/
 /* will be applied on body */
@@ -57,9 +54,14 @@ a.hidden-link:hover:after {
 }
 
 
-.z-theme-light code, .z-theme-light pre {
+.z-theme-light pre, .z-theme-light pre>code {
     background-color : rgb(40, 40, 41);
     color: #e9e9e9;
+}
+
+.z-theme-light code{
+    background-color: rgb(200, 200, 200);
+    color: rgb(40, 40, 41);
 }
 
 

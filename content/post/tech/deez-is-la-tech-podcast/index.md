@@ -4,12 +4,13 @@ date: 2023-06-07T00:00:00+02:00
 slug: "deez-is-la-tech-podcast-termine-sa-saison-1"
 images: [/2023/post/deez-is-la-tech-podcast-termine-sa-saison-1/img/Deez_is_la tech_banner_hu251062474fa46cd1e4b36816e7d49a51_2987978_1024x0_resize_box_3.png]
 tags: ["podcast", "deezer", "tech", "IA-helped"]
+sources: ["zibok"]
 promotions:
   mastodon: https://mamot.fr/@ztec/110501586903677948
   twitter: https://twitter.com/Ztec6/status/1666369706578542592
 ---
 
-Depuis quelque temps, grâce à la brillante [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048), j'anime avec [zibok](https://pouet.chapril.org/@zibok) un podcast tech.
+Depuis quelque temps, grâce à la brillante [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048), j'anime avec {{<source-link "/sources/zibok">}} un podcast tech.
 Le premier épisode a été enregistré en 2021. C'était une première pour moi aussi bien à l'animation,
 la préparation (même si c'est Pauline qui a tout fait de ce côté-là) et surtout l'enregistrement.
 À l'occasion de la sortie du dernier épisode de la saison 1, je vous livre un petit retour d'expérience.
