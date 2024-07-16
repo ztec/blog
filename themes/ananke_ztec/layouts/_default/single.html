@@ -92,7 +92,7 @@
               {{ range $index, $val := .Params.tags }}
                 {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
                         {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
-                        <a href="{{ .Permalink }}" class="f7 h100 dib v-top">{{ .Title }}</a>
+                        <a href="{{ .Permalink }}" class="f7 h100 v-top">{{ .Title }}</a>
                 {{end}}
               {{ end }}
             </li>

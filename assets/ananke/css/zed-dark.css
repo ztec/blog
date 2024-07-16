@@ -9,8 +9,8 @@
 
 /* LINKS */
 .z-theme-dark a:after {
-    background: hsl(248, 42%, 74%);
-    background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);
+    /*background: hsl(248, 42%, 74%);*/
+    /*background: linear-gradient(90deg, rgba(92,78,183,1) 0%, rgba(67,172,199,1) 20%, rgba(128,209,82,1) 40%, rgba(245,242,97,1) 60%, rgba(255,157,77,1) 80%, rgba(255,84,71,1) 100%);*/
 }
 .z-theme-dark a {
     color: hsl(248, 42%, 74%);
