@@ -2,7 +2,7 @@
 title: "Mise à jour Node.js 20 : une aventure inattendue, quand Kubernetes joue avec ma HEAP"
 date: 2024-09-18T07:00:00+02:00
 slug: "node.js-20-aventure-inattendue-kubernetes"
-images: [2024/post/node.js-20-upgrade-heap-issues/img/deploy-1-HEAP-GC.png]
+images: [2024/post/node.js-20-aventure-inattendue-kubernetes/img/deploy-2-system.png]
 summary: "Embarquez pour le voyage d'une mise à jour de Node.js, où les bonnes pratiques de l'univers Kubernetes ont eu des conséquences inattendues sur la mémoire HEAP."
 tags: ["node.js", "tech", "kubernetes", "IA-helped"]
 ---
