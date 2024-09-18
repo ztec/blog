@@ -386,4 +386,4 @@ Thanks for reading me,\
 —
 
 Many thanks to [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048/) and [Gillian Kelly](https://www.linkedin.com/in/gillian-kelly) for their help in writing this article.
-You can also find this article on Deezer.io : https://deezer.io
+You can also find this article on Deezer.io : [https://deezer.io](https://deezer.io/node-js-20-upgrade-a-journey-through-unexpected-heap-issues-with-kubernetes-27ae3d325646)
