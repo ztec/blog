@@ -5,6 +5,10 @@ slug: "node.js-20-upgrade-journey-though-unexpected-heap-issues-with-kubernetes"
 images: [2024/post/node.js-20-aventure-inattendue-kubernetes/img/deploy-2-system.png]
 description: "The journey to an high availability NodeJS upgrade (18 to 20) and the unexpected consequences induced by Kubernetes best practices. Hop in!"
 tags: ["node.js", "tech", "kubernetes", "human-helped"]
+promotions:
+  twitter: https://x.com/DeezerDevs/status/1836344420700139779
+  mastodon: https://mamot.fr/@ztec/113158009756849020
+  bluesky: https://bsky.app/profile/ztec.fr/post/3l4gc37ytei22
 ---
 This summer, I upgraded a project from Node 18 to Node.js 20. 
 The code was not that old, and I did not expect any problems….But as with every Node.js upgrade, unexpected behaviors happened.<!--more-->

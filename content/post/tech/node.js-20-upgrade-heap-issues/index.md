@@ -5,6 +5,9 @@ slug: "node.js-20-aventure-inattendue-kubernetes"
 images: [2024/post/node.js-20-aventure-inattendue-kubernetes/img/deploy-2-system.png]
 description: "Embarquez pour le voyage d'une mise à jour de Node.js, où les bonnes pratiques de l'univers Kubernetes ont eu des conséquences inattendues sur la mémoire HEAP."
 tags: ["node.js", "tech", "kubernetes", "IA-helped"]
+promotions:
+    twitter: https://x.com/Ztec6/status/1836344503222849741
+    mastodon: https://mamot.fr/@ztec/113157970545202111
 ---
 
 Cet été, j'ai mis à jour un projet de Node.js 18 à Node.js 20. Le code n'était pas si vieux et je ne m'attendais pas à avoir des problèmes.
