@@ -382,6 +382,9 @@ The final ~~word~~ paragraph is:
 > performance of your Node.js process.
 > The “--max-semi-space-size” parameter must be considered in those scenarios.
 
+#### Update 24th October 2024
+[Joe Bowbeer](https://github.com/joebowbeer) opened an [issue](https://github.com/nodejs/node/issues/55487) and proposed a [PR](https://github.com/nodejs/node/pull/55495) on Node.js project to clarify the semi-space behavior. 
+PR still open for review as of today. 
 
 Thanks for reading me,\
 [Bisoux](/page/bisoux) :kissing:

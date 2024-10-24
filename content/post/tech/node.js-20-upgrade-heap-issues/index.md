@@ -425,5 +425,9 @@ Le ~~mot~~ paragraph de la fin est :
 > il faut y prêter suffisamment attention pour ne pas impacter les performances de manière inattendue. 
 > Le paramètre --max-semi-space-size est à garder en tête dans ce cas.
 
+#### Mise à jour 24th October 2024
+[Joe Bowbeer](https://github.com/joebowbeer) a ouvert une [issue](https://github.com/nodejs/node/issues/55487) et proposé une [PR](https://github.com/nodejs/node/pull/55495) directement sur le projet Node.js pour clarifier le comportement du "semi-space".
+PR toujours en attente de review à ce jour.
+
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
