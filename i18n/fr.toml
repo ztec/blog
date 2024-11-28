@@ -1,0 +1,36 @@
+[commentAndDiscuss]
+other = "Bien qu'il ne soit pas possible de commenter sur ce blog, vous pouvez me joindre sur les réseaux sociaux via l'une des publications suivantes de cet article :"
+
+[promotion]
+other = "Promotions"
+
+
+[readingTime]
+other = "minutes de lecture"
+
+[words]
+other = "mots"
+
+[publishAt]
+other = "Publié le"
+
+[updatedAt]
+other = "Modifié la dernière fois le"
+
+[availableTranslation]
+other = "Traduction de cet article disponible"
+
+[publishIn]
+other = "Publié dans les catégories"
+
+[copyright]
+other = "Á l'exception des oeuvres citées qui concervent leur droits et attribution originaux, article et son contenu publié sous la licence <a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr\" ><b>Creative Commons</b></a><sup>(CC BY-NC-SA 4.0)</sup>"
+
+[foundATypo]
+other = "Si vous avez trouvé une faute d'ortographe, d'accord, ou une coquille"
+
+[suggestAFix]
+other = "suggerez moi directement une correction via Github"
+
+[subescribeRss]
+other = "Vous pouvez vous abonné à ce blog par <a href=\"/page/flux-rss/\"><img style=\"height: 1em\" src=\"/rss-feed.svg\" alt=\"RSS icon\" /> RSS</a> pour recevoir les nouveaux articles dès leur parution"

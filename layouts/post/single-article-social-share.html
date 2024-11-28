@@ -1,0 +1,28 @@
+<section class="article-social-share">
+    <div class="rainbow divider"></div>
+    <p>{{i18n "commentAndDiscuss" .}}</p>
+    {{ if .Params.promotions }}
+    <div class="">
+        {{ range $network, $promo := .Params.promotions }}
+        <a href="{{ $promo }}" class="" target="_blank">
+            {{ if eq $network "twitter" }}
+            <img style="height: 1em" src="{{$.Site.BaseURL}}twitter.svg" alt="Twitter logo" /> Twitter
+            {{else if eq $network "mastodon" }}
+            <img style="height: 1em" src="{{$.Site.BaseURL}}mastodon.svg" alt="Mastodon logo" /> Mastodon
+            {{else if eq $network "bluesky" }}
+            <img style="height: 1em" src="{{$.Site.BaseURL}}Bluesky_Logo.svg" alt="Bluesky logo" /> Bluesky
+            {{else }}
+            <img style="height: 1em" src="{{$.Site.BaseURL}}social.svg" alt="Share icon" />
+            {{ $network }}
+            {{end}}
+        </a>
+        {{end}}
+    </div>
+    {{else}}
+    <div class="">
+        <a href="https://mamot.fr/@ztec"><img style="height: 1em" src="{{$.Site.BaseURL}}mastodon.svg" alt="Twitter logo" /> @ztec@mamot.fr</a>
+        <a href="https://twitter.com/ztec6"  class="ml2"><img style="height: 1em" src="{{$.Site.BaseURL}}twitter.svg" alt="Twitter logo" /> @ztec6</a>
+        <a href="https://bsky.app/profile/ztec.fr"  class="ml2"><img style="height: 1em" src="{{$.Site.BaseURL}}Bluesky_Logo.svg" alt="Bluesky logo" /> @ztec.fr</a>
+    </div>
+    {{end}}
+</section>

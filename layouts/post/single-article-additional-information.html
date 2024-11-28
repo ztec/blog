@@ -1,0 +1,65 @@
+<section class="article-additional-information">
+    <div class="rainbow divider"></div>
+    <ul class="">
+        {{if .Date}}
+        <li >
+            {{i18n "publishAt" .}}
+            <b><time {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                {{- .Date.Format "2 January 2006" -}}
+                </time></b>
+        </li>
+        {{end}}
+        {{if (and (and .Lastmod .Date) (ne .Lastmod .Date) ) }}
+        <li >
+            {{i18n "updatedAt" .}}
+            <b><time {{ printf `datetime="%s"` (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                {{- .Lastmod.Format "2 January 2006" -}}
+                </time></b>
+        </li>
+        {{end}}
+        {{ if .IsTranslated }}
+        <li>{{i18n "availableTranslation" .}} :  {{ range .Translations }}<a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>{{ end}}
+        {{end}}
+
+        {{ if .Params.tags }}
+        <li class="">
+            {{i18n "publishIn" .}} :
+            {{ range $index, $val := .Params.tags }}
+            {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+            {{if gt $index 0 }}<span class="f7 h100 dib v-top"> - </span>{{end}}
+            <a href="{{ .Permalink }}" class="f7 h100 v-top">{{ .Title }}</a>
+            {{end}}
+            {{ end }}
+        </li>
+        {{end}}
+
+        {{ if .Params.promotions }}
+        <li >
+            {{i18n "promotion" .}} :
+            {{ range $network, $promo := .Params.promotions }}
+            <a href="{{ $promo }}" >
+                {{ if eq $network "twitter" }}
+                <img style="height: 1em" src="{{$.Site.BaseURL}}twitter.svg" alt="Twitter logo" /> Twitter
+                {{else if eq $network "mastodon" }}
+                <img style="height: 1em" src="{{$.Site.BaseURL}}mastodon.svg" alt="Mastodon logo" /> Mastodon
+                {{else if eq $network "bluesky" }}
+                <img style="height: 1em" src="{{$.Site.BaseURL}}Bluesky_Logo.svg" alt="Bluesky logo" /> Bluesky
+                {{else }}
+                <img style="height: 1em" src="{{$.Site.BaseURL}}social.svg" alt="Share icon" />
+                {{ $network }}
+                {{end}}
+            </a>
+            {{end}}
+        </li>
+        {{end}}
+        <li >
+            {{i18n "copyright" | safeHTML }} <img style="max-height: 1em" class="dib" src="/CCANSA80x15.png" />
+        </li>
+        <li>
+            {{i18n "foundATypo" .}} <a target="_blank" href="https://github.com/ztec/blog/edit/main/content/{{.File.Path}}">{{i18n "suggestAFix" .}}</a>.
+        </li>
+        <li>
+            {{i18n "subescribeRss"  | safeHTML }}
+        </li>
+    </ul>
+</section>

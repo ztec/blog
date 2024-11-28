@@ -1,0 +1,19 @@
+<section class="list-sub-title">
+    <time {{ printf `datetime="%s" ` (.Date.Format
+    "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+    {{- .Date.Format "January 2, 2006" -}}
+    </time>
+    <span class="reading-time">{{ .ReadingTime}} minutes read</span>
+    <span >{{ .WordCount}} {{i18n "words" .}}</span>
+
+    {{if .Params.tags }}
+    <span class="tags">
+            {{ range $index, $val := .Params.tags }}
+                {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                    {{if gt $index 0 }} - {{end}}
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{end}}
+           {{ end }}
+      </span>
+    {{end}}
+</section>
