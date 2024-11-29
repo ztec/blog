@@ -1,3 +1,0 @@
-[submodule "themes/hugo_theme_ztec"]
-	path = themes/hugo_theme_ztec
-	url = ssh://git@git.riper.fr:22023/ztec/hugo_theme_ztec.git
