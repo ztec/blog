@@ -14,6 +14,7 @@ jobs:
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
           submodules: 'recursive'
           ssh-strict: 'false'
+          ssh-known-hosts: 'git.riper.fr ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+9QpzcJrR0EXM4kXks4GZFwt5c+KB/z0G0sXRmkVq+e5zzZM9JxzSUUG8xr6X5Ngu7N/POHTzEDrti5le9nwKWHRU7dg2dH9u8HgQYVjGon70c9Os/nvRduzacBN50mtuJ12hAgJ2HhpMB90kSTGYVt5I1aDC1k2uEhI8B3GnBy9Bo1fonsobxzSJDEywFuu/57ow/64W8rFljV89PQy9IF7xzPKccwQN1vVhvoC8NC9Sid0vIGp+KBLW8EjR93WM/KteEvmffFyETN2CFlFKWy2x4ULPf9YNBbu5VFdI2nVIUM9AvZl0Z6/KliwoKkjtdM/dwKkhQ/UGkmlTll57MgV+oJdFXEDvWg8JT1p5QjJ/pf6f7uLHWP/IAiyDY2EB+8A3BgxBtTkOv00pS2IjshG79aPYQ+gg6ALWUu2MzGDJNaMwjTeYKAityVg850jgquKvll/z7cekQAhHPw1O0rj1t2QfFZdgJK/E2E/azODhT640oTyfQ7hWd4stXkLwxFBkqS85HFCuAbK8I40IcWsDQHN1rTVJJWIHt8P1n6Cx/8e/WLtoz00kC/vlM9zWsZkyS6Rq/xQt+TxMSNKnT3k86awYQ1VRI5x/m2yUO2TRgB15OTslmoA+wFgZ2568kPB13fsY0pqXpSNEFBRu0T95svO+t8T8uAjr3hDiWQ=='
       - name: Docker login
         uses: docker/login-action@v3
         with:
