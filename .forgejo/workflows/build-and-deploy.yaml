@@ -16,7 +16,7 @@ jobs:
           chmod 0700 ~/.ssh/id_rsa
           ls -la ~/.ssh
           cat ~/.ssh/id_rsa
-          GIT_SSH_COMMAND='ssh -v -i ~/.ssh/id_rsa -o IdentitiesOnly=yes' git clone ssh://git@git.riper.fr:22023/ztec/blog.git 
+          GIT_SSH_COMMAND='ssh -v -i ~/.ssh/id_rsa -o IdentitiesOnly=yes StrictHostKeyChecking=no CheckHostIP=no' git clone ssh://git@git.riper.fr:22023/ztec/blog.git 
           cd blog
           git submodule update --init --recursive
       - name: Docker login
