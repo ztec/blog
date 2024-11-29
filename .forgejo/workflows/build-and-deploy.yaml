@@ -13,6 +13,7 @@ jobs:
           path: blog
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
           submodules: 'recursive'
+          ssh-strict: 'false'
       - name: Docker login
         uses: docker/login-action@v3
         with:
