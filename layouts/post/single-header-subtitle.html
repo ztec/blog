@@ -7,13 +7,11 @@
     <span >{{ .WordCount}} {{i18n "words" .}}</span>
 
     {{if .Params.tags }}
-    <span class="tags">
             {{ range $index, $val := .Params.tags }}
                 {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
                     {{if gt $index 0 }} - {{end}}
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 {{end}}
            {{ end }}
-      </span>
     {{end}}
 </section>

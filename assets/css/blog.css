@@ -35,8 +35,6 @@ article header h1 a {
 
 article header .list-sub-title{
     font-size: 0.8rem;
-    display: flex;
-    flex-direction: row;
     margin-bottom: 2rem;
 }
 article header .list-sub-title span:before{
