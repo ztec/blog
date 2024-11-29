@@ -13,6 +13,7 @@ jobs:
           cat >~/.ssh/id_rsa <<STRING
           ${{ secrets.GIT_SSH_KEY }}
           STRING
+          cat >~/.ssh/config
           git clone ssh://git@git.riper.fr:22023/ztec/blog.git 
           cd blog
           git submodule update --init --recursive
