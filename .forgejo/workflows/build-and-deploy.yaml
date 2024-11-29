@@ -7,14 +7,7 @@ jobs:
   Build:
     runs-on: ubuntu-22.04
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-          path: blog
-          ssh-key: ${{ secrets.GIT_SSH_KEY }}
-          ssh-known-hosts: ${{ vars.HOST_KEY }}
-          submodules: 'false'
-          ssh-strict: 'false'
+
       - name: "Manual checkout"
         run: |
           cat >~/.ssh/id_rsa <<STRING
