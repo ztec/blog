@@ -12,6 +12,7 @@ jobs:
         with:
           path: blog
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
+          ssh-known-hosts: ${{ vars.HOST_KEY }}
           submodules: 'false'
           ssh-strict: 'false'
       - name: Docker login
