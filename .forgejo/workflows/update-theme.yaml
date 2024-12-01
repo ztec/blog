@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch: {}
+jobs:
+  Build:
+    runs-on: ubuntu-22.04
+    steps:
+
+      - name: "Update theme"
+        run: |
+          cat >~/.ssh/id_rsa <<STRING
+          ${{ secrets.GIT_SSH_KEY }}
+          STRING
+          chmod 0700 ~/.ssh/id_rsa
+          GIT_SSH_COMMAND='ssh -v -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=no -o CheckHostIP=no' git clone ssh://git@git.riper.fr:22023/ztec/blog.git 
+          cd blog
+          git submodule update --init --recursive
+          git submodule foreach git pull origin master
+          git config --global user.email "butler@riper.fr"
+          git config --global user.name "Butler"
+          git commit -am "Update theme"
+          git push
