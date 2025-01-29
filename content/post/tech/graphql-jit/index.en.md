@@ -5,6 +5,10 @@ slug: "is-graphql-jit-worth-it"
 images: [2025/post/graphql-jit-est-t-il-vraiment-plus-performant/img/cover-en.jpg]
 description: "Revisiting the choice of using GraphQL JIT after a few years of real world usage on a GraphQL API"
 tags: ["tech", "node.js", "graphql", "performance", "human-helped"]
+promotions:
+  twitter: https://x.com/DeezerDevs/status/1884558357534507222
+  mastodon: https://mamot.fr/deck/@ztec/113911372387577561
+  bluesky: https://bsky.app/profile/ztec.fr/post/3lgutyt5roj25
 ---
 
 

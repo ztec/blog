@@ -5,6 +5,10 @@ slug: "graphql-jit-est-t-il-vraiment-plus-performant"
 images: [2025/post/graphql-jit-est-t-il-vraiment-plus-performant/img/cover-fr.jpg]
 description: "Revisiter le choix d'utiliser GraphQL JIT après quelques années d'utilisation réelle sur une API GraphQL"
 tags: ["tech", "node.js", "graphql", "performance", "IA-helped"]
+promotions:
+  twitter: https://x.com/Ztec6/status/1884565919386456395
+  mastodon: https://mamot.fr/deck/@ztec/113911431397975652
+  bluesky: https://bsky.app/profile/ztec.fr/post/3lguutoxkax2q
 ---
 
 ## Historique
