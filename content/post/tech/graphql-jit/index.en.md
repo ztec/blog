@@ -266,6 +266,7 @@ In conclusion:
 Thanks for reading me,\
 [Bisoux](/page/bisoux) :kissing:
 
-—
+---
+
 Many thanks to [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048/) and [Gillian Kelly](www.linkedin.com/in/gillian-kelly) for their help in writing this article.
 You can also find this [article](https://deezer.io/graphql-jit-is-it-worth-it-64e66f21dbb8), on [Deezer.io](https://deezer.io/graphql-jit-is-it-worth-it-64e66f21dbb8)
