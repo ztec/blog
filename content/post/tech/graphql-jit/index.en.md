@@ -1,6 +1,6 @@
 ---
 title: "GraphQL  JIT, is it worth it?"
-date: 2025-01-24T00:00:00+02:00
+date: 2025-01-29T00:00:00+02:00
 slug: "is-graphql-jit-worth-it"
 images: [2025/post/graphql-jit-est-t-il-vraiment-plus-performant/img/cover-en.jpg]
 description: "Revisiting the choice of using GraphQL JIT after a few years of real world usage on a GraphQL API"

@@ -1,6 +1,6 @@
 ---
 title: "GraphQL JIT, qu'est-ce que c'est qu'ce binz ?"
-date: 2025-01-24T00:00:00+02:00
+date: 2025-01-29T00:00:00+02:00
 slug: "graphql-jit-est-t-il-vraiment-plus-performant"
 images: [2025/post/graphql-jit-est-t-il-vraiment-plus-performant/img/cover-fr.jpg]
 description: "Revisiter le choix d'utiliser GraphQL JIT après quelques années d'utilisation réelle sur une API GraphQL"
