@@ -268,4 +268,4 @@ Thanks for reading me,\
 
 —
 Many thanks to [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048/) and [Gillian Kelly](www.linkedin.com/in/gillian-kelly) for their help in writing this article.
-You can also find this article, a French version of it, and more on my personal blog: https://blog.ztec.fr/en/
+You can also find this [article](https://deezer.io/graphql-jit-is-it-worth-it-64e66f21dbb8), on [Deezer.io](https://deezer.io/graphql-jit-is-it-worth-it-64e66f21dbb8)
