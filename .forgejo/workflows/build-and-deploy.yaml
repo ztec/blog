@@ -38,7 +38,7 @@ jobs:
           curl -LO "https://dl.k8s.io/release/v1.27.15/bin/linux/amd64/kubectl"
           chmod +x kubectl
       - name: Set Kubectl context
-        uses: https://github.com/Azure/k8s-set-context@v3
+        uses: https://github.com/Azure/k8s-set-context@v4  
         with:
           kubeconfig: ${{ vars.KUBE_CONFIG_TRANTOR }}
       - name: "Deploy"
