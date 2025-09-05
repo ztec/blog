@@ -12,7 +12,7 @@ run:
 
 
 # Pushes main from private to public.
-push-public:
+push:
 	@if [ "$$(git rev-parse --abbrev-ref HEAD)" != "main" ] || \
        [ "$$(git rev-parse --abbrev-ref --symbolic-full-name @{u})" != "private/main" ]; then \
       echo "Error: Must be on 'main' branch tracking 'private/main'."; exit 1; \
@@ -21,7 +21,7 @@ push-public:
 	git push public private/main:main
 
 # Syncs main from public to private with rebase.
-sync-public:
+sync:
 	@if [ "$$(git rev-parse --abbrev-ref HEAD)" != "main" ] || \
        [ "$$(git rev-parse --abbrev-ref --symbolic-full-name @{u})" != "private/main" ]; then \
       echo "Error: Must be on 'main' branch tracking 'private/main'."; exit 1; \
