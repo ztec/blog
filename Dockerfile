@@ -1,4 +1,4 @@
-FROM floryn90/hugo:0.139.2-ext AS builder
+FROM floryn90/hugo:0.149.1-ext AS builder
 WORKDIR /app
 ENV HUGO_ENV="production"
 ADD --chown=hugo:hugo ./ /app

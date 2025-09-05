@@ -3,7 +3,6 @@ title = "Chez Zed"
 theme = "hugo_theme_ztec"
 enableRobotsTXT = true
 disable_share = true
-Paginate = 99 
 googleAnalytics = ""
 enableGitInfo = true
 staticDir = ["assets"]
@@ -13,6 +12,8 @@ DefaultContentLanguage = "fr"
 enableEmoji = true
 summaryLength = 10
 
+[pagination]
+    pagerSize = 99
 
 
 [[menu.main]]
