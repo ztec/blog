@@ -21,4 +21,5 @@ sync-public:
 	git fetch public main
 	git checkout private/main
 	git rebase public/main
-	git push private HEAD:main
+	git push --force private HEAD:main
+	git checkout main
