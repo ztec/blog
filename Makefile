@@ -7,7 +7,7 @@ else
 BASEURL := http://localhost:$(PORT)/
 endif
 
-run:
+dev:
 	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false
 
 
