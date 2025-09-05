@@ -2,3 +2,4 @@ public/
 logs/
 .hugo_build.lock
 resources/
+.idea/
