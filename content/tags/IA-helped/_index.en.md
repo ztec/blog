@@ -1,5 +1,8 @@
 ---
 title: "Proofread by an LLM"
+menu:
+  footer:
+    name: "IA Manifesto"
 ---
 
 Article with this tag mean I used an IA tool to help me. 

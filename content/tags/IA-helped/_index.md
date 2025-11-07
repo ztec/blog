@@ -1,5 +1,8 @@
 ---
 title: "Corrigé par un LLM"
+menu:
+  footer:
+    name: "Manifest IA"
 ---
 
 Les articles portant ce tag ont bénéficié de l'aide d'une IA. 

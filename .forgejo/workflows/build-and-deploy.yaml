@@ -5,7 +5,7 @@ on:
   workflow_dispatch: {}
 jobs:
   Build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
 
       - name: "Manual checkout"
@@ -28,7 +28,7 @@ jobs:
       - name: Docker push
         run: docker push git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }}
   Deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: checkout

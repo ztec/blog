@@ -1,7 +1,7 @@
-FROM floryn90/hugo:0.149.1-ext AS builder
+FROM floryn90/hugo:0.152.2-ext AS builder
 WORKDIR /app
 ENV HUGO_ENV="production"
-ADD --chown=hugo:hugo ./ /app
+ADD --chmod=0777 --chown=hugo:hugo ./ /app
 RUN bin/build.sh
 
 

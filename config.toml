@@ -1,6 +1,6 @@
 baseURL = "https://blog.ztec.fr/"
 title = "Chez Zed"
-theme = "hugo_theme_ztec"
+theme = "VHS"
 enableRobotsTXT = true
 disable_share = true
 googleAnalytics = ""
@@ -12,40 +12,18 @@ DefaultContentLanguage = "fr"
 enableEmoji = true
 summaryLength = 10
 
+[security.funcs]
+getenv = ['^HUGO_', '^CI$', 'PP_TOKEN', 'PP_HOST']
+
 [pagination]
     pagerSize = 99
 
-
-[[menu.main]]
-    name = "Articles"
-    url = "/post"
-    weight = 45
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 50
-[[menu.main]]
-    name = "Réseaux sociaux"
-    url = "https://www.ztec.fr/social"
-    weight = 50
-[[menu.main]]
-    name = "Carrière et formation"
-    url = "https://www.ztec.fr/my-story/"
-    weight = 80
-[[menu.main]]
-    name = "Qui suis-je ?"
-    url = "https://www.ztec.fr/qui-suis-je/"
-    weight = 90
+[markup]
+[markup.highlight]
+style = 'vim'
 
 
-[[menu.footer]]
-    name = "Qui suis-je ?"
-    url = "https://www.ztec.fr/qui-suis-je/"
-    weight = 45
-[[menu.footer]]
-    name = "Website"
-    url = "https://www.ztec.fr"
-    weight = 50
+
 [[menu.footer]]
     name = "Mentions légales"
     url = "https://www.ztec.fr/mentions-legales/"
@@ -58,6 +36,7 @@ summaryLength = 10
 
 [params]
     name = "Loïc Doubinine | Zed"
+    site_slug = "blog"
     description = "Développeur, Architecte, DevOps et Site Reliability Engineer"
     images = ["graph-logo.jpg"]
     custom_css = ["css/blog.css"]
@@ -69,34 +48,6 @@ summaryLength = 10
         title = "Zed's place"
     [languages.en.params]
         description = "Developer, Architect, DevOps and Site Reliability Engineer"
-    [[languages.en.menu.main]]
-        name = "Posts"
-        url = "/en/post"
-        weight = 45
-    [[languages.en.menu.main]]
-        name = "Tags"
-        url = "/en/tags/"
-        weight = 50
-    [[languages.en.menu.main]]
-        name = "Socials"
-        url = "https://www.ztec.fr/en/social/"
-        weight = 50
-    [[languages.en.menu.main]]
-        name = "My story"
-        url = "https://www.ztec.fr/en/my-story/"
-        weight = 80
-    [[languages.en.menu.main]]
-        name = "Who am I"
-        url = "https://www.ztec.fr/en/whoami/"
-        weight = 90
-    [[languages.en.menu.footer]]
-        name = "Who am I"
-        url = "https://www.ztec.fr/en/whoami/"
-        weight = 45
-    [[languages.en.menu.footer]]
-        name = "Website"
-        url = "https://www.ztec.fr/en/"
-        weight = 50
     [[languages.en.menu.footer]]
         name = "Legals"
         url = "https://www.ztec.fr/en/legals/"

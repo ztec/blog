@@ -9,7 +9,8 @@ other = "Promotions"
 other = "minutes de lecture"
 
 [words]
-other = "mots"
+one = "Mot"
+other = "Mots"
 
 [publishAt]
 other = "Publié le"
@@ -17,11 +18,20 @@ other = "Publié le"
 [updatedAt]
 other = "Modifié la dernière fois le"
 
+[publishing_date]
+other = "Publication"
+
+[last_update_date]
+other = "Révision"
+
 [availableTranslation]
-other = "Traduction de cet article disponible"
+other = "Traductions"
 
 [publishIn]
 other = "Publié dans les catégories"
+
+[licence]
+other = "Licence"
 
 [copyright]
 other = "Á l'exception des oeuvres citées qui concervent leur droits et attribution originaux, article et son contenu publié sous la licence <a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr\" ><b>Creative Commons</b></a><sup>(CC BY-NC-SA 4.0)</sup>"

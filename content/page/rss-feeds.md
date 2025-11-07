@@ -1,13 +1,20 @@
 ---
 title: "Les flux rss"
 tags: []
+menus:
+    main:
+        name: "RSS"
+        weight: 45
+    footer:
+        name: "Flux RSS"
+        weight: 10
 slug: "flux-rss"
 ---
 
-Ce blog possède plusieurs flux RSS :
+Ce blog propose plusieurs flux RSS :
 
  - [En français](/index.xml)
  - [En anglais](/en/index.xml)
 
 
- Si vous voulez les deux langues, vous devez vous abonner aux deux langues.
+ Si vous voulez les deux langues, vous devez vous abonner aux deux flux.

@@ -8,7 +8,8 @@ other = "Promotions"
 other = "minutes read"
 
 [words]
-other = "words"
+one = "Word"
+other = "Words"
 
 [publishAt]
 other = "Published at"
@@ -16,11 +17,20 @@ other = "Published at"
 [updatedAt]
 other = "Last modified on"
 
+[publishing_date]
+other = "Published"
+
+[last_update_date]
+other = "Updated"
+
 [availableTranslation]
-other = "Available translation"
+other = "Translation"
 
 [publishIn]
 other = "Published in"
+
+[licence]
+other = "Licence"
 
 [copyright]
 other = "Except for quoted materials, which retain their original rights and attributions, this post and its content are published under the <a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en\" ><b>Creative Commons</b></a><sup>(CC BY-NC-SA 4.0)</sup> liscence"
