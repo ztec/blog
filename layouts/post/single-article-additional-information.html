@@ -63,7 +63,7 @@
             {{ $nbTranslation := len .Translations }}
             <tr>
                 <td class="type" rowspan="{{ add $nbTranslation 1 }}">{{ i18n "availableTranslation" . }}</td>
-                <td>
+                <td class="type">
                     {{ .Language.LanguageName }}
                 </td>
                 <td>
@@ -112,7 +112,7 @@
                         <td class="type" rowspan="{{ $promotionsCount }}">{{ i18n "promotion" $ }}</td>
                         {{ $.Scratch.Set "firstPromotion" false }}
                     {{ end }}
-                    <td>
+                    <td class="type">
                         {{ if eq $network "twitter" }}
                             <img style="height: 1em" src="{{ $.Site.BaseURL }}twitter.svg" alt="Twitter logo"/> Twitter
                         {{ else if eq $network "mastodon" }}
