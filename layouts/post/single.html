@@ -4,6 +4,7 @@
         <h1 id="article"><a  href="{{ .RelPermalink }}">{{- .Title -}}</a></h1>
         {{ .Render "single-header-subtitle" }}
     </header>
+    <hr>
     {{- .Content -}}
     {{ .Render "single-article-social-share" }}
     {{ .Render "single-article-additional-information" }}

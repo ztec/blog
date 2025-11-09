@@ -8,7 +8,7 @@ BASEURL := http://localhost:$(PORT)/
 endif
 
 dev:
-	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false
+	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false --bind 0.0.0.0
 
 
 # Pushes main from private to public.
