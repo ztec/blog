@@ -10,6 +10,8 @@ endif
 dev:
 	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false --bind 0.0.0.0
 
+update-theme:
+	git submodule update --remote --rebase
 
 # Pushes main from private to public.
 push:
