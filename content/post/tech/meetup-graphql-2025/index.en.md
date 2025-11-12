@@ -12,7 +12,7 @@ I'm focusing on the how.
 
 Here's an account of how we managed this large-scale migration and some of the challenges we faced.
 
-> Conflict of interest disclosure: Deezer has been my employer :stuck_out_tongue: for 10 years.
+> Conflict of interest disclosure: Deezer is my employer :stuck_out_tongue: for 10 years now.
 
 This is a talk I gave at the [GraphQL Paris](https://www.meetup.com/parisgraphql) meetup in October 2025. 
 It gives a broad overview of the topic to fit within a 30-minute presentation slot.
