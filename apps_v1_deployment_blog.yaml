@@ -16,7 +16,7 @@ spec:
         app: blog
     spec:
       containers:
-      - image: git2.riper.fr/ztec/blog:main-1642
+      - image: git2.riper.fr/ztec/blog:main-1643
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -43,7 +43,3 @@ spec:
             memory: 12Mi
       imagePullSecrets:
       - name: git2.riper.fr-key
-      volumes:
-      - name: blog-volume
-        persistentVolumeClaim:
-          claimName: blog-pvc
