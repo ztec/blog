@@ -31,23 +31,38 @@ jobs:
     runs-on: ubuntu-24.04
     needs: build
     steps:
-      - name: checkout
+      - name: checkout code
         uses: actions/checkout@v4
+        with:
+          path: code
+      - name: checkout prod branch
+        uses: actions/checkout@v4
+        with:
+          path: prod
+          ref: 'prod'
       - name: "prepare deployment"
         run: |
           cat <<EOF > ./kustomization.yaml
           apiVersion: kustomize.config.k8s.io/v1beta1
           kind: Kustomization
           resources:
-            - k8s/          
+            - code/k8s/
           images:
             - name: git2.riper.fr/ztec/blog
               newName: git2.riper.fr/ztec/blog
               newTag: "${{ github.ref_name }}-${{ github.run_id }}"
           EOF
-      - name: "deploy to cluster"
+      - name: "generate resources"
         uses: https://github.com/steebchen/kubectl@v2.0.0
         with:
           version: v1.27.15
           config: ${{ vars.KUBE_CONFIG_TRANTOR }}
-          command: apply -k ./
+          command: kustomize ./ -o prod/
+      - name: "commit and push manifests"
+        run: |
+            cd prod
+            git config --global user.name "Butler"
+            git config --global user.email "butler[bot]@riper.fr"
+            git add *
+            git commit -m "Deploy blog:${{ github.ref_name }}-${{ github.run_id }}" || echo "No changes to commit"
+            git push --force origin prod
