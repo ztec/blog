@@ -17,10 +17,6 @@ spec:
     spec:
       imagePullSecrets:
         - name: git2.riper.fr-key
-      volumes:
-        - name: blog-volume
-          persistentVolumeClaim:
-            claimName: blog-pvc
       containers:
         - name: "nginx"
           image: "git2.riper.fr/ztec/blog:102"
