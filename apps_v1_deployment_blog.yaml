@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: blog
+  name: blog
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: blog
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      containers:
+      - image: git2.riper.fr/ztec/blog:main-1637
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 2
+          periodSeconds: 3
+        name: nginx
+        ports:
+        - containerPort: 80
+          name: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 2
+          periodSeconds: 3
+        resources:
+          limits:
+            cpu: "0.1"
+            memory: 12Mi
+          requests:
+            cpu: "0.01"
+            memory: 12Mi
+        volumeMounts:
+        - mountPath: /var/log/nginx
+          name: blog-volume
+          subPath: logs
+      imagePullSecrets:
+      - name: git2.riper.fr-key
+      volumes:
+      - name: blog-volume
+        persistentVolumeClaim:
+          claimName: blog-pvc
