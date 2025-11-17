@@ -16,7 +16,7 @@ spec:
         app: blog
     spec:
       containers:
-      - image: git2.riper.fr/ztec/blog:main-1638
+      - image: git2.riper.fr/ztec/blog:main-1642
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -41,10 +41,6 @@ spec:
           requests:
             cpu: "0.01"
             memory: 12Mi
-        volumeMounts:
-        - mountPath: /var/log/nginx
-          name: blog-volume
-          subPath: logs
       imagePullSecrets:
       - name: git2.riper.fr-key
       volumes:
