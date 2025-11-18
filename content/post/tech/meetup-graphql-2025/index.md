@@ -1,5 +1,5 @@
 ---
-title: "L'histoire de la migration d'une API (no)REST vers GraphQL - l'expérience Deezer"
+title: "L'histoire de la migration d'une API (not)REST vers GraphQL - l'expérience Deezer"
 date: 2025-11-10T00:00:00+02:00
 slug: "rex-migration-graphql-deezer"
 images: ["2025/post/rex-migration-graphql-deezer/video-preview.png"]
