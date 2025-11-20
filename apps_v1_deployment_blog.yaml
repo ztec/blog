@@ -16,7 +16,7 @@ spec:
         app: blog
     spec:
       containers:
-      - image: git2.riper.fr/ztec/blog:main-1657
+      - image: git2.riper.fr/ztec/blog:main-1666
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -36,10 +36,10 @@ spec:
           periodSeconds: 3
         resources:
           limits:
-            cpu: "0.1"
-            memory: 12Mi
+            cpu: "0.001"
+            memory: 10Mi
           requests:
-            cpu: "0.01"
-            memory: 12Mi
+            cpu: "0.001"
+            memory: 2Mi
       imagePullSecrets:
       - name: git2.riper.fr-key
