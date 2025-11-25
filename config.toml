@@ -21,6 +21,7 @@ getenv = ['^HUGO_', '^CI$', 'PP_TOKEN', 'PP_HOST']
 [markup]
 [markup.highlight]
 style = 'vim'
+noClasses = false
 
 
 
