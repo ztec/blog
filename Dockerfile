@@ -2,7 +2,8 @@ FROM floryn90/hugo:0.152.2-ext AS builder
 WORKDIR /app
 ENV HUGO_ENV="production"
 ADD --chmod=0777 --chown=hugo:hugo ./ /app
-RUN bin/build.sh
+RUN --mount=target=/app/resources,type=cache,uid=1234,gid=1234 \
+    bin/build.sh
 
 
 FROM nginx:stable

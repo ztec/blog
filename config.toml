@@ -22,7 +22,9 @@ getenv = ['^HUGO_', '^CI$', 'PP_TOKEN', 'PP_HOST']
 [markup.highlight]
 style = 'vim'
 noClasses = false
-
+lineNumbersInTable = false
+lineNos = true
+anchorLineNos=true
 
 
 [[menu.footer]]
