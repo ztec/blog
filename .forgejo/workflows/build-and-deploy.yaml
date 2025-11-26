@@ -66,3 +66,19 @@ jobs:
             git add *
             git commit -m "Deploy blog:${{ github.ref_name }}-${{ github.run_id }}" || echo "No changes to commit"
             git push --force origin prod
+
+  Clear-CDN:
+    runs-on: ubuntu-24.04
+    needs: Deploy
+    steps:
+      - name: Wait for deployment to settle
+        run: sleep 60
+      - name: Clear image cache
+        run: |
+          set -e
+          curl --fail --request POST \
+          --url https://api.bunny.net/pullzone/4889935/purgeCache \
+          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
+          --header 'accept: application/json' \
+          --header 'content-type: application/json' \
+          --data '{"CacheTag": "*page*"}'
