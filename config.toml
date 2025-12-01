@@ -62,6 +62,7 @@ anchorLineNos=true
   quick = "/:year/:month/:slug/"
   post = "/:year/:section/:slug/"
   sources = "/:sections/:slug/"
+  loot = "/:sections/:year/:month/:day"
 
 
 [taxonomies]
