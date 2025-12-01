@@ -49,7 +49,7 @@ Dans l'idéal, un cloud européen compatible avec le RGPD, avec des solutions te
 
  -  Podcast: [Chronique de l'emmerdification du Web, détournement de finalité et absence de base légale du RGPD](https://rdgp.fr/@rdgp/episodes/actu-chronique-de-lemmerdification-du-web-detournement-de-finalite-et-absence-de-base-legale-du-rgpd)
 
-## société
+## Société
  - [La solution pour sauver le Festival de BD d'Angoulême](https://www.youtube.com/watch?v=lbvV0hBB9Fw)
 
  - [Ma première soirée en club parisien](https://blogs.mediapart.fr/zoe-dubus/blog/291125/ma-premiere-soiree-en-club-parisien)
@@ -66,7 +66,7 @@ Comme l'autrice, je suis surpris, et de manière agréable, que des espaces si p
 Quand on sait que les associations et militants décrivent exactement ce qui se passe maintenant, depuis plus de 20 ans sûrement, c'est un "on vous l'avait dit" de colère qui vient en premier. Si vous
 voulez connaître la suite des prédictions, allez voir [la Quadrature du Net](https://www.laquadrature.net/) par exemple et leur site [Technopolice](https://technopolice.fr/).
 
-## science et conscience
+## Science et Conscience
 
 Ces deux liens sont intéressants à lire/écouter l'un après l'autre (sans ordre particulier). Aussi je recommande toutes les vidéos de [Monsieur phi](https://www.youtube.com/@MonsieurPhi) sur le sujet des LLM.
 
