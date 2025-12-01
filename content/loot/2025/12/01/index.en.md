@@ -1,6 +1,6 @@
 ---
 title: "December 1st loot"
-date: 2021-12-01T15:00:00+02:00
+date: 2025-12-01T18:00:00+02:00
 tags: ["loot", "tech", "social", "science", "consciousness", "llm"]
 ---
 
