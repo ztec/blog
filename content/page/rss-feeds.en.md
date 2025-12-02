@@ -4,10 +4,10 @@ tags: []
 menus:
     main:
           name: "RSS"
-          weight: 45
+          weight: 80
     footer:
         name: "RSS Feeds"
-        weight: 10
+        weight: 80
 ---
 
 This blog has several RSS feed.

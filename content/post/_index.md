@@ -6,6 +6,6 @@ menu:
   main:
     weight: 20
   footer:
-    name: "Tous les articles"
+    name: "Articles"
     weight: 45
 ---

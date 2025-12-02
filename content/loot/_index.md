@@ -7,6 +7,7 @@ menu:
     name: "Loots"
     weight: 30
   footer:
+    name: "Loots de la semaine"
     weight: 45
 ---
 

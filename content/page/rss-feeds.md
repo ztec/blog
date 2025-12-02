@@ -4,10 +4,10 @@ tags: []
 menus:
     main:
         name: "RSS"
-        weight: 45
+        weight: 80
     footer:
         name: "Flux RSS"
-        weight: 10
+        weight: 80
 slug: "flux-rss"
 ---
 
