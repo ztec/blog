@@ -1,0 +1,8 @@
+
+<ul class="box-list view-details">
+    {{ range .Site.RegularPages.ByPublishDate.Reverse}}
+        {{ if and ( not ( in .Section "tags") ) ( not ( in .Section "sources") )  ( not ( in .Section "page") ) ( not .Data.Singular )  }}
+            {{ .Render "home-list-view-details-item" }}
+        {{ end }}
+    {{ end }}
+</ul>

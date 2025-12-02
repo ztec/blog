@@ -1,5 +1,13 @@
 ---
 title: "Le loot de la semaine"
+params:
+  name: "Loot"
+menu:
+  main:
+    name: "Loots"
+    weight: 30
+  footer:
+    weight: 45
 ---
 
 ## La quête

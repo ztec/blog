@@ -1,0 +1,8 @@
+
+{{ range .Site.RegularPages.ByPublishDate.Reverse}}
+    {{ if and ( not ( in .Section "tags") ) ( not ( in .Section "sources") )  ( not ( in .Section "page") ) ( not .Data.Singular )  }}
+        <tr>
+            {{ .Render "home-list-view-list-item" }}
+        </tr>
+    {{ end }}
+{{ end }}

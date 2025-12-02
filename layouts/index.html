@@ -1,3 +1,17 @@
 {{ define "main" }}
-    {{- template "_partials/article.html" . -}}
+    {{ if .Content }}
+        {{- template "_partials/article.html" . -}}
+    {{ else if .Title }}
+        <h1>{{ .Title }}</h1>
+    {{ end }}
+
+    {{ if .Data.Singular }}
+        {{ .Render "list-singular-header" }}
+    {{ end }}
+
+
+        {{ .Render "list-article-view-selector" }}
+        {{ .Render "home-list-view-list" }}
+        {{ .Render "home-list-view-details" }}
+
 {{ end }}

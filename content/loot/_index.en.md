@@ -1,5 +1,13 @@
 ---
 title: "Weekly Loot"
+params:
+    name: "Loot"
+menu:
+  main:
+    name: "Loots"
+    weight: 30
+  footer:
+    weight: 45
 ---
 
 ## The Quest

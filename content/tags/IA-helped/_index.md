@@ -3,6 +3,7 @@ title: "Corrigé par un LLM"
 menu:
   footer:
     name: "Manifest IA"
+    weight: 80
 ---
 
 Les articles portant ce tag ont bénéficié de l'aide d'une IA. 
