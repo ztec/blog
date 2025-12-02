@@ -16,7 +16,7 @@ spec:
         app: blog
     spec:
       containers:
-      - image: git2.riper.fr/ztec/blog:main-1806
+      - image: git2.riper.fr/ztec/blog:main-1807
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
