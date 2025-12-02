@@ -1,0 +1,39 @@
+<section class="article-social-share">
+    <p class="social-share-prompt">{{i18n "commentAndDiscuss" .}}</p>
+    {{ if .Params.promotions }}
+    <div class="social-cards-container">
+        {{ range $network, $promo := .Params.promotions }}
+        <a href="{{ $promo }}" class="social-card" target="_blank">
+            {{ if eq $network "twitter" }}
+            <img class="social-icon" src="{{$.Site.BaseURL}}twitter.svg" alt="Twitter logo" />
+            <span class="social-name">Twitter</span>
+            {{else if eq $network "mastodon" }}
+            <img class="social-icon" src="{{$.Site.BaseURL}}mastodon.svg" alt="Mastodon logo" />
+            <span class="social-name">Mastodon</span>
+            {{else if eq $network "bluesky" }}
+            <img class="social-icon" src="{{$.Site.BaseURL}}Bluesky_Logo.svg" alt="Bluesky logo" />
+            <span class="social-name">Bluesky</span>
+            {{else }}
+            <img class="social-icon" src="{{$.Site.BaseURL}}social.svg" alt="Share icon" />
+            <span class="social-name">{{ $network }}</span>
+            {{end}}
+        </a>
+        {{end}}
+    </div>
+    {{else}}
+    <div class="social-cards-container">
+        <a href="https://mamot.fr/@ztec" class="social-card" target="_blank">
+            <img class="social-icon" src="{{$.Site.BaseURL}}mastodon.svg" alt="Mastodon logo" />
+            <span class="social-name">@ztec@mamot.fr</span>
+        </a>
+        <a href="https://twitter.com/ztec6" class="social-card" target="_blank">
+            <img class="social-icon" src="{{$.Site.BaseURL}}twitter.svg" alt="Twitter logo" />
+            <span class="social-name">@ztec6</span>
+        </a>
+        <a href="https://bsky.app/profile/ztec.fr" class="social-card" target="_blank">
+            <img class="social-icon" src="{{$.Site.BaseURL}}Bluesky_Logo.svg" alt="Bluesky logo" />
+            <span class="social-name">@ztec.fr</span>
+        </a>
+    </div>
+    {{end}}
+</section>

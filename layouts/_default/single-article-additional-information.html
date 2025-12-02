@@ -1,0 +1,138 @@
+<section class="article-additional-information">
+    <table>
+        <tr>
+            <td class="type">{{ i18n "title" . }}</td>
+            <td class="main-title" colspan="2"><a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a></td>
+        </tr>
+        {{ if .Description }}
+            <tr>
+                <td class="type">{{ i18n "description" . }}</td>
+                <td colspan="2">{{ .Description }}</td>
+            </tr>
+        {{ end }}
+        {{ if not .Date.IsZero }}
+            <tr>
+                <td class="type">{{ i18n "publishing_date" . }}</td>
+                <td class="date" colspan="2">
+                    <time {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                        {{- .Date.Format "2 January 2006" -}}
+                        {{- if or (ne (.Date.Format "15") "00") (ne (.Date.Format "04") "00") }} {{ .Date.Format "15:04" }}{{ end -}}
+                    </time>
+                </td>
+            </tr>
+        {{ end }}
+        {{ if (and (and .Lastmod .Date) (ne .Lastmod .Date)) }}
+            <tr>
+                <td class="type">{{ i18n "last_update_date" . }}</td>
+                <td class="date" colspan="2">
+                    <time {{ printf `datetime="%s"` (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                        {{- .Lastmod.Format "2 January 2006" -}}
+                        {{- if or (ne (.Lastmod.Format "15") "00") (ne (.Lastmod.Format "04") "00") }} {{ .Lastmod.Format "15:04" }}{{ end -}}
+                    </time>
+                </td>
+            </tr>
+        {{ end }}
+
+        <tr>
+            <td class="type">{{ i18n "type" . }}</td>
+            <td class="icon" colspan="2">
+                {{ $type := .Type }}
+                {{ with $.Site.GetPage (printf "/%s" $type) -}}
+                    {{ if (resources.Get (printf "icons/types/%s.svg" $type)) }}
+                        <img class="icon-type"
+                             alt="{{ .Title }}"
+                             title="{{ .Title }}"
+                             src="{{ ((resources.Get (printf "icons/types/%s.svg" $type)).Permalink) }}"/>
+                    {{ else }}
+                        {{ .Type }}
+                    {{ end }}
+                {{ end }}
+            </td>
+        </tr>
+        <tr>
+            <td class="type">{{ i18n "reading_time" . }}</td>
+            <td colspan="2">{{ .ReadingTime }} {{ i18n "minutes" .ReadingTime }}</td>
+        </tr>
+        <tr>
+            <td class="type">{{ i18n "words" . }}</td>
+            <td colspan="2">{{ .WordCount }}</td>
+        </tr>
+
+        {{ if .IsTranslated }}
+            {{ $nbTranslation := len .Translations }}
+            <tr>
+                <td class="type" rowspan="{{ add $nbTranslation 1 }}">{{ i18n "availableTranslation" . }}</td>
+                <td class="type">
+                    {{ .Language.LanguageName }}
+                </td>
+                <td>
+                    <a href="{{ .RelPermalink }}">{{ .Permalink }}</a>
+                </td>
+            </tr>
+            {{ range $index, $translation := .Translations }}
+                <tr>
+                    <td>
+                        {{ .Language.LanguageName }}
+                    </td>
+                    <td>
+                        <a href="{{ .RelPermalink }}">{{ .Permalink }}</a>
+                    </td>
+                </tr>
+            {{ end }}
+        {{ end }}
+
+        {{ if .Params.tags }}
+            <tr>
+                <td class="type">{{ i18n "tags" . }}</td>
+                <td colspan="2">
+                    {{ range $index, $val := .Params.tags }}
+                        {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                            {{ if gt $index 0 }}<span> - </span>{{ end }}
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        {{ end }}
+                    {{ end }}
+                </td>
+            </tr>
+        {{ end }}
+        <tr>
+            <td class="type">{{ i18n "licence" . }}</td>
+            <td colspan="2">
+                {{ i18n "copyright" | safeHTML }} <img style="max-height: 1em" class="dib" src="/CCANSA80x15.png"/>
+            </td>
+        </tr>
+
+
+        {{ if .Params.promotions }}
+            {{ $promotionsCount := len .Params.promotions }}
+            {{ $.Scratch.Set "firstPromotion" true }}
+            {{ range $network, $promo := .Params.promotions }}
+                <tr >
+                    {{ if $.Scratch.Get "firstPromotion" }}
+                        <td class="type" rowspan="{{ $promotionsCount }}">{{ i18n "promotion" $ }}</td>
+                        {{ $.Scratch.Set "firstPromotion" false }}
+                    {{ end }}
+                    <td class="type">
+                        {{ if eq $network "twitter" }}
+                            <img style="height: 1em" src="{{ $.Site.BaseURL }}twitter.svg" alt="Twitter logo"/> Twitter
+                        {{ else if eq $network "mastodon" }}
+                            <img style="height: 1em" src="{{ $.Site.BaseURL }}mastodon.svg"
+                                 alt="Mastodon logo"/> Mastodon
+                        {{ else if eq $network "bluesky" }}
+                            <img style="height: 1em" src="{{ $.Site.BaseURL }}Bluesky_Logo.svg"
+                                 alt="Bluesky logo"/> Bluesky
+                        {{ else }}
+                            <img style="height: 1em" src="{{ $.Site.BaseURL }}social.svg" alt="Share icon"/>
+                            {{ $network }}
+                        {{ end }}
+                    </td>
+                    <td class="grayscale" colspan="2">
+                        <a href="{{ $promo }}">
+                            {{ $promo }}
+                        </a>
+                    </td>
+                </tr>
+            {{ end }}
+        {{ end }}
+
+    </table>
+</section>

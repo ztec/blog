@@ -1,0 +1,94 @@
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
+{{ $alt := (.Get "alt") }}
+{{ $name := (.Get "name") }}
+{{ if eq $alt "" }}
+    {{ $alt = $name }}
+{{ end }}
+{{ if eq $name "" }}
+    {{ $name = $alt }}
+{{ end }}
+
+{{ $baseWidth := int (.Get "width" | default "800") }}
+{{ $quality := int (.Get "quality" | default "90") }}
+{{ $credit := (.Get "credit") }}
+{{ $href := (.Get "href") }}
+{{ $Link := "" }}
+{{ if eq $href "self" }}
+    {{ $Link = $image.RelPermalink }}
+{{ else if ne $href "" }}
+    {{ $Link = $href }}
+{{ end }}
+
+{{ $sizes := slice }}
+{{ $originalWidth := $image.Width }}
+
+{{/* Generate 1x, 2x, 3x, 4x sizes if original permits */}}
+{{ range $multiplier := slice 1 2 3 4 }}
+    {{ $targetWidth := mul $baseWidth $multiplier }}
+    {{ if le $targetWidth $originalWidth }}
+        {{ $sizes = $sizes | append (dict "width" $targetWidth "multiplier" $multiplier) }}
+    {{ end }}
+{{ end }}
+
+{{/* If original is bigger than base but doesn't fit standard multipliers, add it */}}
+{{ $hasOriginalSize := false }}
+{{ range $sizes }}
+    {{ if eq .width $originalWidth }}
+        {{ $hasOriginalSize = true }}
+    {{ end }}
+{{ end }}
+{{ if and (gt $originalWidth $baseWidth) (not $hasOriginalSize) }}
+    {{ $originalMultiplier := div (float $originalWidth) (float $baseWidth) }}
+    {{ $sizes = $sizes | append (dict "width" $originalWidth "multiplier" $originalMultiplier "isOriginal" true) }}
+{{ end }}
+
+{{ if ne $Link "" }}
+<a class="hidden-link {{ if (.Get "dark-protection") }}dark-protection{{ end }}" href="{{ $Link | safeURL }}" target="_blank">
+{{ end }}
+    <picture class="inner-cover">
+        {{/* WebP sources */}}
+        {{ if gt (len $sizes) 0 }}
+            <source type="image/webp" srcset="
+                {{- range $index, $size := $sizes -}}
+                    {{- if $size.isOriginal -}}
+                        {{- $converted := $image.Process (printf "webp q%d" $quality) -}}
+                        {{- $converted.RelPermalink | safeURL }} {{ printf "%.2f" $size.multiplier }}x
+                    {{- else -}}
+                        {{- $resized := $image.Resize (printf "%dx webp q%d" $size.width $quality) -}}
+                        {{- $resized.RelPermalink | safeURL }} {{ $size.multiplier }}x
+                    {{- end -}}
+                    {{- if lt (add $index 1) (len $sizes) }}, {{ end -}}
+                {{- end -}}
+            " />
+        {{ end }}
+
+        {{/* JPEG sources */}}
+        {{ if gt (len $sizes) 0 }}
+            <source type="image/jpeg" srcset="
+                {{- range $index, $size := $sizes -}}
+                    {{- if $size.isOriginal -}}
+                        {{- $converted := $image.Process (printf "jpg q%d" $quality) -}}
+                        {{- $converted.RelPermalink | safeURL }} {{ printf "%.2f" $size.multiplier }}x
+                    {{- else -}}
+                        {{- $resized := $image.Resize (printf "%dx jpg q%d" $size.width $quality) -}}
+                        {{- $resized.RelPermalink | safeURL }} {{ $size.multiplier }}x
+                    {{- end -}}
+                    {{- if lt (add $index 1) (len $sizes) }}, {{ end -}}
+                {{- end -}}
+            " />
+        {{ end }}
+
+        {{/* Fallback img tag */}}
+        {{ $fallback := $image.Resize (printf "%dx jpg q%d" $baseWidth $quality) }}
+        <img
+            src="{{ $fallback.RelPermalink | safeURL }}"
+            {{ with $alt }} alt="{{ . }}" {{ end }}
+            {{ with $name }} title="{{ . }}" {{ end }}
+        />
+    </picture>
+{{ if ne $Link "" }}
+</a>
+{{ end }}
+{{ if ne $credit "" }}
+<div class="credit">{{ $credit | markdownify }}</div>
+{{ end }}

@@ -59,14 +59,22 @@ anchorLineNos=true
 
 
 [permalinks]
+[permalinks.page]
   quick = "/:year/:month/:slug/"
   post = "/:year/:section/:slug/"
+  loot = "/:year/:month/:day/:sections/:slug/"
+  concert = "/:year/:month/:day/:sections[first]/:slug/"
+[permalinks.term]
   sources = "/:sections/:slug/"
-  loot = "/:year/:month/:day/:sections/:slug"
+  artist = "/artists/:slug/"
+  place = "/place/:slug/"
 
 
 [taxonomies]
 tag = 'tags'
 source = 'sources'
 resources = 'resources'
+artist = 'artists'
+place = 'places'
+instrument = 'instruments'
 

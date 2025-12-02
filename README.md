@@ -56,5 +56,19 @@ All code and content is licensed under [Creative Commons BY-NC-SA 4.0](https://c
 - **License**: CC0 License
 - **Source**: [SVG Repo](https://www.svgrepo.com/svg/213030/article)
 
+#### Triangle Icon (Concert)
+- **Collection**: Music Line Vectors
+- **License**: CC Attribution License
+- **Author**: [wishforge.games](https://www.svgrepo.com/author/wishforge.games/)
 
- 
+#### Artists Icon
+- **Collection**: [Avatars 10](https://www.svgrepo.com/collection/avatars-10/)
+- **License**: CC0 License
+- **Uploader**: [SVG Repo](https://www.svgrepo.com/)
+
+#### Saxophone Icon (Instruments)
+- **Collection**: Retro Pixel Icons
+- **License**: CC Attribution License
+- **Author**: [Buninux](https://buninux.gumroad.com/l/lfdy?ref=svgrepo.com)
+
+

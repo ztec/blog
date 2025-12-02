@@ -43,3 +43,36 @@ other = "suggest a fix via github"
 
 [subescribeRss]
 other = "You can subscribe via <a href=\"/page/flux-rss/\"><img style=\"height: 1em\" src=\"/rss-feed.svg\" alt=\"RSS icon\" /> RSS</a> to get new articles as son as they are published"
+
+[concertDate]
+other = "Concert date"
+
+[artists]
+other = "Artists"
+
+[venue]
+other = "Venue"
+
+[url]
+other = "Link"
+
+[artistsLinked]
+other = "Related artists"
+
+[concerts]
+other = "Concerts"
+
+[others]
+other = "Others"
+
+[taxonomy]
+other = "Taxonomy"
+
+[artist]
+other = "Artist"
+
+[instrumentsOrTags]
+other = "Instrument(s) / tags"
+
+[instrument]
+other = "Instrument"

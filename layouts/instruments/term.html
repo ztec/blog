@@ -1,0 +1,204 @@
+{{ define "main" }}
+    {{ if .Content }}
+        {{- template "_partials/article.html" . -}}
+    {{ else if .Title }}
+        <h1>{{ .Title }}</h1>
+        <article></article>
+    {{ end }}
+
+    {{ if .Pages }}
+
+        <section class="flex-column">
+
+        {{ $hasArtist := false }}
+        {{ range .Pages }}
+            {{ if eq .Type "artists" }}
+                {{ $hasArtist = true }}
+            {{ end }}
+        {{ end }}
+
+        {{ if $hasArtist }}
+            <div>
+            <section class="flex-hr">
+                <h2>{{ i18n "artistsLinked" . }}</h2>
+                <hr class="filler">
+            </section>
+            <table class="table-list alternate">
+                <tr>
+                    <th class="short"></th>
+                    <th>{{ i18n "artist" . }}</th>
+                    <th>{{ i18n "instrumentsOrTags" . }}</th>
+                </tr>
+
+                {{ range .Pages }}
+                    {{ if eq .Type "artists" }}
+                        <tr>
+                            <td class="blk center middle">
+                                {{ $type := .Type }}
+                                {{ with $.Site.GetPage (printf "/%s" $type) -}}
+                                    <a href="{{ with .Site.GetPage "Section" $type }}{{ .Permalink }}{{ end }}"
+                                       class="hidden-link">
+                                        {{ if (resources.Get (printf "icons/types/%s.svg" $type)) }}
+                                            <img class="icon-type"
+                                                 alt="{{ with .Params.Name }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+                                                 title="{{ with .Params.Name }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+                                                 src="{{ ((resources.Get (printf "icons/types/%s.svg" $type)).Permalink) }}"/>
+                                        {{ else }}
+                                            {{ .Type }}
+                                        {{ end }}
+                                    </a>
+                                {{ end }}
+                            </td>
+                            <td class="blk">
+                                <a href="{{ .RelPermalink }}" class="link no-decoration"
+                                   title="{{ .Title }}">{{ .Title }}</a>
+                            </td>
+                            <td class="">
+                                {{ if .Params.instruments }}
+                                    {{ range $index, $val := .Params.instruments }}
+                                        {{ with $.Site.GetPage (printf "/instruments/%s" $val) -}}
+                                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                        {{ end }}
+                                    {{ end }}
+                                {{ end }}
+                                {{ if .Params.tags }}
+                                    {{ range $index, $val := .Params.tags }}
+                                        {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                        {{ end }}
+                                    {{ end }}
+                                {{ end }}
+                            </td>
+                        </tr>
+                    {{ end }}
+                {{ end }}
+            </table>
+            </div>
+        {{ end }}
+
+        {{ $hasConcert := false }}
+        {{ range .Pages }}
+            {{ if eq .Type "concert" }}
+                {{ $hasConcert = true }}
+            {{ end }}
+        {{ end }}
+
+        {{ if $hasConcert }}
+            <div>
+            <section class="flex-hr">
+                <h2>{{ i18n "concerts" . }}</h2>
+                <hr class="filler">
+            </section>
+            <table class="table-list alternate">
+                <tr>
+                    <th class="short"></th>
+                    <th>Concert</th>
+                </tr>
+                {{ range .Pages }}
+                    {{ if eq .Type "concert" }}
+                        <tr>
+                            <td class="blk center middle">
+                                {{ $type := .Type }}
+                                {{ with $.Site.GetPage (printf "/%s" $type) -}}
+                                    <a href="{{ with .Site.GetPage "Section" $type }}{{ .Permalink }}{{ end }}"
+                                       class="hidden-link">
+                                        {{ if (resources.Get (printf "icons/types/%s.svg" $type)) }}
+                                            <img class="icon-type"
+                                                 alt="{{ with .Params.Name }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+                                                 title="{{ with .Params.Name }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+                                                 src="{{ ((resources.Get (printf "icons/types/%s.svg" $type)).Permalink) }}"/>
+                                        {{ else }}
+                                            {{ .Type }}
+                                        {{ end }}
+                                    </a>
+                                {{ end }}
+                            </td>
+                            <td class="blk">
+                                <a href="{{ .RelPermalink }}" class="link no-decoration"
+                                   title="{{ .Title }}">{{ .Title }}</a>
+                            </td>
+                        </tr>
+                    {{ end }}
+                {{ end }}
+            </table>
+            </div>
+        {{ end }}
+
+        {{ $hasOthers := false }}
+        {{ range .Pages }}
+            {{ if and (ne .Type "artists") (ne .Type "concert") }}
+                {{ $hasOthers = true }}
+            {{ end }}
+        {{ end }}
+
+        {{ if $hasOthers }}
+            <div>
+            <section class="flex-hr">
+                <h2>{{ i18n "others" . }}</h2>
+                <hr class="filler">
+            </section>
+            <table class="table-list alternate">
+                <tr>
+                    <th class="short"></th>
+                    <th>Concert</th>
+                </tr>
+                {{ range .Pages }}
+                    {{ if and (ne .Type "artists") (ne .Type "concert") }}
+                        <tr>
+                            <td class="blk center middle">
+                                {{ $type := .Type }}
+                                {{ with $.Site.GetPage (printf "/%s" $type) -}}
+                                    <a href="{{ with .Site.GetPage "Section" $type }}{{ .Permalink }}{{ end }}"
+                                       class="hidden-link">
+                                        {{ if (resources.Get (printf "icons/types/%s.svg" $type)) }}
+                                            <img class="icon-type"
+                                                 alt="{{ with .Params.Name }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+                                                 title="{{ with .Params.Name }}{{ . }}{{ else }}{{ .Title }}{{ end }}"
+                                                 src="{{ ((resources.Get (printf "icons/types/%s.svg" $type)).Permalink) }}"/>
+                                        {{ else }}
+                                            {{ .Type }}
+                                        {{ end }}
+                                    </a>
+                                {{ end }}
+                            </td>
+                            <td class="blk">
+                                <a href="{{ .RelPermalink }}" class="link no-decoration"
+                                   title="{{ .Title }}">{{ .Title }}</a>
+                            </td>
+                        </tr>
+                    {{ end }}
+                {{ end }}
+            </table>
+            </div>
+        {{ end }}
+
+        </section>
+
+    {{ end }}
+
+
+    {{ if .Data.Singular }}
+        {{ .Render "taxonomy-singular-header" }}
+    {{ end }}
+
+
+    <section class="list-sub-title">
+        <table>
+            {{ if .Params.tags }}
+                <tr>
+                    <td class="type">{{ i18n "tags" . }}</td>
+                    <td>
+                        {{ range $index, $val := .Params.tags }}
+                            {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                                {{ if gt $index 0 }}<span class=""> - </span>{{ end }}
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </td>
+                </tr>
+            {{ end }}
+        </table>
+    </section>
+
+
+{{ end }}

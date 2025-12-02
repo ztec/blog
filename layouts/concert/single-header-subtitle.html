@@ -1,0 +1,64 @@
+<section class="list-sub-title">
+    <table>
+        {{ if .Params.concertDate }}
+            <tr>
+                <td class="type">{{ i18n "concertDate" . }}</td>
+                <td class="date">
+                    <time {{ printf `datetime="%s"` ((time.AsTime .Params.concertDate).Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                        {{- (time.AsTime .Params.concertDate) | time.Format ":date_long" -}}
+                    </time>
+                </td>
+            </tr>
+        {{ end }}
+        {{ if .Params.tags }}
+            <tr>
+                <td class="type">{{ i18n "tags" . }}</td>
+                <td>
+                    {{ range $index, $val := .Params.tags }}
+                        {{ with $.Site.GetPage (printf "/tags/%s" $val) -}}
+                            {{ if gt $index 0 }}<span class=""> - </span>{{ end }}
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        {{ end }}
+                    {{ end }}
+                </td>
+            </tr>
+        {{ end }}
+
+        {{ if .Params.artists }}
+            <tr>
+                <td class="type">{{ i18n "artists" . }}</td>
+                <td>
+                    {{ range $index, $val := .Params.artists }}
+                        {{ with $.Site.GetPage (printf "/artists/%s" $val) -}}
+                            {{ if gt $index 0 }}<span class=""> - </span>{{ end }}
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        {{ end }}
+                    {{ end }}
+                </td>
+            </tr>
+        {{ end }}
+        {{ if .Params.places }}
+            <tr>
+                <td class="type">{{ i18n "venue" . }}</td>
+                <td>
+                    {{ range $index, $val := .Params.places }}
+                        {{ with $.Site.GetPage (printf "/places/%s" $val) -}}
+                            {{ if gt $index 0 }}<span class=""> - </span>{{ end }}
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        {{ end }}
+                    {{ end }}
+                </td>
+            </tr>
+        {{ end }}
+
+        {{ if .Params.eventPage }}
+            <tr>
+                <td class="type">{{ i18n "url" . }}</td>
+                <td>
+                    <a href="{{ .Params.eventPage }}" >{{ .Params.eventPage }}</a>
+                </td>
+            </tr>
+        {{ end }}
+
+    </table>
+</section>

@@ -44,3 +44,36 @@ other = "suggerez moi directement une correction via Github"
 
 [subescribeRss]
 other = "Vous pouvez vous abonné à ce blog par <a href=\"/page/flux-rss/\"><img style=\"height: 1em\" src=\"/rss-feed.svg\" alt=\"RSS icon\" /> RSS</a> pour recevoir les nouveaux articles dès leur parution"
+
+[concertDate]
+other = "Date du concert"
+
+[artists]
+other = "Artistes"
+
+[venue]
+other = "Lieu"
+
+[url]
+other = "Lien"
+
+[artistsLinked]
+other = "Artistes liés"
+
+[concerts]
+other = "Concerts"
+
+[others]
+other = "Autres"
+
+[taxonomy]
+other = "Taxonomie"
+
+[artist]
+other = "Artiste"
+
+[instrumentsOrTags]
+other = "Instrument(s) / tags"
+
+[instrument]
+other = "Instrument"

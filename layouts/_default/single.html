@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+    <header>
+        <h1 id="article"><a  href="{{ .RelPermalink }}">{{- .Title -}}</a></h1>
+        {{ .Render "single-header-subtitle" }}
+    </header>
+    <hr>
+    {{- .Content -}}
+    <hr>
+    {{ .Render "single-article-social-share" }}
+    <hr>
+    {{ .Render "single-article-additional-information" }}
+    <hr>
+    {{ i18n "foundATypo" . }} <a target="_blank" href="https://github.com/ztec/blog/edit/main/content/{{.File.Path}}">{{ i18n "suggestAFix" . }}</a>.
+    <br/>
+    <br/>
+    {{ i18n "subescribeRss" | safeHTML }}
+</article>
+{{ end }}

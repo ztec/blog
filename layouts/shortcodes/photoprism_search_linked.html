@@ -1,0 +1,67 @@
+{{ $query := .Get "query" | default "" | urlquery }}
+
+{{/* newest | oldest | added | relevance*/}}
+{{ $order := .Get "order" | default "newest" }}
+
+{{ $amount := .Get "amount" | default "1000" }}
+
+{{ $token := getenv "PP_TOKEN" | string }}
+{{ $host := getenv "PP_HOST" | string }}
+
+{{/* Mode can be "preview" or "tile" */}}
+{{ $Mode := .Get "mode" | default "tile" }}
+{{/* Mode can be "preview" or "tile" */}}
+{{ $ConvertWebp := .Get "webp" | default true }}
+
+{{ $HideTitle := .Get "no-title" | default false }}
+
+{{ $NoFigure := .Get "no-figure" | default false }}
+
+{{ $Class := .Get "class" | default "photo" }}
+
+{{ $FilterInFavorites := .Get "favorites-only" | default false }}
+
+{{/* Size in pixels for 1x image (2x and 4x will be multiples) */}}
+{{ $Size := .Get "size" | default 200 }}
+
+{{/* Embed images as data URIs (reduces CDN requests) */}}
+{{ $Embed := .Get "embed" | default false }}
+
+{{/* Size for embedded image (in pixels) - defaults to 100 */}}
+{{ $EmbedSize := .Get "embed-size" | default 100 }}
+
+{{ $token := getenv "PP_TOKEN" | string }}
+{{ $host := getenv "PP_HOST" | string }}
+
+{{ $auth := printf "%s %s" "Bearer" $token }}
+{{ $opts := dict
+        "headers" (dict "Authorization" $auth)
+}}
+
+{{ $additional := "" }}
+
+{{ if $FilterInFavorites }}
+    {{ $additional = printf "%s&favorite=true" $additional }}
+{{ end }}
+
+{{ $SearchURL := printf "%s/api/v1/photos?count=%s&offset=0&merged=true&order=%s%s&q=%s" $host $amount $order $additional $query }}
+
+{{ $data := dict }}
+{{ with try (resources.GetRemote $SearchURL $opts) }}
+    {{ with .Err }}
+        {{ warnf "%s" . }}
+    {{ else with .Value }}
+        {{ $data = . | transform.Unmarshal }}
+        {{ range $data}}
+            {{ $photoID := (index . "UID") }}
+            {{ $photoLink := printf "https://photos.ztec.fr/p/%s" $photoID }}
+            <a class="hidden-link" href="{{ $photoLink }}">
+                {{ partial "photoprism_photo.html"  (dict "PhotoID" $photoID "Mode" $Mode "ConvertWebp" $ConvertWebp "HideTitle" $HideTitle "Nofigure" $NoFigure "class" $Class "Size" $Size "Embed" $Embed "EmbedSize" $EmbedSize) }}
+            </a>
+        {{ end }}
+    {{ else }}
+        {{ warnf "No data returned for album %s" $query }}
+    {{ end }}
+{{ else }}
+    {{ warnf "Unable to get remote resource album %s" $query }}
+{{ end }}
