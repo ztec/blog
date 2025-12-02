@@ -40,3 +40,21 @@ docker compose up prod
 ```
 
 then go to [http://localhost:8080](http://localhost:8080)
+
+
+## License
+
+All code and content is licensed under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en), except for content with a specific license mentioned below.
+
+### Third-Party Assets
+
+#### Chest Icon
+- **License**: CC Attribution License
+- **Author**: [Dazzle UI](https://dazzleui.gumroad.com/l/dazzleiconsfree?ref=svgrepo.com)
+
+#### Article Icon
+- **License**: CC0 License
+- **Source**: [SVG Repo](https://www.svgrepo.com/svg/213030/article)
+
+
+ 
