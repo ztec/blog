@@ -1,7 +1,7 @@
 ---
 title: "December 1st loot"
 date: 2025-12-01T18:00:00+02:00
-tags: ["loot", "tech", "social", "science", "consciousness", "llm"]
+tags: ["tech", "social", "science", "consciousness", "llm"]
 ---
 
 This is the inaugural loot, the first haul from my exploration. This week's drops: readings, listenings, viewings, and other encounters that gave me XP or made me think.

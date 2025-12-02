@@ -1,7 +1,7 @@
 ---
 title: "Butin du 01 décembre"
 date: 2025-12-01T18:00:00+02:00
-tags: ["loot", "tech", "social", "science", "conscience", "llm" ]
+tags: ["tech", "social", "science", "conscience", "llm" ]
 ---
 
 Ceci est le loot inaugural, le premier butin de mon exploration. c'est les drops de la semaine : lectures, écoutes, visionnages, et autres rencontres qui m'ont donné de l'XP ou fait réfléchir.
