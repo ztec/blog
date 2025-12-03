@@ -140,9 +140,12 @@
 
 article picture.inner-cover{
     width: 100%;
+    max-width:100%;
 }
 article picture.inner-cover img{
     border-radius: 3px;
+    width: 100%;
+    max-width:100%;
 }
 
 
