@@ -6,6 +6,9 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-24.04
+    env:
+      PP_TOKEN: ${{ secrets.PP_TOKEN }}
+      PP_HOST: ${{ secrets.PP_HOST }}
     steps:
 
       - name: "Manual checkout"
@@ -23,10 +26,15 @@ jobs:
           registry: git2.riper.fr
           username: ${{ vars.DOCKER_LOGIN }}
           password: ${{ vars.DOCKER_TOKEN }}
-      - name: Docker build
-        run: docker buildx build -t git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }} blog
-      - name: Docker push
-        run: docker push git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }}
+      - name: Docker build and push
+        run: |
+          cd blog
+          docker buildx build --push \
+            --secret id=PP_TOKEN \
+            --secret id=PP_HOST \
+            -t git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }} \
+            -t git2.riper.fr/ztec/blog:latest \
+            .
   Deploy:
     runs-on: ubuntu-24.04
     needs: build
