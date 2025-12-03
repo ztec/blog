@@ -32,7 +32,7 @@ The electro/jazz mix is still as good.
 
 {{< photo-gallery >}}
     {{<photoprism_search_linked 
-        query="label:\"Takuya Kuroda\"" 
+        query="label:\"Takuya Kuroda\" month:11 year:2025" 
     >}}
 {{</photo-gallery >}}
 

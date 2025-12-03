@@ -29,7 +29,7 @@ The audience isn't forgotten either, and they managed to get people standing up 
 
 {{< photo-gallery >}}
     {{<photoprism_search_linked 
-        query="label:\"Old School Funky Family\"" 
+        query="label:\"Old School Funky Family\" month:12 year:2025" 
         no-title="true"
         size="200"
         mode="tile"
