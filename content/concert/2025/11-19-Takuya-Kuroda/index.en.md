@@ -45,6 +45,6 @@ live is by far even better.
 
 The Crowd Breakdown: Diverse and young. A few tourists as usual. I had the opportunity to talk to a Japanese lady
 and exchange a few recommendations. It was really nice. As always at New Morning, people stay standing and move well.
-Don't forget it's jazz, no pogos!
+But don't forget it's jazz sooo no pogos!
 
 
