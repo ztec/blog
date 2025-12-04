@@ -20,7 +20,7 @@
                 <th>{{ i18n "instrument" . }}</th>
             </tr>
 
-            {{ range .Pages }}
+            {{ range .Pages.ByTitle  }}
                 {{ if eq .Type "instruments" }}
                     <tr>
                         <td class="blk center middle">

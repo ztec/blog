@@ -21,7 +21,7 @@
                 <th>{{ i18n "instrumentsOrTags" . }}</th>
             </tr>
 
-            {{ range .Pages }}
+            {{ range .Pages.ByTitle }}
                 {{ if eq .Type "artists" }}
                     <tr>
                         <td class="blk center middle">

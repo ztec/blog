@@ -31,7 +31,7 @@
                     <th>{{ i18n "instrumentsOrTags" . }}</th>
                 </tr>
 
-                {{ range .Pages }}
+                {{ range .Pages.ByTitle }}
                     {{ if eq .Type "artists" }}
                         <tr>
                             <td class="blk center middle">
@@ -94,8 +94,9 @@
                 <tr>
                     <th class="short"></th>
                     <th>Concert</th>
+                    <th class="short">Date</th>
                 </tr>
-                {{ range .Pages }}
+                {{ range .Pages.ByPublishDate.Reverse }}
                     {{ if eq .Type "concert" }}
                         <tr>
                             <td class="blk center middle">
@@ -117,6 +118,15 @@
                             <td class="blk">
                                 <a href="{{ .RelPermalink }}" class="link no-decoration"
                                    title="{{ .Title }}">{{ .Title }}</a>
+                            </td>
+                            <td class="date expendable">
+                                {{ if not .Date.IsZero }}
+                                    <time {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                                        {{- .Date | time.Format ":date_long" -}}
+                                    </time>
+                                {{ else }}
+                                    -
+                                {{ end }}
                             </td>
                         </tr>
                     {{ end }}
