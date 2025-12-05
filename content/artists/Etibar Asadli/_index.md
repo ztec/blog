@@ -1,4 +1,4 @@
 ---
 title: Etibar Asadli
-instruments: [ "piano", "keyboards" ]
+instruments: [ "piano" ]
 ---
