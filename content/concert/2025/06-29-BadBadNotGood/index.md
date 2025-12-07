@@ -28,4 +28,12 @@ credit="©Sylvain Chausse"
 
 ## Première partie
 
-{{< link "artists/Yazmin Lacey" >}}
+- {{< link "artists/Yazmin Lacey" >}}
+
+{{< cover
+src="cover2.jpg"
+name="Yazmin Lacey"
+alt="Yazmin Lacey"
+quality="70"
+credit="©Myah Jeffers"
+>}}
