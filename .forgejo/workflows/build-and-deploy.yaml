@@ -80,7 +80,51 @@ jobs:
     needs: Deploy
     steps:
       - name: Wait for deployment to settle
-        run: sleep 60
+        run: sleep 4
+      - name: Clear image cache
+        run: |
+          set -e
+          curl --fail --request POST \
+          --url https://api.bunny.net/pullzone/4889935/purgeCache \
+          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
+          --header 'accept: application/json' \
+          --header 'content-type: application/json' \
+          --data '{"CacheTag": "*page*"}'
+      - name: Wait for deployment to settle
+        run: sleep 15
+      - name: Clear image cache
+        run: |
+          set -e
+          curl --fail --request POST \
+          --url https://api.bunny.net/pullzone/4889935/purgeCache \
+          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
+          --header 'accept: application/json' \
+          --header 'content-type: application/json' \
+          --data '{"CacheTag": "*page*"}'
+      - name: Wait for deployment to settle
+        run: sleep 30
+      - name: Clear image cache
+        run: |
+          set -e
+          curl --fail --request POST \
+          --url https://api.bunny.net/pullzone/4889935/purgeCache \
+          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
+          --header 'accept: application/json' \
+          --header 'content-type: application/json' \
+          --data '{"CacheTag": "*page*"}'
+      - name: Wait for deployment to settle
+        run: sleep 30
+      - name: Clear image cache
+        run: |
+          set -e
+          curl --fail --request POST \
+          --url https://api.bunny.net/pullzone/4889935/purgeCache \
+          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
+          --header 'accept: application/json' \
+          --header 'content-type: application/json' \
+          --data '{"CacheTag": "*page*"}'
+      - name: Wait for deployment to settle
+        run: sleep 120
       - name: Clear image cache
         run: |
           set -e
