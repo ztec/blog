@@ -1,6 +1,7 @@
 ---
-title: "Du loot violent cette semaine"
+title: "Du loot violent cette semaine et d'autre trucs"
 date: 2025-12-08T22:00:00+02:00
+aliases: ["/2025/12/08/loot/du-loot-violent-cette-semaine/"]
 tags: ["tech", "social", "music", "train", "photo" ]
 ---
 

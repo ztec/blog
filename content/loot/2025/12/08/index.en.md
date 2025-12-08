@@ -1,6 +1,7 @@
 ---
-title: "A week of Violent Loot"
+title: "A week of Violent Loot among other things"
 date: 2025-12-08T22:00:00+02:00
+aliases: [ "/en/2025/12/08/loot/a-week-of-violent-loot" ]
 tags: ["tech", "social", "music", "train", "photo" ]
 ---
 
