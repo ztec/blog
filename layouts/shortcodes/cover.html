@@ -8,6 +8,9 @@
     {{ $name = $alt }}
 {{ end }}
 
+{{/*Kind of cover. Possible value are full | medium | left | right*/}}
+{{ $type := (.Get "type") | default "full" }}
+
 {{ $baseWidth := int (.Get "width" | default "800") }}
 {{ $quality := int (.Get "quality" | default "90") }}
 {{ $credit := (.Get "credit") }}
@@ -45,7 +48,7 @@
 {{ if ne $Link "" }}
 <a class="hidden-link {{ if (.Get "dark-protection") }}dark-protection{{ end }}" href="{{ $Link | safeURL }}" target="_blank">
 {{ end }}
-    <picture class="inner-cover">
+    <picture class="inner-cover type-{{$type}}">
         {{/* WebP sources */}}
         {{ if gt (len $sizes) 0 }}
             <source type="image/webp" srcset="
