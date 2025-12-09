@@ -41,7 +41,7 @@ anchorLineNos=true
     name = "Loïc Doubinine | Zed"
     site_slug = "blog"
     description = "Développeur, Architecte, DevOps et Site Reliability Engineer"
-    images = ["graph-logo.jpg"]
+    images = []
     custom_css = ["css/blog.css"]
 [languages]
     [languages.fr]
