@@ -3,6 +3,10 @@ title: "Du loot violent cette semaine et d'autre trucs"
 date: 2025-12-08T22:00:00+02:00
 aliases: ["/2025/12/08/loot/du-loot-violent-cette-semaine/"]
 tags: ["tech", "social", "music", "train", "photo" ]
+promotions:
+  twitter: https://x.com/Ztec6/status/1998422405467807748
+  mastodon: https://mamot.fr/deck/@ztec/115690438976127575
+  bluesky: https://bsky.app/profile/ztec.fr/post/3m7kz2r5p5g2q
 ---
 
 Déjà le second Loot, et je suis en retard. J'ai eu à réviser mon Blue et Red book (comprendra qui sait). Allez, on y va : 
