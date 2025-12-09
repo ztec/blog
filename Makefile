@@ -33,3 +33,29 @@ sync:
 	git rebase public/main
 	git push --force private HEAD:main
 	git checkout main
+
+# Convert SVG type icons to PNG with theme colors
+# Theme white: #e7dfd2, Theme dark: #0f1115
+convert-type-icons:
+	@echo "Converting SVG type icons to PNG..."
+	@for dir in themes/VHS/assets/icons/types assets/icons/types; do \
+		if [ -d "$$dir" ]; then \
+			echo "Processing directory: $$dir"; \
+			for svg in $$dir/*.svg; do \
+				if [ -f "$$svg" ]; then \
+					basename=$$(basename "$$svg" .svg); \
+					png="$$dir/$$basename.png"; \
+					echo "  Converting $$basename.svg to $$basename.png"; \
+					magick -size 160x160 "$$svg" -background none -channel RGB -negate +channel \
+						-fuzz 10% -transparent black -background "#0f1115" -flatten "$$png"; \
+				fi; \
+			done; \
+		fi; \
+	done
+	@echo "Creating rounded corner background for type icon (80px icon + 20px padding = 120px)..."
+	@magick -size 120x120 xc:none -fill "#0f1115" \
+		-draw "rectangle 0,0 112,119" \
+		-draw "rectangle 0,0 119,112" \
+		-draw "roundrectangle 104,104 119,119 8,8" \
+		themes/VHS/assets/icon-bg-rounded.png
+	@echo "Done!"
