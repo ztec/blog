@@ -52,13 +52,13 @@ width="240"
 quality="70"
 >}}
 
-- [Retour chez mes potes trumpistes (1/4)](https://www.youtube.com/watch?v=wGaUReDvXew)
+- [Retour chez mes potes trumpistes (1/4)](https://m.youtube.com/watch?v=F4p-KHV2-Qw)
 
 - [Ça va mal finir (2/4)](https://www.youtube.com/watch?v=Vtq_F5EOKaM)
 
 - [Le fils qu'ils n'ont jamais eu (3/4)](https://www.youtube.com/watch?v=uhioLEQcpNk)
 
-- [Réveille-toi ! (4/4)](https://www.youtube.com/watch?v=F4p-KHV2-Qw)
+- [Réveille-toi ! (4/4)](https://m.youtube.com/watch?v=wGaUReDvXew)
 {{< clear >}}
 
 ## Music
