@@ -147,6 +147,7 @@ article picture.inner-cover.type-full{
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-direction: column;
 }
 article picture.inner-cover.type-full img{
     max-width:100%;
@@ -284,3 +285,7 @@ div.credit {
     font-family: Departure Mono, monospace;
 }
 
+.og-image-preview {
+    max-height: 120px;
+    display: block;
+}

@@ -2,7 +2,9 @@
 title: "Les couilles sur la table - Nous faire justice"
 date: 2023-06-12T17:00:00+02:00
 slug: "nous-fare-justice-les-couilles-sur-la-table"
-images: [/2023/post/nous-fare-justice-les-couilles-sur-la-table/img/banner_hu91d32f8d4506d6ccfecd879042abfa1e_6302578_1024x0_resize_box_3.png]
+og: 
+  useComposition: true
+  illustration: cover
 tags: ["podcast", "reco", "feminism", "IA-helped"]
 promotions:
   mastodon: https://mamot.fr/@ztec/110532258437864324

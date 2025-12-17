@@ -2,7 +2,9 @@
 title: "Node.js 20 upgrade: a Journey through unexpected HEAP issues with kubernetes"
 date: 2024-09-18T07:00:00+02:00
 slug: "node.js-20-upgrade-journey-though-unexpected-heap-issues-with-kubernetes"
-images: [2024/post/node.js-20-aventure-inattendue-kubernetes/img/deploy-2-system.png]
+og:
+  useComposition: true
+  illustration: cover
 description: "The journey to an high availability NodeJS upgrade (18 to 20) and the unexpected consequences induced by Kubernetes best practices. Hop in!"
 tags: ["node.js", "tech", "kubernetes", "human-helped"]
 promotions:

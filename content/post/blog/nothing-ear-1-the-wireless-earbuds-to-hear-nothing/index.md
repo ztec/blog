@@ -1,6 +1,9 @@
 ---
 title: "Nothing Ear (1), des écouteurs sans fil et sans son"
 slug: "nothing-ear-one-sans-fil-sans-son"
+og: 
+    illustration: cover
+    useComposition: true
 date: 2022-10-28T18:00:00+02:00
 tags: [review, opinion]
 ---

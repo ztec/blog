@@ -2,6 +2,9 @@
 title: "Nothing Ear (1), the Wireless Earbuds to Hear Nothing!"
 slug: "nothing-ear-one-the-wireless-earbuds-to-hear-nothing"
 date: 2022-10-28T18:00:00+02:00
+og:
+  illustration: cover
+  useComposition: true
 tags: [review, opinion]
 ---
 

@@ -88,10 +88,11 @@
             {{ with $alt }} alt="{{ . }}" {{ end }}
             {{ with $name }} title="{{ . }}" {{ end }}
         />
+
+        {{ if ne $credit "" }}
+            <div class="credit">{{ $credit | markdownify }}</div>
+        {{ end }}
     </picture>
 {{ if ne $Link "" }}
 </a>
-{{ end }}
-{{ if ne $credit "" }}
-<div class="credit">{{ $credit | markdownify }}</div>
 {{ end }}

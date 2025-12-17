@@ -4,12 +4,10 @@
             <td class="type">{{ i18n "title" . }}</td>
             <td class="main-title" colspan="2"><a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a></td>
         </tr>
-        {{ if .Description }}
-            <tr>
-                <td class="type">{{ i18n "description" . }}</td>
-                <td colspan="2">{{ .Description }}</td>
-            </tr>
-        {{ end }}
+        <tr>
+            <td class="type">{{ i18n "description" . }}</td>
+            <td colspan="2">{{ .Description | default .Summary }}</td>
+        </tr>
         {{ if not .Date.IsZero }}
             <tr>
                 <td class="type">{{ i18n "publishing_date" . }}</td>
@@ -38,13 +36,21 @@
             <td class="icon" colspan="2">
                 {{ $type := .Type }}
                 {{ with $.Site.GetPage (printf "/%s" $type) -}}
+                    {{ $typeLink := "" }}
+                    {{ with .Site.GetPage "Section" $type }}{{ $typeLink = .Permalink }}{{ end }}
                     {{ if (resources.Get (printf "icons/types/%s.svg" $type)) }}
-                        <img class="icon-type"
-                             alt="{{ .Title }}"
-                             title="{{ .Title }}"
-                             src="{{ ((resources.Get (printf "icons/types/%s.svg" $type)).Permalink) }}"/>
+                        <div style="display: flex; align-items: center; gap: 0.5em;">
+                            <a href="{{ $typeLink }}" class="hidden-link">
+                                <img class="icon-type"
+                                     alt="{{ .Title }}"
+                                     title="{{ .Title }}"
+                                     style="max-height: 1em; vertical-align: middle; display: inline-block;"
+                                     src="{{ ((resources.Get (printf "icons/types/%s.svg" $type)).Permalink) }}"/>
+                            </a>
+                            <a href="{{ $typeLink }}">{{ .Title }}</a>
+                        </div>
                     {{ else }}
-                        {{ .Type }}
+                        <a href="{{ $typeLink }}">{{ .Title }}</a>
                     {{ end }}
                 {{ end }}
             </td>
@@ -101,6 +107,100 @@
             </td>
         </tr>
 
+        {{ $ogImages := partial "_funcs/get-page-images.html" . }}
+        {{ with $ogImages }}
+            {{ $ogImage := index . 0 }}
+            {{ with $ogImage }}
+                {{ $ogTitle := $.Title }}
+                {{ $ogSubtitle := "" }}
+                {{ $ogDescription := $.Description | default $.Summary }}
+                {{ with $.Params.og }}
+                    {{ if .title }}
+                        {{ $ogTitle = .title }}
+                    {{ end }}
+                    {{ if .subtitle }}
+                        {{ $ogSubtitle = .subtitle }}
+                    {{ end }}
+                    {{ if .description }}
+                        {{ $ogDescription = .description }}
+                    {{ end }}
+                {{ end }}
+
+                {{/* Count number of OG properties to display */}}
+                {{ $ogPropertiesCount := 3 }}{{/* Base: Image, Title, Type */}}
+                {{ if $ogSubtitle }}
+                    {{ $ogPropertiesCount = add $ogPropertiesCount 1 }}
+                {{ end }}
+                {{ if $ogDescription }}
+                    {{ $ogPropertiesCount = add $ogPropertiesCount 1 }}
+                {{ end }}
+
+                {{/* Image row */}}
+                <tr>
+                    <td class="type" rowspan="{{ $ogPropertiesCount }}">{{ i18n "openGraph" $ }}</td>
+                    <td class="type">{{ i18n "image" $ }}</td>
+                    <td>
+                        <a href="{{ .Permalink }}" target="_blank">
+                            {{ if .Image }}
+                                {{ $thumbnail1x := .Image.Resize "x120" }}
+                                {{ $thumbnail2x := .Image.Resize "x240" }}
+                                <picture>
+                                    <source srcset="{{ $thumbnail1x.RelPermalink }} 1x, {{ $thumbnail2x.RelPermalink }} 2x">
+                                    <img src="{{ $thumbnail1x.RelPermalink }}"
+                                         alt="OpenGraph preview"
+                                         class="og-image-preview"/>
+                                </picture>
+                            {{ else }}
+                                <img src="{{ .RelPermalink }}"
+                                     alt="OpenGraph preview"
+                                     class="og-image-preview"/>
+                            {{ end }}
+                        </a>
+                    </td>
+                </tr>
+
+                {{/* Title row */}}
+                <tr>
+                    <td class="type">{{ i18n "title" $ }}</td>
+                    <td>{{ $ogTitle }}</td>
+                </tr>
+
+                {{/* Subtitle row */}}
+                {{ if $ogSubtitle }}
+                    <tr>
+                        <td class="type">{{ i18n "subtitle" $ }}</td>
+                        <td>{{ $ogSubtitle }}</td>
+                    </tr>
+                {{ end }}
+
+                {{/* Description row */}}
+                {{ if $ogDescription }}
+                    <tr>
+                        <td class="type">{{ i18n "description" $ }}</td>
+                        <td>{{ $ogDescription }}</td>
+                    </tr>
+                {{ end }}
+
+                {{/* Type row */}}
+                <tr>
+                    <td class="type">{{ i18n "type" $ }}</td>
+                    <td>
+                        {{ $ogType := "article" }}
+                        {{ $twitterCard := "summary_large_image" }}
+                        {{ with $.Params.og }}
+                            {{ if .type }}
+                                {{ $ogType = .type }}
+                            {{ end }}
+                            {{ if .twitter_card }}
+                                {{ $twitterCard = .twitter_card }}
+                            {{ end }}
+                        {{ end }}
+                        og:type = <strong>{{ $ogType }}</strong><br/>
+                        twitter:card = <strong>{{ $twitterCard }}</strong>
+                    </td>
+                </tr>
+            {{ end }}
+        {{ end }}
 
         {{ if .Params.promotions }}
             {{ $promotionsCount := len .Params.promotions }}

@@ -77,3 +77,15 @@ other = "Instrument(s) / tags"
 
 [instrument]
 other = "Instrument"
+
+[description]
+other = "Description"
+
+[openGraph]
+other = "OpenGraph"
+
+[image]
+other = "Image"
+
+[subtitle]
+other = "Sous-titre"
