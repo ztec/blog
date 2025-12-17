@@ -13,6 +13,15 @@ tags: ["jazz", "clarinet", "contemporary", "minimalist", "klezmer"]
 params:
     concertDate: 2025-12-16T20:00:00+01:00
     eventPage: https://jazzaufildeloise.fr/hypnotic-temple-creation-yom
+og:
+  useComposition: true
+  illustration: cover
+  title : |-
+    YOM
+    Hypnotic Temple
+  subtitle: |-
+    A kind of soft trance experience
+    with music and dance
 ---
 
 It starts in complete darkness. We're warned that phones aren't allowed as they would ruin the experience. 

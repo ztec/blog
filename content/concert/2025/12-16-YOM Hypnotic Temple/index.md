@@ -16,9 +16,12 @@ params:
 og:
     useComposition: true
     illustration: cover
-    title : YOM - Hypnotic Temple 
+    title : |- 
+        YOM
+        Hypnotic Temple 
     subtitle: |-
-        Une experience exceptionelle et envoûtante
+        Une experience 
+        exceptionelle et envoûtante
 ---
 
 Ça commence dans le noir total. On est averti que les téléphones ne sont pas autorisés car ça nuirait à l'expérience. Est-ce que cette horde de vieux va réussir à se contenir ? Ouais. Surprenant mais ouais, et pas un seul flash du coup.
