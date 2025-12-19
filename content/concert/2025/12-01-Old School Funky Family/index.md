@@ -17,6 +17,12 @@ tags: [ "jazz", "fun", "french" ]
 params:
   concertDate: 2025-12-01T20:00:00+01:00
   eventPage: https://ducdeslombards.com/fr/l-agenda/nouvelle-scene-old-school-funky-family-peluches-tour
+og:
+  useComposition: true
+  illustration: cover
+  coverWidthPercent: 70
+  coverOffsetY: 70
+  coverOffsetX: -30
 ---
 
 Découverte aujourd'hui de Old School Funky Family au {{<link "places/le duc des lombards">}}. Apparemment c'est un évènement rare car
