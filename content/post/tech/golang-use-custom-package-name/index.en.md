@@ -3,7 +3,6 @@ title: "Custom package name for go libraries"
 date: 2023-04-18T02:00:00+02:00
 slug: "remove-github-com-from-golang-package-name"
 tags: ["tech", "go", "IA-helped"]
-images: [/en/2023/post/remove-github-com-from-golang-package-name/img/promotion-material.png]
 promotions:
     mastodon: https://mamot.fr/@ztec/110217173420271662
     twitter: https://twitter.com/Ztec6/status/1648134533412159489
