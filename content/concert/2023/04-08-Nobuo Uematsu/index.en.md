@@ -7,6 +7,11 @@ tags: [ "video game music", "classical" ]
 params:
   concertDate: 2023-04-08T20:00:00+02:00
   eventPage: https://www.sallepleyel.com/evenement/nobuo-uematsu-contiki/
+og:
+  useComposition: true
+  illustration: cover
+  coverOffsetY: -120
+  coverWidthPercent: 80
 ---
 
 Nobuo Uematsu
