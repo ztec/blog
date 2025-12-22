@@ -14,7 +14,7 @@ og:
         dernier épisode
         de la saison 1
     illustration: cover
-    coverOffsetX: 200
+    coverOffsetX: 400
 ---
 
 Depuis quelque temps, grâce à la brillante [Pauline Munier](https://www.linkedin.com/in/pauline-m-b8703048), j'anime avec {{<source-link "/sources/zibok">}} un podcast tech.

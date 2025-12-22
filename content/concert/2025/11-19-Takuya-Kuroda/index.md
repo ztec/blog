@@ -12,6 +12,10 @@ tags: ["jazz", "japanese", "new-yorker"]
 params:
     concertDate: 2025-11-19T20:00:00+01:00
     eventPage: https://www.newmorning.com/20251119-6301-takuya-kuroda.html
+og:
+    useComposition: true
+    illustration: cover
+    effect: outlet-full
 ---
 
 {{< cover

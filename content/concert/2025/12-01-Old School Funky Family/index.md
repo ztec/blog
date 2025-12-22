@@ -21,8 +21,8 @@ og:
   useComposition: true
   illustration: cover
   coverWidthPercent: 70
-  coverOffsetY: 70
-  coverOffsetX: -30
+  coverOffsetY: 140
+  coverOffsetX: -60
 ---
 
 Découverte aujourd'hui de Old School Funky Family au {{<link "places/le duc des lombards">}}. Apparemment c'est un évènement rare car

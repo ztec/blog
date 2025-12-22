@@ -10,7 +10,7 @@ params:
 og:
   useComposition: true
   illustration: cover
-  coverOffsetY: -120
+  coverOffsetY: -240
   coverWidthPercent: 80
 ---
 
