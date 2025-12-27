@@ -37,7 +37,7 @@ jobs:
             .
   Deploy:
     runs-on: ubuntu-24.04
-    needs: build
+    needs: Build
     steps:
       - name: checkout code
         uses: actions/checkout@v4
