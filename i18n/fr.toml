@@ -89,3 +89,61 @@ other = "Image"
 
 [subtitle]
 other = "Sous-titre"
+
+# Lecteur vidéo
+[videoPlayerJsDisabled]
+other = "JavaScript est désactivé. C'est OK ! Activez-le pour les options de lecture intégrée."
+
+[videoPlayerCurrentOptions]
+other = "Options actuellement disponibles :"
+
+[videoPlayerPlayOnBunny]
+other = "▶ Lire sur Bunny"
+
+[videoPlayerDownload]
+other = "Télécharger :"
+
+[videoPlayerPrivacyNotice]
+other = "La lecture vidéo transmet certaines informations personnelles à <a href=\"https://bunny.net/gdpr/\" target=\"_blank\" rel=\"noopener noreferrer\">BunnyCDN</a>. Le lecteur HTML5 ou les téléchargements minimisent cela aux en-têtes/IP uniquement. BunnyCDN héberge déjà ce site"
+
+[videoPlayerLegalInfo]
+other = "informations légales"
+
+[videoPlayerChooseWatch]
+other = "Choisissez votre lecteur :"
+
+[videoPlayerBunnyPlayer]
+other = "Bunny (complet)"
+
+[videoPlayerHTML5Player]
+other = "HTML5 (standard)"
+
+[videoPlayerRememberChoice]
+other = "Mémoriser mon choix"
+
+[videoPlayerRevokeConsent]
+other = "⟲ Révoquer le consentement et oublier les choix"
+
+[videoPlayerOptions]
+other = "⋯ Options"
+
+[videoPlayerClose]
+other = "× Fermer"
+
+[videoPlayerHTML5PlayerLabel]
+other = "Lecteur HTML5 :"
+
+[videoPlayerBunnyPlayerLabel]
+other = "Lecteur Bunny :"
+
+[videoPlayerEmbed]
+other = "Intégré"
+
+[videoPlayerBunnyPlayerPage]
+other = "▶ Page lecteur Bunny"
+
+[videoPlayerPlayVideo]
+other = "Lire la vidéo"
+
+[videoPlayerVideo]
+other = "Vidéo"

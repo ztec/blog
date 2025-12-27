@@ -88,3 +88,61 @@ other = "Image"
 
 [subtitle]
 other = "Subtitle"
+
+# Video player
+[videoPlayerJsDisabled]
+other = "JavaScript is disabled. That's OK! Enable it for embedded player options."
+
+[videoPlayerCurrentOptions]
+other = "Current options available:"
+
+[videoPlayerPlayOnBunny]
+other = "▶ Play on Bunny"
+
+[videoPlayerDownload]
+other = "Download:"
+
+[videoPlayerPrivacyNotice]
+other = "Video playback sends some personal information to <a href=\"https://bunny.net/gdpr/\" target=\"_blank\" rel=\"noopener noreferrer\">BunnyCDN</a>. HTML5 Player or downloads minimize this to headers/IP only. BunnyCDN already serves this site"
+
+[videoPlayerLegalInfo]
+other = "legal info"
+
+[videoPlayerChooseWatch]
+other = "Choose how you want to watch:"
+
+[videoPlayerBunnyPlayer]
+other = "Bunny Player"
+
+[videoPlayerHTML5Player]
+other = "HTML5 Player"
+
+[videoPlayerRememberChoice]
+other = "Remember my choice"
+
+[videoPlayerRevokeConsent]
+other = "⟲ Revoke consent & forget choices"
+
+[videoPlayerOptions]
+other = "⋯ Options"
+
+[videoPlayerClose]
+other = "× Close"
+
+[videoPlayerHTML5PlayerLabel]
+other = "HTML5 Player:"
+
+[videoPlayerBunnyPlayerLabel]
+other = "Bunny Player:"
+
+[videoPlayerEmbed]
+other = "Embed"
+
+[videoPlayerBunnyPlayerPage]
+other = "▶ Bunny player page"
+
+[videoPlayerPlayVideo]
+other = "Play video"
+
+[videoPlayerVideo]
+other = "Video"
