@@ -71,4 +71,10 @@ All code and content is licensed under [Creative Commons BY-NC-SA 4.0](https://c
 - **License**: CC Attribution License
 - **Author**: [Buninux](https://buninux.gumroad.com/l/lfdy?ref=svgrepo.com)
 
+#### Dinosaur Kids Play SVG Vector
+- **Collection**: Kids Toys Line Vectors
+- **License**: CC Attribution License
+- **Author**: [Dooder](https://dribbble.com/Dooder)
+- **Source**: [SVG Repo](https://www.svgrepo.com/author/Dooder/)
+
 
