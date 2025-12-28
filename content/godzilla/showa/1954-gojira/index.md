@@ -491,4 +491,4 @@ sur ce film. Il est fort probable que je serai beaucoup plus succinct sur les di
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
 
-![Godzilla qui a détruit Tokyo](img/Gojira-1954-shadow.gif "Godzilla qui a détruit Tokyo")
+![Godzilla qui a détruit Tokyo](img/Gojira-1954-shadow.webp "Godzilla qui a détruit Tokyo")
