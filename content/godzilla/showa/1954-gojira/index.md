@@ -72,7 +72,7 @@ Un son qui le caractérise et qui le suivra tout au long de sa carrière.
 Enfin je pense, j'ai pas encore vérifié, mais je commence.
 
 La toute aussi iconique et majestueuse musique qu'on connaît tous (oui oui, toi aussi) vient habiller ces sons aussi désagréables que jouissifs. Composée par [伊福部 昭 Ifukube Akira](https://fr.wikipedia.org/wiki/Akira_Ifukube)
-elle va créer ce qui sera aussi bien une icône musicale qu'une inspiration pour tant de réalisateurs (Spielberg inclus).
+il va créer ce qui sera aussi bien une icône musicale qu'une inspiration pour tant de réalisateurs (Spielberg inclus).
 
 {{< bunny-video
     title="Rugissement et musique sur générique"
