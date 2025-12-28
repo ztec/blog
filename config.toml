@@ -64,6 +64,7 @@ anchorLineNos=true
   post = "/:year/:section/:slug/"
   loot = "/:year/:month/:day/:sections/:slug/"
   concert = "/:year/:month/:day/:sections[first]/:slug/"
+  godzilla = "/godzilla/:slug/"
 [permalinks.term]
   sources = "/:sections/:slug/"
   artist = "/artists/:slug/"

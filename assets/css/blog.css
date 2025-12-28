@@ -170,9 +170,19 @@ article picture.inner-cover.type-left{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
-article picture.inner-cover.type-left img{
+article picture.inner-cover.type-left img,
+article picture.inner-cover.type-right img{
     max-width:100%;
     width: 100%;
+}
+
+article picture.inner-cover.type-right{
+    display: block;
+    float:right;
+    width: 30%;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 article .clear {

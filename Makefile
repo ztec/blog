@@ -1,6 +1,8 @@
 SHELL := /bin/bash
 PORT ?= 1313
 
+.PHONY: dev update-theme push sync convert-type-icons docker docker-build docker-run docker-shell
+
 ifeq ($(origin VSCODE_PROXY_URI), environment)
 BASEURL := $(shell echo $${VSCODE_PROXY_URI/\{\{port\}\}/$(PORT)})
 else
@@ -59,3 +61,18 @@ convert-type-icons:
 		-draw "roundrectangle 104,104 119,119 8,8" \
 		themes/VHS/assets/icon-bg-rounded.png
 	@echo "Done!"
+
+# Docker targets
+DOCKER_IMAGE ?= ztec-blog
+DOCKER_TAG ?= latest
+
+docker: docker-build
+
+docker-build:
+	docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
+
+docker-run:
+	docker run --rm -p 8080:80 $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+docker-shell:
+	docker run --rm -it -p 8080:80 $(DOCKER_IMAGE):$(DOCKER_TAG) /bin/bash
