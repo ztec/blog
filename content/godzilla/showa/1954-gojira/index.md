@@ -23,7 +23,7 @@ og:
 >
 > J'aborde la mort, la guerre, et les meurtres de masse atomiques.
 >
-> L'entièreté de l'article est léger, mais par moment je suis très sérieux !
+> L'article est léger, mais par moment je suis très sérieux !
 
 
 [{{< cover
