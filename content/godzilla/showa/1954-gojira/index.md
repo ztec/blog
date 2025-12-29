@@ -21,8 +21,7 @@ og:
 > Trigger Warning (Attention)
 >
 >
-> J'aborde la mort, la guerre, et les meurtres de masse atomiques.
->
+> J'aborde la mort, la guerre, et les meurtres de masse atomiques. \
 > L'article est léger, mais par moment je suis très sérieux !
 
 
@@ -247,7 +246,7 @@ de godzilla. Car oui, les vieux pêcheurs parlent d'une vieille légende (même 
 
 C'est là qu'on arrive au fondamental de ce que représente Godzilla. Du moins dans ce film-ci. Car je trouve que ça change un peu dans les suivants.
 
-Godzilla est revenu, car on a foutu le bazar sur les fonds marins, là où il habitait/hibernait (rayez votre choix préféré). Et en plus on y est pas allés
+Godzilla est revenu, car on a foutu le bazar sur les fonds marins, là où il habitait/hibernait (rayez votre choix moinsféré). Et en plus on y est pas allés
 avec le dos de la main morte! On l'a atomisé le truc. Genre Bombe A, Bombe H, etc…
 
 On sait tous que c'est vraiment chiant quand le FBI ou le GIGN vient "gentiment" défoncer votre porte et votre logement à coups de
@@ -415,10 +414,10 @@ quality="70"
 >}}
 ](https://www.tripadvisor.ca/Attraction_Review-g298561-d8178491-Reviews-Fukuromachi_Elementary_School_Peace_Museum-Hiroshima_Hiroshima_Prefecture_Chugoku.html#/media/8178491/?type=ALL_INCLUDING_RESTRICTED&albumid=-160&category=-160)
 
-Le film rappelle ici son propos, au cas où le spectateur aurait oublié;
-Où j'aurais oublié;
-Où tu aurais oublié;
-Où nous aurions collectivement oublié.
+Le film rappelle ici son propos, au cas où le spectateur aurait oublié; \
+Où j'aurais oublié; \
+Où tu aurais oublié; \
+Où nous aurions collectivement oublié. \
 
 {{< bunny-video
 title="Plus de conséquences"
