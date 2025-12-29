@@ -1,6 +1,6 @@
 ---
 title: "Godzilla from 1954 to today"
-date: 2025-12-29T23:00:00+02:00
+date: 2025-12-29T23:01:00+02:00
 tags: ["3615-my-life", "movie", "godzilla", "IA-helped"]
 description: I'm going to watch all Godzilla movies from the first to the most recent. I'll write an article about each one. Enjoy this journey with me
 og:
