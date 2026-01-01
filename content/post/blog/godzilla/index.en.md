@@ -54,7 +54,7 @@ Whether it's about the film, its form and substance, but also the techniques spe
 I'll share everything, and maybe you too will one day want to watch them all. Well, especially some of them because I suppose
 not everything is equal in almost 70 years of franchise.
 
-To find my way, I'll follow [this list](https://en.wikipedia.org/wiki/List_of_Godzilla_films) which traces all the films by year and era. I'll watch them
+To find my way, I'll follow [this list](https://wikizilla.org/wiki/List_of_Godzilla_movies) which traces all the films by year and era. I'll watch them
 roughly chronologically. I say roughly because I've already seen all the Godzillas since 2014 I think. Also, there are probably crossovers that will justify
 changing orders sometimes. This will be reflected here too.
 
