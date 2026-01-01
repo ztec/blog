@@ -54,7 +54,7 @@ Que ce soit sur le film, sa forme et son fond, mais aussi sur les techniques pro
 Je vous partagerai tout, et peut-être que vous aussi vous aurez un jour envie de tous les voir. Enfin, surtout quelques-uns car je suppose
 que tout ne se vaut pas en presque 70 ans de franchise.
 
-Pour m'y retrouver, je vais suivre [cette liste](https://fr.wikipedia.org/wiki/T%C5%8Dh%C5%8D) qui retrace tous les films par année et ère. Je vais les
+Pour m'y retrouver, je vais suivre [cette liste(en)](https://wikizilla.org/wiki/List_of_Godzilla_movies) qui retrace tous les films par année et ère. Je vais les
 regarder à peu près chronologiquement. Je dis à peu près, car j'ai déjà vu tous les Godzilla depuis 2014 je pense. Aussi, il y a sûrement des croisements qui justifieront
 certains ordres. Ça se reflètera ici aussi.
 
