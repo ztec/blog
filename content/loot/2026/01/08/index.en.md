@@ -1,7 +1,7 @@
 ---
 title: "The \"Happy New Year\" loot"
 date: 2026-01-08T09:00:00+02:00
-slug: "bonne_annee"
+slug: "happy_new_year"
 tags: [ "tech", "society", "art" ]
 og:
     useComposition: true
