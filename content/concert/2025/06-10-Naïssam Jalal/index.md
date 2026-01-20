@@ -9,6 +9,8 @@ params:
   eventPage: https://www.studio-ermitage.com/index.php/agenda/date/naissam-jalal--
 ---
 
+Le concert à été enregistré: [Naïssam Jalal - 'Souffles' Full Concert, Studio de l'Ermitage 2025](https://www.youtube.com/watch?app=desktop&v=DIeZf5OzPBk)
+
 - {{< link "artists/Naïssam Jalal" >}} - {{< link "instruments/flute" >}}, {{< link "instruments/voice" >}}, composition
 - {{< link "artists/Yom" >}} - {{< link "instruments/clarinet" >}}
 - {{< link "artists/Emile Parisien" >}} - {{< link "instruments/saxophone" >}}
