@@ -2,7 +2,7 @@
 title: "Le loot \"busy édition\""
 date: 2025-12-30T09:00:00+02:00
 slug: "busy_edition"
-tags: [ "tech", "société", "privacy", "communication", "accessibility", "art"  ]
+tags: [ "tech", "social", "privacy", "communication", "accessibility", "art"  ]
 og:
   subtitle: |-
     Free livre vos SMS 12h en retard,

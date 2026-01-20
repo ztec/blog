@@ -2,7 +2,7 @@
 title: "Le loot \"Bonne année\""
 date: 2026-01-08T09:00:00+02:00
 slug: "bonne_annee"
-tags: [ "tech", "société", "art" ]
+tags: [ "tech", "social", "art" ]
 og:
     useComposition: true
     illustration: cover

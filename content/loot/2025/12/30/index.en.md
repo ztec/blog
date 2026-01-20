@@ -1,7 +1,7 @@
 ---
 title: "Loot: I was busy edition"
 date: 2025-12-30T09:00:00+02:00
-tags: [ "tech", "société", "privacy", "communication", "accessibility", "art"  ]
+tags: [ "tech", "social", "privacy", "communication", "accessibility", "art"  ]
 slug: "busy_edition"
 og:
   title: |-
