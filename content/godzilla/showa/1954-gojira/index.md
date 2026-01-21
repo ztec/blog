@@ -419,6 +419,7 @@ Où j'aurais oublié; \
 Où tu aurais oublié; \
 Où nous aurions collectivement oublié. \
 
+
 {{< bunny-video
 title="Plus de conséquences"
 videoId="16c7cf24-7403-4c9e-b2f1-537a9084eb42"
