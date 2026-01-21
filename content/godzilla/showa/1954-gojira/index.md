@@ -250,7 +250,7 @@ Godzilla est revenu, car on a foutu le bazar sur les fonds marins, là où il ha
 avec le dos de la main morte! On l'a atomisé le truc. Genre Bombe A, Bombe H, etc…
 
 On sait tous que c'est vraiment chiant quand le FBI ou le GIGN vient "gentiment" défoncer votre porte et votre logement à coups de
-percussion atomique. Donc c'est un peu normal que le pauvre Godzilla soit énervé et vienne foutre le bazar dans notre chez-nous. Il vient piétiner
+erquisition atomique. Donc c'est un peu normal que le pauvre Godzilla soit énervé et vienne foutre le bazar dans notre chez-nous. Il vient piétiner
 nos massifs!
 
 Il est suggéré que le fait que Godzilla soit si gros et possède des super-pouvoirs (on va le voir après), soit le résultat des radiations de nos essais nucléaires.
