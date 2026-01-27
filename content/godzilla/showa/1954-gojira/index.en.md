@@ -5,17 +5,20 @@ slug: "1954-Godzilla"
 tags: ["movie", "showa", "godzilla", "tokyo", "IA-helped"]
 description: Excerpts, analysis and sharing of feelings after watching the 1954 Godzilla film. Why this film is a masterpiece!
 og:
- useComposition: true
- illustration: cover
- title: GODZILLA
- subtitle: |
-    Why this film is a
-    1954 masterpiece!
- title_size: 180
- subtitle_top_padding: 260
- coverWidthPercent: 90
- coverOffsetY: 850
- coverOffsetX: 0
+  useComposition: true
+  cover:
+    preset: "cover"
+    type: "from_content"
+    widthPercent: 90
+    offsetX: 0
+    offsetY: 850
+  right:
+    title: "GODZILLA"
+    title_size: 180
+    subtitle: |
+      Why this film is a
+      1954 masterpiece!
+    subtitle_top_padding: 260
 ---
 
 > Trigger Warning

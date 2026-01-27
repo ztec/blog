@@ -7,6 +7,9 @@ tags: [ "jazz", "solidarity" ]
 params:
   concertDate: 2025-06-30T19:00:00+02:00
   eventPage: https://www.lapetitehalle.com/evenement/jazz-for-palestine/
+og:
+  cover:
+    zoom: 10
 ---
 
 A charitable musical evening bringing together numerous jazz artists in solidarity with Gaza.

@@ -5,17 +5,20 @@ slug: "1954-Godzilla"
 tags: ["movie", "showa", "godzilla", "tokyo", "IA-helped"]
 description: Extraits, analyse et partage de ressenti suite au visionnage du film Godzilla de 1954. Pourquoi ce film est un chef-d'œuvre!
 og:
- useComposition: true
- illustration: cover
- title: GODZILLA
- subtitle: |
-    Pourquoi ce film est un
-    chef-d'œuvre de 1954!
- title_size: 180
- subtitle_top_padding: 260
- coverWidthPercent: 90
- coverOffsetY: 850
- coverOffsetX: 0
+  useComposition: true
+  cover:
+    preset: "cover"
+    type: "from_content"
+    widthPercent: 90
+    offsetX: 0
+    offsetY: 850
+  right:
+    title: "GODZILLA"
+    title_size: 180
+    subtitle: |
+      Pourquoi ce film est un
+      chef-d'œuvre de 1954!
+    subtitle_top_padding: 260
 ---
 
 > Trigger Warning (Attention)

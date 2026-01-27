@@ -9,6 +9,6 @@ menu:
 ---
 
 {{<photo-gallery>}}
-{{< photo src="pic/mamot.fr.png" alt="Avatar" >}}
+{{< photo src="pic/2026-blue-note-computer.png" alt="Avatar" >}}
 {{</photo-gallery>}}
 
