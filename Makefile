@@ -10,7 +10,7 @@ BASEURL := http://localhost:$(PORT)/
 endif
 
 dev:
-	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false --bind 0.0.0.0
+	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false --bind 0.0.0.0 --templateMetrics --templateMetricsHints
 
 update-theme:
 	git submodule update --remote --rebase
