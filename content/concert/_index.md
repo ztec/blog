@@ -2,8 +2,12 @@
 title: Concerts
 cascade:
     og:
-      useComposition: true
       illustration: cover
+og:
+    useComposition: true
+    cover:
+        preset: "me"
+        label:  me-2026-blue-note
 ---
 
 Je garde ici la liste de tous les concerts auxquels j'ai assisté depuis 2021. J'essaie de

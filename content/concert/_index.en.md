@@ -4,6 +4,11 @@ cascade:
     og:
       useComposition: true
       illustration: cover
+og:
+    useComposition: true
+    cover:
+        preset: "me"
+        label:  me-2026-blue-note
 ---
 
 I keep here a list of all the concerts I've attended since 2021. I try to

@@ -8,6 +8,11 @@ menu:
     weight: 30
   footer:
     weight: 45
+og:
+    useComposition: true
+    cover:
+        preset: "me"
+        label:  me-2026-blue-note
 ---
 
 ## The Quest
