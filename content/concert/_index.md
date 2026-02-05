@@ -2,7 +2,8 @@
 title: Concerts
 cascade:
     og:
-      illustration: cover
+         cover:
+                preset: "cover"
 og:
     useComposition: true
     cover:
