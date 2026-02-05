@@ -23,6 +23,8 @@ og:
     subtitle_top_padding: 170
     subtitle: |-
         Salle Pleyel
+    cover:
+        copyright: © Jon Shard / Nicky Rybka
 ---
 
 Concert plutôt cool. Du GOGO PENGUIN comme on l'attend. La qualité de la salle était vraiment un gros plus. Une mise en valeur de la qualité de la musique par une qualité sonore au top, comme toujours là-bas.
@@ -38,7 +40,7 @@ src="cover.webp"
 name="GoGo Penguin"
 alt="GoGo Penguin"
 quality="70"
-credit="Jon Shard / Nicky Rybka"
+credit="© Jon Shard / Nicky Rybka"
 >}}
 
 
