@@ -1,6 +1,7 @@
 ---
 title: "GOGO PENGUIN à la Salle Pleyel"
 description: "GOGO PENGUIN en concert à la Salle Pleyel, avec Daudi Matsiko en première partie."
+slug: GOGO-PENGUIN-a-la-Salle-Pleyel
 artists: [
     "GoGo Penguin",
     "Chris Illingworth",
