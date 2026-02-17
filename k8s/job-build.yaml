@@ -99,6 +99,7 @@ spec:
                 - -c
                 - |
                   set -e
+                  git config --global --add safe.directory /app
                   hugo --minify --templateMetrics --templateMetricsHints -d /build/public
                   echo "Build completed, moving files..."
                   mv  /build/public /output/public-new
