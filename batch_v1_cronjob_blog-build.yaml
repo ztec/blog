@@ -22,6 +22,7 @@ spec:
             - -c
             - |
               set -e
+              git config --global --add safe.directory /app
               hugo --minify --templateMetrics --templateMetricsHints -d /build/public
               echo "Build completed, moving files..."
               mv  /build/public /output/public-new
@@ -53,7 +54,7 @@ spec:
                   name: bunny-api-key
             - name: XDG_CACHE_HOME
               value: /app/resources/cache
-            image: git2.riper.fr/ztec/blog-builder:main-2126
+            image: git2.riper.fr/ztec/blog-builder:main-2127
             name: hugo-build
             securityContext:
               runAsGroup: 1000
@@ -80,7 +81,7 @@ spec:
               git submodule update --init --recursive
             env:
             - name: COMMIT_HASH
-              value: 4acdec9db3798177dd04effccd283c06c6ae23de
+              value: de393557e7614da8e7757bb291ab7ad36665dc14
             - name: HOME
               value: /tmp
             - name: GIT_TOKEN
