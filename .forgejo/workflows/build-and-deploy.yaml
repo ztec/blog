@@ -6,35 +6,19 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-24.04
-    env:
-      PP_TOKEN: ${{ secrets.PP_TOKEN }}
-      PP_HOST: ${{ secrets.PP_HOST }}
     steps:
-
-      - name: "Manual checkout"
-        run: |
-          cat >~/.ssh/id_rsa <<STRING
-          ${{ secrets.GIT_SSH_KEY }}
-          STRING
-          chmod 0700 ~/.ssh/id_rsa
-          GIT_SSH_COMMAND='ssh -v -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o StrictHostKeyChecking=no -o CheckHostIP=no' git clone ssh://git@git.riper.fr:22023/ztec/blog.git 
-          cd blog
-          git submodule update --init --recursive
+      - name: checkout code
+        uses: actions/checkout@v4
       - name: Docker login
         uses: docker/login-action@v3
         with:
           registry: git2.riper.fr
           username: ${{ vars.DOCKER_LOGIN }}
           password: ${{ vars.DOCKER_TOKEN }}
-      - name: Docker build and push
-        run: |
-          cd blog
-          docker buildx build --push \
-            --secret id=PP_TOKEN \
-            --secret id=PP_HOST \
-            -t git2.riper.fr/ztec/blog:${{ github.ref_name }}-${{ github.run_id }} \
-            -t git2.riper.fr/ztec/blog:latest \
-            .
+      - name: Docker build builder
+        run: docker buildx build -f Dockerfile.builder -t git2.riper.fr/ztec/blog-builder:${{ github.ref_name }}-${{ github.run_id }} .
+      - name: Docker push
+        run: docker push git2.riper.fr/ztec/blog-builder:${{ github.ref_name }}-${{ github.run_id }}
   Deploy:
     runs-on: ubuntu-24.04
     needs: Build
@@ -55,82 +39,47 @@ jobs:
           kind: Kustomization
           resources:
             - code/k8s/
+          patches:
+            - target:
+                kind: CronJob
+                name: blog-build
+              patch: |
+                - op: replace
+                  path: /spec/jobTemplate/spec/template/spec/initContainers/0/env/0/value
+                  value: "${{ github.sha }}"
           images:
-            - name: git2.riper.fr/ztec/blog
-              newName: git2.riper.fr/ztec/blog
+            - name: git2.riper.fr/ztec/blog-builder
+              newName: git2.riper.fr/ztec/blog-builder
               newTag: "${{ github.ref_name }}-${{ github.run_id }}"
           EOF
+      - name: "clean prod branch"
+        run: rm -vf prod/*.yaml prod/*.yml
       - name: "generate resources"
         uses: https://github.com/steebchen/kubectl@v2.0.0
         with:
           version: v1.27.15
           config: ${{ vars.KUBE_CONFIG_TRANTOR }}
           command: kustomize ./ -o prod/
+      - name: "generate PostSync job from CronJob"
+        run: |
+          yq eval '{
+            "apiVersion": "batch/v1",
+            "kind": "Job",
+            "metadata": {
+              "name": "blog-deploy-build",
+              "labels": .metadata.labels,
+              "annotations": {
+                "argocd.argoproj.io/hook": "PostSync",
+                "argocd.argoproj.io/hook-delete-policy": "BeforeHookCreation"
+              }
+            },
+            "spec": .spec.jobTemplate.spec
+          }' prod/batch_v1_cronjob_blog-build.yaml > prod/batch_v1_job_blog-deploy-build.yaml
       - name: "commit and push manifests"
         run: |
             cd prod
             git config --global user.name "Butler"
             git config --global user.email "butler[bot]@riper.fr"
-            git add *
+            git add -A
             git commit -m "Deploy blog:${{ github.ref_name }}-${{ github.run_id }}" || echo "No changes to commit"
             git push --force origin prod
-
-  Clear-CDN:
-    runs-on: ubuntu-24.04
-    needs: Deploy
-    steps:
-      - name: Wait for deployment to settle
-        run: sleep 4
-      - name: Clear image cache
-        run: |
-          set -e
-          curl --fail --request POST \
-          --url https://api.bunny.net/pullzone/4889935/purgeCache \
-          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
-          --header 'accept: application/json' \
-          --header 'content-type: application/json' \
-          --data '{"CacheTag": "*page*"}'
-      - name: Wait for deployment to settle
-        run: sleep 15
-      - name: Clear image cache
-        run: |
-          set -e
-          curl --fail --request POST \
-          --url https://api.bunny.net/pullzone/4889935/purgeCache \
-          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
-          --header 'accept: application/json' \
-          --header 'content-type: application/json' \
-          --data '{"CacheTag": "*page*"}'
-      - name: Wait for deployment to settle
-        run: sleep 30
-      - name: Clear image cache
-        run: |
-          set -e
-          curl --fail --request POST \
-          --url https://api.bunny.net/pullzone/4889935/purgeCache \
-          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
-          --header 'accept: application/json' \
-          --header 'content-type: application/json' \
-          --data '{"CacheTag": "*page*"}'
-      - name: Wait for deployment to settle
-        run: sleep 30
-      - name: Clear image cache
-        run: |
-          set -e
-          curl --fail --request POST \
-          --url https://api.bunny.net/pullzone/4889935/purgeCache \
-          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
-          --header 'accept: application/json' \
-          --header 'content-type: application/json' \
-          --data '{"CacheTag": "*page*"}'
-      - name: Wait for deployment to settle
-        run: sleep 120
-      - name: Clear image cache
-        run: |
-          set -e
-          curl --fail --request POST \
-          --url https://api.bunny.net/pullzone/4889935/purgeCache \
-          --header 'AccessKey: ${{ secrets.BUNNY_API_KEY }}' \
-          --header 'accept: application/json' \
-          --header 'content-type: application/json' \
-          --data '{"CacheTag": "*page*"}'

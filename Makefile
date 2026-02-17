@@ -12,6 +12,9 @@ endif
 dev:
 	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false --bind 0.0.0.0 --templateMetrics --templateMetricsHints
 
+builder:
+	docker buildx build -f Dockerfile.builder -t git2.riper.fr/ztec/blog-builder:local .
+
 update-theme:
 	git submodule update --remote --rebase
 

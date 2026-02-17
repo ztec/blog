@@ -82,22 +82,16 @@ instrument = 'instruments'
 [caches]
     [caches.assets]
         dir = ':resourceDir/_gen'
-        maxAge = -1
-    [caches.getcsv]
-        dir = ':cacheDir/:project'
-        maxAge = -1
-    [caches.getjson]
-        dir = ':cacheDir/:project'
-        maxAge = -1
+        maxAge = "23h"
     [caches.getresource]
-        dir = ':cacheDir/:project'
-        maxAge = -1
+        dir = ':resourceDir/rsc/:project'
+        maxAge = "10m"
     [caches.images]
         dir = ':resourceDir/_gen'
-        maxAge = -1
+        maxAge = "23h"
     [caches.misc]
-        dir = ':cacheDir/:project'
-        maxAge = -1
+        dir = ':resourceDir/misc/:project'
+        maxAge = "23h"
     [caches.modules]
-        dir = ':cacheDir/modules'
-        maxAge = -1
+        dir = ':resourceDir/modules'
+        maxAge = "23h"

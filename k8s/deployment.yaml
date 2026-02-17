@@ -5,21 +5,40 @@ metadata:
   labels:
     app: "blog"
 spec:
-  replicas: 3
-  revisionHistoryLimit: 2
+  replicas: 2
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: "blog"
+      component: "server"
   template:
     metadata:
       labels:
         app: "blog"
+        component: "server"
     spec:
-      imagePullSecrets:
-        - name: git2.riper.fr-key
+      securityContext:
+        fsGroup: 101
+      initContainers:
+        - name: ensure-content
+          image: "busybox:stable"
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+          command:
+            - sh
+            - -c
+            - |
+              if [ ! -f /data/public/index.html ]; then
+                mkdir -p /data/public
+                echo "<html><body>Building site...</body></html>" > /data/public/index.html
+              fi
+          volumeMounts:
+            - name: blog-public
+              mountPath: /data
       containers:
         - name: "nginx"
-          image: "git2.riper.fr/ztec/blog:102"
+          image: "nginx:stable"
           imagePullPolicy: "IfNotPresent"
           resources:
             requests:
@@ -43,4 +62,20 @@ spec:
               port: http
             initialDelaySeconds: 2
             periodSeconds: 3
-
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+            - name: blog-public
+              mountPath: /data
+              readOnly: true
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: blog-nginx-config
+        - name: blog-public
+          persistentVolumeClaim:
+            claimName: pvc-blog-public

@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: blog-nginx-config
+  labels:
+    app: "blog"
+data:
+  nginx.conf: |
+    user  nginx;
+    worker_processes  1;
+
+    error_log  /var/log/nginx/error.log warn;
+    pid        /var/run/nginx.pid;
+
+
+    events {
+        worker_connections  1024;
+    }
+
+
+    http {
+        include       /etc/nginx/mime.types;
+        default_type  application/octet-stream;
+
+        map $http_x_forwarded_for $ip_anonym {
+            ~(?P<ip>\d+\.\d+)\.    $ip.x.x;
+            ~(?P<ip>[^:]+:[^:]+):       $ip::;
+            default                     0.0.0.0;
+        }
+
+        log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                              '$status $body_bytes_sent "$http_referer" '
+                              '"$http_user_agent" "$http_x_forwarded_for" "$ip_anonym" '
+                              '"$request_time" "$upstream_connect_time" "$upstream_header_time" "$upstream_response_time" ""';
+
+
+        access_log  /var/log/nginx/access.$hostname.log  main;
+
+        sendfile        on;
+        #tcp_nopush     on;
+
+        keepalive_timeout  65;
+
+        #gzip  on;
+
+        include /etc/nginx/conf.d/*.conf;
+    }
+  default.conf: |
+    server {
+        listen       80;
+        listen  [::]:80;
+        server_name  localhost;
+        gzip on;
+
+
+        location / {
+            root   /data/public;
+            add_header Pragma public;
+            add_header Cache-Control "public, max-age=600, s-maxage=3600";
+            add_header CDN-Tag "page";
+            index  index.html index.htm;
+        }
+        location ~* \.(?:ico|css|js|gif|jpe?g|png|webp|svg|woff2)$ {
+    #         expires 30d;
+            root   /data/public;
+            add_header Pragma public;
+            add_header CDN-Tag "media,static,assets";
+            add_header Cache-Control "public, max-age=3600, s-maxage=604800";
+        }
+
+        error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   /data/public;
+        }
+    }

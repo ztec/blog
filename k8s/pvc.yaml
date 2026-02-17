@@ -1,0 +1,77 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-blog-public
+  labels:
+    pv-name: pv-blog-public
+spec:
+  storageClassName: trantor-nfs
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - noatime
+    - nodiratime
+  claimRef:
+    namespace: ztec-fr
+    name: pvc-blog-public
+  nfs:
+    path: "/riper/cargo/Kube/ztec-fr/blog/public"
+    server: "cargo.trantor.riper.fr"
+    readOnly: false
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-blog-public
+spec:
+  storageClassName: trantor-nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      pv-name: pv-blog-public
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-blog-resources
+  labels:
+    pv-name: pv-blog-resources
+spec:
+  storageClassName: trantor-nfs
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - noatime
+    - nodiratime
+  claimRef:
+    namespace: ztec-fr
+    name: pvc-blog-resources
+  nfs:
+    path: "/riper/cargo/Kube/ztec-fr/blog/resources"
+    server: "cargo.trantor.riper.fr"
+    readOnly: false
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-blog-resources
+spec:
+  storageClassName: trantor-nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      pv-name: pv-blog-resources

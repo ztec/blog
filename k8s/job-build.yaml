@@ -1,0 +1,135 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: "blog-build"
+  labels:
+    app: "blog"
+spec:
+  schedule: "0 4 * * *"
+  concurrencyPolicy: Replace
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        metadata:
+          labels:
+            app: "blog"
+            component: "build"
+        spec:
+          restartPolicy: Never
+          securityContext:
+            fsGroup: 1000
+          initContainers:
+            - name: git-clone
+              image: "alpine/git:latest"
+              securityContext:
+                runAsUser: 1000
+                runAsGroup: 1000
+              env:
+                - name: COMMIT_HASH
+                  value: "main"
+                - name: HOME
+                  value: /tmp
+                - name: GIT_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: git-token
+                      key: token
+              command:
+                - sh
+                - -c
+                - |
+                  git config --global url."https://token:${GIT_TOKEN}@git2.riper.fr/".insteadOf "ssh://git@git.riper.fr:22023/"
+                  git config --global --add safe.directory /source
+                  git clone https://token:${GIT_TOKEN}@git2.riper.fr/ztec/blog.git /source
+                  cd /source
+                  git checkout $COMMIT_HASH
+                  git submodule update --init --recursive
+              volumeMounts:
+                - name: source
+                  mountPath: /source
+            - name: fix-permissions
+              image: "busybox:stable"
+              securityContext:
+                runAsUser: 0
+              command:
+                - sh
+                - -c
+                - |
+                  chown -R 1000:1000 /output
+                  chmod -R 775 /output
+                  chown  1000:1000 /resources
+                  chmod  775 /resources
+                  mkdir -p /resources/cache
+                  chown 1000:1000 /resources/cache
+                  chmod 775 /resources/cache
+              volumeMounts:
+                - name: build-output
+                  mountPath: /output
+                - name: hugo-cache
+                  mountPath: /resources
+          containers:
+            - name: hugo-build
+              image: "git2.riper.fr/ztec/blog-builder:latest"
+              securityContext:
+                runAsUser: 1000
+                runAsGroup: 1000
+              env:
+                - name: PP_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: pp-secret
+                      key: token
+                - name: PP_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: pp-config
+                      key: host
+                - name: BUNNY_API_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: bunny-api-key
+                      key: key
+                - name: XDG_CACHE_HOME
+                  value: /app/resources/cache
+              command:
+                - sh
+                - -c
+                - |
+                  set -e
+                  hugo --minify --templateMetrics --templateMetricsHints -d /build/public
+                  echo "Build completed, moving files..."
+                  mv  /build/public /output/public-new
+                  mv  /output/public /output/public-old
+                  mv  /output/public-new /output/public
+                  echo "Files moved, purging cache..."
+                  rm -rf /output/public-old
+                  wget --post-data='{"CacheTag": "*page*"}' \
+                    --header='AccessKey: '"${BUNNY_API_KEY}" \
+                    --header='accept: application/json' \
+                    --header='content-type: application/json' \
+                    -O - \
+                    https://api.bunny.net/pullzone/4889935/purgeCache
+              volumeMounts:
+                - name: source
+                  mountPath: /app
+                - name: build-output
+                  mountPath: /output
+                - name: hugo-cache
+                  mountPath: /app/resources
+                - name: build-tmp
+                  mountPath: /build
+          volumes:
+            - name: source
+              emptyDir: {}
+            - name: build-tmp
+              emptyDir:
+                sizeLimit: 1Gi
+            - name: build-output
+              persistentVolumeClaim:
+                claimName: pvc-blog-public
+            - name: hugo-cache
+              persistentVolumeClaim:
+                claimName: pvc-blog-resources
