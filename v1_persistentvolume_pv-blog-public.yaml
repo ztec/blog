@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    pv-name: pv-blog-public
+  name: pv-blog-public
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  claimRef:
+    name: pvc-blog-public
+    namespace: ztec-fr
+  mountOptions:
+  - noatime
+  - nodiratime
+  nfs:
+    path: /riper/cargo/Kube/ztec-fr/blog/public
+    readOnly: false
+    server: cargo.trantor.riper.fr
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: trantor-nfs
