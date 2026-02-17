@@ -92,6 +92,8 @@ spec:
                     secretKeyRef:
                       name: bunny-api-key
                       key: key
+                - name: HOME
+                  value: /tmp
                 - name: XDG_CACHE_HOME
                   value: /app/resources/cache
               command:
