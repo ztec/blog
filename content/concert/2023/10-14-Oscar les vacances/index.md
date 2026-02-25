@@ -1,5 +1,6 @@
 ---
 title: "Oscar les vacances à ADN Montmartre - Fête des Vendanges de Montmartre"
+description: "Concert intime d'Oscar les Vacances au ADN Montmartre lors de la Fête des Vendanges de Montmartre."
 artists: [ "Oscar les vacances" ]
 places: [ "ADN Montmartre" ]
 date: 2023-10-14T20:00:00+02:00

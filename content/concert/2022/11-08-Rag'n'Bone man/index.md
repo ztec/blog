@@ -1,5 +1,6 @@
 ---
 title: "Rag'n'Bone man à la Salle Pleyel"
+description: "Rag'n'Bone man en concert à la Salle Pleyel, avec Mathilda Homer en première partie."
 artists: [ "Rag'n'Bone man", "Mathilda Homer" ]
 places: [ "Salle Pleyel" ]
 date: 2022-11-08T20:00:00+01:00

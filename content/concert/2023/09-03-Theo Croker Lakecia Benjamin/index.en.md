@@ -1,5 +1,6 @@
 ---
 title: "Theo Croker / Lakecia Benjamin \"Phoenix\" at Philharmonie de Paris"
+description: "Theo Croker and Lakecia Benjamin live at Philharmonie de Paris."
 artists: [ "Theo Croker", "Lakecia Benjamin", "Zaccal Curtis", "Elias Bailey", "EJ Strickland", "Mike King", "Eric Wheeler", "Shekwoaga Ode" ]
 places: [ "La cité de la musique" ]
 date: 2023-09-03T20:00:00+02:00

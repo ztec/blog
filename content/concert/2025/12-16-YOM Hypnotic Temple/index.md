@@ -1,5 +1,6 @@
 ---
 title: "YOM - Hypnotic Temple à Points communs"
+description: "YOM et son Hypnotic Temple à Points communs. Une experience envoûtante mêlant musique onirique, danse et projections vidéo dans le noir."
 artists: [
     "Yom",
     "Manuel Peskine",
@@ -20,8 +21,10 @@ og:
         YOM
         Hypnotic Temple 
     subtitle: |-
-        Une experience 
+        Une experience
         exceptionelle et envoûtante
+    cover:
+        copyright: CC-BY-NC Ztec
 ---
 
 Ça commence dans le noir total. On est averti que les téléphones ne sont pas autorisés car ça nuirait à l'expérience. Est-ce que cette horde de vieux va réussir à se contenir ? Ouais. Surprenant mais ouais, et pas un seul flash du coup.

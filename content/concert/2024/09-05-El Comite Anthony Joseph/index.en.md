@@ -1,5 +1,6 @@
 ---
 title: "El Comité and Anthony Joseph at la cité de la musique"
+description: "El Comité and Anthony Joseph live at La Cite de la Musique."
 artists: [ "El Comité", "Rolando Luna", "Harold López-Nussa", "Gastón Joya", "Rodney Barreto", "Yaroldy Abreu", "Carlos Sarduy", "Irving Acao", "Flavia Coelho", "Anthony Joseph", "Andrew John", "Thibaut Remy", "Rod Youngs", "Renato Paris", "Colin Webster", "Dave Okumu", "Roger Raspail" ]
 places: [ "La cité de la musique" ]
 date: 2024-09-05T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "jazz", "afro-funk" ]
 params:
   concertDate: 2024-09-05T20:00:00+02:00
   eventPage: https://philharmoniedeparis.fr/fr/activite/concert/28031-anthony-joseph-el-comite
+og:
+  cover:
+    copyright: EL Comite ⓒ Anastasia Polak
 ---
 
 ## El Comité

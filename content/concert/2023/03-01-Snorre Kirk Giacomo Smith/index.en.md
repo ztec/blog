@@ -1,5 +1,6 @@
 ---
 title: "Snorre Kirk featuring Giacomo Smith at Duc des Lombards"
+description: "Snorre Kirk featuring Giacomo Smith live at Duc des Lombards."
 artists: [ "Snorre Kirk", "Giacomo Smith", "Joe Webb", "Anders Fjeldsted" ]
 places: [ "Le duc des lombards" ]
 date: 2023-03-01T20:00:00+01:00

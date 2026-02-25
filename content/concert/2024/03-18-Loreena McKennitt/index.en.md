@@ -1,5 +1,6 @@
 ---
 title: "Loreena McKennitt at Salle Pleyel"
+description: "Loreena McKennitt live at Salle Pleyel."
 artists: [ "Loreena McKennitt" ]
 places: [ "Salle Pleyel" ]
 date: 2024-03-18T20:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 title: "Man with a mission à La Cigale"
+description: "Man with a mission en concert à la Cigale."
 artists: [ "Man with a mission" ]
 places: [ "La Cigale" ]
 date: 2023-06-14T20:00:00+02:00

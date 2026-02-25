@@ -1,5 +1,6 @@
 ---
 title: "Takuya Kuroda at New Morning"
+description: "Takuya Kuroda live at New Morning."
 artists: [ "Takuya Kuroda", "Craig Hill", "Takahiro Izumikawa", "Kyle Miles", "Chris Napo" ]
 places: [ "New Morning" ]
 date: 2024-10-16T20:00:00+02:00

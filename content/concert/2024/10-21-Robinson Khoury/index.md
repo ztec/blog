@@ -1,5 +1,6 @@
 ---
 title: "Robinson Khoury - MŸA au Café de la danse"
+description: "Robinson Khoury et son projet MŸA en concert au Café de la Danse, avec Mohamed Abozekry en première partie."
 artists: [ "Robinson Khoury", "Lynn Adib", "Anissa Nehari", "Léo Jassef", "Mohamed Abozekry" ]
 places: [ "Café de la danse" ]
 date: 2024-10-21T20:00:00+02:00

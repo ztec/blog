@@ -1,5 +1,6 @@
 ---
 title: "Hadouk at New Morning"
+description: "Hadouk live at New Morning."
 artists: [ "Didier Malherbe", "Loy Ehrlich", "Steve Shehan", "Jean-Luc Di Fraya", "Éric Löhrer" ]
 places: [ "New Morning" ]
 date: 2024-12-05T20:00:00+01:00

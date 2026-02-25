@@ -1,5 +1,6 @@
 ---
 title: "Pieter Jan Leusink dirige le Requiem de Mozart au Concertgebouw"
+description: "Pieter Jan Leusink et le Bach Choir & Orchestra of the Netherlands en concert au Concertgebouw."
 artists: [ "The Bach Choir & Orchestra of the Netherlands", "Pieter Jan Leusink" ]
 places: [ "Concertgebouw" ]
 date: 2022-05-07T19:30:00+02:00
@@ -7,6 +8,9 @@ tags: [ "classique", "musique sacrée" ]
 params:
   concertDate: 2022-05-07T19:30:00+02:00
   eventPage: https://gocomgo.com/concertgebouw/missa-in-c-coronation-k317-mozart/71471
+og:
+  cover:
+    copyright: ⓒ Gocomgo 2020
 ---
 
 - {{< link "artists/Pieter Jan Leusink" >}} - direction

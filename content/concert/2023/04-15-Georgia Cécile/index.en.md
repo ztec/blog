@@ -1,5 +1,6 @@
 ---
 title: "Georgia Cécile at Duc des Lombards"
+description: "Georgia Cécile live at Duc des Lombards."
 artists: [ "Georgia Cécile", "Euan Stevenson", "Edouard Pennes", "Max Popp" ]
 places: [ "Le duc des lombards" ]
 date: 2023-04-15T20:00:00+02:00

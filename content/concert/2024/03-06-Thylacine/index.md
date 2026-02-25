@@ -1,5 +1,6 @@
 ---
 title: "Thylacine Symphonique à La Seine Musicale"
+description: "Thylacine Symphonique en concert à la Seine Musicale, avec Grégoire Jokic en première partie."
 artists: [ "Thylacine", "Uele Lamore", "Bravinsan", "Grégoire Jokic", "Orchestre Lamoureux" ]
 places: [ "La Seine Musicale" ]
 date: 2024-03-06T20:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 title: "Quand des nounours en pyjama envahissent Le Duc Des Lombards"
+description: "Découverte de Old School Funky Family au Duc des Lombards. Beaucoup d'énergie, de fun et de funk avec 8 musiciens en pyjama sur scène."
 artists: [
   "Old School Funky Family",
   "Jérôme Martineau-Ricotti",
@@ -23,6 +24,8 @@ og:
   coverWidthPercent: 70
   coverOffsetY: 140
   coverOffsetX: -60
+  cover:
+    copyright: ℗ 2025 Pleins Poumons Productions
 ---
 
 Découverte aujourd'hui de Old School Funky Family au {{<link "places/le duc des lombards">}}. Apparemment c'est un évènement rare car

@@ -1,5 +1,6 @@
 ---
 title: "Léa Cazauran And Andy Emler Make'em Move at L'Imprévu"
+description: "Léa Cazauran and Andy Emler MegaOctet for the Make'em Move show, blending jazz and hip hop dance, live at L'Imprevu."
 artists: [ "Léa Cazauran", "Andy Emler", "Adrien Sanchez", "Philippe Sellam", "Guillaume Orti", "François Thuillier", "Laurent Blondiau", "Claude Tchamitchian", "Éric Échampard", "François Verly", "Julia Ortola", "Rodrigue Lino", "Jesus Gil", "Maëlle Dufour", "Lisa Dwomoh", "Santiago Codon Gras", "Ludovic Piscioneri", "Virgile Garcia", "Vincent Mahey", "Marine Stroeher" ]
 places: [ "L'Imprévu" ]
 date: 2024-11-15T20:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 title: "Ana Layla \"Introvert and Naked\" at Duc des Lombards"
+description: "Ana Layla live at Duc des Lombards."
 artists: [ "Ana Layla", "Dré Pallemaerts", "Victor Foulon", "Raphael DeBacker", "Diego Di Vito" ]
 places: [ "Le duc des lombards" ]
 date: 2023-09-23T20:00:00+02:00

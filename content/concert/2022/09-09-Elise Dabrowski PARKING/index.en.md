@@ -1,5 +1,6 @@
 ---
 title: "Elise Dabrowski - PARKING"
+description: "Elise Dabrowski and her PARKING Trio project live."
 artists: [ "Elise Dabrowski", "Olivier Lété", "Fidel Fourneyron" ]
 places: [ "" ]
 date: 2022-09-09T20:00:00+02:00

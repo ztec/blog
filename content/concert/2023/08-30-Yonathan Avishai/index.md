@@ -1,5 +1,6 @@
 ---
 title: "Yonathan Avishai à la bougie au Sunset Sunside"
+description: "Yonathan Avishai en concert à la bougie au Sunset Sunside."
 artists: [ "Yonathan Avishai" ]
 places: [ "Sunset Sunside" ]
 date: 2023-08-30T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "jazz", "piano solo" ]
 params:
   concertDate: 2023-08-30T20:00:00+02:00
   eventPage: https://www.jds.fr/paris/concerts/jazz/yonathan-avishai-concert-a-la-bougie-342583_A
+og:
+  cover:
+    copyright: ©Annie-Claire Alvoët
 ---
 
 - {{< link "artists/Yonathan Avishai" >}} - {{< link "instruments/piano" >}} solo

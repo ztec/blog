@@ -1,5 +1,6 @@
 ---
 title: "Son Moeun Project - Reflet at Le Duc des Lombards"
+description: "Son Moeun Project live at Le Duc des Lombards."
 artists: [ "Son Moeun Project", "Moeun Son", "Dexter Goldberg", "Galindo Cuadra", "Florent Allirot", "Gabriel Ferrari" ]
 places: [ "Le duc des lombards" ]
 date: 2024-05-21T20:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 title: "Who Parked the Car au Sunset Sunside"
+description: "Who Parked the Car en concert au Sunset Sunside."
 artists: [ "Who parked the car", "Thomas Salvatore", "Sebastián Muñoz", "Félix Reneault", "César Aouillé", "Ludovic Prieur", "Malo Ropers", "Alejandro Dixon" ]
 places: [ "Sunset Sunside" ]
 date: 2025-05-10T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "jazz" ]
 params:
   concertDate: 2025-05-10T20:00:00+02:00
   eventPage: https://www.imep.pro/en/event/who-parked-the-car-at-sunset-3/
+og:
+  cover:
+    copyright: ©Yoel Reboh
 ---
 
 - {{< link "artists/Thomas Salvatore" >}} - {{< link "instruments/keyboards" >}}, {{< link "instruments/voice" >}}

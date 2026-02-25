@@ -1,5 +1,6 @@
 ---
 title: "Etibar Asadli Trio \"Mugham\" electro/oriental project at Duc des Lombards"
+description: "Etibar Asadli Trio live at Duc des Lombards."
 artists: [ "Etibar Asadli", "Chris Jennings", "Yoann Schmidt" ]
 places: [ "Le duc des lombards" ]
 date: 2023-09-25T20:00:00+02:00

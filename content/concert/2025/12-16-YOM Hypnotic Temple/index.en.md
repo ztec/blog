@@ -1,5 +1,6 @@
 ---
 title: "YOM - Hypnotic Temple at Points communs"
+description: "YOM and his Hypnotic Temple at Points communs. An enchanting experience blending dreamlike music, dance and video projections in the dark."
 artists: [
     "Yom",
     "Manuel Peskine",
@@ -22,6 +23,8 @@ og:
   subtitle: |-
     A kind of soft trance experience
     with music and dance
+  cover:
+    copyright: CC-BY-NC Ztec
 ---
 
 It starts in complete darkness. We're warned that phones aren't allowed as they would ruin the experience. 

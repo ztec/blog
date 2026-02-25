@@ -1,5 +1,6 @@
 ---
 title: "Who parked the car at Sunset sunside"
+description: "Who parked the car live at Sunset Sunside."
 artists: [ "Who parked the car", "Thomas Salvatore", "Laura Wamba", "Sebastián Muñoz", "Félix Reneault", "César Aouillé", "Ludovic Prieur", "Malo Ropers", "Alejandro Dixon" ]
 places: [ "Sunset sunside" ]
 date: 2024-01-05T20:00:00+01:00
@@ -7,6 +8,9 @@ tags: [ "jazz", "funk" ]
 params:
   concertDate: 2024-01-05T20:00:00+01:00
   eventPage: https://www.parisjazzclub.net/fr/87352/concert/2024/01/05/who-parked-the-car
+og:
+  cover:
+    copyright: ⓒYoel Reboh
 ---
 
 **{{< link "artists/Who parked the car" >}}**

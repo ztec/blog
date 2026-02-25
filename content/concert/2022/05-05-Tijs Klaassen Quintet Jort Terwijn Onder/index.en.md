@@ -1,5 +1,6 @@
 ---
 title: "Tijs Klaassen Quintet / Jort Terwijn Önder at Bimhuis"
+description: "Tijs Klaassen Quintet and Jort Terwijn Önder live at Bimhuis."
 artists: [ "Tijs Klaassen Quintet", "Tijs Klaassen", "Mo van der Does", "Matthias Van den Brande", "Floris Kappeyne", "Wouter Kühne", "Jort Terwijn Önder", "Jort Terwijn", "Federico Calcagno", "Hristo Goleminov", "Alessandro Mazzieri", "Nick Thessalonikefs" ]
 places: [ "Bimhuis" ]
 date: 2022-05-05T20:00:00+02:00

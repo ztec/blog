@@ -1,5 +1,6 @@
 ---
 title: "Makaya McCraven and Endea Owens & the Cookout"
+description: "Makaya McCraven Quartet and Endea Owens & the Cookout live at La Cite de la Musique."
 artists: [ "Makaya McCraven Quartet", "Makaya McCraven", "Jahari Stampley", "Matt Gold", "Marquis Hill", "Junius Paul", "Endea Owens & the Cookout", "Endea Owens", "Miki Hayama", "Shenel Johns", "Louis Fouché", "Kris Johnson", "Lee Pearson" ]
 places: [ "La cité de la musique" ]
 date: 2024-08-20T20:00:00+02:00

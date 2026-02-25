@@ -1,5 +1,6 @@
 ---
 title: "Tribute to Amy Winehouse at Sunset sunside"
+description: "Melissa Lesnie Sextet live at Sunset Sunside for a tribute to Amy Winehouse."
 artists: [ "Melissa Lesnie Sextet", "Melissa Lesnie", "Victor Pitoiset", "Nicola Sabato", "Erwan Morisse" ]
 places: [ "Sunset sunside" ]
 date: 2024-07-20T20:00:00+02:00

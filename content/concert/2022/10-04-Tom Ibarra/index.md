@@ -1,5 +1,6 @@
 ---
 title: "Tom Ibarra - La nouvelle scène au Duc des Lombards"
+description: "Tom Ibarra en concert au Duc des Lombards."
 artists: [ "Tom Ibarra", "Auxane Cartigny", "Lilian Mille", "Jeff Mercadié", "Tao Ehrlich", "Noé Berne" ]
 places: [ "Le duc des lombards" ]
 date: 2022-10-04T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "jazz" ]
 params:
   concertDate: 2022-10-04T20:00:00+02:00
   eventPage: https://ducdeslombards.com/fr/l-agenda/la-nouvelle-scene-tom-ibarra-luma-0
+og:
+  cover:
+    copyright: ⓒunknown
 ---
 
 - {{< link "artists/Tom Ibarra" >}} - {{< link "instruments/guitar" >}}

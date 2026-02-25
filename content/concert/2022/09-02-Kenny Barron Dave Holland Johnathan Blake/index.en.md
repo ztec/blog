@@ -1,5 +1,6 @@
 ---
 title: "Kenny Barron, Dave Holland & Johnathan Blake Trio"
+description: "Kenny Barron, Dave Holland & Johnathan Blake Trio live at Philharmonie de Paris, with Alain Jean-Marie & Diego Imbert as opening act."
 artists: [ "Kenny Barron", "Dave Holland", "Johnathan Blake", "Alain Jean-Marie", "Diego Imbert" ]
 places: [ "Philharmonie de Paris" ]
 date: 2022-09-02T20:00:00+02:00

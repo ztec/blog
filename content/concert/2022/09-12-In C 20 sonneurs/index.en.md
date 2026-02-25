@@ -1,5 +1,6 @@
 ---
 title: "Erwan Keravec - In C 20 sonneurs at Le 104"
+description: "Erwan Keravec and the In C 20 sonneurs live at Le 104."
 artists: [ "In C 20 sonneurs", "Erwan Keravec", "Gaël Chauvin", "Kevin Colas", "Ewen Couriaut", "Ylan Couriaut", "Céline Cozien", "Mickaël Cozien", "Nathalie Drant", "Pierre Gateclou-Marest", "Ernesto Gongora", "Erwan Hamon", "Stéphane Hardy", "Gweltaz Hervé", "Guénolé Keravec", "Lionel Le Page", "Vincent Marin", "Enora Morice", "Gwenaël Piel", "François Robin", "Pierre Thebault", "Quentin Viannais" ]
 places: [ "Le 104" ]
 date: 2022-09-12T21:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "minimalism", "breton traditional music" ]
 params:
   concertDate: 2022-09-12T21:00:00+02:00
   eventPage: https://www.104.fr/fiche-evenement/erwan-keravec-in-c-20-sonneurs.html
+og:
+  cover:
+    copyright: ⓒ Christophe Raynaud De Lage
 ---
 
 ## In C 20 sonneurs

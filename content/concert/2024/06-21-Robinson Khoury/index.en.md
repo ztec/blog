@@ -1,5 +1,6 @@
 ---
 title: "Robinson Khoury - MŸA at La Gare Le Gore"
+description: "Robinson Khoury presents his MŸA project at La Gare Le Gore, with Anissa Nehari, Léo Jassef, and Lynn Adib as guest."
 artists: [ "Robinson Khoury", "Lynn Adib", "Anissa Nehari", "Léo Jassef" ]
 places: [ "La Gare Le Gore" ]
 date: 2024-06-21T20:00:00+02:00

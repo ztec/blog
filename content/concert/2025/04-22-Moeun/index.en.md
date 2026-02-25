@@ -1,5 +1,6 @@
 ---
 title: "Moeun at Le Duc des Lombards"
+description: "Moeun live at Le Duc des Lombards."
 artists: [ "Moeun Son", "Dexter Goldberg", "Romain Habert", "Julia Richard", "Wadie Naim" ]
 places: [ "Le duc des lombards" ]
 date: 2025-04-22T21:00:00+02:00

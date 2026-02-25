@@ -1,5 +1,6 @@
 ---
 title: "Avishai Cohen au Duc des Lombards"
+description: "Avishai Cohen en concert au Duc des Lombards."
 artists: [ "Avishai Cohen", "Guy Moskovich", "Roni Kaspi" ]
 places: [ "Le duc des lombards" ]
 date: 2022-12-03T20:00:00+01:00

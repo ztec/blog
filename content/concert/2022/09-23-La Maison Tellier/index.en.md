@@ -1,5 +1,6 @@
 ---
 title: "La Maison Tellier at La Maroquinerie"
+description: "La Maison Tellier live at La Maroquinerie, with Flora Hibberd as opening act."
 artists: [ "La Maison Tellier", "Flora Hibberd" ]
 places: [ "La Maroquinerie" ]
 date: 2022-09-23T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "pop", "french chanson" ]
 params:
   concertDate: 2022-09-23T20:00:00+02:00
   eventPage: https://www.lamaroquinerie.fr/fr/agenda/view/1076/la-maison-tellier/?of=16
+og:
+  cover:
+    copyright: ⓒunknown
 ---
 
 ## La Maison Tellier

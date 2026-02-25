@@ -1,5 +1,6 @@
 ---
 title: "The Headhunters at New Morning"
+description: "The Headhunters live at New Morning."
 artists: [ "The Headhunters", "Bill Summers", "Mike Clark", "Chris Severin", "Donald Harrison", "Kyle Roussel" ]
 places: [ "New Morning" ]
 date: 2024-10-18T20:00:00+02:00

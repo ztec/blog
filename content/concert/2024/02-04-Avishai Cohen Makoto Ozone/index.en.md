@@ -1,5 +1,6 @@
 ---
 title: "Avishai Cohen & Makoto Ozone - The Amity Duet"
+description: "Avishai Cohen & Makoto Ozone live at Philharmonie de Paris."
 artists: [ "Avishai Cohen", "Makoto Ozone" ]
 places: [ "Philharmonie de Paris" ]
 date: 2024-02-04T20:00:00+01:00

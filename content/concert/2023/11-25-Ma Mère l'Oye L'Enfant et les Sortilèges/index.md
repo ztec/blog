@@ -1,5 +1,6 @@
 ---
 title: "Ma Mère l'Oye / L'Enfant et les Sortilèges au Palais Garnier"
+description: "Ma Mere l'Oye et L'Enfant et les Sortileges de Maurice Ravel au Palais Garnier, ballet en un acte chorégraphié par Martin Chaix."
 artists: [ "Maurice Ravel", "Martin Chaix", "Patrick Lange", "Camille Dugas", "Aleksandar Noshpal", "Tom Klefstad" ]
 places: [ "Palais Garnier" ]
 date: 2023-11-25T19:30:00+01:00
@@ -7,6 +8,9 @@ tags: [ "ballet", "classique", "opéra" ]
 params:
   concertDate: 2023-11-25T19:30:00+01:00
   eventPage: https://www.operadeparis.fr/saison-23-24/opera/ma-mere-loye-lenfant-et-les-sortileges
+og:
+  cover:
+    copyright: © Julien Benhamou / OnP
 ---
 
 Ballet en un acte, cinq tableaux et une apothéose (1912)

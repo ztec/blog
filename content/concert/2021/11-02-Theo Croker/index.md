@@ -1,5 +1,6 @@
 ---
 title: "Theo Croker au Duc Des Lombards"
+description: "Theo Croker en concert au Duc des Lombards."
 artists: [ "Theo Croker", "Mike King", "Eric Wheeler", "Shekwoaga Ode", "D'Leo" ]
 places: [ "Le duc des lombards" ]
 date: 2021-11-02T20:00:00+01:00

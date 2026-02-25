@@ -1,5 +1,6 @@
 ---
 title: "Rag'n'Bone man at Salle Pleyel"
+description: "Rag'n'Bone man live at Salle Pleyel, with Mathilda Homer as opening act."
 artists: [ "Rag'n'Bone man", "Mathilda Homer" ]
 places: [ "Salle Pleyel" ]
 date: 2022-11-08T20:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 title: "Who Parked The Car + Kalupto + Notap au New Morning"
+description: "Mini-festival du label Resolution au New Morning avec trois groupes de la nouvelle scène parisienne : Who Parked The Car, Kalupto et Notap."
 artists: [ "Who parked the car", "Thomas Salvatore", "Laura Wamba", "Sebastián Muñoz", "Félix Reneault", "César Aouillé", "Ludovic Prieur", "Malo Ropers", "Alejandro Dixon", "Kalupto", "Calypso Larrazet-Llop", "Victor Gonon", "Notap" ]
 places: [ "New morning" ]
 date: 2024-04-17T20:00:00+02:00

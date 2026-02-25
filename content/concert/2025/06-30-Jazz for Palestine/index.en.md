@@ -1,5 +1,6 @@
 ---
 title: "Jazz for Palestine at La Petite Halle"
+description: "A charitable jazz evening at La Petite Halle bringing together numerous artists in solidarity with Gaza, with all proceeds donated to UNICEF and the France Palestine Solidarity Association."
 artists: [ "Alain Jean-Marie", "Clélya Abraham", "Naïssam Jalal", "Erik Truffaz", "Estrella Besson", "Lynn Adib", "Cyril Atef", "Arnaud Dolmen", "Tony Tixier", "Climène Zarkan", "Baptiste Ferrandis", "Leonardo Montana", "Noé Codjia", "Neil Saidi", "Charlotte Planchou", "Mark Priore", "Lukmil Perez", "Mohamed Abozekry", "Lina Belaïd", "Wadie Naim", "Jules Jassef", "Léo Jassef", "Omarhaba", "Corentin Giniaux", "Enzo Carniel", "Melvin Marquez", "Camille Prenant", "Laure Sanchez", "David Paycha", "Noé Huchard", "Clément Daldosso", "Kevin Lazakis", "Samuel F'hima", "Tom Peyron", "Philippe Maniez", "Pablo Campos", "Malte Arndal", "Zoot Big Band" ]
 places: [ "La Petite Halle" ]
 date: 2025-06-30T19:00:00+02:00

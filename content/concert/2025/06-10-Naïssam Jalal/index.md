@@ -1,5 +1,6 @@
 ---
 title: "Naïssam Jalal au Studio Ermitage"
+description: "Naïssam Jalal en concert au Studio Ermitage."
 artists: [ "Naïssam Jalal", "Yom", "Emile Parisien", "Robinson Khoury", "Sylvain Rifflet" ]
 places: [ "Studio Ermitage" ]
 date: 2025-06-10T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "jazz" ]
 params:
   concertDate: 2025-06-10T20:00:00+02:00
   eventPage: https://www.studio-ermitage.com/index.php/agenda/date/naissam-jalal--
+og:
+  cover:
+    copyright: ©Alexandre Lacombe
 ---
 
 Le concert à été enregistré: [Naïssam Jalal - 'Souffles' Full Concert, Studio de l'Ermitage 2025](https://www.youtube.com/watch?app=desktop&v=DIeZf5OzPBk)

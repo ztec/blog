@@ -1,5 +1,6 @@
 ---
 title: "Takuya Kuroda plays at New morning Paris"
+description: "Second time seeing Takuya Kuroda at New Morning. Still as classy as ever, with a fluid and pro electro/jazz mix."
 artists: [
     "Takuya Kuroda",
     "Craig Hill",
@@ -12,6 +13,9 @@ tags: ["jazz", "japanese", "new-yorker"]
 params:
     concertDate: 2025-11-19T20:00:00+01:00
     eventPage: https://www.newmorning.com/20251119-6301-takuya-kuroda.html
+og:
+    cover:
+        copyright: ⓒ Hiroyuki Seo
 ---
 
 {{< cover

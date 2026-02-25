@@ -1,5 +1,6 @@
 ---
 title: "When teddy bears in pyjamas take over Le Duc des Lombards"
+description: "Discovering Old School Funky Family at Le Duc des Lombards. Loads of energy, fun and funk with 8 musicians in pyjamas on stage."
 artists: [
   "Old School Funky Family",
   "Jérôme Martineau-Ricotti",
@@ -23,6 +24,8 @@ og:
   coverWidthPercent: 70
   coverOffsetY: 140
   coverOffsetX: -60
+  cover:
+    copyright: ℗ 2025 Pleins Poumons Productions
 ---
 
 Discovery of the day: Old School Funky Family at {{<link "places/le duc des lombards">}}. A rare occasion as they

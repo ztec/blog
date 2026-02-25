@@ -1,5 +1,6 @@
 ---
 title: "Robinson Khoury - MŸA at Café de la danse"
+description: "Robinson Khoury and his MŸA project live at Cafe de la Danse, with Mohamed Abozekry as opening act."
 artists: [ "Robinson Khoury", "Lynn Adib", "Anissa Nehari", "Léo Jassef", "Mohamed Abozekry" ]
 places: [ "Café de la danse" ]
 date: 2024-10-21T20:00:00+02:00

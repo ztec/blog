@@ -1,5 +1,6 @@
 ---
 title: "Makoto Ozone - TRiNFiNiTY at Le Duc des Lombards"
+description: "Makoto Ozone live at Le Duc des Lombards."
 artists: [ "Makoto Ozone", "Kunito Kitai", "Shimpei Ogawa" ]
 places: [ "Le duc des lombards" ]
 date: 2025-04-18T19:30:00+02:00

@@ -1,5 +1,6 @@
 ---
 title: "Takuya Kuroda au New morning"
+description: "Deuxième fois que je vois Takuya Kuroda au New Morning. Toujours aussi class, un mélange électro/jazz fluide et pro."
 artists: [
     "Takuya Kuroda",
     "Craig Hill",
@@ -16,6 +17,8 @@ og:
     useComposition: true
     illustration: cover
     effect: outlet-full
+    cover:
+        copyright: ⓒ Hiroyuki Seo
 ---
 
 {{< cover

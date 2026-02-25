@@ -1,5 +1,6 @@
 ---
 title: "Makaya McCraven à la Philharmonie de Paris"
+description: "Makaya McCraven en concert à la Philharmonie de Paris, avec Endea Owens & the Cookout en première partie."
 artists: [ "Makaya McCraven", "Jahari Stampley", "Matt Gold", "Marquis Hill", "Junius Paul", "Endea Owens", "Miki Hayama", "Shenel Johns", "Louis Fouché", "Kris Johnson", "Lee Pearson" ]
 places: [ "Philharmonie de Paris" ]
 date: 2024-08-30T20:00:00+02:00
@@ -7,6 +8,9 @@ tags: [ "jazz" ]
 params:
   concertDate: 2024-08-30T20:00:00+02:00
   eventPage: https://philharmoniedeparis.fr/fr/activite/concert/28026-makaya-mccraven
+og:
+  cover:
+    copyright: ©EO
 ---
 
 ## Makaya McCraven

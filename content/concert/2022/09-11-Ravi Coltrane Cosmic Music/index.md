@@ -1,5 +1,6 @@
 ---
 title: "Ravi Coltrane - Cosmic Music: A Contemporary Exploration into the Music of John & Alice Coltrane"
+description: "Ravi Coltrane explore la musique de John & Alice Coltrane, avec Emile Parisien en premiere partie."
 artists: [ "Ravi Coltrane", "Gadi Lehavi", "Rashaan Carter", "Elé Howell", "Emile Parisien", "Theo Croker", "Roberto Negro", "Manu Codjia", "Joe Martin", "Nasheet Waits" ]
 places: [ "" ]
 date: 2022-09-11T20:00:00+02:00

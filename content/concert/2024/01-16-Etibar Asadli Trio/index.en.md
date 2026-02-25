@@ -1,5 +1,6 @@
 ---
 title: "Etibar Asadli Trio - Mugham electro/oriental project"
+description: "Etibar Asadli Trio live at Le Duc des Lombards."
 artists: [ "Etibar Asadli", "Ranto Rakotomalala", "Martin Wangermee" ]
 places: [ "Le duc des lombards" ]
 date: 2024-01-16T20:00:00+01:00
@@ -22,4 +23,3 @@ alt="Etibar Asadli Trio"
 quality="70"
 credit="ⓒunknown"
 >}}
-

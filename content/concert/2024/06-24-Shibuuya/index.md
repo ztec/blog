@@ -1,5 +1,6 @@
 ---
 title: "Shibuuya! au Duc Des Lombards"
+description: "Shibuuya! en concert au Duc des Lombards."
 artists: [ "Shibuuya!", "Pierre-Louis Varnier", "Japhet Boristhène", "Lucas Benedetti" ]
 places: [ "Le duc des lombards" ]
 date: 2024-06-24T20:00:00+02:00

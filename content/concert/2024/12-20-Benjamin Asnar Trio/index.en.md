@@ -1,5 +1,6 @@
 ---
 title: "Benjamin Asnar Trio at Paris Jazz Club"
+description: "Benjamin Asnar Trio live at Paris Jazz Club."
 artists: [ "Benjamin Asnar", "Lucas Belkhiri", "Francesco Marzetti" ]
 places: [ "Paris Jazz Club" ]
 date: 2024-12-20T20:00:00+01:00

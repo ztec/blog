@@ -1,5 +1,6 @@
 ---
 title: "Meshell Ndegeocello au New Morning"
+description: "Meshell Ndegeocello en concert au New Morning."
 artists: [ "Meshell Ndegeocello", "Jebin Bruni", "Abraham Rounds", "Christopher Bruce", "Kyle Miles", "Justin Hicks" ]
 places: [ "New Morning" ]
 date: 2024-11-13T20:00:00+01:00

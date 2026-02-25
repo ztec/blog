@@ -1,5 +1,6 @@
 ---
 title: "Emma Rawicz Quintet at Vortex"
+description: "Emma Rawicz Quintet live at Vortex."
 artists: [ "Emma Rawicz", "Ivo Neame", "Jim Hart", "Kevin Glasgow", "Marc Michel" ]
 places: [ "Vortex" ]
 date: 2024-05-03T20:00:00+01:00
@@ -7,6 +8,9 @@ tags: [ "jazz", "saxophone" ]
 params:
   concertDate: 2024-05-03T20:00:00+01:00
   eventPage: https://www.vortexjazz.co.uk/event/emma-rawicz-quintet-2nd-show/
+og:
+  cover:
+    copyright: ⓒACT Gregor Hohenberg
 ---
 
 **Emma Rawicz Quintet**

@@ -1,5 +1,6 @@
 ---
 title: "Man with a mission au Trianon"
+description: "Man with a mission en concert au Trianon."
 artists: [ "Man with a mission" ]
 places: [ "Le Trianon" ]
 date: 2024-09-04T20:00:00+02:00

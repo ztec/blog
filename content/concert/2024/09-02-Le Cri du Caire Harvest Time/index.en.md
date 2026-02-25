@@ -1,5 +1,6 @@
 ---
 title: "Le Cri du Caire and The Harvest Time Experiment - Tribute to Pharoah Sanders"
+description: "Le Cri du Caire and The Harvest Time Experiment live at La Cite de la Musique for a tribute to Pharoah Sanders."
 artists: [ "Le Cri du Caire", "Abdullah Miniawy", "Peter Corser", "Karsten Hochapfel", "The Harvest Time Experiment", "Tisziji Muñoz", "Joshua Abrams", "Hamid Drake", "Sheila Maurice-Grey", "Idris Rahman", "Emre Ramazanoglu", "Liran Donin" ]
 places: [ "La cité de la musique" ]
 date: 2024-09-02T20:00:00+02:00
