@@ -46,7 +46,7 @@ spec:
               memory: "2Mi"
             limits:
               cpu: "0.001"
-              memory: "10Mi"
+              memory: "512Mi"
           ports:
             - name: http
               containerPort: 80
@@ -54,13 +54,13 @@ spec:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 2
+            initialDelaySeconds: 10
             periodSeconds: 3
           readinessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 2
+            initialDelaySeconds: 10
             periodSeconds: 3
           volumeMounts:
             - name: nginx-config
@@ -72,6 +72,8 @@ spec:
             - name: blog-public
               mountPath: /data
               readOnly: true
+            - name: nginx-logs
+              mountPath: /var/log/nginx
       volumes:
         - name: nginx-config
           configMap:
@@ -79,3 +81,5 @@ spec:
         - name: blog-public
           persistentVolumeClaim:
             claimName: pvc-blog-public
+        - name: nginx-logs
+          emptyDir: {}
