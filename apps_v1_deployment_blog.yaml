@@ -24,7 +24,7 @@ spec:
           httpGet:
             path: /
             port: http
-          initialDelaySeconds: 2
+          initialDelaySeconds: 10
           periodSeconds: 3
         name: nginx
         ports:
@@ -34,12 +34,12 @@ spec:
           httpGet:
             path: /
             port: http
-          initialDelaySeconds: 2
+          initialDelaySeconds: 10
           periodSeconds: 3
         resources:
           limits:
             cpu: "0.001"
-            memory: 10Mi
+            memory: 512Mi
           requests:
             cpu: "0.001"
             memory: 2Mi
@@ -53,6 +53,8 @@ spec:
         - mountPath: /data
           name: blog-public
           readOnly: true
+        - mountPath: /var/log/nginx
+          name: nginx-logs
       initContainers:
       - command:
         - sh
@@ -79,3 +81,5 @@ spec:
       - name: blog-public
         persistentVolumeClaim:
           claimName: pvc-blog-public
+      - emptyDir: {}
+        name: nginx-logs
