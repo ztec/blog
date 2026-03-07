@@ -5,7 +5,7 @@ slug: "nous-fare-justice-les-couilles-sur-la-table"
 og: 
   useComposition: true
   illustration: cover
-tags: ["podcast", "reco", "feminism", "IA-helped"]
+tags: ["podcast", "reco", "feminism", "IA-helped", "antiracisme"]
 promotions:
   mastodon: https://mamot.fr/@ztec/110532258437864324
   twitter: https://twitter.com/Ztec6/status/1668298986803871744
