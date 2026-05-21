@@ -1,5 +1,5 @@
 ---
-title: "Takuya Kuroda plays at New morning Paris"
+title: "Takuya Kuroda plays at New Morning Paris"
 description: "Second time seeing Takuya Kuroda at New Morning. Still as classy as ever, with a fluid and pro electro/jazz mix."
 artists: [
     "Takuya Kuroda",
@@ -7,7 +7,7 @@ artists: [
     "Takahiro Izumikawa",
     "David Frazier"
 ]
-places: ["New morning"]
+places: ["New Morning"]
 date: 2025-11-19T20:00:00+01:00
 tags: ["jazz", "japanese", "new-yorker"]
 params:

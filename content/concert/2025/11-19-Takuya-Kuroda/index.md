@@ -1,5 +1,5 @@
 ---
-title: "Takuya Kuroda au New morning"
+title: "Takuya Kuroda au New Morning"
 description: "Deuxième fois que je vois Takuya Kuroda au New Morning. Toujours aussi class, un mélange électro/jazz fluide et pro."
 artists: [
     "Takuya Kuroda",
@@ -7,7 +7,7 @@ artists: [
     "Takahiro Izumikawa",
     "David Frazier"
 ]
-places: ["New morning"]
+places: ["New Morning"]
 date: 2025-11-19T20:00:00+01:00
 tags: ["jazz", "japanese", "new-yorker"]
 params:

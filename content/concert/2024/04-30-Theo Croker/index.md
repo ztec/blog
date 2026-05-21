@@ -2,7 +2,7 @@
 title: "Theo Croker au New Morning"
 description: "Theo Croker en concert au New Morning."
 artists: [ "Theo Croker", "Eric Wheeler", "Idris Frederick", "Jeremiah Collier" ]
-places: [ "New morning" ]
+places: [ "New Morning" ]
 date: 2024-04-30T20:00:00+02:00
 tags: [ "jazz", "trumpet" ]
 params:
