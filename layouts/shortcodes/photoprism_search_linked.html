@@ -15,8 +15,6 @@
 
 {{ $HideTitle := .Get "no-title" | default false }}
 
-{{ $NoFigure := .Get "no-figure" | default false }}
-
 {{ $Class := .Get "class" | default "photo" }}
 
 {{ $FilterInFavorites := .Get "favorites-only" | default false }}
@@ -55,9 +53,7 @@
         {{ range $data}}
             {{ $photoID := (index . "UID") }}
             {{ $photoLink := printf "https://photos.ztec.fr/p/%s" $photoID }}
-            <a class="hidden-link" href="{{ $photoLink }}">
-                {{ partial "photoprism_photo.html"  (dict "PhotoID" $photoID "Mode" $Mode "ConvertWebp" $ConvertWebp "HideTitle" $HideTitle "Nofigure" $NoFigure "class" $Class "Size" $Size "Embed" $Embed "EmbedSize" $EmbedSize) }}
-            </a>
+            {{ partial "photoprism_photo.html"  (dict "PhotoID" $photoID "Mode" $Mode "ConvertWebp" $ConvertWebp "HideTitle" $HideTitle "Nofigure" false "class" $Class "Size" $Size "Embed" $Embed "EmbedSize" $EmbedSize "Lightbox" true "AnchorHref" $photoLink) }}
         {{ end }}
     {{ else }}
         {{ warnf "No data returned for album %s" $query }}
