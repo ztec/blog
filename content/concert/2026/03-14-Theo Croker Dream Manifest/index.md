@@ -32,14 +32,11 @@ Cinquième fois que je vois Theo Croker. À chaque fois avec une formation diff�
 Je pense qu'ils s'entendent bien tous les deux, au point où il a brodé une illustration de son pote sur une de ses poches arrière
 de son pantalon 😁
 
-{{< photo-gallery >}}
-
 {{<photoprism_photo
         id="ptfe4v7amptspach"
         size="200"
         webp="true"
     >}}
-{{</photo-gallery >}}
 
 Côté musique, c'est toujours aussi "neat". Un mélange des genres, une précision, et une sonorité toujours agréable et originale.
 
@@ -52,7 +49,7 @@ Artists:
 - {{< link "artists/Koleby Royston" >}} - {{< link "instruments/drums" >}}
 
 Photos:
-{{< photo-gallery >}}
+{{<justify 3>}}
     {{<photoprism_search_linked
         query="label:\"Theo Croker\" year:2026"
         no-title="true"
@@ -62,5 +59,5 @@ Photos:
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</justify>}}
 

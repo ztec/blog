@@ -14,12 +14,12 @@ Gambetta, is right on top of the cemetery.
 
 In the area, there is some interesting monuments I saw countless times, mostly in cars from the [Périphérique](https://en.wikipedia.org/wiki/Boulevard_P%C3%A9riph%C3%A9rique).
 
-{{< photo-gallery >}}
-{{< photo src="photos/Twisted-Lamppost-Star.jpg" name="Twisted Lamppost Star" alt="[Twisted Lamppost Star](https://fr.wikipedia.org/wiki/Twisted_Lamppost_Star)" >}}
-{{< photo src="photos/Tours-Mercuriales.jpg" name="Tours Mercuriales" alt="[Tours Mercuriales](https://fr.wikipedia.org/wiki/Tours_Mercuriales)" >}}
-{{< photo src="photos/Place-gambetta.jpg" name="Fontaine place Gambetta" alt="[Fontaine place Gambetta](https://fr.wikipedia.org/wiki/Place_Gambetta_(Paris))" >}}
-{{< photo src="photos/Buttes.jpg" name="Buttes Chaumon" alt="[Parc des Buttes-Chaumont](https://fr.wikipedia.org/wiki/Parc_des_Buttes-Chaumont)" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![[Twisted Lamppost Star](https://fr.wikipedia.org/wiki/Twisted_Lamppost_Star)](photos/Twisted-Lamppost-Star.jpg "Twisted Lamppost Star")
+![[Tours Mercuriales](https://fr.wikipedia.org/wiki/Tours_Mercuriales)](photos/Tours-Mercuriales.jpg "Tours Mercuriales")
+![[Fontaine place Gambetta](https://fr.wikipedia.org/wiki/Place_Gambetta_(Paris))](photos/Place-gambetta.jpg "Fontaine place Gambetta")
+![[Parc des Buttes-Chaumont](https://fr.wikipedia.org/wiki/Parc_des_Buttes-Chaumont)](photos/Buttes.jpg "Buttes Chaumon")
+{{</flex>}}
 
 ---
 
@@ -27,12 +27,12 @@ The Gambetta neighborhood is really ... full of life. Days and night. Not the bu
 In france, every year we have what we call "Fête de la music" (Music party) where the whole country put music everywhere.
 Come at Gambetta on this time, push your luck to hear the fanfare (or be the lucky one to be awakened by trompette every saturday)
 
-{{< photo-gallery >}}
-{{< photo src="photos/clap.jpg" name="Clap" alt="Femme illuminée clappant des mains derrière un Corp" >}}
-{{< photo src="photos/Saxo.jpg" name="Saxo" alt="Joueur de saxophone" >}}
-{{< photo src="photos/Trompette.jpg" name="Trompette" alt="Joueur de trompette" >}}
-{{< photo src="photos/dancing.gif" name="Dacing" alt="Un homme et une femme s'éloignant au loin en dansant de joie" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Femme illuminée clappant des mains derrière un Corp](photos/clap.jpg "Clap")
+![Joueur de saxophone](photos/Saxo.jpg "Saxo")
+![Joueur de trompette](photos/Trompette.jpg "Trompette")
+![Un homme et une femme s'éloignant au loin en dansant de joie](photos/dancing.gif "Dacing")
+{{</flex>}}
 
 ---
 
@@ -43,16 +43,16 @@ Few weeks ago I decided to lost myself in Paris. Recently I willingly lost mysel
 aware of the beauty of the city. Street art, parisien typical building and street, broken bench, bucolic streets, I think everyone
 can see one beauty or another.
 
-{{< photo-gallery >}}
-{{< photo src="photos/Amazing.jpg" name="Amazing" alt="Bar wall with street art on it" >}}
-{{< photo src="photos/FinDeCourse.jpg" name="Fin de course" alt="Car parked in front of a typical parisian bar" >}}
-{{< photo src="photos/NonPotable.jpg" name="Non potable" alt="Lion's Fountain surrounded by two painted spiders on the wall" >}}
-{{< photo src="photos/ParisALaCampagne.jpg" name="Paris à la campagne" alt="[Campagne à Paris](https://fr.wikipedia.org/wiki/Campagne_%C3%A0_Paris)" >}}
-{{< photo src="photos/VillaOlivierMétra.jpg" name="Villa Olivier Métra" alt="[Villa Olivier-Métra](https://fr.wikipedia.org/wiki/Villa_Olivier-M%C3%A9tra)" >}}
-{{< photo src="photos/VoieVerdurée.jpg" name="Voie verdurée" alt="Typical parisian street with plants" >}}
-{{< photo src="photos/CanILiveThere.jpg" name="Can I Live there?" alt="no so typical parisian houses" >}}
-{{< photo src="photos/WalkingToDeath.jpg" name="Le père lachaise" alt="A woman walking away with a pink bag at [Cimetière du Père-Lachaise](https://fr.wikipedia.org/wiki/Cimeti%C3%A8re_du_P%C3%A8re-Lachaise)" >}}
-{{</photo-gallery>}}
+{{<masonry 3>}}
+![Bar wall with street art on it](photos/Amazing.jpg "Amazing")
+![Car parked in front of a typical parisian bar](photos/FinDeCourse.jpg "Fin de course")
+![Lion's Fountain surrounded by two painted spiders on the wall](photos/NonPotable.jpg "Non potable")
+![[Campagne à Paris](https://fr.wikipedia.org/wiki/Campagne_%C3%A0_Paris)](photos/ParisALaCampagne.jpg "Paris à la campagne")
+![[Villa Olivier-Métra](https://fr.wikipedia.org/wiki/Villa_Olivier-M%C3%A9tra)](photos/VillaOlivierMétra.jpg "Villa Olivier Métra")
+![Typical parisian street with plants](photos/VoieVerdurée.jpg "Voie verdurée")
+![no so typical parisian houses](photos/CanILiveThere.jpg "Can I Live there?")
+![A woman walking away with a pink bag at [Cimetière du Père-Lachaise](https://fr.wikipedia.org/wiki/Cimeti%C3%A8re_du_P%C3%A8re-Lachaise)](photos/WalkingToDeath.jpg "Le père lachaise")
+{{</masonry>}}
 
 What a discovery! I did not expect to find soo much bucolic places soo far away from the typical parisien street style.
 
@@ -60,42 +60,42 @@ What a discovery! I did not expect to find soo much bucolic places soo far away 
 
 I saw some peculiar things worth the look
 
-{{< photo-gallery >}}
-{{< photo src="photos/Bee.jpg" name="Bee" alt="A bee on the street" >}}
-{{< photo src="photos/BearinMind.jpg" name="Bear in mind" alt="Stay free" >}}
-{{< photo src="photos/Alf.jpg" name="Alf" alt="Alf saying `I like your smile!`" >}}
-{{< photo src="photos/FresqueManouchian.jpg" name="Fresque Manouchian" alt="[La fresque de Popof](https://mairie20.paris.fr/pages/il-etait-une-fois-le-20e-la-rue-du-groupe-manouchian-20448)" >}}
-{{< photo src="photos/FresqueElephant.jpg" name="Fresque Elephant" alt="An Elephant on the wall" >}}
-{{< photo src="photos/Koalachnikov.jpg" name="I Love Koalachnikov" alt="I Love Koalachnikov" >}}
-{{< photo src="photos/VéloASaisir.jpg" name="A saisir" alt="A bike on takeaway" >}}
-{{< photo src="photos/AttentionChatEnPsy.jpg" name="Attention chat en psychanalyse" alt="Warning, Cat under psychanalyse" >}}
-{{< photo src="photos/ChienGentilsMaitreLunatique.jpg" name="Chien gentils Maitre lunatique" alt="Nice dog, temperamental owner" >}}
-{{< photo src="photos/LapinLunatique.jpg" name="Lapin lunatique" alt="Temperamental rabbit" >}}
-{{< photo src="photos/JohnHamon.jpg" name="John Hamon" alt="The mysterious John Hamon" >}}
-{{< photo src="photos/Leloup.jpg" name="Le loup" alt="Wolf climbing stairs" >}}
-{{< photo src="photos/Aziz.jpg" name="Aziz" alt="So I brought light" >}}
-{{</photo-gallery>}}
+{{<masonry 3>}}
+![A bee on the street](photos/Bee.jpg "Bee")
+![Stay free](photos/BearinMind.jpg "Bear in mind")
+![Alf saying `I like your smile!`](photos/Alf.jpg "Alf")
+![[La fresque de Popof](https://mairie20.paris.fr/pages/il-etait-une-fois-le-20e-la-rue-du-groupe-manouchian-20448)](photos/FresqueManouchian.jpg "Fresque Manouchian")
+![An Elephant on the wall](photos/FresqueElephant.jpg "Fresque Elephant")
+![I Love Koalachnikov](photos/Koalachnikov.jpg "I Love Koalachnikov")
+![A bike on takeaway](photos/VéloASaisir.jpg "A saisir")
+![Warning, Cat under psychanalyse](photos/AttentionChatEnPsy.jpg "Attention chat en psychanalyse")
+![Nice dog, temperamental owner](photos/ChienGentilsMaitreLunatique.jpg "Chien gentils Maitre lunatique")
+![Temperamental rabbit](photos/LapinLunatique.jpg "Lapin lunatique")
+![The mysterious John Hamon](photos/JohnHamon.jpg "John Hamon")
+![Wolf climbing stairs](photos/Leloup.jpg "Le loup")
+![So I brought light](photos/Aziz.jpg "Aziz")
+{{</masonry>}}
 
 ---
 
 Paris also contains some famous building it cannot be Paris without. 
 
-{{< photo-gallery >}}
-{{< photo src="photos/LeLouvre.jpg" name="Le louvre" alt="Pyramide du louvre" >}}
-{{< photo src="photos/BNF.jpg" name="BNF" alt="National French library" >}}
-{{< photo src="photos/BNF2.jpg" name="BNF2" alt="The national french library" >}}
-{{< photo src="photos/Bastille.jpg" name="Bastille" alt="Bastille place angle" >}}
-{{< photo src="photos/répu.jpg" name="Répu" alt="Republic place with a bench on foreground" >}}
-{{< photo src="photos/arc.jpg" name="Arc" alt="Two woman before the Arc de Triomphe" >}}
-{{< photo src="photos/laTour.jpg" name="La Tour" alt="THE Eiffel tower with my face in the reflexion" >}}
-{{< photo src="photos/opéra.jpg" name="l'opéra" alt="One the [l'opéra garnier](https://fr.wikipedia.org/wiki/Op%C3%A9ra_Garnier) roof statue" >}}
-{{< photo src="photos/Sacrécoeur.JPG" name="Sacré coeur" alt="[Le sacré coeur](https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris)" >}}
-{{< photo src="photos/Samaritaine.JPG" name="La Samaritaine" alt="[La Samaritaine](https://fr.wikipedia.org/wiki/La_Samaritaine)" >}}
-{{< photo src="photos/Crop.jpg" name="Tour Montparnasse" alt="[Montparnasse tower](https://en.wikipedia.org/wiki/Tour_Montparnasse) through Eiffel tower" >}}
-{{< photo src="photos/Orsay.JPG" name="Musée d'Orsay" alt="[Orsay Museum](https://en.wikipedia.org/wiki/Mus%C3%A9e_d%27Orsay)" >}}
-{{< photo src="photos/Troca.JPG" name="Trocadéro" alt="Trocadéro statue" >}}
-{{< photo src="photos/Répu2.jpg" name="République" alt="République place" >}}
-{{</photo-gallery>}}
+{{<masonry 3>}}
+![Pyramide du louvre](photos/LeLouvre.jpg "Le louvre")
+![National French library](photos/BNF.jpg "BNF")
+![The national french library](photos/BNF2.jpg "BNF2")
+![Bastille place angle](photos/Bastille.jpg "Bastille")
+![Republic place with a bench on foreground](photos/répu.jpg "Répu")
+![Two woman before the Arc de Triomphe](photos/arc.jpg "Arc")
+![THE Eiffel tower with my face in the reflexion](photos/laTour.jpg "La Tour")
+![One the [l'opéra garnier](https://fr.wikipedia.org/wiki/Op%C3%A9ra_Garnier) roof statue](photos/opéra.jpg "l'opéra")
+![[Le sacré coeur](https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris)](photos/Sacrécoeur.JPG "Sacré coeur")
+![[La Samaritaine](https://fr.wikipedia.org/wiki/La_Samaritaine)](photos/Samaritaine.JPG "La Samaritaine")
+![[Montparnasse tower](https://en.wikipedia.org/wiki/Tour_Montparnasse) through Eiffel tower](photos/Crop.jpg "Tour Montparnasse")
+![[Orsay Museum](https://en.wikipedia.org/wiki/Mus%C3%A9e_d%27Orsay)](photos/Orsay.JPG "Musée d'Orsay")
+![Trocadéro statue](photos/Troca.JPG "Trocadéro")
+![République place](photos/Répu2.jpg "République")
+{{</masonry>}}
 
 ---
 
@@ -104,28 +104,28 @@ With no order, here is some shot I took. I had to dig in my archives, the oldest
 This is probably the beginning of my journey as a photographer. I started on film, even if digital camera were already a thing back then. 
 Will you be able to tell ?
 
-{{< photo-gallery >}}
-{{< photo src="photos/CetD.jpg"                     name="MK2 Bibliothèque, les petites salles" alt="Small cinema theatre room entrances" >}}
-{{< photo src="photos/VirginDisco.jpg"              name="Virgin disco" alt="Virgin Megastore discotheque at Champs Élysée" >}}
-{{< photo src="photos/ugcWheel.jpg"                 name="UGC Wheel" alt="UGC restaurent" >}}
-{{< photo src="photos/Décolage.jpg"                 name="Décolage" alt="A plan toy on a window" >}}
-{{< photo src="photos/WaitingForTheMovie.jpg"       name="Waiting" alt="A woman waiting, her friends, in the shadows" >}}
-{{< photo src="photos/Madelene.jpg"                 name="Madelene" alt="Madeleine station plants line 14" >}}
-{{< photo src="photos/métro.jpg"                    name="Métro parisien" alt="Entrance of the métro" >}}
-{{< photo src="photos/LaPetiteRivière.jpg"          name="La Petite Rivière" alt="The small river in the center of Paris with fashion institute on the right " >}}
-{{< photo src="photos/ModernHabitats.jpg"           name="Les habitations" alt="modern-ish living building in 12e arrondissement" >}}
-{{< photo src="photos/sunoff.jpg"                   name="Sun off" alt="Paris from the eiffel tower." >}}
-{{< photo src="photos/ChampsElysees.jpg"            name="Champs Élysées" alt="Champs Élysées metro station" >}}
-{{< photo src="photos/EscalatorLyon.jpg"            name="Escalator Lyon" alt="Moving stairs of Gare de lyon railway station" >}}
-{{< photo src="photos/LaGrande.jpg"                 name="La Grande" alt="Eiffel tower from the ground" >}}
-{{< photo src="photos/LeChat.jpg"                   name="Le Chat" alt="A cat on a window" >}}
-{{< photo src="photos/Briques.jpg"                  name="Briques" alt="Red brick building" >}}
-{{< photo src="photos/MétroParisien.JPG"            name="Le métro parisien" alt="Paris métro" >}}
-{{< photo src="photos/StairwayToFlotte.JPG"         name="StairwayToFlotte" alt="Stairway to watter" >}}
-{{< photo src="photos/TGV.JPG"                      name="TGV" alt="TGV at Gare de lyon" >}}
-{{< photo src="photos/Tourists.JPG"                 name="Tourists" alt="Two tourist being taken in picture in front of the eiffel tower" >}}
-{{< photo src="photos/Villette.jpg"                  name="Vilette" alt="La Villette building at night" >}}
-{{</photo-gallery>}}
+{{<masonry 3>}}
+![Small cinema theatre room entrances](photos/CetD.jpg "MK2 Bibliothèque, les petites salles")
+![Virgin Megastore discotheque at Champs Élysée](photos/VirginDisco.jpg "Virgin disco")
+![UGC restaurent](photos/ugcWheel.jpg "UGC Wheel")
+![A plan toy on a window](photos/Décolage.jpg "Décolage")
+![A woman waiting, her friends, in the shadows](photos/WaitingForTheMovie.jpg "Waiting")
+![Madeleine station plants line 14](photos/Madelene.jpg "Madelene")
+![Entrance of the métro](photos/métro.jpg "Métro parisien")
+![The small river in the center of Paris with fashion institute on the right ](photos/LaPetiteRivière.jpg "La Petite Rivière")
+![modern-ish living building in 12e arrondissement](photos/ModernHabitats.jpg "Les habitations")
+![Paris from the eiffel tower.](photos/sunoff.jpg "Sun off")
+![Champs Élysées metro station](photos/ChampsElysees.jpg "Champs Élysées")
+![Moving stairs of Gare de lyon railway station](photos/EscalatorLyon.jpg "Escalator Lyon")
+![Eiffel tower from the ground](photos/LaGrande.jpg "La Grande")
+![A cat on a window](photos/LeChat.jpg "Le Chat")
+![Red brick building](photos/Briques.jpg "Briques")
+![Paris métro](photos/MétroParisien.JPG "Le métro parisien")
+![Stairway to watter](photos/StairwayToFlotte.JPG "StairwayToFlotte")
+![TGV at Gare de lyon](photos/TGV.JPG "TGV")
+![Two tourist being taken in picture in front of the eiffel tower](photos/Tourists.JPG "Tourists")
+![La Villette building at night](photos/Villette.jpg "Vilette")
+{{</masonry>}}
 
 ---
 

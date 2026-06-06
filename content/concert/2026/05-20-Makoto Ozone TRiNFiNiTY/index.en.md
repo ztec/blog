@@ -41,7 +41,7 @@ Artists:
 
 A few pictures I took:
 
-{{< photo-gallery >}}
+{{<masonry>}}
     {{<photoprism_search_linked
         query="label:\"Makoto Ozone\" year:2026"
         no-title="true"
@@ -51,5 +51,5 @@ A few pictures I took:
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</masonry>}}
 

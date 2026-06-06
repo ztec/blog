@@ -17,9 +17,7 @@ Afin que mon image soit nette et propre, j'ai installé une lampe qui m'envoie b
 De cette façon, je suis sûr que l'on me voit bien ! 
 J'oubliais souvent d'allumer ou pire, de l'éteindre. J'ai donc automatisé le processus.
 
-{{< photo-gallery >}}
-{{< photo src="img/light.jpg" name="Lumière et webcam" alt="Une webcam poser au dessus d'une lampe entre deux écrants" >}}
-{{</photo-gallery>}}
+![Une webcam poser au dessus d'une lampe entre deux écrants](img/light.jpg "Lumière et webcam")
 
 La lampe que j'utilise est une [Philips Hue Play](https://www.philips-hue.com/fr-fr/p/hue-white-and-color-ambiance-hue-play-pack-x2/7820230P7), qui peut être contrôlée via l'ensemble de l'écosystème Philips Hue.
 
@@ -27,9 +25,7 @@ J'ai également une tablette sur mon bureau avec des gros boutons pour allumer e
 C'est pratique, mais cela nécessite tout de même un geste de trop.
 
 
-{{< photo-gallery >}}
-{{< photo src="img/tablet.jpg" name="Tablette de contrôle" alt="Tablette posé sur le bureau avec des gros carré dessus pour allumer ou éteindre les lumières, donc celle de la webcam" >}}
-{{</photo-gallery>}}
+![Tablette posé sur le bureau avec des gros carré dessus pour allumer ou éteindre les lumières, donc celle de la webcam](img/tablet.jpg "Tablette de contrôle")
 
 ## API pour allumer la lampe
 Les lampes Philips Hue peuvent être contrôlées via le bridge qui dispose d'une API REST assez simple.
@@ -175,6 +171,5 @@ J'ai été agréablement surpris du peu de temps qu'il m'a fallu pour faire ce s
 
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
-
 
 

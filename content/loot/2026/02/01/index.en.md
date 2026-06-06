@@ -169,14 +169,14 @@ On another topic, it seems I've broken all my Masto audience records this year w
 
 [https://mamot.fr/deck/@ztec/115990259401164027](https://mamot.fr/deck/@ztec/115990259401164027)
 
-{{< photo-gallery >}}
-{{< photo
-    src="pouet.png"        name="Toot on Mastodon"            alt="Screenshot of the toot on Mastodon" >}}
-{{</photo-gallery >}}
+
+![Screenshot of the toot on Mastodon](pouet.png "oot on Mastodon")
 
 The cool photos I took during the weekend:
 
-{{< photo-gallery >}}
+
+
+{{< justify >}}
     {{<photoprism_search_linked
         query="label:\"FOSDEM\" year:2026"
         order="oldest"
@@ -186,6 +186,6 @@ The cool photos I took during the weekend:
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</justify >}}
 
 Looking forward to the next FOSDEM, in 2027.

@@ -187,16 +187,16 @@ I will be able to search within fields or add modifiers. I use it a lot for my o
 > query and display the results.
 
 
-{{< photo-gallery >}}
-{{< photo src="img/search-ok-grin.png"        name="Search results for grin"            alt="Search result for the query `grin` displaying the `grin` emoji as expected" >}}
-{{< photo src="img/search-ok-smile.png"       name="Search results for smile"           alt="Search result for the query `smile` displaying multiple emoji smiling" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Search result for the query `grin` displaying the `grin` emoji as expected](img/search-ok-grin.png "Search results for grin")
+![Search result for the query `smile` displaying multiple emoji smiling](img/search-ok-smile.png "Search results for smile")
+{{</flex>}}
 
 ## :bubble_tea: Fuzzy search 
 
 Cool, the results seem promising. But there seems to be a problem.
 
-{{< illustration src="img/search-ko-hug.png"        name="Search results for hug"            alt="Search result for the query `hug` displaying no results" >}}
+![Search result for the query `hug` displaying no results](img/search-ko-hug.png "Search results for hug")
 
 I should have an emoji here, :hugs: to be exact. If I add the `s` to the query, it finds it, but not without it. Let's try
 to enhance the search for this kind of purpose by adding a bit of fuzziness to the search.
@@ -244,7 +244,7 @@ func Search(q string) (results []EmojiDescription) {
 	return
 }
 ```
-{{< illustration src="img/search-ok-hug.png"        name="Search results for hug"            alt="Search result for the query `hug` now displaying multiple emoji including hugs" >}}
+![Search result for the query `hug` now displaying multiple emoji including hugs](img/search-ok-hug.png "Search results for hug")
 
 This time, I have my `hugs` emoji when I search for `hug`. I also have other results, but that's fine for me. I don't expect 
 to have only one result and picking the right one as long as it is visible on screen with few to no scrolls is ok for me.
@@ -256,7 +256,7 @@ to have only one result and picking the right one as long as it is visible on sc
 If I search for `ok hand` I find the emoji, right? But as you can see, there is only the standard variation - the yellow one.
 I would like to have the skin tone variation as well.
 
-{{< illustration src="img/search-ok-hand-no-black.png" name="Search results for ok hand" alt="Search result for the query `ok hand` displaying only the yellow emoji" >}}
+![Search result for the query `ok hand` displaying only the yellow emoji](img/search-ok-hand-no-black.png "Search results for ok hand")
 
 > Open your mind again and imagine a narrator with a deep voice popping in your head and saying the following:
 > "Zed did not know how hard it would be to include those fancy skin toned emojis. Hours would pass before he finally understands."
@@ -350,14 +350,14 @@ and failing, always two characters were displayed. I inadvertently used type con
 
 We now have our skin tone variations! :tada:
 
-{{< illustration src="img/search-ok-hand-black.png"        name="Search results for ok hand"            alt="Search result for the query `ok hand` now displaying all the color variations" >}}
+![Search result for the query `ok hand` now displaying all the color variations](img/search-ok-hand-black.png "Search results for ok hand")
 
 ## :no_entry_sign: Unsupported Emoji
 
 My computer and my phone do not support Emoji version 14 and higher well. But, as I said earlier, the beauty of UTF8 ligatures
 is that even if you cannot process them fully, you get the characters. This way, you can still understand the intention.
 
-{{< illustration src="img/search-ok-no-ligature.png"        name="Search results with unsupported skin-toned emoji"            alt="Multiple emojis `couple with heart man man` with skin tone displayed as two emojis. The original one + the skin tone itself as a square" >}}
+![Multiple emojis `couple with heart man man` with skin tone displayed as two emojis. The original one + the skin tone itself as a square](img/search-ok-no-ligature.png "Search results with unsupported skin-toned emoji")
 
 If you want to test it yourself and tinker with it, you can find the full working example in this repository [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go).
 

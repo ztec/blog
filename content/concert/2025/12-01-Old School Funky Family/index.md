@@ -36,7 +36,7 @@ créent.
 
 On voit que l'ensemble des musiciens aime ce qu'ils font et s'amusent sur scène. Il y a de la complicité et des échanges entre eux.
 Le public n'est pas en reste non plus, les interactions sont fluides et plaisantes.
-{{< photo-gallery >}}
+{{<flex 3>}}
     {{<photoprism_search_linked 
         query="label:\"Old School Funky Family\"" 
         no-title="true"
@@ -45,7 +45,7 @@ Le public n'est pas en reste non plus, les interactions sont fluides et plaisant
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</flex>}}
 
 Côté musical, c'est vraiment fun et funk. On sent le "big band" en fond sans faire fanfare.
 Le Duc avait retiré l'énorme piano à queue de la scène pour faire rentrer les 8 (huit !!!) musiciens sur scène.

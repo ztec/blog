@@ -171,14 +171,12 @@ Par ailleurs, il semblerait que j'aie explosé tous mes records d'audience Masto
 
 [https://mamot.fr/deck/@ztec/115990259401164027 (en)](https://mamot.fr/deck/@ztec/115990259401164027)
 
-{{< photo-gallery >}}
-{{< photo
-    src="pouet.png"        name="Pouet sur Mastodon"            alt="Capture d'écran du pouet sur Mastodon" >}}
-{{</photo-gallery >}}
+![Capture d'écran du pouet sur Mastodon](pouet.png "Pouet sur Mastodon")
+
 
 Les photos cool que j'ai prises durant le weekend :
 
-{{< photo-gallery >}}
+{{< justify >}}
     {{<photoprism_search_linked
         query="label:\"FOSDEM\" year:2026"
         order="oldest"
@@ -188,6 +186,6 @@ Les photos cool que j'ai prises durant le weekend :
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</justify >}}
 
 Vivement le prochain FOSDEM, en 2027.

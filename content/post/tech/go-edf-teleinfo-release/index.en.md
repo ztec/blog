@@ -20,10 +20,10 @@ Two of them allow to receive constant data about the meter and the instantaneous
 I won't detail how I did it because there is a lot of better content that go in details online. Just do some 
 duckduckgo search with "EDF, teleinfo, raspberry-pi" for example.
 
-{{< photo-gallery >}}
-{{< photo src="linky.jpg"       name="Linky with raspberry-pi on the side" >}}
-{{< photo src="connection.jpg"  name="Linky connection" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![](linky.jpg "Linky with raspberry-pi on the side")
+![](connection.jpg "Linky connection")
+{{</flex>}}
 
 Unfortunately, I broke all my data platform end of 2019. No mor history (visage triste). However, I never removed the
 raspberry-pi. So, it is still there, hanging and connected to the meter, powered down. 
@@ -52,7 +52,7 @@ Oct 26 19:27:36 compteur plumbus[3960]: time="2022-10-26T19:27:36+02:00" level=i
 
 I put all of that in my new data hoarding platform, and here me again with nerdy graphs.
 
-{{< illustration src="Graph.png"  name="EDF dasbhoard"   alt="Dashboard following consumption of electricity" resize="no" >}}
+![Dashboard following consumption of electricity](Graph.png "EDF dasbhoard")
 
 You can now make fun of me and my outrageous energy consumption. It's not pretty I know. I will talk about that maybe one day.
 

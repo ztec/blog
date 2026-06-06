@@ -39,7 +39,7 @@ Artists:
 
 Photos: (I don't have a single decent shot of the pianist 😅, but he was definitely there)
 
-{{< photo-gallery >}}
+{{<flex>}}
     {{<photoprism_search_linked
         query="label:\"Erik Truffaz\" year:2025"
         no-title="true"
@@ -49,4 +49,4 @@ Photos: (I don't have a single decent shot of the pianist 😅, but he was defin
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</flex >}}

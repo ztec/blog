@@ -36,16 +36,16 @@ Lots and lots of energy, fun, and enjoyment. The pyjama style is fun and perfect
 It's obvious that all members of the band really enjoy playing together. Lots of chemistry and interactions between them.
 The audience isn't forgotten either, and they managed to get people standing up at the Duc, a cool but somewhat stuffy place. 
 
-{{< photo-gallery >}}
-    {{<photoprism_search_linked 
-        query="label:\"Old School Funky Family\" month:12 year:2025" 
+{{<flex 3>}}
+    {{<photoprism_search_linked
+        query="label:\"Old School Funky Family\""
         no-title="true"
         size="200"
         mode="tile"
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</flex>}}
 
 On the musical side, it's fun and funk. A bit of big band sometimes but without fanfare. Electro and classic
 jazz mix together neatly. The {{<link "instruments/sousaphone">}} is really nice. Never heard of it before. I like it.

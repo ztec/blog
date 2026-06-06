@@ -17,7 +17,7 @@ Now, you can test it and see the code by yourself.
 - The code: https://git2.riper.fr/ztec/poulpe or https://github.com/ztec/poulpe
 
 
-{{< illustration src="img/preview.png"        name="Poulpe the emoji search engine"            alt="Search result for the query `love` displaying some emoji related to love" >}}
+![Search result for the query `love` displaying some emoji related to love](img/preview.png "Poulpe the emoji search engine")
 
 
 Thank you reading this,\

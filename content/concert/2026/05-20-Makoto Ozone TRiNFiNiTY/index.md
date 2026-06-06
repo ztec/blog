@@ -40,7 +40,7 @@ Artists:
 
 Quelques photos du concert :
 
-{{< photo-gallery >}}
+{{<masonry>}}
     {{<photoprism_search_linked
         query="label:\"Makoto Ozone\" year:2026"
         no-title="true"
@@ -50,4 +50,4 @@ Quelques photos du concert :
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</masonry>}}

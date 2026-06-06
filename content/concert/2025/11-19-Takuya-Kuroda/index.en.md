@@ -34,11 +34,11 @@ Those guys are pro, precise and fluid. They know their stuff.
 
 The electro/jazz mix is still as good.
 
-{{< photo-gallery >}}
-    {{<photoprism_search_linked 
-        query="label:\"Takuya Kuroda\" month:11 year:2025" 
+{{<flex 2>}}
+    {{<photoprism_search_linked
+        query="label:\"Takuya Kuroda\""
     >}}
-{{</photo-gallery >}}
+{{</flex>}}
 
 Takuya Kuroda san told the story about the track "[Car 16 15 A](https://www.youtube.com/watch?v=E8vr1QvOMKw)" like last time.
 Always a pleasure to listen to it, especially live where the band takes time

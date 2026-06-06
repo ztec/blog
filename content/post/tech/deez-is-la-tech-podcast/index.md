@@ -22,7 +22,7 @@ Le premier épisode a été enregistré en 2021. C'était une première pour moi
 la préparation (même si c'est Pauline qui a tout fait de ce côté-là) et surtout l'enregistrement.
 À l'occasion de la sortie du dernier épisode de la saison 1, je vous livre un petit retour d'expérience.
 
-{{< illustration src="img/Deez_is_la tech_banner.png"        name="Deez is la tech banner"            alt="Banner of the podcast Deez is la tech, with circuits traces everywhere" >}}
+![Banner of the podcast Deez is la tech, with circuits traces everywhere](<img/Deez_is_la tech_banner.png> "Deez is la tech banner")
 
 ## Deez is la tech, qu'est-ce que c'est ?
 
@@ -64,9 +64,7 @@ j'ai mes repères et habitudes. Compliqué, parce que ce n'est pas vraiment adap
 propre et synchronisé. C'est parfois difficile de s'entendre soi-même parler, et quand il y a un petit décalage, c'est
 juste impossible. De plus, il faut faire des pirouettes avec Pipewire/Pulseaudio pour pouvoir utiliser toutes les entrées en même temps.
 
-{{< photo-gallery >}}
-{{< photo src="img/PODCAST-01.jpg" name="Enregistrement du premier épisode" alt="3 Personne autour d'une table de réunion, avec deux interfaces audio raccordé à des micros via des cables, le tout branché à un ordinateur" >}}
-{{</photo-gallery>}}
+![3 Personne autour d'une table de réunion, avec deux interfaces audio raccordé à des micros via des cables, le tout branché à un ordinateur](img/PODCAST-01.jpg "Enregistrement du premier épisode")
 
 ## L'animation 
 

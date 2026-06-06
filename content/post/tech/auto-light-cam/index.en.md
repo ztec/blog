@@ -18,9 +18,7 @@ This way, I'm sure I'm visible!
 I used to forget to turn it on or worse, turn it off. So, I automated the process.
 
 
-{{< photo-gallery >}}
-{{< photo src="img/light.jpg" name="Light and webcam" alt="A webcam on top of a light between two screens" >}}
-{{</photo-gallery>}}
+![A webcam on top of a light between two screens](img/light.jpg "Light and webcam")
 
 The lamp I use is a [Philips Hue Play](https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-play-light-bar-single-pack/7820130U7), which can be controlled through the entire Philips Hue ecosystem.
 
@@ -28,9 +26,7 @@ I also have a tablet on my desk with big buttons to turn the lamp on and off.
 It's convenient, but it still requires an extra gesture.
 
 
-{{< photo-gallery >}}
-{{< photo src="img/tablet.jpg" name="Control tablet" alt="Tablet on the desk with big square buttons to turn on or off lights including the webcam light" >}}
-{{</photo-gallery>}}
+![Tablet on the desk with big square buttons to turn on or off lights including the webcam light](img/tablet.jpg "Control tablet")
 
 ##API to turn on the lamp
 
@@ -172,6 +168,5 @@ Writing this article was probably longer.
 
 Thank you reading this,\
 [Bisoux](/page/bisoux) :kissing:
-
 
 

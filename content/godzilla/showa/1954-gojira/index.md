@@ -448,13 +448,7 @@ videoId="23b91c00-51cd-4f74-a00e-baf794cb664a"
 
 Notez que Godzilla marche bien sur le fond de l'océan. Il ne flotte pas. Du moins pas ici.
 
-{{< photo-gallery >}}
-{{< photo
-    src="img/legs.jpg"
-     name="Un dessin de godzilla avec de longues jambes pour atteindre les fonds marins"
-     alt="Un dessin de godzilla avec de longues jambes pour atteindre les fonds marins"
- >}}
-{{</photo-gallery>}}
+![Un dessin de godzilla avec de longues jambes pour atteindre les fonds marins](img/legs.jpg "Un dessin de godzilla avec de longues jambes pour atteindre les fonds marins")
 
 
 {{< bunny-video
@@ -494,4 +488,4 @@ sur ce film. Il est fort probable que je serai beaucoup plus succinct sur les di
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
 
-![Godzilla qui a détruit Tokyo](img/Gojira-1954-shadow.webp "Godzilla qui a détruit Tokyo")
+{{< raw-picture src="img/Gojira-1954-shadow.webp" alt="Godzilla qui a détruit Tokyo" title="Godzilla qui a détruit Tokyo" >}}

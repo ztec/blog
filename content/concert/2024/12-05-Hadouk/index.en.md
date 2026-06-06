@@ -21,7 +21,7 @@ Guests:
 [Hadouk - Teaser album 2024](https://www.youtube.com/watch?v=PVHDlXi7OLc) (Youtube)
 
 {{< cover
-src="cover.jpg"
+src="cover.webp"
 name="Hadouk"
 alt="Hadouk"
 quality="70"

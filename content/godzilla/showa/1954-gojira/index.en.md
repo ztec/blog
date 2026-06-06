@@ -445,13 +445,7 @@ videoId="23b91c00-51cd-4f74-a00e-baf794cb664a"
 
 Note that Godzilla walks on the ocean floor. He doesn't float. At least not here.
 
-{{< photo-gallery >}}
-{{< photo
-    src="img/legs.jpg"
-     name="A drawing of Godzilla with long legs to reach the seabed"
-     alt="A drawing of Godzilla with long legs to reach the seabed"
- >}}
-{{</photo-gallery>}}
+![A drawing of Godzilla with long legs to reach the seabed](img/legs.jpg "A drawing of Godzilla with long legs to reach the seabed")
 
 
 {{< bunny-video
@@ -491,4 +485,4 @@ See you soon for the next one. I've already seen it, just need to clip and write
 Thanks for reading me,\
 [Bisoux](/page/bisoux) :kissing:
 
-![Godzilla who destroyed Tokyo](img/Gojira-1954-shadow.webp "Godzilla who destroyed Tokyo")
+{{< raw-picture src="img/Gojira-1954-shadow.webp" alt="Godzilla who destroyed Tokyo" title="Godzilla who destroyed Tokyo" >}}

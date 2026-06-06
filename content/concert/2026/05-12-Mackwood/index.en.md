@@ -45,7 +45,7 @@ A shame their names weren't added to the concert page, even after the fact.
 
 A few pictures:
 
-{{< photo-gallery >}}
+{{<masonry>}}
     {{<photoprism_search_linked
         query="label:\"Mackwood\" year:2026"
         no-title="true"
@@ -55,7 +55,7 @@ A few pictures:
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</masonry>}}
 
 Artists:
 - {{< link "artists/Mackwood" >}} - {{< link "instruments/drums" >}}

@@ -20,10 +20,10 @@ a deux qu'on peut utiliser pour recevoir un flux (série) constant de donnée en
 Je ne vais pas detailer la procédure, car il y a pleins d'autres gens qui l'on fait bien mieux que je ne le ferais. Une petite recherche
 DuckDucGo sur "EDF téléinfo raspbery-pi" donnera de bons résultats.
 
-{{< photo-gallery >}}
-{{< photo src="linky.jpg"       name="Le linky tout moche avec le raspbery-pi a coté (tout moche aussi)" >}}
-{{< photo src="connection.jpg"  name="Les connections sur le Linky" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![](linky.jpg "Le linky tout moche avec le raspbery-pi a coté (tout moche aussi)")
+![](connection.jpg "Les connections sur le Linky")
+{{</flex>}}
 
 
 En realité, j'ai pété toute la partie réception des données fin 2019, donc j'ai plus d'historique (sadFace), mais 
@@ -52,7 +52,7 @@ Oct 26 19:27:36 compteur plumbus[3960]: time="2022-10-26T19:27:36+02:00" level=i
 
 Je met ça dans mon nouveau système de stockage de data, et me revoilà avec de joli graph
 
-{{< illustration src="Graph.png"  name="Dashboard EDF"   alt="Dashboard de suivis de consommation électrique" resize="no" >}}
+![Dashboard de suivis de consommation électrique](Graph.png "Dashboard EDF")
 
 Vous pouvez maintenant vous moquer de moi et de ma consommation électrique, car ce n'est pas du joli joli. J'en reparlerais surement un jour.
 

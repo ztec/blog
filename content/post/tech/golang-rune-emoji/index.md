@@ -182,16 +182,16 @@ mais ça ne coûte pas grand-chose alors je le garde quand même.
 > Détendez-vous et imaginez un clip musical de moi qui ajoute le code que vous avez vu dans mon programme et créant une superbe interface pour envoyer les recherches et voir les résultats.
 
 
-{{< photo-gallery >}}
-{{< photo src="img/search-ok-grin.png"        name="Résultat de la recherche grin"            alt="Résultat de la recherche `grin` affichant l'émoji `grin` comme prévu" >}}
-{{< photo src="img/search-ok-smile.png"       name="Résultat de la recherche smile"           alt="Résultat de la recherche `smile` affichant plusieurs émojis souriants" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Résultat de la recherche `grin` affichant l'émoji `grin` comme prévu](img/search-ok-grin.png "Résultat de la recherche grin")
+![Résultat de la recherche `smile` affichant plusieurs émojis souriants](img/search-ok-smile.png "Résultat de la recherche smile")
+{{</flex>}}
 
 ## :bubble_tea: Recherche approximative (Fuzzy)
 
 C'est cool, les résultats sont bons, mais il semblerait qu'il y ait des ratés.
 
-{{< illustration src="img/search-ko-hug.png"        name="Résultat de la recherche hug"            alt="Résultat de la recherche `hug` qui n'affiche pas de résultats" >}}
+![Résultat de la recherche `hug` qui n'affiche pas de résultats](img/search-ko-hug.png "Résultat de la recherche hug")
 
 Ici, je devrais avoir un émoji en résultat, c'est :hugs:!. Si j'ajoute le `s` à la requête, le moteur le trouve, mais pas sans.
 Essayons d'améliorer ça en acceptant des résultats approximatifs.
@@ -240,7 +240,7 @@ func Search(q string) (results []EmojiDescription) {
 	return
 }
 ```
-{{< illustration src="img/search-ok-hug.png" name="Résultat de la recherche hug" alt="Résultat de la recherche `hug` qui affiche maintenant plusieurs résultats dont l'emoji `hug`" >}}
+![Résultat de la recherche `hug` qui affiche maintenant plusieurs résultats dont l'emoji `hug`](img/search-ok-hug.png "Résultat de la recherche hug")
 
 Cette fois, c'est bon, j'ai bien mon émoji câlin. J'ai également quelques autres résultats, mais ça va. Je ne m'attends pas à avoir mon résultat en premier, du moment qu'il est visible sans descendre dans la page, ça me convient.
 
@@ -250,7 +250,7 @@ Cette fois, c'est bon, j'ai bien mon émoji câlin. J'ai également quelques aut
 
 Si je cherche pour l'émoji `ok hand`, je le trouve. Cependant, il n'y a que la version de base, la jaune. J'aimerais bien aussi voir les variations quand il y en a.
 
-{{< illustration src="img/search-ok-hand-no-black.png" name="Résultat de la recherche ok hand" alt="Résultat de la recherche `ok hand` n'affichant que des émoji jaune" >}}
+![Résultat de la recherche `ok hand` n'affichant que des émoji jaune](img/search-ok-hand-no-black.png "Résultat de la recherche ok hand")
 
 > Détendez-vous une seconde encore, et imaginez qu'un narrateur fait irruption dans votre tête avec une voix profonde et raconte :
 > "Zed ne le sait pas encore, mais inclure ces jolis émojis avec toutes les couleurs de peau sera une tâche difficile. Des heures passeront avant qu'il ne réussisse le challenge et qu'il comprenne enfin".
@@ -344,14 +344,14 @@ Je ne suis pas un expert en Go, encore moins en UTF-8. J'ai donc sûrement raté
 
 Nous avons maintenant nos emojis de toutes les couleurs ! :tada:
 
-{{< illustration src="img/search-ok-hand-black.png" name="Résultat de la recherche ok hand" alt="Résultat de la recherche `ok hand` affichant toutes les variations de couleur de l'émoji de base" >}}
+![Résultat de la recherche `ok hand` affichant toutes les variations de couleur de l'émoji de base](img/search-ok-hand-black.png "Résultat de la recherche ok hand")
 
 ## :no_entry_sign: emojis incompatibles
 
 Mon ordinateur et mon téléphone ne supportent pas bien les emojis publiés après la version 14. Mais comme je l'ai dit plus tôt, la beauté des ligatures de l'UTF-8, 
 c'est que malgré cela, je vois quand même les différents composants. De cette façon, je ne perds pas le sens original.
 
-{{< illustration src="img/search-ok-no-ligature.png" name="Résultat de la recherche pour des emojis ne supportant pas les variations" alt="Plusieurs emojis `couple with heart man man` qui affichent la couleur de peau dans un second caractère, un carré de la couleur" >}}
+![Plusieurs emojis `couple with heart man man` qui affichent la couleur de peau dans un second caractère, un carré de la couleur](img/search-ok-no-ligature.png "Résultat de la recherche pour des emojis ne supportant pas les variations")
 
 Si vous voulez tester par vous-même et bidouiller le code, vous pouvez trouver le code complet et fonctionnel sur ce repository : [git2.riper.fr/ztec/emoji-search-engine-go](https://git2.riper.fr/ztec/emoji-search-engine-go).
 

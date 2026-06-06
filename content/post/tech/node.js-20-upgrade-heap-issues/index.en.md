@@ -24,10 +24,7 @@ Maintenance is set to end in June of next year.
 
 Node.js 20 is the current LTS version available. It is in active development and will enter its maintenance phase next year.
 
-{{< illustration src="img/nodejs-roadmap.png"
-name="Node.js release roadmap"
-alt="All Node.js versions from 16 to 24 and their different phases: Current, Active, Maintenance"
-resize="no" >}}
+![All Node.js versions from 16 to 24 and their different phases: Current, Active, Maintenance](img/nodejs-roadmap.png "Node.js release roadmap")
 
 Soon after the next LTS (Node.js 22) is released, a migration will be scheduled (and maybe another post?)
 
@@ -35,7 +32,7 @@ Soon after the next LTS (Node.js 22) is released, a migration will be scheduled 
 
 This part is pretty simple: change a few versions values in the "package.json" file, then run `npm install` as usual.
 
-{{< illustration src="img/diff-package.json.png" name="Diff of the package.json file" alt="Engines Node is updated to >=20.15.1 and npm to >= 10.7.0" resize="no" >}}
+![Engines Node is updated to >=20.15.1 and npm to >= 10.7.0](img/diff-package.json.png "Diff of the package.json file")
 
 All dependencies versions are managed by [renovate](https://github.com/renovatebot/renovate) bot. Therefore, 
 “package.json” only contains the exact versions of each dependency.
@@ -44,10 +41,7 @@ The version is set to Node “20.15.1” because it was the very last version av
 Any future minor upgrade will be done automatically without changing anything in the “package.json” file.
 Docker images are built regularly and target the latest version of Node.js 20 like a rolling release.
 
-{{< illustration src="img/diff-dockerfile.png"
-name="Diff of the Dockerfile"
-alt="Diff of the Dockerfile changing the `FROM` from one node-18 image to node-20, both maintained internally" resize="no"
->}}
+![Diff of the Dockerfile changing the `FROM` from one node-18 image to node-20, both maintained internally](img/diff-dockerfile.png "Diff of the Dockerfile")
 
 
 ## Deployment and first results
@@ -61,10 +55,7 @@ It contains all the required metrics to know at a glance if the project is healt
 I won't go into details here for confidentiality reasons, but I can show you the response time goal of 
 the project:
 
-{{< illustration src="img/deploy-1-project-goal.png"
-name="Response time goals"
-alt="Graph showing the percentage of requests with a response time under 100ms, 50ms, 10ms, respectively around 97%, 90%, and 45%"
-resize="no" >}}
+![Graph showing the percentage of requests with a response time under 100ms, 50ms, 10ms, respectively around 97%, 90%, and 45%](img/deploy-1-project-goal.png "Response time goals")
 
 The purple vertical line is roughly when the deployment occurred. You can see the response time went up. 
 Note: Given that the purple line is not displayed on all graphs, follow the red arrow instead. 
@@ -75,10 +66,7 @@ Sure, we can agree that losing around 1% is perfectly acceptable, but it shows t
 
 Looking at the average response time, we can see the increase more easily. It went from ~23ms to ~28ms.
 
-{{< illustration src="img/deploy-1-project-response-time.png"
-name="Response time average"
-alt="Graph showing the average response time oscillating between 22ms and 25ms"
-resize="no" >}}
+![Graph showing the average response time oscillating between 22ms and 25ms](img/deploy-1-project-response-time.png "Response time average")
 
 I then looked at all the other graphs, metrics, and logs. After validating and considering the project as healthy, 
 it was time to dig in to understand what was happening. 
@@ -92,10 +80,7 @@ Those unfamiliar with Kubernetes can consider a pods like one Node.js process st
 #### CPU increase
 I noticed an increase in CPU usage, going from 24% to 30% of the reservation after the deployment—another defeat.
 
-{{< illustration src="img/deploy-1-CPU.png"
-name="CPU Graph"
-alt="The CPU went from 24% to 30%"
-resize="no" >}}
+![The CPU went from 24% to 30%](img/deploy-1-CPU.png "CPU Graph")
 
 > In Kubernetes, we set CPU and RAM reservations. It is a good practice to indicate to the cluster how many resources the pods will need.
 > For example, we can define that one Node.js process can use up to 2 CPUs.
@@ -114,10 +99,7 @@ resize="no" >}}
 
 The memory usage went down. A small victory!
 
-{{< illustration src="img/deploy-1-RAM.png"
-name="RAM usage"
-alt="The RAM went from 75% to 55%"
-resize="no" >}}
+![The RAM went from 75% to 55%](img/deploy-1-RAM.png "RAM usage")
 
 This project always loses weight after each deployment. It is normal, and it gains it back after a while. 
 It takes a few hours to stabilize, but here, it went down more than usual, and at first glance, it will likely stay like that.
@@ -126,10 +108,7 @@ It takes a few hours to stabilize, but here, it went down more than usual, and a
 The first Node.js metric I was interested in is the [Event Loop Utilization (ELU)](https://nodesource.com/blog/event-loop-utilization-nodejs/).
 This metric is essential to understand the health of a Node.js process. It basically shows how much time the process is spending doing work in the [event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick), from ~0% for an idle process to 100% for a process that is always executing JavaScript code.
 
-{{< illustration src="img/deploy-1-elu.png"
-name="Event Loop Utilization"
-alt="The ELU went from 17% to 20% on average"
-resize="no" >}}
+![The ELU went from 17% to 20% on average](img/deploy-1-ELU.png "Event Loop Utilization")
 
 The graph shows a slight increase after the deployment, going from 17% to 20% on average. A defeat, again! 
 It is not really surprising as we know the CPU usage increased, 
@@ -138,10 +117,7 @@ This may be the reason for the increase in response time.
 
 After that, I looked at the HEAP and the Garbage collector statistics. They both make sense together.
 
-{{< illustration src="img/deploy-1-HEAP-GC.png"
-name="HEAP and Garbage collector metrics"
-alt="Multiple graphs showing all HEAP spaces and the Garbage Collector statistics"
-resize="no" >}}
+![Multiple graphs showing all HEAP spaces and the Garbage Collector statistics](img/deploy-1-HEAP-GC.png "HEAP and Garbage collector metrics")
 
 We lost weight on the HEAP, but something is happening with the Garbage Collector.
 The minor GC is running more often and is taking more time.
@@ -164,11 +140,7 @@ Ok, there is clearly something going on with the Garbage Collector. But what is 
 
 If we look at the HEAP in detail, there were a few notable changes after the deployment:
 
-{{< illustration
-src="img/deploy-1-HEAP-NEW.png"
-name="Gaph of few HEAP spaces size: map, new, shared"
-alt="Gaph of few HEAP spaces size: map, new, shared"
-resize="no" >}}
+![Gaph of few HEAP spaces size: map, new, shared](img/deploy-1-HEAP-NEW.png "Gaph of few HEAP spaces size: map, new, shared")
 
 The **map** HEAP space disappeared, and the **shared** spaces appeared. But most importantly, the **new** space went from ~33MB to ~8MB.
 
@@ -234,24 +206,15 @@ The value “16” comes from the [documentation itself](https://github.com/node
 
 Let's deploy this simple change and see if it works.
 
-{{< illustration src="img/deploy-2-project.png"
-name="Response time goals & average response time"
-alt="Graph showing the percentage of requests with a response time under 100ms, 50ms, 10ms, and the average response time"
-resize="no" >}}
+![Graph showing the percentage of requests with a response time under 100ms, 50ms, 10ms, and the average response time](img/deploy-2-project.png "Response time goals & average response time")
 
 The response time has gone back to the previous values. It's a win!
 
-{{< illustration src="img/deploy-2-system.png"
-name="CPU & RAM usage"
-alt="Graph showing the CPU and RAM usage returning to normal values"
-resize="no" >}}
+![Graph showing the CPU and RAM usage returning to normal values](img/deploy-2-system.png "CPU & RAM usage")
 
 The CPU usage is also back to normal, and the RAM usage is still lower than before. It's a double win!
 
-{{< illustration src="img/deploy-2-nodejs.png"
-name="Node.js metrics including ELU, HEAP and GC"
-alt="Graph showing the ELU, HEAP and GC returning to normal values"
-resize="no" >}}
+![Graph showing the ELU, HEAP and GC returning to normal values](img/deploy-2-nodejs.png "Node.js metrics including ELU, HEAP and GC")
 
 Finally, we can see that the GC went back to a "normal" behavior. 
 Also, the new space is now back to its original value. 
@@ -322,10 +285,7 @@ The “new_space” size is the same for both versions. I was clearly wrong.
 
 Of course, doing the same without the “--max-old-space-size” gives the exact same result.
 
-{{< illustration
-src="img/doctor-what.png"
-name="Me watching the results"
-alt="Me (represented by William Hartnell) watching the results with astonishment" >}}
+![Me (represented by William Hartnell) watching the results with astonishment](img/doctor-what.png "Me watching the results")
 
 What is going on? Why is my project behaving differently? At this stage, I can’t understand the reason why.
 
@@ -360,9 +320,7 @@ $ docker run --memory=512m -ti --rm -v ./:/ node:20 node /test.js
 Finally, we have a different result. 
 The “new_space” size is now 2MB. It confirms the hypothesis that the memory reservation is used to compute the “new_space” size.
 
-{{< illustration src="img/doctor-disco.gif"
-name="Me celebrating the results"
-alt="Me (represented by Peter Capaldi) dancing of joy and walking away from a small tardis door" >}}
+{{< raw-picture src="img/doctor-disco.gif" alt="Me (represented by Peter Capaldi) dancing of joy and walking away from a small tardis door" title="Me celebrating the results" >}}
 
 I now have my culprit. The memory reservation in the Kubernetes configuration is the reason why the "new_space" size shrunk so much.
 

@@ -8,9 +8,6 @@ tags: [ "minimalisme", "musique traditionnelle bretonne" ]
 params:
   concertDate: 2022-09-12T21:00:00+02:00
   eventPage: https://www.104.fr/fiche-evenement/erwan-keravec-in-c-20-sonneurs.html
-og:
-  cover:
-    copyright: ⓒ Christophe Raynaud De Lage
 ---
 
 ## In C 20 sonneurs
@@ -42,10 +39,3 @@ og:
 
 [Goebbels/Glass/Radigue, Erwan Keravec](https://www.youtube.com/watch?v=gabrrMbENas)
 
-{{< cover
-src="cover.jpg"
-name="In C 20 sonneurs"
-alt="In C 20 sonneurs"
-quality="70"
-credit="ⓒ Christophe Raynaud De Lage"
->}}

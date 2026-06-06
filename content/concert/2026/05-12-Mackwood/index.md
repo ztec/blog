@@ -45,7 +45,7 @@ la page du concert, même à postériori.
 
 Quelques photos:
 
-{{< photo-gallery >}}
+{{<masonry>}}
     {{<photoprism_search_linked
         query="label:\"Mackwood\" year:2026"
         no-title="true"
@@ -55,7 +55,7 @@ Quelques photos:
         webp="true"
         no-figure="true"
     >}}
-{{</photo-gallery >}}
+{{</masonry>}}
 
 Artists:
 - {{< link "artists/Mackwood" >}} - {{< link "instruments/drums" >}}

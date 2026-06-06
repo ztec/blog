@@ -8,6 +8,4 @@ menu:
     weight: 1
 ---
 
-{{<photo-gallery>}}
-{{< photo src="pic/2026-blue-note-computer.png" alt="Avatar" >}}
-{{</photo-gallery>}}
+![Avatar](pic/2026-blue-note-computer.png)

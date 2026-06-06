@@ -37,11 +37,11 @@ C'est pro, c'est carré, c'est fluide. On sent toujours qu'ils ont l'habitude.
 
 Le mélange électro/jazz est toujours aussi bon.
 
-{{< photo-gallery >}}
+{{<flex 2>}}
     {{<photoprism_search_linked 
         query="label:\"Takuya Kuroda\"" 
     >}}
-{{</photo-gallery >}}
+{{</flex>}}
 
 Il a raconté comme la dernière fois l'histoire du morceau "[Car 16 15 A](https://www.youtube.com/watch?v=E8vr1QvOMKw)".
 Toujours un plaisir de l'écouter, surtout en live où le groupe prend le temps

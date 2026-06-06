@@ -17,7 +17,7 @@ params:
 - {{< link "artists/Kyle Roussel" >}} - {{< link "instruments/piano" >}}
 
 {{< cover
-src="cover.jpg"
+src="cover.webp"
 name="The Headhunters"
 alt="The Headhunters"
 quality="70"

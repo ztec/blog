@@ -68,9 +68,7 @@ En résumé,
 
 J'ai récemment acheté des graines de Flamboyant (Delonix regia), un arbre majestueux !
 
-{{< photo-gallery >}}
-{{< photo src="img/flamboyant.jpg" name="Flamboyant" alt="Un arbre rouge majestueux, le Flamboyant" >}}
-{{</photo-gallery>}}
+![Un arbre rouge majestueux, le Flamboyant](img/flamboyant.jpg "Flamboyant")
 
 Premier problème : il est imposant et destiné à vivre à l'extérieur. Ces soucis ne concernent évidemment que le Futur moi. 
 Bonne chance Futur moi !
@@ -87,18 +85,16 @@ En parcourant Amazon, j'ai trouvé de nombreuses options de lampes à LED. J'en 
 ce sont des lampes LED dotées de 8 barres et d'un minuteur automatique permettant d'allumer/éteindre les LED automatiquement, le tout pour environ 50 €.
 
 
-{{< photo-gallery >}}
-    {{< photo src="img/LED-01-01.jpg" name="Lampe Horticole avec Minuterie" alt="Lampe Horticole avec Minuterie" >}}
-    {{< photo src="img/LED-01-02.jpg" name="Minuteur" alt="Le minuteur de la lampe avec trois options 3h, 6h, 12h" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Lampe Horticole avec Minuterie](img/LED-01-01.jpg "Lampe Horticole avec Minuterie")
+![Le minuteur de la lampe avec trois options 3h, 6h, 12h](img/LED-01-02.jpg "Minuteur")
+{{</flex>}}
 
 
 Je ne fournis pas de liens Amazon, mais vous pourrez facilement les trouver avec divers prix et options. 
 J'ai installé tout cela de manière naïve dans les cases d'un meuble Kallax d'Ikea qui traîne dans mon salon.
 
-{{< photo-gallery >}}
-    {{< photo src="img/kallax-01.jpg" name="Kallax horticole" alt="Meuble Ikea Kallax avec un bandeau de LED par case scotché en haut de chacune d'elles. Des plantes et des objets sont disposés dans chaque case." >}}
-{{</photo-gallery>}}
+![Meuble Ikea Kallax avec un bandeau de LED par case scotché en haut de chacune d'elles. Des plantes et des objets sont disposés dans chaque case.](img/kallax-01.jpg "Kallax horticole")
 
 ## Semi
 
@@ -123,10 +119,10 @@ Sur l'ensemble des graines que j'ai semées, seulement deux ont germé et une se
 
 Score de 1/10 pour un premier essai.
 
-{{< photo-gallery >}}
-    {{< photo src="img/flamboyant-01.jpeg" name="Pousse de Flamboyant" alt="Petit pouce d'un Flamboyant avec les proto-feuilles visibles" >}}
-    {{< photo src="img/flamboyant-02.jpeg" name="Pousse de Flamboyant" alt="Petit pouce d'un Flamboyant avec les vraies feuilles qui commencent à pousser" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Petit pouce d'un Flamboyant avec les proto-feuilles visibles](img/flamboyant-01.jpeg "Pousse de Flamboyant")
+![Petit pouce d'un Flamboyant avec les vraies feuilles qui commencent à pousser](img/flamboyant-02.jpeg "Pousse de Flamboyant")
+{{</flex>}}
 
 
 ## Fin
@@ -134,9 +130,7 @@ Score de 1/10 pour un premier essai.
 Une fois que le Flamboyant a émergé du sol, je l'ai déplacé à côté de la fenêtre pour qu'il bénéficie de plus de lumière. 
 Malgré les LED, la luminosité reste plus intense à proximité de la fenêtre qu'à l'intérieur de la case.
 
-{{< photo-gallery >}}
-    {{< photo src="img/flamboyant-03.jpeg" name="Petit Flamboyant" alt="Petit Flamboyant tout vert" >}}
-{{</photo-gallery>}}
+![Petit Flamboyant tout vert](img/flamboyant-03.jpeg "Petit Flamboyant")
 
 C'est la dernière photo que j'ai de mon petit Flamboyant en vie. 
 Quelques semaines plus tard, il avait perdu toutes ses feuilles et avait terminé sa croissance... pour toujours.
@@ -153,9 +147,7 @@ La cause exacte du décès n'est pas certaine, mais en conjonction avec le manqu
 
 En cuisinant, j'ai récupéré les graines d'un petit piment oiseau, également connu sous le nom de Pili Pili. C'est très savoureux, épicé et esthétique.
 
-{{< photo-gallery >}}
-    {{< photo src="img/piment.jpg" name="Pili Pili" alt="Petit piment rouge" >}}
-{{</photo-gallery>}}
+![Petit piment rouge](img/piment.jpg "Pili Pili")
 
 Après quelques recherches en ligne, voici ce que j'ai noté :
 Comme pour le Flamboyant, il est recommandé de laisser les graines tremper pendant 12 heures dans de l'eau tiède avant de les semer. 
@@ -173,10 +165,10 @@ L'objectif est de maximiser la lumière atteignant les plantes, ainsi que les ra
 Le meuble, étant noir, absorbait tous les rayons qui n'allaient pas directement sur les plantes. 
 Maintenant, l'aluminium renverra en grande partie ces rayons.
 
-{{< photo-gallery >}}
-    {{< photo src="img/serre-kallax-01.jpg" name="Case vide" alt="Case d'un meuble Ikea Kallax, avec 8 bandeaux de LED et une serviette au fond" >}}
-    {{< photo src="img/serre-kallax-02.jpg" name="Case fermée" alt="Case d'un meuble Ikea Kallax fermée avec une serviette" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Case d'un meuble Ikea Kallax, avec 8 bandeaux de LED et une serviette au fond](img/serre-kallax-01.jpg "Case vide")
+![Case d'un meuble Ikea Kallax fermée avec une serviette](img/serre-kallax-02.jpg "Case fermée")
+{{</flex>}}
 
 Je fais avec ce que j'ai sous la main et je clos la case devant et derrière avec deux serviettes que je visse sur le meuble. 
 La serviette de devant n'est fixée que sur le dessus. Bien que loin d'être hermétique, j'espère ainsi limiter au maximum les mouvements d'air. 
@@ -185,18 +177,13 @@ Je vais pouvoir laisser le minuteur sans que la lumière ne me gêne quand je re
 
 J'installe une [sonde de température et de luminosité](https://fr.aliexpress.com/w/wholesale-Xiaomi-Mi-Flora.html) et je lance un cycle avec le minuteur.
 
-{{< illustration src="img/grafana-semi-01-01-tem-lum.png"        
-name="Graphique température & luminosité"
-alt="Luminosité et température sur 15 jours"
->}}
+![Luminosité et température sur 15 jours](img/grafana-semi-01-01-tem-lum.png "Graphique température & luminosité")
 
 Sans être parfait, on voit que la température monte quand la lumière est allumée, et reste presque constante autour de 29°C si je ne mets pas le minuteur.
 
 ### Semi & germination
 
-{{< photo-gallery >}}
-    {{< photo src="img/serre-kallax-03.jpg" name="Semis complet" alt="4 mini-serres dans une case de meuble Kallax éclairé par des LED" >}}
-{{</photo-gallery>}}
+![4 mini-serres dans une case de meuble Kallax éclairé par des LED](img/serre-kallax-03.jpg "Semis complet")
 
 Avec de telles températures, je me suis empressé de faire le nécessaire et de planter mes graines de Pili Pili. 
 Avec le taux de réussite que j'avais précédemment eu, j'ai mis entre 3 et 5 graines par petit pot.
@@ -205,18 +192,18 @@ En seulement quelques jours, les premières germinations sont apparues.
 
 Cette fois-ci, j'ai obtenu presque un taux de succès de 100%.
 
-{{< photo-gallery >}}
-    {{< photo src="img/pili-01.jpg" name="Pousse Pili Pili" alt="Jeune pousse de Pili Pili" >}}
-    {{< photo src="img/pili-02.jpg" name="Pousse Pili Pili" alt="Jeune pousse de Pili Pili avec les proto-feuilles visibles. Il y en a dans toutes les cases" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Jeune pousse de Pili Pili](img/pili-01.jpg "Pousse Pili Pili")
+![Jeune pousse de Pili Pili avec les proto-feuilles visibles. Il y en a dans toutes les cases](img/pili-02.jpg "Pousse Pili Pili")
+{{</flex>}}
 
 Avec autant de jeunes pousses, j'ai décidé de faire un test en laissant l'une des mini-serres dans la case éclairée, et d'en mettre une à côté de la fenêtre. 
 La différence est notable et impressionnante après seulement quelques jours.
 
-{{< photo-gallery >}}
-    {{< photo src="img/pili-03.jpg" name="Serre vs Fenêtre" alt="Deux mini-serres de Pili Pili montrant un stade différent de croissance. Le bac de gauche est bien plus rempli et grand que celui de droite qui était à la fenêtre" >}}
-    {{< photo src="img/pili-04.jpg" name="Fenêtre" alt="Les pousses se tournent vers la lumière et sont toutes orientées vers la fenêtre" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Deux mini-serres de Pili Pili montrant un stade différent de croissance. Le bac de gauche est bien plus rempli et grand que celui de droite qui était à la fenêtre](img/pili-03.jpg "Serre vs Fenêtre")
+![Les pousses se tournent vers la lumière et sont toutes orientées vers la fenêtre](img/pili-04.jpg "Fenêtre")
+{{</flex>}}
 
 
 ### Rempotage
@@ -229,16 +216,14 @@ J'ai préféré les laisser ensemble pour minimiser les risques de perte liés �
 Il est possible que ce choix ait des conséquences à l'avenir. 
 Je ne manquerai pas de vous tenir informé. Ou plutôt, je laisse le soin à Futur moi de vous tenir informé.
 
-{{< photo-gallery >}}
-{{< photo src="img/pili-05.jpg" alt="Deux cases de Kallax remplies de petits pots dans lesquels se trouvent les Pili Pili" >}}
-{{</photo-gallery>}}
+![Deux cases de Kallax remplies de petits pots dans lesquels se trouvent les Pili Pili](img/pili-05.jpg)
 
-{{< photo-gallery >}}
-{{< photo src="img/pili-06.jpg" alt="Gros plan sur une feuille d'une plante de Pili Pili" >}}
-{{< photo src="img/pili-07.jpg" alt="Plein de petits pots avec des plants de Pili Pili dedans" >}}
-{{< photo src="img/pili-08.jpg" alt="Vue du dessus d'un plateau rempli de petits pots avec des plants de Pili Pili dedans" >}}
-{{< photo src="img/pili-09.jpg" alt="Vue du dessus d'un plateau rempli de petits et moyens pots avec des plants de Pili Pili dedans" >}}
-{{</photo-gallery>}}
+{{<grid 4>}}
+![Gros plan sur une feuille d'une plante de Pili Pili](img/pili-06.jpg)
+![Plein de petits pots avec des plants de Pili Pili dedans](img/pili-07.jpg)
+![Vue du dessus d'un plateau rempli de petits pots avec des plants de Pili Pili dedans](img/pili-08.jpg)
+![Vue du dessus d'un plateau rempli de petits et moyens pots avec des plants de Pili Pili dedans](img/pili-09.jpg)
+{{</grid>}}
 
 
 
@@ -246,34 +231,25 @@ Je ne manquerai pas de vous tenir informé. Ou plutôt, je laisse le soin à Fut
 L'étape suivante après le prototype à base de serviette était de rendre la Serre Kallax plus esthétique dans un salon et d'amélioré le PAF (Partner Acceptance Factor: Facteur d'acceptation du partenaire) 
 Qui voudrait d'un meuble recouvert d'une serviette moche.
 
-{{< photo-gallery >}}
-{{< photo src="img/salon-01.jpg" name="C'est moche" alt="Vue d'ensemble du meuble Kallax avec la serviette qui cache deux cases" >}}
-{{</photo-gallery>}}
+![Vue d'ensemble du meuble Kallax avec la serviette qui cache deux cases](img/salon-01.jpg "C'est moche")
 
 Ikea vend des portes qui semblent idéales pour cet usage. En plus de la porte, le bloc complet ferme la case devant et derrière. C'est parfait.
 
-{{< photo-gallery >}}
-{{< photo src="img/ikea-kallax-porte.png" name="KALLAX Bloc porte" alt="KALLAX Bloc porte" >}}
-{{</photo-gallery>}}
+![KALLAX Bloc porte](img/ikea-kallax-porte.png "KALLAX Bloc porte")
 
 Ni une ni une, je m'en procure une pour tester ça. Après avoir suivi la documentation avec soin, me voilà avec une case fermée, et des LED à l'intérieur. 
 J'ai bien pris soin de mettre du papier aluminium sur tout le côté, y compris la porte. Ce détail à de l'importance (mais vous ne le saurez qu'au prochain épisode).
 
-{{< photo-gallery >}}
-    {{< photo src="img/serre-kallax-04.jpg" alt="Étagère Kallax avec de l'aluminium partout, y compris sur la porte. Des plantes sont visibles à l'intérieur." >}}
-    {{< photo src="img/serre-kallax-05.jpg" alt="Étagère Kallax avec la porte fermée. Comme n'importe quelle autre Kallax dans le monde." >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Étagère Kallax avec de l'aluminium partout, y compris sur la porte. Des plantes sont visibles à l'intérieur.](img/serre-kallax-04.jpg)
+![Étagère Kallax avec la porte fermée. Comme n'importe quelle autre Kallax dans le monde.](img/serre-kallax-05.jpg)
+{{</flex>}}
 
-{{< photo-gallery >}}
-{{< photo src="img/serre-kallax-06.jpg" alt="Vue d'ensemble du meuble Kallax avec 3 cases converties, et une en haut à gauche avec une porte" >}}
-{{</photo-gallery>}}
+![Vue d'ensemble du meuble Kallax avec 3 cases converties, et une en haut à gauche avec une porte](img/serre-kallax-06.jpg)
 
 Je trouve le résultat bien plus propre et élégant et surtout le PAF est nettement meilleur ! Les performances sont également au rendez-vous.
 
-{{< illustration src="img/grafana-semi-03-01.png"        
-name="Graphique température & luminosité"
-alt="Luminosité et température sur 2 jours avec un maximum à 30.8°C"
->}}
+![Luminosité et température sur 2 jours avec un maximum à 30.8°C](img/grafana-semi-03-01.png "Graphique température & luminosité")
 
 D'autres portes sont en cours de procuration pour les deux anciennes cases afin de pouvoir enfin enlever cette serviette moche.
 

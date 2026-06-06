@@ -17,7 +17,7 @@ Vous pouvez maintenant la tester et voir le code par vous-même.
 - Le code: https://git2.riper.fr/ztec/poulpe or https://github.com/ztec/poulpe
 
 
-{{< illustration src="img/preview.png"        name="Poulpe, le moteur de recherche d'emojis"            alt="Résultats de recherche pour `love` avec tous les emoji qui sont liés à l'amour" >}}
+![Résultats de recherche pour `love` avec tous les emoji qui sont liés à l'amour](img/preview.png "Poulpe, le moteur de recherche d'emojis")
 
 
 Merci infiniment de m'avoir lu,\

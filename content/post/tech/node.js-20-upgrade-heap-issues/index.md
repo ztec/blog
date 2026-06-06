@@ -25,10 +25,7 @@ La phase de maintenance est prévue de se terminer l'année prochaine en juin.
 
 Node.js 20 est la version LTS actuelle disponible. Elle est en développement actif et passera en phase de maintenance l'année prochaine.
 
-{{< illustration src="img/nodejs-roadmap.png"
-name="Roadmap des versions de Node.js"
-alt="Toutes les versions de Node.js de 16 à 24 avec les dates pour chacune des phases : Current, Active, Maintenance"
-resize="no" >}}
+![Toutes les versions de Node.js de 16 à 24 avec les dates pour chacune des phases : Current, Active, Maintenance](img/nodejs-roadmap.png "Roadmap des versions de Node.js")
 
 Peu après la sortie de la version LTS suivante (Node.js 22), une migration sera à l'ordre du jour avec peut-être un autre article si tout se passe mal !
 
@@ -36,10 +33,7 @@ Peu après la sortie de la version LTS suivante (Node.js 22), une migration sera
 
 Cette partie est assez simple. Changer quelques valeurs dans le fichier "package.json", puis exécuter `npm install` comme d'habitude.
 
-{{< illustration src="img/diff-package.json.png"
-name="Diff du fichier package.json"
-alt="L'engine Node est mis à jour à >=20.15.1 et npm à >= 10.7.0"
-resize="no" >}}
+![L'engine Node est mis à jour à >=20.15.1 et npm à >= 10.7.0](img/diff-package.json.png "Diff du fichier package.json")
 
 Toutes les dépendances sont gérées par le bot [renovate](https://github.com/renovatebot/renovate). 
 Par conséquent, le "package.json" ne contient que des versions exactes.
@@ -48,10 +42,7 @@ La version choisie de Node est la 20.15.1, car c'est la dernière version dispon
 Toute mise à jour mineure future se fera automatiquement sans rien changer dans le fichier "package.json". 
 Les images Docker sont construites régulièrement et ciblent la dernière version de Node.js 20 à la manière d'une "[rolling release](https://fr.wikipedia.org/wiki/Rolling_release)".
 
-{{< illustration src="img/diff-dockerfile.png"
-name="Diff du fichier Dockerfile"
-alt="Diff du Dockerfile changeant le `FROM` d'une image node-18 à node-20, toutes deux maintenues en interne"
-resize="no" >}}
+![Diff du Dockerfile changeant le `FROM` d'une image node-18 à node-20, toutes deux maintenues en interne](img/diff-dockerfile.png "Diff du fichier Dockerfile")
 ## Déploiement et premiers résultats
 
 Ce projet est critique, le déploiement est simple, rapide, et se fait généralement de manière sereine. 
@@ -63,10 +54,7 @@ Il contient toutes les métriques requises pour savoir en un coup d'œil si le s
 Je ne rentrerai pas dans les détails pour des raisons de confidentialité, mais je peux vous montrer 
 l'objectif de temps de réponse du projet :
 
-{{< illustration src="img/deploy-1-project-goal.png"
-name="Objectifs de temps de réponse"
-alt="Graphique montrant le pourcentage de requêtes avec un temps de réponse inférieur à 100ms, 50ms, 10ms respectivement autour de 97%, 90%, et 45%"
-resize="no" >}}
+![Graphique montrant le pourcentage de requêtes avec un temps de réponse inférieur à 100ms, 50ms, 10ms respectivement autour de 97%, 90%, et 45%](img/deploy-1-project-goal.png "Objectifs de temps de réponse")
 
 La ligne verticale violette est positionnée approximativement quand le déploiement a eu lieu, et comme elle n'est pas 
 présente systématiquement, j'ai ajouté une flèche rouge sur tous les graphiques pour rendre ça plus clair.
@@ -79,10 +67,7 @@ Bon, on est d'accord que perdre environ 1 % est largement acceptable, mais cela 
 Si nous regardons le temps de réponse moyen, nous pouvons voir plus nettement l'augmentation
 qui est passée d'environ 23ms à 28ms.
 
-{{< illustration src="img/deploy-1-project-response-time.png"
-name="Temps de réponse moyen"
-alt="Graphique montrant le temps de réponse moyen oscillant entre 22ms et 25ms"
-resize="no" >}}
+![Graphique montrant le temps de réponse moyen oscillant entre 22ms et 25ms](img/deploy-1-project-response-time.png "Temps de réponse moyen")
 
 J'ai regardé les autres métriques, graphiques et logs et considéré le projet comme stable et en bonne santé malgré ces variations.
 Il était maintenant temps de creuser pour comprendre ce qui s'est passé. 
@@ -98,10 +83,7 @@ démarré à l'intérieur d'un conteneur Docker.
 #### Augmentation du CPU
 Après le déploiement, je remarque une augmentation de l'utilisation du CPU, passant de 24% à 30% de la réservation. C'est la loose ici aussi.
 
-{{< illustration src="img/deploy-1-CPU.png"
-name="Graphique de l'utilisation CPU"
-alt="Le CPU est passé de 24% à 30%"
-resize="no" >}}
+![Le CPU est passé de 24% à 30%](img/deploy-1-CPU.png "Graphique de l'utilisation CPU")
 
 > Dans Kubernetes, nous définissons des réservations CPU et RAM. C'est une bonne pratique de préciser au cluster combien de ressources 
 > les pods auront besoin. Par exemple, nous pouvons dire qu'un processus Node.js peut utiliser jusqu'à 2 CPUs. 
@@ -121,10 +103,7 @@ resize="no" >}}
 #### Diminution de la consommation de mémoire
 L'utilisation de la mémoire a diminué. C'est une victoire ici !
 
-{{< illustration src="img/deploy-1-RAM.png"
-name="Graphique de l'utilisation de la RAM"
-alt="La RAM est passée de 75% à 55%"
-resize="no" >}}
+![La RAM est passée de 75% à 55%](img/deploy-1-RAM.png "Graphique de l'utilisation de la RAM")
 Ce projet perd toujours du poids après chaque déploiement. C'est normal, mais il le récupère après un certain temps. 
 Il faut quelques heures pour que ça se stabilise. Cependant, cette fois-ci, la diminution est plus importante que d'habitude et,
 à première vue, probablement là pour rester.
@@ -136,10 +115,7 @@ Cette métrique est essentielle pour connaître la santé d'un processus Node.js
 Elle montre combien de temps le processus passe à travailler, combien de temps l'[event-loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick) est utilisé. 
 Environ 0 % pour un process en attente, et 100 % pour une utilisation maximale de l'event-loop. 
 
-{{< illustration src="img/deploy-1-elu.png"
-name="Utilisation de l'Event Loop"
-alt="L'ELU est passé de 17% à 20% en moyenne"
-resize="no" >}}
+![L'ELU est passé de 17% à 20% en moyenne](img/deploy-1-ELU.png "Utilisation de l'Event Loop")
 
 On voit une légère augmentation après le déploiement, passant de 17% à 20% en moyenne. 
 C'est la loose ici ! 
@@ -150,10 +126,7 @@ Cela peut aussi expliquer l'augmentation du temps de réponse.
 
 Après cela, je regarde la HEAP et les statistiques du Garbage Collector.
 
-{{< illustration src="img/deploy-1-HEAP-GC.png"
-name="Graphiques de toutes les espaces HEAP et des statistiques du Garbage Collector"
-alt="Graphiques montrant tous les espaces HEAP et les statistiques du Garbage Collector"
-resize="no" >}}
+![Graphiques montrant tous les espaces HEAP et les statistiques du Garbage Collector](img/deploy-1-HEAP-GC.png "Graphiques de toutes les espaces HEAP et des statistiques du Garbage Collector")
 
 La HEAP s'allège, mais surtout, quelque chose se passe avec le Garbage Collector.
 Sa déclinaison "minor" tourne beaucoup plus souvent et prend plus de temps.
@@ -177,11 +150,7 @@ Ok, il se passe quelque chose de louche avec le Garbage Collector. Mais quoi ?
 
 Si on regarde plus en détail la HEAP, on peut voir quelques changements notables après le déploiement :
 
-{{< illustration
-src="img/deploy-1-HEAP-NEW.png"
-name="Taille des espaces HEAP: map, new, shared"
-alt="Graphique de la HEAP montrant les espaces map, new, et shared"
-resize="no" >}}
+![Graphique de la HEAP montrant les espaces map, new, et shared](img/deploy-1-HEAP-NEW.png "Taille des espaces HEAP: map, new, shared")
 
 L'espace **map** a disparu et les espaces **shared** sont apparus. Mais surtout, l'espace **new** est passé de ~33MB à ~8MB.
 
@@ -260,25 +229,16 @@ Le 16 vient de la [documentation elle-même](https://github.com/nodejs/node/blob
 
 Je déploie ce changement simple et regarde les métriques.
 
-{{< illustration src="img/deploy-2-project.png"
-name="Objectifs de temps de réponse & temps de réponse moyen"
-alt="Graphique montrant le pourcentage de requêtes avec un temps de réponse inférieur à 100ms, 50ms, 10ms et le temps de réponse moyen"
-resize="no" >}}
+![Graphique montrant le pourcentage de requêtes avec un temps de réponse inférieur à 100ms, 50ms, 10ms et le temps de réponse moyen](img/deploy-2-project.png "Objectifs de temps de réponse & temps de réponse moyen")
 
 Le temps de réponse semble être revenu à la normale. C'est une victoire !
 
-{{< illustration src="img/deploy-2-system.png"
-name="Utilisation CPU & RAM"
-alt="Graphique montrant l'utilisation CPU et RAM revenant à des valeurs normales"
-resize="no" >}}
+![Graphique montrant l'utilisation CPU et RAM revenant à des valeurs normales](img/deploy-2-system.png "Utilisation CPU & RAM")
 
 L'utilisation CPU est également revenue à la normale, et l'utilisation RAM est toujours inférieure aux valeurs précédentes. 
 C'est une double victoire !
 
-{{< illustration src="img/deploy-2-nodejs.png"
-name="Métriques Node.js incluant ELU, HEAP et GC"
-alt="Graphique montrant l'ELU, HEAP et GC revenant à des valeurs normales"
-resize="no" >}}
+![Graphique montrant l'ELU, HEAP et GC revenant à des valeurs normales](img/deploy-2-nodejs.png "Métriques Node.js incluant ELU, HEAP et GC")
 
 Enfin, on peut voir que le GC est revenu à un comportement normal. De plus, l'espace "new" est maintenant revenu à sa valeur d'origine. 
 Cela confirme l'hypothèse que la taille de l'espace "new" était le problème.
@@ -351,10 +311,7 @@ Les deux versions donnent le même résultat. L'espace "new_space" est de la mê
 
 Bien sûr, faire la même chose sans le `--max-old-space-size` donne exactement le même résultat.
 
-{{< illustration
-src="img/doctor-what.png"
-name="Moi regardant les résultats"
-alt="Moi (représenté par William Hartnell) regardant les résultats avec étonnement" >}}
+![Moi (représenté par William Hartnell) regardant les résultats avec étonnement](img/doctor-what.png "Moi regardant les résultats")
 
 Qu'est-ce qui se passe ? Pourquoi mon projet se comporte-t-il différemment ?
 
@@ -394,9 +351,7 @@ La taille de "new_space" est maintenant de 2 Mo.
 
 Cela confirme l'hypothèse que la réservation de mémoire est utilisée pour calculer la taille de "new_space".
 
-{{< illustration src="img/doctor-disco.gif"
-name="Moi dansant sur les résultats"
-alt="Moi (représenté par Peter Capaldi) dansant sur les résultats" >}}
+{{< raw-picture src="img/doctor-disco.gif" alt="Moi (représenté par Peter Capaldi) dansant sur les résultats" title="Moi dansant sur les résultats" >}}
 
 J'ai maintenant mon coupable. 
 La réservation de mémoire dans la configuration Kubernetes est la raison pour laquelle la taille de "new_space" a tant rétréci.

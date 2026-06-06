@@ -21,13 +21,6 @@
 {{ else if ne $href "" }}
     {{ $Link = $href }}
 {{ end }}
-{{ $NoLightboxParam := .Get "no-lightbox" | default false }}
-{{ $NoLightboxValue := printf "%v" $NoLightboxParam }}
-{{ $NoLightbox := or (eq $NoLightboxValue "true") (eq $NoLightboxValue "1") }}
-{{ $EnableLightbox := and (not $NoLightbox) (or (eq $href "") (eq $href "self")) }}
-{{ if and $EnableLightbox (eq $Link "") }}
-    {{ $Link = $image.RelPermalink }}
-{{ end }}
 
 {{ $sizes := slice }}
 {{ $originalWidth := $image.Width }}
@@ -52,26 +45,10 @@
     {{ $sizes = $sizes | append (dict "width" $originalWidth "multiplier" $originalMultiplier "isOriginal" true) }}
 {{ end }}
 
-<figure class="photo inner-cover type-{{$type}} {{ if (.Get "dark-protection") }}dark-protection{{ end }}"{{ if $EnableLightbox }} data-enable-lightbox{{ end }}>
-    {{ if ne $Link "" }}
-    <a class="hidden-link" href="{{ $Link | safeURL }}" target="_blank">
-    {{ end }}
-    <picture>
-        {{/* WebP sources */}}
-        {{ if gt (len $sizes) 0 }}
-            <source type="image/webp" srcset="
-                {{- range $index, $size := $sizes -}}
-                    {{- if $size.isOriginal -}}
-                        {{- $converted := $image.Process (printf "webp q%d" $quality) -}}
-                        {{- $converted.RelPermalink | safeURL }} {{ $converted.Width }}w
-                    {{- else -}}
-                        {{- $resized := $image.Resize (printf "%dx webp q%d" $size.width $quality) -}}
-                        {{- $resized.RelPermalink | safeURL }} {{ $resized.Width }}w
-                    {{- end -}}
-                    {{- if lt (add $index 1) (len $sizes) }}, {{ end -}}
-                {{- end -}}
-            " />
-        {{ end }}
+{{ if ne $Link "" }}
+<a class="hidden-link {{ if (.Get "dark-protection") }}dark-protection{{ end }}" href="{{ $Link | safeURL }}" target="_blank">
+{{ end }}
+    <picture class="inner-cover type-{{$type}}">
 
         {{/* JPEG sources */}}
         {{ if gt (len $sizes) 0 }}
@@ -79,10 +56,10 @@
                 {{- range $index, $size := $sizes -}}
                     {{- if $size.isOriginal -}}
                         {{- $converted := $image.Process (printf "jpg q%d" $quality) -}}
-                        {{- $converted.RelPermalink | safeURL }} {{ $converted.Width }}w
+                        {{- $converted.RelPermalink | safeURL }} {{ printf "%.2f" $size.multiplier }}x
                     {{- else -}}
                         {{- $resized := $image.Resize (printf "%dx jpg q%d" $size.width $quality) -}}
-                        {{- $resized.RelPermalink | safeURL }} {{ $resized.Width }}w
+                        {{- $resized.RelPermalink | safeURL }} {{ $size.multiplier }}x
                     {{- end -}}
                     {{- if lt (add $index 1) (len $sizes) }}, {{ end -}}
                 {{- end -}}
@@ -93,8 +70,6 @@
         {{ $fallback := $image.Resize (printf "%dx jpg q%d" $baseWidth $quality) }}
         <img
             src="{{ $fallback.RelPermalink | safeURL }}"
-            width="{{ $fallback.Width }}"
-            height="{{ $fallback.Height }}"
             {{ with $alt }} alt="{{ . }}" {{ end }}
             {{ with $name }} title="{{ . }}" {{ end }}
         />
@@ -103,7 +78,6 @@
             <div class="credit">{{ $credit | markdownify }}</div>
         {{ end }}
     </picture>
-    {{ if ne $Link "" }}
-    </a>
-    {{ end }}
-</figure>
+{{ if ne $Link "" }}
+</a>
+{{ end }}

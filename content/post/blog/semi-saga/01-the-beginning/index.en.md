@@ -15,7 +15,7 @@ promotions:
 > It's cool and works great. I hope, I still don't have any peppers.
 
 
-{{<  illustration src="img/serre-kallax-04.jpg" alt="Kallax shelf with aluminum on all walls, including the doors. Plants are visible inside." >}}
+{{<  cover src="img/serre-kallax-04.jpg" alt="Kallax shelf with aluminum on all walls, including the doors. Plants are visible inside." >}}
 
 
 # The beginning, plants
@@ -64,9 +64,7 @@ To summarize:
 
 I recently bought Flamboyant (Delonix regia) seeds, a beautiful tree!
 
-{{< photo-gallery >}}
-{{< photo src="img/flamboyant.jpg" name="Flamboyant" alt="A beautiful red tree,the Flamboyant" >}}
-{{</photo-gallery>}}
+![A beautiful red tree,the Flamboyant](img/flamboyant.jpg "Flamboyant")
 
 First issue: It's a big tree and needs to live outside. These problems will of course be problems for future me. 
 Good luck, future me!
@@ -81,18 +79,16 @@ Here I am searching for good growing lights compatible with a living space.
 On Amazon, I found lots of options using LED lights. I chose a random one with 8 LED strips and a timer allowing for automatic switching on/off of the light.
 For 50 € I went for it to try.
 
-{{< photo-gallery >}}
-    {{< photo src="img/LED-01-01.jpg" name="Growing light with timer" alt="Growing light with timer" >}}
-    {{< photo src="img/LED-01-02.jpg" name="Timer" alt="The timer allow to choose between 3h, 6h, 12h of lighting" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Growing light with timer](img/LED-01-01.jpg "Growing light with timer")
+![The timer allow to choose between 3h, 6h, 12h of lighting](img/LED-01-02.jpg "Timer")
+{{</flex>}}
 
 I don't provide any links, but you can easily find these products yourself with different prices and options.
 I set up everything basically in a square of one of my existing furniture, an Ikea Kallax lying around in my living room.
 
 
-{{< photo-gallery >}}
-    {{< photo src="img/kallax-01.jpg" name="Kallax for plants" alt="Ikea Kallax furniture with LED strips in multiple squares. Plants and objects are visible in each square." >}}
-{{</photo-gallery>}}
+![Ikea Kallax furniture with LED strips in multiple squares. Plants and objects are visible in each square.](img/kallax-01.jpg "Kallax for plants")
 
 ## Seeding
 
@@ -118,10 +114,10 @@ Out of all the seeds (10, I think), only two sprouted and only one survived more
 
 Score of 1/10 for my first try.
 
-{{< photo-gallery >}}
-    {{< photo src="img/flamboyant-01.jpeg" name="Flamboyant seedling" alt="Small Flamboyant seedling with visible cotyledons" >}}
-    {{< photo src="img/flamboyant-02.jpeg" name="Flamboyant seedling" alt="Small Flamboyant seedling with first real leaves" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Small Flamboyant seedling with visible cotyledons](img/flamboyant-01.jpeg "Flamboyant seedling")
+![Small Flamboyant seedling with first real leaves](img/flamboyant-02.jpeg "Flamboyant seedling")
+{{</flex>}}
 
 
 ## The ultimate sacrifice
@@ -129,9 +125,7 @@ Score of 1/10 for my first try.
 Once the Flamboyant sprouted, I moved it near the window for better lighting.
 LEDs are good, but the sun is best anyway, even in my situation.
 
-{{< photo-gallery >}}
-    {{< photo src="img/flamboyant-03.jpeg" name="Small Flamboyant" alt="Small green Flamboyant" >}}
-{{</photo-gallery>}}
+![Small green Flamboyant](img/flamboyant-03.jpeg "Small Flamboyant")
 
 This is the last known picture of my little Flamboyant, still alive.
 A few weeks later, all the leaves died, and it stopped growing... forever.
@@ -146,9 +140,7 @@ Moreover, I need to be careful with watering. The cause of death is not clear, b
 
 While cooking, I kept some seeds of a small pepper called "bird's eye chili" or Pili Pili. Tasty, spicy, and good looking.
 
-{{< photo-gallery >}}
-    {{< photo src="img/piment.jpg" name="bird's eye chili or Pili Pili" alt="Small red peper" >}}
-{{</photo-gallery>}}
+![Small red peper](img/piment.jpg "bird's eye chili or Pili Pili")
 
 Online, I found out that like the Flamboyant, you need to leave the seeds in water for 12 hours before seeding them. 
 Also, sprouting is best between 28°C and 30°C, and the temperature needs to be stable and go down below 20°C.
@@ -167,10 +159,10 @@ The Kallax is black; by itself, it would have absorbed most of the light not dir
 Having the aluminum foil helped as most rays of light had another chance to hit a plant.
 
 
-{{< photo-gallery >}}
-    {{< photo src="img/serre-kallax-01.jpg" name="Empty square" alt="Ikea Kallax square with 8 LED strips and a towel to seal off the back." >}}
-    {{< photo src="img/serre-kallax-02.jpg" name="Closed square" alt="Ikea Kallax square sealed of with a towel" >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Ikea Kallax square with 8 LED strips and a towel to seal off the back.](img/serre-kallax-01.jpg "Empty square")
+![Ikea Kallax square sealed of with a towel](img/serre-kallax-02.jpg "Closed square")
+{{</flex>}}
 
 I made that with what I had lying around. I screwed old towels to almost seal off the back and front of the squares. 
 The front towel is only screwed at the top, allowing me to raise it to look inside. 
@@ -182,37 +174,32 @@ I will be able to set up the timer without any bother from the light when I watc
 
 I set up a [temperature and light probe](https://fr.aliexpress.com/w/wholesale-Xiaomi-Mi-Flora.html) and started a timer cycle.
 
-{{< illustration src="img/grafana-semi-01-01-tem-lum.png"        
-name="Graph of temperature and lighting"
-alt="Temperature and lighting for 15 days"
->}}
+![Temperature and lighting for 15 days](img/grafana-semi-01-01-tem-lum.png "Graph of temperature and lighting")
 
 This is not perfect, but we can clearly see that when the lights are on, the temperature stays around 29°C which is enough.
 If I disable the timer (and live the light always on), the temperature says.
 
 ### Bird's eye chili seeding & sprouting
 
-{{< photo-gallery >}}
-    {{< photo src="img/serre-kallax-03.jpg" name="Completed seeding" alt="4 mini-greenhouses in a Ikea Kallax square lighted by LED strips" >}}
-{{</photo-gallery>}}
+![4 mini-greenhouses in a Ikea Kallax square lighted by LED strips](img/serre-kallax-03.jpg "Completed seeding")
 
 With such temperatures, I quickly seeded all my Pili Pili. Given my last success rate (1/10), I put between 3 and 5 seeds per pot.
 I had hopes of getting some of them to sprout, at least one per pot.
 
 In only a few days, the first sprouting happened. This time, I had almost a 100% success rate.
 
-{{< photo-gallery >}}
-    {{< photo src="img/pili-01.jpg" name="Pili Pili seedlings" alt="Pili Pili seedlings" >}}
-    {{< photo src="img/pili-02.jpg" name="Pili Pili seedlings" alt="Pili Pili seedlings with cotyledons. Every pot have one or more." >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Pili Pili seedlings](img/pili-01.jpg "Pili Pili seedlings")
+![Pili Pili seedlings with cotyledons. Every pot have one or more.](img/pili-02.jpg "Pili Pili seedlings")
+{{</flex>}}
 
 With so many seedlings, I decided to conduct some tests by leaving one mini greenhouse in the lighted square, and one beside the window.
 We can clearly see the impact of growing lights after just a few days. My window does not let enough sun in.
 
-{{< photo-gallery >}}
-    {{< photo src="img/pili-03.jpg" name="Greenhouse vs Window" alt="Twi mini greenhouse with Pili Pili showing a different growth rate. The left one (greenhouse) is much more filled when the one on the right (window) barely changed." >}}
-    {{< photo src="img/pili-04.jpg" name="Window" alt="The seedlings turn and chase the light. They lean toward the window to get most light as possible." >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Twi mini greenhouse with Pili Pili showing a different growth rate. The left one (greenhouse) is much more filled when the one on the right (window) barely changed.](img/pili-03.jpg "Greenhouse vs Window")
+![The seedlings turn and chase the light. They lean toward the window to get most light as possible.](img/pili-04.jpg "Window")
+{{</flex>}}
 
 
 ### Repotting
@@ -225,16 +212,14 @@ I took the cautious path and left some of them as is to reduce the risk of losin
 
 This choice may have consequences in the future. We'll see; I'm confident future me will keep you informed!
 
-{{< photo-gallery >}}
-{{< photo src="img/pili-05.jpg" alt="Two Kallax square filled with pots" >}}
-{{</photo-gallery>}}
+![Two Kallax square filled with pots](img/pili-05.jpg)
 
-{{< photo-gallery >}}
-{{< photo src="img/pili-06.jpg" alt="Closeup, on a Pili Pili leave" >}}
-{{< photo src="img/pili-07.jpg" alt="Lots of pots with Pili Pili inside" >}}
-{{< photo src="img/pili-08.jpg" alt="Top view of plate with all Pili Pili pots" >}}
-{{< photo src="img/pili-09.jpg" alt="Top view of plate with all Pili Pili pots" >}}
-{{</photo-gallery>}}
+{{<grid 4>}}
+![Closeup, on a Pili Pili leave](img/pili-06.jpg)
+![Lots of pots with Pili Pili inside](img/pili-07.jpg)
+![Top view of plate with all Pili Pili pots](img/pili-08.jpg)
+![Top view of plate with all Pili Pili pots](img/pili-09.jpg)
+{{</flex>}}
 
 
 
@@ -243,34 +228,25 @@ The next step after the first towel prototype was to enhance the PAF (Partner Ac
 Make it less ugly for a living-room space.
 Who would like to have such a horrible, ugly towel thing near your TV or your best decorating thing.
 
-{{< photo-gallery >}}
-{{< photo src="img/salon-01.jpg" name="It's ugly" alt="Global view of the Kallax with the towel hiding two squares" >}}
-{{</photo-gallery>}}
+![Global view of the Kallax with the towel hiding two squares](img/salon-01.jpg "It's ugly")
 
 Ikea sells doors that feel ideal for this purpose. Moreover, the door comes with a complete seal of the square, making the full square sealed up from both front and back. Perfect!
 
-{{< photo-gallery >}}
-{{< photo src="img/ikea-kallax-porte.png" name="KALLAX door" alt="KALLAX door" >}}
-{{</photo-gallery>}}
+![KALLAX door](img/ikea-kallax-porte.png "KALLAX door")
 
 Without hesitating, I get one to test it. After following thoroughly the really long and complex manual, here I am with a closed square with Growing LED lights inside.
 I took the time to put aluminum foil on each side as before, including the door. This last part is more important than it looks. (More details on the next episode)
 
-{{< photo-gallery >}}
-    {{< photo src="img/serre-kallax-04.jpg" alt="Kallax shelf with aluminium all around, including the door. Plants can be sported inside." >}}
-    {{< photo src="img/serre-kallax-05.jpg" alt="Kallax shelf with the door closed. As any other Kallax in the world, nothing shows there is plant inside." >}}
-{{</photo-gallery>}}
+{{<flex 2>}}
+![Kallax shelf with aluminium all around, including the door. Plants can be sported inside.](img/serre-kallax-04.jpg)
+![Kallax shelf with the door closed. As any other Kallax in the world, nothing shows there is plant inside.](img/serre-kallax-05.jpg)
+{{</flex>}}
 
-{{< photo-gallery >}}
-{{< photo src="img/serre-kallax-06.jpg" alt="Global view of Ikea Kallax with 3 squares converted into greenhouses. One upper left with a proper door, the other with the ugly towel." >}}
-{{</photo-gallery>}}
+![Global view of Ikea Kallax with 3 squares converted into greenhouses. One upper left with a proper door, the other with the ugly towel.](img/serre-kallax-06.jpg)
 
 I find the result clean and okay. The PAF definitely increased. Performance is also a win.
 
-{{< illustration src="img/grafana-semi-03-01.png"        
-name="Graph of Lighting & temperature"
-alt="Lighting & temperature for 2 days with a maximum at 30.8°C"
->}}
+![Lighting & temperature for 2 days with a maximum at 30.8°C](img/grafana-semi-03-01.png "Graph of Lighting & temperature")
 
 More doors will be acquired to further increase the PAF of the other squares and finally remove this ugly towel.
 
