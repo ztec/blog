@@ -56,7 +56,7 @@ spec:
               value: /tmp
             - name: XDG_CACHE_HOME
               value: /app/resources/cache
-            image: git2.riper.fr/ztec/blog-builder:main-2546
+            image: git2.riper.fr/ztec/blog-builder:main-2561
             name: hugo-build
             securityContext:
               runAsGroup: 1000
@@ -83,7 +83,7 @@ spec:
               git submodule update --init --recursive
             env:
             - name: COMMIT_HASH
-              value: 059fe35685f03b09f2eeca970ca7def3d7c19198
+              value: 5f90c235ca026ff4bf5cfafc349ed376963005a7
             - name: HOME
               value: /tmp
             - name: GIT_TOKEN
