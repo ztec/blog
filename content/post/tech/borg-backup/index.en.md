@@ -73,7 +73,7 @@ There is a lot of ways to do it, I won't go in details.
 
 Basically, here is how I built my backup system:
 
-{{< illustration src="schema.png"        name="Global schematics"            alt="Global schematics"  resize="no" dark-protection="yes" >}}
+{{< illustration src="schema.png"  bg="light"      name="Global schematics"            alt="Global schematics"  resize="no" dark-protection="yes" >}}
 
 ##### Borg server 
 

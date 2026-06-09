@@ -37,12 +37,13 @@ créent.
 On voit que l'ensemble des musiciens aime ce qu'ils font et s'amusent sur scène. Il y a de la complicité et des échanges entre eux.
 Le public n'est pas en reste non plus, les interactions sont fluides et plaisantes.
 {{<flex 3>}}
-    {{<photoprism_search_linked 
+    {{<photoprism_search 
         query="label:\"Old School Funky Family\"" 
         no-title="true"
-        size="200"
-        mode="tile"
-        webp="true"
+        sizes="200x,400x,800x"
+        thumb-sizes="x200,x400"
+        include-tile="true"
+        format="webp"
         no-figure="true"
     >}}
 {{</flex>}}

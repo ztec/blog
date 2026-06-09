@@ -46,13 +46,10 @@ la page du concert, même à postériori.
 Quelques photos:
 
 {{<masonry>}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"Mackwood\" year:2026"
         no-title="true"
-        size="200"
-        mode="tile"
         order="oldest"
-        webp="true"
         no-figure="true"
     >}}
 {{</masonry>}}

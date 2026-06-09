@@ -177,13 +177,10 @@ The cool photos I took during the weekend:
 
 
 {{< justify >}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"FOSDEM\" year:2026"
         order="oldest"
         no-title="true"
-        size="200"
-        mode="tile"
-        webp="true"
         no-figure="true"
     >}}
 {{</justify >}}

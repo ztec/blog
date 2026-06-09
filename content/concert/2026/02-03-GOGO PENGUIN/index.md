@@ -39,7 +39,6 @@ Concert plutôt cool. Du GOGO PENGUIN comme on l'attend. La qualité de la salle
 src="cover.webp"
 name="GoGo Penguin"
 alt="GoGo Penguin"
-quality="70"
 credit="© Jon Shard / Nicky Rybka"
 >}}
 

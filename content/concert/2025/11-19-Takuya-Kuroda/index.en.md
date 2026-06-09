@@ -35,8 +35,13 @@ Those guys are pro, precise and fluid. They know their stuff.
 The electro/jazz mix is still as good.
 
 {{<flex 2>}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"Takuya Kuroda\""
+        no-title="true"
+        sizes="200x,400x,800x"
+        thumb-sizes="x200,x400"
+        include-tile="true"
+        format="webp"
     >}}
 {{</flex>}}
 
@@ -50,5 +55,4 @@ live is by far even better.
 The Crowd Breakdown: Diverse and young. A few tourists as usual. I had the opportunity to talk to a Japanese lady
 and exchange a few recommendations. It was really nice. As always at New Morning, people stay standing and move well.
 But don't forget it's jazz sooo no pogos!
-
 

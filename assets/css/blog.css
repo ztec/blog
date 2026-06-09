@@ -350,15 +350,6 @@ article picture.photo:hover {
     }
 }
 
-div.credit {
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 0.70rem;
-    text-align: right;
-    margin-top: -0.4rem;
-    padding-right: 0.2rem;
-    font-family: Departure Mono, monospace;
-}
 
 .og-image-preview {
     max-height: 120px;

@@ -37,12 +37,13 @@ It's obvious that all members of the band really enjoy playing together. Lots of
 The audience isn't forgotten either, and they managed to get people standing up at the Duc, a cool but somewhat stuffy place. 
 
 {{<flex 3>}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"Old School Funky Family\""
         no-title="true"
-        size="200"
-        mode="tile"
-        webp="true"
+        sizes="200x,400x,800x"
+        thumb-sizes="x200,x400"
+        include-tile="true"
+        format="webp"
         no-figure="true"
     >}}
 {{</flex>}}

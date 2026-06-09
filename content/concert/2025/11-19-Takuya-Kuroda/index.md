@@ -38,8 +38,13 @@ C'est pro, c'est carré, c'est fluide. On sent toujours qu'ils ont l'habitude.
 Le mélange électro/jazz est toujours aussi bon.
 
 {{<flex 2>}}
-    {{<photoprism_search_linked 
+    {{<photoprism_search 
         query="label:\"Takuya Kuroda\"" 
+        no-title="true"
+        sizes="200x,400x,800x"
+        thumb-sizes="x200,x400"
+        include-tile="true"
+        format="webp"
     >}}
 {{</flex>}}
 
@@ -50,5 +55,4 @@ en live c'est de loin encore mieux.
 
 Instant sociologie : Public plutôt varié, et jeune. Quelques touristes, dont une japonaise avec qui j'ai eu le plaisir de discuter et
 échanger quelques recommandations. Comme toujours au New Morning, ça reste debout et ça bouge un peu voire bien. Ça reste du jazz hein, pas de pogos!
-
 

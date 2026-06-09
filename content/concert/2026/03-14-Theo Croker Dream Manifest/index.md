@@ -34,8 +34,6 @@ de son pantalon 😁
 
 {{<photoprism_photo
         id="ptfe4v7amptspach"
-        size="200"
-        webp="true"
     >}}
 
 Côté musique, c'est toujours aussi "neat". Un mélange des genres, une précision, et une sonorité toujours agréable et originale.
@@ -50,13 +48,10 @@ Artists:
 
 Photos:
 {{<justify 3>}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"Theo Croker\" year:2026"
         no-title="true"
-        size="200"
-        mode="tile"
         order="oldest"
-        webp="true"
         no-figure="true"
     >}}
 {{</justify>}}

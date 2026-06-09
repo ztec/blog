@@ -41,13 +41,14 @@ Artists:
 Photos: (je n'en ai aucune de propre du pianiste 😅, mais il était bien là)
 
 {{<flex>}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"Erik Truffaz\" year:2025"
         no-title="true"
-        size="200"
-        mode="tile"
+        sizes="200x,400x,800x"
+        thumb-sizes="x200,x400"
+        include-tile="true"
         order="oldest"
-        webp="true"
+        format="webp"
         no-figure="true"
     >}}
 {{</flex >}}

@@ -62,13 +62,10 @@ Alors comme d'habitude, Technology Connections fait une vidéo très intéressan
 de 2h sur le fonctionnement des lave-vaisselle, c'est ici très pertinent et bien géré. J'aime beaucoup comment il remet les ordres de grandeur
 en tête pour montrer les conneries qu'on fait en tant que société.
 
-{{< cover
+{{< float-img
     src="tc_angry.png"
-    name="Technology Connections pointing angrily"
     alt="Technology Connections pointing angrily"
-    type="right"
-    width="240"
-    quality="70"
+    float="right"
 >}}
 
 Mais je partage la vidéo ici non pas pour son sujet premier, mais pour sa partie plus inhabituelle sur les soucis que les USA rencontrent
@@ -100,13 +97,10 @@ Juste un petit rappel qui va de pair avec [Dear friend, you have built a Kuberne
 
 ### FOSDEM
 
-{{< cover
+{{< float-img
     src="FOSDEM_logo.png"
-    name="FOSDEM logo"
     alt="FOSDEM logo"
-    type="left"
-    width="200"
-    quality="70"
+    float="left"
 >}}
 
 
@@ -177,13 +171,10 @@ Par ailleurs, il semblerait que j'aie explosé tous mes records d'audience Masto
 Les photos cool que j'ai prises durant le weekend :
 
 {{< justify >}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"FOSDEM\" year:2026"
         order="oldest"
         no-title="true"
-        size="200"
-        mode="tile"
-        webp="true"
         no-figure="true"
     >}}
 {{</justify >}}

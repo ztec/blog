@@ -33,8 +33,9 @@ I think they get along well, to the point where he had a portrait of his buddy e
 
 {{<photoprism_photo
         id="ptfe4v7amptspach"
-        size="200"
-        webp="true"
+        sizes="200x,400x,800x"
+        thumb-sizes="x200,x400"
+        format="webp"
     >}}
 
 On the music side, it's always just as neat. A mix of genres, precision, and a sound that's always pleasant and original.
@@ -49,13 +50,10 @@ Artists:
 
 Photos:
 {{<justify 3>}}
-    {{<photoprism_search_linked
+    {{<photoprism_search
         query="label:\"Theo Croker\" year:2026"
         no-title="true"
-        size="200"
-        mode="tile"
         order="oldest"
-        webp="true"
         no-figure="true"
     >}}
 {{</justify>}}

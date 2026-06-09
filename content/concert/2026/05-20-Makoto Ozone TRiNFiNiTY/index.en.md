@@ -42,14 +42,11 @@ Artists:
 A few pictures I took:
 
 {{<masonry>}}
-    {{<photoprism_search_linked
-        query="label:\"Makoto Ozone\" year:2026"
-        no-title="true"
-        size="200"
-        mode="tile"
-        order="oldest"
-        webp="true"
-        no-figure="true"
-    >}}
+    {{<photoprism_search
+            query="label:\"Makoto Ozone\" year:2026"
+            no-title="true"
+            order="oldest"
+            no-figure="true"
+        >}}
 {{</masonry>}}
 
