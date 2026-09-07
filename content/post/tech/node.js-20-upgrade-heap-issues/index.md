@@ -351,7 +351,11 @@ La taille de "new_space" est maintenant de 2 Mo.
 
 Cela confirme l'hypothèse que la réservation de mémoire est utilisée pour calculer la taille de "new_space".
 
-{{< raw-picture src="img/doctor-disco.gif" alt="Moi (représenté par Peter Capaldi) dansant sur les résultats" title="Moi dansant sur les résultats" >}}
+{{< illustration
+    src="img/doctor-disco.gif"
+    name="Moi dansant sur les résultats"
+    alt="Moi (représenté par Peter Capaldi) dansant sur les résultats"
+>}}
 
 J'ai maintenant mon coupable. 
 La réservation de mémoire dans la configuration Kubernetes est la raison pour laquelle la taille de "new_space" a tant rétréci.

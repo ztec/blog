@@ -25,11 +25,11 @@ It grew whenever I add drives to it. From few TeraBytes it is 24To large now.
 
 I have a monitoring in place to follow its usage. And you guessed it, empty drive space does stay empty very long. 
 
-{{< illustration src="img/fullCargoGraph.png"  name="Cargo is full"   alt="A gauge showing that the cargo volume is full red at 97.2%" resize="no" >}}
+{{< illustration src="img/fullCargoGraph.png"  name="Cargo is full"   alt="A gauge showing that the cargo volume is full red at 97.2%" >}}
 
 As I'm not able to grow any [Simoleon Tree](https://sims.fandom.com/wiki/Money_tree) at my place. I cannot add drive endlessly.
 
-{{< illustration src="img/MoneyTree.png"  name="Sims 2 money tree"   alt="A Sims2 money tree" resize="no" >}}
+{{< illustration src="img/MoneyTree.png"  name="Sims 2 money tree"   alt="A Sims2 money tree" >}}
 
 I perform some cleaning on a regular basis to try to keep the used space under control. I mostly delete anything not relevant anymore.
 From Movies files to project dataset I abandoned I can sometimes free multiple Terabytes of data.
@@ -38,7 +38,7 @@ From Movies files to project dataset I abandoned I can sometimes free multiple T
 Today was cleaning day. After doing the usual stuff, I go on the recycle bin to permanently delete some dangling files.
 I do a `df` on the server to check free space after that and find odd values.
 
-{{< illustration src="img/dfBefore.png"  name="df before"   alt="Results of the `df` command showing size=24T, used=20T, Available=2.4T use=90%" resize="no" >}}
+{{< illustration src="img/dfBefore.png"  name="df before"   alt="Results of the `df` command showing size=24T, used=20T, Available=2.4T use=90%" >}}
 
 ### Who did steal my 1.2To ?
 
@@ -68,8 +68,8 @@ sudo tune2fs -m 0.05 /dev/vda
 ```
 
 And voilà !
-{{< illustration src="img/dfAfter.png"  name="df after"   alt="command `sudo tune2fs -m 0.05 /dev/vda` and results of the `df` command showing size=24T, used=20T, Available=3.6T use=86%" resize="no" >}}
-{{< illustration src="img/notSoFullCargo.png"  name="Cargo is not full anymore"   alt="A gauge showing that the cargo volume is not full anymore at 85.1%" resize="no" >}}
+{{< illustration src="img/dfAfter.png"  name="df after"   alt="command `sudo tune2fs -m 0.05 /dev/vda` and results of the `df` command showing size=24T, used=20T, Available=3.6T use=86%" >}}
+{{< illustration src="img/notSoFullCargo.png"  name="Cargo is not full anymore"   alt="A gauge showing that the cargo volume is not full anymore at 85.1%" >}}
 
 ## So what ?
 

@@ -45,11 +45,13 @@ A short video that puts prejudices back in their place, again. A must-watch.
 
 Fun and serious at the same time. Nothing to add 😁
 
+{{< center 20 >}}
 {{< illustration
     src="queer-as-folk-michael-novotny.gif"
     name="Queer as Folks quote: BUTT PLUG, BUTT PLUG, BUTT PLUG, BUTT"
     alt="Queer as Folks quote: BUTT PLUG, BUTT PLUG, BUTT PLUG, BUTT"
 >}}
+{{< /center >}}
 
 ## USA, Fascism, and renewable energy
 
@@ -60,14 +62,9 @@ As usual, Technology Connections makes a very interesting video, and even though
 2-hour videos about how dishwashers work, it's very relevant and well handled here. I really like how he puts orders of magnitude
 back into perspective to show the stupid things we do as a society.
 
-{{< cover
-    src="tc_angry.png"
-    name="Technology Connections pointing angrily"
-    alt="Technology Connections pointing angrily"
-    type="right"
-    width="240"
-    quality="70"
->}}
+{{< float right small >}}
+![Technology Connections pointing angrily](tc_angry.png)
+{{< /float >}}
 
 But I'm sharing this video here not for its main topic, but for its more unusual part about the issues the USA is facing
 with the consequences of the fascism in place. He steps out of his "duty of neutrality" I'd say. Not that he has one, but it's like a
@@ -98,14 +95,9 @@ Just a little reminder that goes hand in hand with [Dear friend, you have built 
 
 ### FOSDEM
 
-{{< cover
-    src="FOSDEM_logo.png"
-    name="FOSDEM logo"
-    alt="FOSDEM logo"
-    type="left"
-    width="200"
-    quality="70"
->}}
+{{< float left small >}}
+![FOSDEM logo](FOSDEM_logo.png)
+{{< /float >}}
 
 
 This weekend I was in Brussels for [FOSDEM](https://fosdem.org). I go every year since 2019. (online in 2021 and 2022 due to the pandemic).
@@ -181,7 +173,6 @@ The cool photos I took during the weekend:
         query="label:\"FOSDEM\" year:2026"
         order="oldest"
         no-title="true"
-        no-figure="true"
     >}}
 {{</justify >}}
 

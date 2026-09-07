@@ -127,14 +127,14 @@ Cela n'inclut pas le temps qu'il faut pour envoyer la réponse au client ou le t
 {{< illustration src="img/prod-avg-all.png"  
 name="Temps de réponse moyen par moteur"  
 alt="Graphique du temps de réponse moyen par moteur"  
-resize="no" >}}
+>}}
 
 Le temps de réponse moyen montre que le moteur JS est légèrement plus rapide, mais avec seulement 1 ms de différence, ce n'est pas vraiment significatif.
 
 {{< illustration src="img/prod-95p-all.png"  
 name="Temps de réponse au 95ᵉ percentile par moteur"  
 alt="Graphique du temps de réponse au 95ᵉ percentile par moteur"  
-resize="no" >}}
+>}}
 
 Le 95ᵉ percentile montre une différence un peu plus grande. Ce n'est pas énorme, mais 5 ms semblent significatifs.
 
@@ -163,7 +163,7 @@ Le service est déployé sur un cluster Kubernetes. J'ai accès aux métriques d
 {{< illustration src="img/prod-system-cpu.png"  
 name="Pourcentage de l'utilisation de la réservation CPU"  
 alt="Pourcentage de l'utilisation de la réservation CPU"  
-resize="no" >}}
+>}}
 
 Le moteur `js` utilise 2 % de CPU en moins que le moteur `JIT`. C'est une différence constante, mais comme pour le temps de réponse, ce n'est pas très impressionnant.  
 Ne vous méprenez pas cependant, lorsque vous déployez des centaines ou des milliers de pods, 2 % peuvent devenir beaucoup. Considérons le CPU comme pas cher pour le moment.
@@ -171,7 +171,7 @@ Ne vous méprenez pas cependant, lorsque vous déployez des centaines ou des mil
 {{< illustration src="img/prod-system-RAM.png"  
 name="Pourcentage de l'utilisation de la réservation RAM"  
 alt="Pourcentage de l'utilisation de la réservation RAM"  
-resize="no" >}}
+>}}
 
 Les indicateurs de RAM sont un peu plus intéressants. Le moteur `js` utilise environ 20 % de RAM en moins que le moteur `JIT`.  
 Une différence de 20 % semble substantielle.
@@ -181,7 +181,7 @@ Une différence de 20 % semble substantielle.
 {{< illustration src="img/prod-nodejs-elu.png"  
 name="Event Loop Utilization min, max et moyenne au niveau du cluster"  
 alt="Event Loop Utilization min, max et moyenne au niveau du cluster"  
-resize="no" >}}
+>}}
 
 Je vous mets au défi d'identifier le moment où le déploiement du 50/50 par moteur a été fait. L'ELU n'a pas bougé d'un iota.  
 Je n'ai qu'un indicateur global contrairement au CPU/RAM, je ne peux pas observer les différences de manière aussi précise.  
@@ -191,7 +191,7 @@ Je considère donc que l'utilisation de l'un ou l'autre moteur n'a pas d'impact 
 {{< illustration src="img/prod-nodejs-heap-old.png"  
 name="Heap old space usage at cluster level, min, max, and average"  
 alt="Heap old space usage at cluster level, min, max, and average"  
-resize="no" >}}
+>}}
 
 En surveillant la HEAP, on voit que l'espace `old` semble avoir légèrement diminué. Ce n'est pas très évident sur le graphique, mais c'est visible dans la moyenne.  
 Le maximum n'a pas changé, mais le minimum oui. Cela confirme ce que nous avons observé plus tôt avec l'utilisation de la RAM.
@@ -208,7 +208,7 @@ J'ai exécuté le test Gatling pour chaque moteur dans deux déploiements distin
 {{< illustration src="img/lab-all.png"  
 name="Temps de réponse moyen et 95ᵉ percentile par moteur"  
 alt="Temps de réponse moyen et 95ᵉ percentile par moteur"  
-resize="no" >}}
+>}}
 
 Les résultats ne sont pas très favorables au moteur `js`. La différence semble vraiment importante en faveur du moteur `JIT`.  
 Gardez en tête que les résultats absolus ne sont pas comparables à ceux de la production, mais des comparatifs avec uniquement des données de ces tests restent pertinents.  
@@ -219,12 +219,12 @@ Nous perdons environ 50 ms sur le 95ᵉ percentile et 20 ms en moyenne. Cela rep
 {{< illustration src="img/lab-system-all-js.png"  
 name="Tableau de bord des métriques système montrant l'utilisation du CPU et de la RAM pour le moteur js"  
 alt="Tableau de bord des métriques système montrant l'utilisation du CPU et de la RAM pour le moteur js"  
-resize="no" >}}
+>}}
 
 {{< illustration src="img/lab-system-all-jit.png"  
 name="Tableau de bord des métriques système montrant l'utilisation du CPU et de la RAM pour le moteur JIT"  
 alt="Tableau de bord des métriques système montrant l'utilisation du CPU et de la RAM pour le moteur JIT"  
-resize="no" >}}
+>}}
 
 La première différence notable, c'est l'utilisation du CPU. Le moteur `js` utilise 20 % de CPU en plus que le moteur `JIT`, pas négligeable.
 
@@ -237,12 +237,12 @@ Dans l'ensemble, nos tests synthétiques indiquent que le moteur `JIT` est plus 
 {{< illustration src="img/lab-nodejs-all-js.png"  
 name="Tableau de bord des métriques Node.js telles que ELU, HEAP et Garbage Collector pour le moteur js"  
 alt="Tableau de bord des métriques Node.js telles que ELU, HEAP et Garbage Collector pour le moteur js"  
-resize="no" >}}
+>}}
 
 {{< illustration src="img/lab-nodejs-all-jit.png"  
 name="Tableau de bord des métriques Node.js telles que ELU, HEAP et Garbage Collector pour le moteur JIT"  
 alt="Tableau de bord des métriques Node.js telles que ELU, HEAP et Garbage Collector pour le moteur JIT"  
-resize="no" >}}
+>}}
 
 L'histoire est la même avec les indicateurs Node.js. Le moteur `js` utilise plus de HEAP, requiert davantage de garbage collection et a un taux d'utilisation de l'ELU plus élevé.  
 Spécifiquement, l'ELU est passé de 30 % à 50 %.

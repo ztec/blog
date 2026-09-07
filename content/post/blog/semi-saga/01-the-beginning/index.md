@@ -17,7 +17,7 @@ promotions:
 > C'est cool et super efficace. Enfin, d'une certaine manière. J'ai toujours pas de piment.
 
 
-{{<  cover src="img/serre-kallax-04.jpg" alt="Étagère Kallax avec de l'aluminium partout, y compris sur la porte. Des plantes sont visibles à l'intérieur." >}}
+![Étagère Kallax avec de l'aluminium partout, y compris sur la porte. Des plantes sont visibles à l'intérieur.](img/serre-kallax-04.jpg)
 
 
 # Le début, les plantes

@@ -47,11 +47,13 @@ Une petite vidéo qui remet les préjugés en place. À voir absolument.
 
 Rigolo et sérieux à la fois, rien à ajouter 😁
 
+{{< center 20 >}}
 {{< illustration
     src="queer-as-folk-michael-novotny.gif"
     name="Citation de Queer as Folks: BUTT PLUG, BUTT PLUG, BUTT PLUG, BUTT"
     alt="Citation de Queer as Folks: BUTT PLUG, BUTT PLUG, BUTT PLUG, BUTT"
 >}}
+{{< /center >}}
 
 ## USA, Fascisme, et énergie renouvelable
 
@@ -62,11 +64,9 @@ Alors comme d'habitude, Technology Connections fait une vidéo très intéressan
 de 2h sur le fonctionnement des lave-vaisselle, c'est ici très pertinent et bien géré. J'aime beaucoup comment il remet les ordres de grandeur
 en tête pour montrer les conneries qu'on fait en tant que société.
 
-{{< float-img
-    src="tc_angry.png"
-    alt="Technology Connections pointing angrily"
-    float="right"
->}}
+{{< float right small >}}
+![Technology Connections pointing angrily](tc_angry.png)
+{{< /float >}}
 
 Mais je partage la vidéo ici non pas pour son sujet premier, mais pour sa partie plus inhabituelle sur les soucis que les USA rencontrent
 avec les conséquences du fascisme en place. Il sort de "son devoir de réserve" je dirais. Non pas qu'il en ait un, mais c'est comme un
@@ -97,11 +97,9 @@ Juste un petit rappel qui va de pair avec [Dear friend, you have built a Kuberne
 
 ### FOSDEM
 
-{{< float-img
-    src="FOSDEM_logo.png"
-    alt="FOSDEM logo"
-    float="left"
->}}
+{{< float left small >}}
+![FOSDEM logo](FOSDEM_logo.png)
+{{< /float >}}
 
 
 Ce weekend je l'ai passé à Bruxelles pour le [FOSDEM](https://fosdem.org). J'y vais tous les ans depuis 2019. (en ligne en 2021 et 2022 à cause de la pandémie).
@@ -175,7 +173,6 @@ Les photos cool que j'ai prises durant le weekend :
         query="label:\"FOSDEM\" year:2026"
         order="oldest"
         no-title="true"
-        no-figure="true"
     >}}
 {{</justify >}}
 

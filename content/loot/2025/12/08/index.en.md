@@ -38,14 +38,9 @@ A very good documentary about Trump's America and how/why Americans vote for him
 Sometimes hard to watch, but very informative without falling into the "we have to hear all sides" trap, because it doesn't put all viewpoints on the same level.
 
 
-{{< cover
-src="HIGH SCHOOL RADICAL.png"
-name="HIGH SCHOOL RADICAL"
-alt="HIGH SCHOOL RADICAL"
-type="left"
-width="240"
-quality="70"
->}}
+{{< float left small >}}
+![HIGH SCHOOL RADICAL](<HIGH SCHOOL RADICAL.png>)
+{{< /float >}}
 
 - [Retour chez mes potes trumpistes (1/4)](https://www.youtube.com/watch?v=wGaUReDvXew)
 

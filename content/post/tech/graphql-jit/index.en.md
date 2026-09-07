@@ -116,13 +116,13 @@ It does not include the time it takes to send the response to the client or netw
 {{< illustration src="img/prod-avg-all.png"
 name="Average response time per engine"  
 alt="Graph of the average response time per engine"
-resize="no" >}}
+>}}
 The average response time shows that the JS engine is slightly faster, but with only a one-millisecond difference, it's not really significant.
 
 {{< illustration src="img/prod-95p-all.png"
 name="95th percentile of the response time per engine"  
 alt="Graph of the 95th percentile of the response time per engine"
-resize="no" >}}
+>}}
 
 The 95th percentile shows a somewhat greater difference. It is not enormous, but five milliseconds does feel significant.
 
@@ -148,14 +148,14 @@ This is an example of a configuration for a pod. This means the pod will have tw
 {{< illustration src="img/prod-system-cpu.png"
 name="Percent of the CPU reservation used"  
 alt="Percent of the CPU reservation used"
-resize="no" >}}
+>}}
 
 The `js-engine’ uses 2% less CPU than the `JIT-engine.’ It is a consistent difference, but like the response time gain, it is not that significant. Don't get me wrong, when you deploy hundreds or thousands of pods, 2% can mean a lot, but I'm not convinced it does in my case.
 
 {{< illustration src="img/prod-system-RAM.png"
 name="Percent of the RAM reservation used"  
 alt="Percent of the RAM reservation used"
-resize="no" >}}
+>}}
 
 The RAM usage is a bit more interesting. The `js-engine’ uses ~20% less RAM than the `JIT-engine.’ Here, a 20% difference feels substantial.
 #### Node.js metrics
@@ -163,14 +163,14 @@ The RAM usage is a bit more interesting. The `js-engine’ uses ~20% less RAM th
 {{< illustration src="img/prod-nodejs-elu.png"
 name="Event Loop Utilization min at cluster level, max and average"  
 alt="Event Loop Utilization min at cluster level, max and average"
-resize="no" >}}
+>}}
 
 I challenge you to identify when the deployment occurred. The ELU (Event Loop Utilization) did not shift a single bit, even with 50% of the requests being handled by the `js-engine.’ This graph only shows the overall cluster level, as I cannot get metrics for each engine separately. In my opinion, since 50% of the pods use another engine, if the ELU were significantly impacted, we would see it. I will assume that using either `JIT’ or `js’ does not change anything in terms of Event Loop Utilization.
 
 {{< illustration src="img/prod-nodejs-heap-old.png"
 name="HEAP old space usage at cluster level, min, max, and average"  
 alt="HEAP old space usage at cluster level, min, max, and average"
-resize="no" >}}
+>}}
 
 Monitoring the HEAP shows that the `old’ space seems to have reduced slightly. It is not very obvious in the graph but it is visible in the average. The maximum did not change, but the minimum did. This confirms what we observed earlier with RAM usage.
 
@@ -184,7 +184,7 @@ I ran the Gatling test for each engine in two separate deployments. The tests we
 {{< illustration src="img/lab-all.png"
 name="Average and 95th percentile response time per engine"  
 alt="Average and 95th percentile response time per engine"
-resize="no" >}}
+>}}
 
 The results are not favorable for the `js` engine. The difference is substantial. We must remember that this is a lab environment, and response times may differ from those in production. However, we are losing about 50 milliseconds on the 95th percentile and 20 milliseconds on average. These represent slowdowns of approximately 50% and 70%, respectively, compared to the `JIT’ engine.
 
@@ -193,12 +193,12 @@ The results are not favorable for the `js` engine. The difference is substantial
 {{< illustration src="img/lab-system-all-js.png"
 name="Dashboard of System metrics showing CPU and RAM for the js engine"  
 alt="Dashboard of System metrics showing CPU and RAM for the js engine"
-resize="no" >}}
+>}}
 
 {{< illustration src="img/lab-system-all-jit.png"
 name="Dashboard of System metrics showing CPU and RAM for the JIT engine"  
 alt="Dashboard of System metrics showing CPU and RAM for the JIT engine"
-resize="no" >}}
+>}}
 
 The first notable difference is in CPU usage. The `js-engine’ uses 20% more CPU than the `JIT-engine,’ which is significant.
 
@@ -210,12 +210,12 @@ Overall, our synthetic tests indicate that the JIT engine is more efficient than
 {{< illustration src="img/lab-nodejs-all-js.png"
 name="Dashboard of Node.js metrics such as ELU, HEAP, and Garbage Collector for the js engine"  
 alt="Dashboard of Node.js metrics such as ELU, HEAP, and Garbage Collector for the js engine"
-resize="no" >}}
+>}}
 
 {{< illustration src="img/lab-nodejs-all-jit.png"
 name="Dashboard of Node.js metrics such as ELU, HEAP, and Garbage Collector for the JIT engine"  
 alt="Dashboard of Node.js metrics such as ELU, HEAP, and Garbage Collector for the JIT engine"
-resize="no" >}}
+>}}
 
 The story remains consistent with the Node.js metrics. The `js engine’ uses more HEAP, more Garbage Collection, and has a higher Event Loop Utilization (ELU). Specifically, the ELU increased from 30% to 50%.
 

@@ -15,7 +15,7 @@ promotions:
 > It's cool and works great. I hope, I still don't have any peppers.
 
 
-{{<  cover src="img/serre-kallax-04.jpg" alt="Kallax shelf with aluminum on all walls, including the doors. Plants are visible inside." >}}
+![Kallax shelf with aluminum on all walls, including the doors. Plants are visible inside.](img/serre-kallax-04.jpg)
 
 
 # The beginning, plants

@@ -27,11 +27,11 @@ Je le maintiens depuis 3-4 ans. Il grossit à chaque fois que j'ajoute des disqu
 
 J'ai mis du monitoring en place pour surveiller son utilisation. Vous imaginez bien que tout espace libre, ne le reste pas bien longtemps. 
 
-{{< illustration src="img/fullCargoGraph.png"  name="Cargo est plein"   alt="Une jauge qui montre que le volume CARGO est plein à 97.2%" resize="no" >}}
+{{< illustration src="img/fullCargoGraph.png"  name="Cargo est plein"   alt="Une jauge qui montre que le volume CARGO est plein à 97.2%" >}}
 
 Je n'ai pas la main assez verte pour faire pousser un [arbre à simflouz](https://fr.wikipedia.org/wiki/Simflouz), du coup je ne peux pas rajouter des disques infiniment.
 
-{{< illustration src="img/MoneyTree.png"  name="Arbre a simflouz du jeu Sims 2"   alt="Arbre a simflouz du jeu Sims 2" resize="no" >}}
+{{< illustration src="img/MoneyTree.png"  name="Arbre a simflouz du jeu Sims 2"   alt="Arbre a simflouz du jeu Sims 2" >}}
 
 Je fais donc du ménage de temps en temps. Généralement, je supprime beaucoup de choses inutiles comme des films ou des jeux de données de projets abandonnés.
 Je parviens souvent à libérer quelques térabytes. 
@@ -43,7 +43,7 @@ pour vider définitivement quelques fichiers qui n'attendaient que cela.
 À l'occasion, j'ai lancé la commande `df` sur le serveur pour regarder tout l'espace que j'ai gagné et enfin pouvoir me féliciter des économies réalisées. 
 Cependant, en regardant les données de plus près, je suis surpris. 
 
-{{< illustration src="img/dfBefore.png"  name="df avant"   alt="Résultats de la commande `df` montrant taille=24T, utilisé=20T, disponible=2.4T utilisé=90%" resize="no" >}}
+{{< illustration src="img/dfBefore.png"  name="df avant"   alt="Résultats de la commande `df` montrant taille=24T, utilisé=20T, disponible=2.4T utilisé=90%" >}}
 
 ### Qui m'a piquer ces 1.2To ?
 
@@ -73,8 +73,8 @@ Voici la commande que j'ai utilisée pour réduire l'espace réservé
 sudo tune2fs -m 0.05 /dev/vda
 ```
 TaDa ! 
-{{< illustration src="img/dfAfter.png"  name="df après"   alt="command `sudo tune2fs -m 0.05 /dev/vda` et le résultat de la commande `df` montrant taille=24T, utilisé=20T, disponible=3.6T utilisé=86%" resize="no" >}}
-{{< illustration src="img/notSoFullCargo.png"  name="Cargo n'est plus plein" alt="Une jauge qui montre que le volume CARGO est remplis à 85.1%" resize="no" >}}
+{{< illustration src="img/dfAfter.png"  name="df après"   alt="command `sudo tune2fs -m 0.05 /dev/vda` et le résultat de la commande `df` montrant taille=24T, utilisé=20T, disponible=3.6T utilisé=86%" >}}
+{{< illustration src="img/notSoFullCargo.png"  name="Cargo n'est plus plein" alt="Une jauge qui montre que le volume CARGO est remplis à 85.1%" >}}
 
 ## Conclusions
 

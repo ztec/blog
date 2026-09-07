@@ -70,14 +70,9 @@ se rendre disponible ailleurs ne veut pas nécessairement dire qu'il faut être 
 
 ## Art
 
- {{< cover
- src="cover.jpg"
- name="The Living Tombstone - \"Everything Is Fine (Remix)\""
- alt="The Living Tombstone - \"Everything Is Fine (Remix)\""
- type="right"
- width="240"
- quality="70"
- >}}
+{{< float right small >}}
+![The Living Tombstone - "Everything Is Fine (Remix)"](cover.jpg)
+{{< /float >}}
 
  - [The Living Tombstone - "Everything Is Fine (Remix)" (en)](https://www.youtube.com/watch?app=desktop&v=JxgqPk1RCCU)
 

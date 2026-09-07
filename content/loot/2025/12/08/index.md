@@ -43,14 +43,9 @@ Très bon documentaire sur l'Amérique de Trump et comment/pourquoi les América
 du tout au même niveau.
 
 
-{{< cover
-src="HIGH SCHOOL RADICAL.png"
-name="HIGH SCHOOL RADICAL"
-alt="HIGH SCHOOL RADICAL"
-type="left"
-width="240"
-quality="70"
->}}
+{{< float left small >}}
+![HIGH SCHOOL RADICAL](<HIGH SCHOOL RADICAL.png>)
+{{< /float >}}
 
 - [Retour chez mes potes trumpistes (1/4)](https://m.youtube.com/watch?v=F4p-KHV2-Qw)
 

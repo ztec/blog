@@ -75,7 +75,7 @@ Il y a plein de façon de le faire, je ne rentrerais pas dans les détails.
 
 En gros, voici comment j'ai construit mes backup.
 
-{{< illustration src="schema.png"        name="Global schematics"            alt="Global schematics"  resize="no" dark-protection="yes" >}}
+{{< illustration src="schema.png" bg="light" name="Global schematics" alt="Global schematics" >}}
 
 ##### Borg server 
 Un serveur est dédié a la réception des backup borg. En réalité c'est une Machine virtuel, mais cela pourrais très bien 
@@ -304,6 +304,5 @@ J'utilise ce système depuis moins d'un an, et il y a plein de détails qui ne s
 
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
-
 
 

@@ -28,15 +28,9 @@ og:
 > L'article est léger, mais par moment je suis très sérieux !
 
 
-[{{< cover
-src="poster.fr.jpg"
-name="Poster de Godzilla en français"
-alt="Poster de Godzilla en français"
-type="right"
-width="240"
-quality="70"
->}}
-](https://wikizilla.org/wiki/Godzilla_(1954_film)#/media/File:Godzilla_Movie_Posters_-_Gojira_-French-.jpg/2)
+{{< float right small >}}
+[![Poster de Godzilla en français](poster.fr.jpg)](https://wikizilla.org/wiki/Godzilla_(1954_film)#/media/File:Godzilla_Movie_Posters_-_Gojira_-French-.jpg/2)
+{{< /float >}}
 
 
 Bonjour tout le monde. Aujourd'hui je vais vous parler de Godzilla, le tout premier film.
@@ -184,15 +178,16 @@ La révélation à la fin avec les traces sur la plage … Magnifique !
 Donc ouais, c'est bien fait, mais c'est chiche pour le moment. Quasiment que de la suggestion. On dirait du Spielberg (ou est-ce que c'est Spielberg qui ressemble à du [本多 猪四郎 Honda Ishirō](https://fr.wikipedia.org/wiki/Ishir%C5%8D_Honda)? 😏)
 
 ## Le costume
-{{< cover
-src="img/suit-01.jpg"
-name="The completed No. 1 ShodaiGoji suit with human for scale"
-alt="The completed No. 1 ShodaiGoji suit with a human for scale (only few cm shorter)"
-type="left"
-width="240"
-quality="70"
-credit="ⓒ Unknown"
+{{< float left small >}}
+{{< img
+    src="img/suit-01.jpg"
+    title="The completed No. 1 ShodaiGoji suit with human for scale"
+    alt="The completed No. 1 ShodaiGoji suit with a human for scale (only few cm shorter)"
+    caption="ⓒ Unknown"
+    figcaption-class="credit"
+    paragraph="false"
 >}}
+{{< /float >}}
 
 Avant d'aller plus loin, un petit mot sur le costume.
 
@@ -372,15 +367,9 @@ title="Conséquences"
 videoId="e4598ca4-2331-4d51-90c2-0c996b1ba4fb"
 >}}
 
-[{{< cover
-src="img/hiroshima.jpeg"
-name="Aerial view of the destruction at Hiroshima, Japan, caused by the atomic bomb dropped on the city."
-alt="Aerial view of the destruction at Hiroshima, Japan, caused by the atomic bomb dropped on the city."
-type="left"
-width="240"
-quality="70"
->}}
-](https://commons.wikimedia.org/wiki/File:Hiroshima_aerial_view_after_atomic_bomb_8-1945.jpeg)
+{{< float left small >}}
+[![Aerial view of the destruction at Hiroshima, Japan, caused by the atomic bomb dropped on the city.](img/hiroshima.jpeg)](https://commons.wikimedia.org/wiki/File:Hiroshima_aerial_view_after_atomic_bomb_8-1945.jpeg)
+{{< /float >}}
 
 Bon, ici on va redevenir sérieux quelques instants.
 
@@ -394,28 +383,16 @@ La représentation de Tokyo après le passage de Godzilla ressemble en tout poin
 Du moins, de ce qu'il nous en est parvenu.
 
 
-[{{< cover
-src="img/Fukuromachi_Elementary_School_Peace_Museum01.JPG"
-name="Fukuromachi Elementary School Peace Museum in Hiroshima, Japan"
-alt="Fukuromachi Elementary School Peace Museum in Hiroshima, Japan"
-type="right"
-width="240"
-quality="70"
->}}
-](https://commons.wikimedia.org/wiki/File:Fukuromachi_Elementary_School_Peace_Museum01.JPG)
+{{< float right small >}}
+[![Fukuromachi Elementary School Peace Museum in Hiroshima, Japan](img/Fukuromachi_Elementary_School_Peace_Museum01.JPG)](https://commons.wikimedia.org/wiki/File:Fukuromachi_Elementary_School_Peace_Museum01.JPG)
+{{< /float >}}
 
 L'hôpital improvisé rappelle l'histoire (nombreuse) de ces endroits qui ont servi de refuge, et de centre d'aide post-apocalypse. Personnellement, je repense à [cette école (en)](https://en.wikipedia.org/wiki/Fukuromachi_Elementary_School_Peace_Museum)
 qui avait "survécu" grâce à sa technique de construction en béton armé malgré sa proximité avec le lieu de détonation de la bombe.
 La scène du film m'y replonge, tellement la structure et les murs y ressemblent.
 Sûrement que cette architecture est répandue au Japon, mais ici je ne peux m'empêcher de faire le rapprochement avec l'escalier où des survivants ont écrit les noms de ceux qu'ils cherchaient.
 
-[{{< cover
-src="img/inscriptions-on-the-walls.jpg"
-name="Inscription des noms des personnes recherchées sur le mur de l'école"
-alt="Inscription des noms des personnes recherchées sur le mur de l'école"
-quality="70"
->}}
-](https://www.tripadvisor.ca/Attraction_Review-g298561-d8178491-Reviews-Fukuromachi_Elementary_School_Peace_Museum-Hiroshima_Hiroshima_Prefecture_Chugoku.html#/media/8178491/?type=ALL_INCLUDING_RESTRICTED&albumid=-160&category=-160)
+[![Inscription des noms des personnes recherchées sur le mur de l'école](img/inscriptions-on-the-walls.jpg)](https://www.tripadvisor.ca/Attraction_Review-g298561-d8178491-Reviews-Fukuromachi_Elementary_School_Peace_Museum-Hiroshima_Hiroshima_Prefecture_Chugoku.html#/media/8178491/?type=ALL_INCLUDING_RESTRICTED&albumid=-160&category=-160)
 
 Le film rappelle ici son propos, au cas où le spectateur aurait oublié; \
 Où j'aurais oublié; \
@@ -488,4 +465,8 @@ sur ce film. Il est fort probable que je serai beaucoup plus succinct sur les di
 Merci infiniment de m'avoir lu,\
 [Bisoux](/page/bisoux) :kissing:
 
-{{< raw-picture src="img/Gojira-1954-shadow.webp" alt="Godzilla qui a détruit Tokyo" title="Godzilla qui a détruit Tokyo" >}}
+{{< illustration
+    src="img/Gojira-1954-shadow.webp"
+    name="Godzilla qui a détruit Tokyo"
+    alt="Godzilla qui a détruit Tokyo"
+>}}

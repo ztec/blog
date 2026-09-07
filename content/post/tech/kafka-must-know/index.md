@@ -6,7 +6,7 @@ tags: ["kafka", "tech"]
 ---
 
 
-{{< illustration src="img/kafka-logo.png"  name="Apache Kafka"   alt="Logo of Apache Kafka" resize="no" dark-protection="yes" >}}
+{{< illustration src="img/kafka-logo.png" bg="light" name="Apache Kafka" alt="Logo of Apache Kafka" >}}
 
 Vous êtes un développeur et vous avez entendu parler d'Apache [Kafka](https://fr.wikipedia.org/wiki/Franz_Kafka), le broker de message. 
 Vous trouvez que kafka est complexe et qu'il est difficile de l'utiliser.
@@ -48,7 +48,7 @@ Comme kafka est conçu pour fonctionner en Cluster, certains aspects de son fonc
 Les deux parties suivantes décrivent le fonctionnement global de Kafka, de manière succinct. Je vous recommande les relire régulièrement au fur-et-a-mesure que vous parcourez cet article. 
 À force d'avancer, vous devriez commencer à mieux comprendre ce que veulent dire les phrases, qui risque d'etre bien abscond à votre première lecture.
 
-{{< illustration src="img/OverviewApacheKafka.png"        name="Overview Apache Kafka"            alt="Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers"  dark-protection="yes" >}}
+{{< illustration src="img/OverviewApacheKafka.png" bg="light" name="Overview Apache Kafka" alt="Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers" >}}
 
 ### Production de messages :
 

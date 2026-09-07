@@ -6,7 +6,7 @@ tags: ["kafka", "tech"]
 ---
 
 
-{{< illustration src="img/kafka-logo.png"  name="Apache Kafka"   alt="Logo of Apache Kafka" resize="no" dark-protection="yes" >}}
+{{< illustration src="img/kafka-logo.png" bg="light" name="Apache Kafka" alt="Logo of Apache Kafka" >}}
 
 You are a developer, and you heard of Apache [Kafka](https://en.wikipedia.org/wiki/Franz_Kafka), the message broker, and you find it probably complex and difficult to work with.
 Today, I will try to give you the basic knowledge about kafka you need to know to be able to work with it on a daily basis.
@@ -41,7 +41,7 @@ Kafka is designed to be clustered. This mean its internal construction was creat
 The next two section describe what I will describe in this article. I strongly suggest you to read them once, then read them again 
 after each section of this post. You should understand it completely once you've read the whole post. 
 
-{{< illustration src="img/OverviewApacheKafka.png"        name="Overview Apache Kafka"            alt="Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers"  dark-protection="yes" >}}
+{{< illustration src="img/OverviewApacheKafka.png" bg="light" name="Overview Apache Kafka" alt="Overview of Apache Kafka with Topic, Partitions, Consumers, and Producers" >}}
 
 ### Production of message:
 

@@ -14,14 +14,9 @@ og:
 ---
 
 
-{{< cover
-src="head-1.jpg"
-name="Tête de Godzilla"
-alt="Tête de Godzilla"
-type="right"
-width="240"
-quality="70"
->}}
+{{< float right small >}}
+![Tête de Godzilla](head-1.jpg)
+{{< /float >}}
 
 Godzilla fait partie de la culture commune. Connu de tous au même titre que le T-rex ou Star Wars. Il y a eu quelques films récents
 sur le sujet. Par exemple, le très bon [Godzilla Minus One](https://fr.wikipedia.org/wiki/Godzilla_Minus_One) de [山崎 貴 Yamazaki Takashi](https://fr.wikipedia.org/wiki/Takashi_Yamazaki_(r%C3%A9alisateur))
@@ -41,14 +36,9 @@ mon expérience de visionnage, et d'analyse de ces films. L'idée c'est de parco
 ce qui m'impressionne, m'émerveille, me rend triste (car oui Godzilla c'est avant tout une histoire triste), me réjouit.
 
 
-{{< cover
-src="body-1.jpg"
-name="Statue de Godzilla"
-alt="Statue de Godzilla"
-type="left"
-width="240"
-quality="70"
->}}
+{{< float left small >}}
+![Statue de Godzilla](body-1.jpg)
+{{< /float >}}
 
 Que ce soit sur le film, sa forme et son fond, mais aussi sur les techniques propres au genre, presque inventé par la franchise elle-même.
 Je vous partagerai tout, et peut-être que vous aussi vous aurez un jour envie de tous les voir. Enfin, surtout quelques-uns car je suppose
@@ -66,9 +56,4 @@ et ça commence ici par le tout premier film : {{<Link "godzilla/showa/1954-goji
 
 Ouais j'ai mis de 54 à nos jours, mais va falloir être patient pour rattraper les 38 films sans compter tous les trucs à côté. Marvel n'a rien inventé avec son MCU
 
-{{< cover
-src="tokyo-bay.jpg"
-name="Baie de Tokyo de nuit"
-alt="Baie de Tokyo de nuit"
-quality="90"
->}}
+![Baie de Tokyo de nuit](tokyo-bay.jpg "Baie de Tokyo de nuit")

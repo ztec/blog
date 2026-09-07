@@ -320,7 +320,11 @@ $ docker run --memory=512m -ti --rm -v ./:/ node:20 node /test.js
 Finally, we have a different result. 
 The “new_space” size is now 2MB. It confirms the hypothesis that the memory reservation is used to compute the “new_space” size.
 
-{{< raw-picture src="img/doctor-disco.gif" alt="Me (represented by Peter Capaldi) dancing of joy and walking away from a small tardis door" title="Me celebrating the results" >}}
+{{< illustration
+    src="img/doctor-disco.gif"
+    name="Me celebrating the results"
+    alt="Me (represented by Peter Capaldi) dancing of joy and walking away from a small tardis door"
+>}}
 
 I now have my culprit. The memory reservation in the Kubernetes configuration is the reason why the "new_space" size shrunk so much.
 

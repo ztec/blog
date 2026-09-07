@@ -14,14 +14,9 @@ og:
 ---
 
 
-{{< cover
-src="head-1.jpg"
-name="Godzilla Head"
-alt="Godzilla Head"
-type="right"
-width="240"
-quality="70"
->}}
+{{< float right small >}}
+![Godzilla Head](head-1.jpg)
+{{< /float >}}
 
 Godzilla is part of popular culture. Known by everyone just like the T-rex or Star Wars. There have been several recent films
 about him. For example, the excellent [Godzilla Minus One](https://en.wikipedia.org/wiki/Godzilla_Minus_One) by [Yamazaki Takashi](https://en.wikipedia.org/wiki/Takashi_Yamazaki)
@@ -41,14 +36,9 @@ my viewing experience and analysis of these films. The idea is to explore what m
 what impresses me, amazes me, makes me sad (because yes, Godzilla is above all a sad story), and brings me joy.
 
 
-{{< cover
-src="body-1.jpg"
-name="Godzilla Statue"
-alt="Godzilla Statue"
-type="left"
-width="240"
-quality="70"
->}}
+{{< float left small >}}
+![Godzilla Statue](body-1.jpg)
+{{< /float >}}
 
 Whether it's about the film, its form and substance, but also the techniques specific to the genre, almost invented by the franchise itself;
 I'll share everything, and maybe you too will one day want to watch them all. Well, especially some of them because I suppose
@@ -66,9 +56,4 @@ and it starts here, right now, with the very first film from 1954: {{<Link "godz
 
 Yeah, I put from '54 to today, but you'll have to be patient to catch up with the 38 films not counting all the stuff on the side. Marvel invented nothing with their MCU.
 
-{{< cover
-src="tokyo-bay.jpg"
-name="Tokyo Bay at night"
-alt="Tokyo Bay at night"
-quality="90"
->}}
+![Tokyo Bay at night](tokyo-bay.jpg "Tokyo Bay at night")
