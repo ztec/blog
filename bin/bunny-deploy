@@ -1,0 +1,714 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+readonly PROGRAM="${0##*/}"
+readonly WORKSPACE="${BUNNY_WORKSPACE:-/workspace}"
+readonly HUGO_CACHE_ROOT="${BUNNY_HUGO_CACHE_ROOT:-/cache}"
+readonly CONFIG_FILE="${WORKSPACE}/config.toml"
+
+CORE_API_URL=""
+STORAGE_ZONE=""
+SITE=""
+SITE_HOSTNAME=""
+PULL_ZONE_ID=""
+EDGE_RULE_DESCRIPTION=""
+EDGE_RULE_GUID=""
+EDGE_RULE_ORDER=""
+EDGE_RULE_PATTERN=""
+RETAIN_RELEASES=""
+UPLOAD_CONCURRENCY=""
+
+STORAGE_ZONE_ID=""
+STORAGE_PASSWORD=""
+STORAGE_HOSTNAME=""
+PULL_ZONE_JSON=""
+MANAGED_RULE_JSON=""
+RELEASES_JSON="[]"
+DEPLOY_TEMP_DIR=""
+
+log() {
+  printf '%s\n' "$*" >&2
+}
+
+die() {
+  log "Error: $*"
+  exit 1
+}
+
+usage() {
+  cat <<'EOF'
+Build and deploy a versioned static site to Bunny Storage.
+
+Usage:
+  bunny-deploy deploy [RELEASE]
+  bunny-deploy list
+  bunny-deploy rollback list
+  bunny-deploy rollback RELEASE
+  bunny-deploy prune
+  bunny-deploy purge
+
+Commands:
+  deploy     Build the site, upload a new release, switch the edge rule,
+             purge the cache, and apply configured release retention.
+  list       List retained rollback targets and mark the current edge target.
+  rollback   Switch the edge rule to an existing release and purge the cache.
+             "rollback list" is an alias for "list".
+  prune      Re-apply retention around the current edge target.
+  purge      Re-run the configured pull-zone cache purge.
+
+Required environment:
+  BUNNY_API_KEY                 bunny.net account API key.
+  PP_HOST                       PhotoPrism host (deploy only).
+  PP_TOKEN                      PhotoPrism API token (deploy only).
+
+Optional build environment:
+  BUNNY_HUGO_CACHE_ROOT         Persistent Hugo cache root (default: /cache).
+
+Deployment configuration:
+  /workspace/config.toml        Authoritative [params.bunny] settings.
+EOF
+}
+
+require_command() {
+  command -v "$1" >/dev/null 2>&1 || die "required command not found: $1"
+}
+
+load_configuration() {
+  local config_json value
+
+  require_command python3
+  require_command jq
+  [[ -f "$CONFIG_FILE" ]] || die "deployment configuration not found: $CONFIG_FILE"
+
+  config_json="$(
+    python3 - "$CONFIG_FILE" <<'PY'
+import json
+import sys
+import tomllib
+
+path = sys.argv[1]
+try:
+    with open(path, "rb") as stream:
+        config = tomllib.load(stream)
+    bunny = config.get("params", {}).get("bunny")
+    if not isinstance(bunny, dict):
+        raise ValueError("missing [params.bunny] table")
+    json.dump(bunny, sys.stdout, separators=(",", ":"))
+except (OSError, tomllib.TOMLDecodeError, ValueError) as error:
+    print(f"{path}: {error}", file=sys.stderr)
+    sys.exit(1)
+PY
+  )" || die "could not load Bunny configuration"
+
+  value="$(jq -er '.api_url | select(type == "string" and length > 0)' <<<"$config_json")" ||
+    die "params.bunny.api_url must be a non-empty string"
+  CORE_API_URL="$value"
+  value="$(jq -er '.storage_zone | select(type == "string" and length > 0)' <<<"$config_json")" ||
+    die "params.bunny.storage_zone must be a non-empty string"
+  STORAGE_ZONE="$value"
+  value="$(jq -er '.site_folder | select(type == "string" and length > 0)' <<<"$config_json")" ||
+    die "params.bunny.site_folder must be a non-empty string"
+  SITE="$value"
+  value="$(jq -er '.site_hostname | select(type == "string" and length > 0)' <<<"$config_json")" ||
+    die "params.bunny.site_hostname must be a non-empty string"
+  SITE_HOSTNAME="$value"
+  value="$(jq -er '.pull_zone_id | select(type == "number" and . == floor and . > 0) | tostring' <<<"$config_json")" ||
+    die "params.bunny.pull_zone_id must be a positive integer"
+  PULL_ZONE_ID="$value"
+  value="$(jq -er '.edge_rule_description | select(type == "string" and length > 0)' <<<"$config_json")" ||
+    die "params.bunny.edge_rule_description must be a non-empty string"
+  EDGE_RULE_DESCRIPTION="$value"
+  value="$(jq -er '.edge_rule_guid | select(type == "string")' <<<"$config_json")" ||
+    die "params.bunny.edge_rule_guid must be a string"
+  EDGE_RULE_GUID="$value"
+  value="$(jq -er '
+    .edge_rule_order
+    | if . == "preserve" then .
+      elif type == "number" and . == floor and . >= 0 then tostring
+      else error("invalid edge rule order")
+      end
+  ' <<<"$config_json")" || die "params.bunny.edge_rule_order must be 'preserve' or a non-negative integer"
+  EDGE_RULE_ORDER="$value"
+  value="$(jq -er '.edge_rule_pattern | select(type == "string" and length > 0)' <<<"$config_json")" ||
+    die "params.bunny.edge_rule_pattern must be a non-empty string"
+  EDGE_RULE_PATTERN="$value"
+  value="$(jq -er '.retain_releases | select(type == "number" and . == floor and . > 0) | tostring' <<<"$config_json")" ||
+    die "params.bunny.retain_releases must be a positive integer"
+  RETAIN_RELEASES="$value"
+  value="$(jq -er '.upload_concurrency | select(type == "number" and . == floor and . > 0) | tostring' <<<"$config_json")" ||
+    die "params.bunny.upload_concurrency must be a positive integer"
+  UPLOAD_CONCURRENCY="$value"
+
+  readonly CORE_API_URL STORAGE_ZONE SITE SITE_HOSTNAME PULL_ZONE_ID
+  readonly EDGE_RULE_DESCRIPTION EDGE_RULE_GUID EDGE_RULE_ORDER EDGE_RULE_PATTERN
+  readonly RETAIN_RELEASES UPLOAD_CONCURRENCY
+}
+
+require_remote_tools() {
+  require_command curl
+  require_command jq
+  require_command sort
+}
+
+validate_configuration() {
+  [[ -n "${BUNNY_API_KEY:-}" ]] || die "BUNNY_API_KEY is required"
+  [[ "$CORE_API_URL" =~ ^https?://[^[:space:]]+$ ]] || die "invalid params.bunny.api_url: $CORE_API_URL"
+  [[ "$STORAGE_ZONE" =~ ^[A-Za-z0-9][A-Za-z0-9_-]*$ ]] || die "invalid params.bunny.storage_zone: $STORAGE_ZONE"
+  [[ "$SITE" =~ ^[a-z0-9][a-z0-9-]*$ ]] || die "invalid params.bunny.site_folder: $SITE"
+  [[ "$SITE_HOSTNAME" =~ ^[A-Za-z0-9.-]+$ ]] || die "invalid params.bunny.site_hostname: $SITE_HOSTNAME"
+  [[ "$PULL_ZONE_ID" =~ ^[0-9]+$ ]] || die "invalid params.bunny.pull_zone_id: $PULL_ZONE_ID"
+  [[ -z "$EDGE_RULE_GUID" || "$EDGE_RULE_GUID" =~ ^[A-Za-z0-9-]+$ ]] ||
+    die "invalid params.bunny.edge_rule_guid: $EDGE_RULE_GUID"
+}
+
+validate_build_configuration() {
+  [[ -n "${PP_HOST:-}" ]] || die "PP_HOST is required for deploy"
+  [[ -n "${PP_TOKEN:-}" ]] || die "PP_TOKEN is required for deploy"
+  [[ "$HUGO_CACHE_ROOT" == /* ]] || die "BUNNY_HUGO_CACHE_ROOT must be an absolute path"
+}
+
+validate_release() {
+  local release="$1"
+  [[ "$release" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{6}Z(-[A-Za-z0-9][A-Za-z0-9._-]*)?$ ]] ||
+    die "invalid release '$release'; expected UTC timestamp YYYY-MM-DDTHHMMSSZ with an optional suffix"
+}
+
+urlencode() {
+  jq -rn --arg value "$1" '$value | @uri'
+}
+
+urlencode_path() {
+  jq -rn --arg value "$1" '$value | split("/") | map(@uri) | join("/")'
+}
+
+request() {
+  local key="$1"
+  local method="$2"
+  local url="$3"
+  local data="${4-}"
+  local response_file status curl_status
+  local -a args
+
+  response_file="$(mktemp)"
+  args=(
+    --silent --show-error
+    --request "$method"
+    --header "AccessKey: $key"
+    --header "Accept: application/json"
+    --output "$response_file"
+    --write-out '%{http_code}'
+    "$url"
+  )
+  if [[ -n "$data" ]]; then
+    args+=(--header 'Content-Type: application/json' --data "$data")
+  fi
+
+  set +e
+  status="$(curl "${args[@]}")"
+  curl_status=$?
+  set -e
+
+  if (( curl_status != 0 )); then
+    rm -f "$response_file"
+    die "request failed before receiving an HTTP response: $method $url"
+  fi
+  if [[ ! "$status" =~ ^2[0-9][0-9]$ ]]; then
+    log "Request failed: $method $url (HTTP $status)"
+    sed -n '1,40p' "$response_file" >&2
+    rm -f "$response_file"
+    return 1
+  fi
+
+  cat "$response_file"
+  rm -f "$response_file"
+}
+
+core_request() {
+  request "$BUNNY_API_KEY" "$1" "${CORE_API_URL%/}$2" "${3-}"
+}
+
+region_storage_hostname() {
+  case "$1" in
+    DE) printf '%s\n' 'storage.bunnycdn.com' ;;
+    UK) printf '%s\n' 'uk.storage.bunnycdn.com' ;;
+    NY) printf '%s\n' 'ny.storage.bunnycdn.com' ;;
+    LA) printf '%s\n' 'la.storage.bunnycdn.com' ;;
+    SG) printf '%s\n' 'sg.storage.bunnycdn.com' ;;
+    SE) printf '%s\n' 'se.storage.bunnycdn.com' ;;
+    BR) printf '%s\n' 'br.storage.bunnycdn.com' ;;
+    JH) printf '%s\n' 'jh.storage.bunnycdn.com' ;;
+    SYD) printf '%s\n' 'syd.storage.bunnycdn.com' ;;
+    *) return 1 ;;
+  esac
+}
+
+resolve_storage_zone() {
+  local zone_json zones_json count region search
+
+  search="$(urlencode "$STORAGE_ZONE")"
+  zones_json="$(core_request GET "/storagezone?search=${search}&perPage=1000")"
+  zone_json="$(
+    jq -c --arg name "$STORAGE_ZONE" '
+      [(if type == "array" then . else (.Items // []) end)[] | select(.Name == $name)]
+    ' <<<"$zones_json"
+  )"
+  count="$(jq 'length' <<<"$zone_json")"
+  (( count == 1 )) || die "expected one storage zone named '$STORAGE_ZONE', found $count"
+  zone_json="$(jq -c '.[0]' <<<"$zone_json")"
+
+  [[ "$(jq -r '.Name // empty' <<<"$zone_json")" == "$STORAGE_ZONE" ]] ||
+    die "resolved storage zone does not match '$STORAGE_ZONE'"
+
+  STORAGE_ZONE_ID="$(jq -r '.Id // empty' <<<"$zone_json")"
+  STORAGE_PASSWORD="$(jq -r '.Password // empty' <<<"$zone_json")"
+  STORAGE_HOSTNAME="$(jq -r '.StorageHostname // empty' <<<"$zone_json")"
+
+  if [[ -z "$STORAGE_HOSTNAME" ]]; then
+    region="$(jq -r '.Region // empty' <<<"$zone_json")"
+    STORAGE_HOSTNAME="$(region_storage_hostname "$region")" ||
+      die "unknown Bunny Storage region '$region'"
+  fi
+
+  [[ "$STORAGE_ZONE_ID" =~ ^[0-9]+$ ]] || die "storage zone ID is missing or invalid"
+  [[ -n "$STORAGE_PASSWORD" ]] || die "storage password is unavailable from the Bunny API"
+  [[ "$STORAGE_HOSTNAME" =~ ^[A-Za-z0-9.-]+$ ]] || die "invalid storage hostname"
+}
+
+refresh_pull_zone() {
+  PULL_ZONE_JSON="$(core_request GET "/pullzone/${PULL_ZONE_ID}")"
+  [[ "$(jq -r '.Id // empty' <<<"$PULL_ZONE_JSON")" == "$PULL_ZONE_ID" ]] ||
+    die "pull zone response did not match ID $PULL_ZONE_ID"
+  jq -e --arg hostname "$SITE_HOSTNAME" '
+    any(
+      .Hostnames[]?;
+      (.Value | ascii_downcase) as $configured
+      | ($hostname | ascii_downcase) as $wanted
+      | $configured == $wanted
+        or ($configured | startswith("*.") and ($wanted | endswith($configured[1:])))
+    )
+  ' <<<"$PULL_ZONE_JSON" >/dev/null ||
+    die "pull zone $PULL_ZONE_ID does not contain hostname '$SITE_HOSTNAME'"
+}
+
+select_managed_rule() {
+  local rules count guid="$EDGE_RULE_GUID"
+
+  if [[ -n "$guid" ]]; then
+    rules="$(jq -c --arg guid "$guid" '[.EdgeRules[]? | select(.Guid == $guid)]' <<<"$PULL_ZONE_JSON")"
+    count="$(jq 'length' <<<"$rules")"
+    (( count == 1 )) || die "edge rule GUID '$guid' was not found"
+  else
+    rules="$(jq -c --arg description "$EDGE_RULE_DESCRIPTION" '
+      [.EdgeRules[]? | select(.Description == $description)]
+    ' <<<"$PULL_ZONE_JSON")"
+    count="$(jq 'length' <<<"$rules")"
+    (( count <= 1 )) || die "multiple edge rules use description '$EDGE_RULE_DESCRIPTION'"
+  fi
+
+  if (( count == 1 )); then
+    MANAGED_RULE_JSON="$(jq -c '.[0]' <<<"$rules")"
+    [[ "$(jq -r '.ReadOnly // false' <<<"$MANAGED_RULE_JSON")" != "true" ]] ||
+      die "managed edge rule is read-only"
+  else
+    MANAGED_RULE_JSON=""
+  fi
+}
+
+resolve_remote_context() {
+  require_remote_tools
+  validate_configuration
+  resolve_storage_zone
+  refresh_pull_zone
+  select_managed_rule
+}
+
+storage_url() {
+  local remote_path
+  remote_path="$(urlencode_path "$1")"
+  printf 'https://%s/%s/%s' "$STORAGE_HOSTNAME" "$(urlencode "$STORAGE_ZONE")" "$remote_path"
+}
+
+refresh_releases() {
+  local response_file status curl_status url
+  url="$(storage_url "${SITE}/")"
+  response_file="$(mktemp)"
+
+  set +e
+  status="$(curl --silent --show-error \
+    --request GET \
+    --header "AccessKey: $STORAGE_PASSWORD" \
+    --header 'Accept: application/json' \
+    --output "$response_file" \
+    --write-out '%{http_code}' \
+    "$url")"
+  curl_status=$?
+  set -e
+
+  if (( curl_status != 0 )); then
+    rm -f "$response_file"
+    die "failed to list releases from Bunny Storage"
+  fi
+  if [[ "$status" == "404" ]]; then
+    RELEASES_JSON="[]"
+  elif [[ "$status" =~ ^2[0-9][0-9]$ ]]; then
+    jq -e 'type == "array"' "$response_file" >/dev/null || die "invalid storage listing response"
+    RELEASES_JSON="$(
+      jq -c '[.[] | select(.IsDirectory == true) | .ObjectName | rtrimstr("/")]' "$response_file"
+    )"
+  else
+    log "Storage listing failed (HTTP $status)"
+    sed -n '1,40p' "$response_file" >&2
+    rm -f "$response_file"
+    exit 1
+  fi
+  rm -f "$response_file"
+}
+
+release_exists() {
+  jq -e --arg release "$1" 'index($release) != null' <<<"$RELEASES_JSON" >/dev/null
+}
+
+current_release() {
+  local action path normalized release
+  [[ -n "$MANAGED_RULE_JSON" ]] || return 0
+
+  action="$(jq -r '.ActionType // empty' <<<"$MANAGED_RULE_JSON")"
+  [[ "$action" == "17" || "$action" == "OriginStorage" ]] || return 0
+  [[ "$(jq -r '.ActionParameter1 // empty' <<<"$MANAGED_RULE_JSON")" == "$STORAGE_ZONE_ID" ]] || return 0
+
+  path="$(jq -r '.ActionParameter3 // empty' <<<"$MANAGED_RULE_JSON")"
+  normalized="${path#/}"
+  normalized="${normalized%/}"
+  [[ "$normalized" == "$SITE/"* ]] || return 0
+  release="${normalized#"$SITE/"}"
+  [[ "$release" != */* ]] || return 0
+  printf '%s\n' "$release"
+}
+
+print_releases() {
+  local current release found_current=false
+  current="$(current_release)"
+
+  printf '%-42s %s\n' 'RELEASE' 'STATUS'
+  while IFS= read -r release; do
+    [[ -n "$release" ]] || continue
+    if [[ "$release" == "$current" ]]; then
+      printf '%-42s %s\n' "$release" 'current'
+      found_current=true
+    else
+      printf '%-42s %s\n' "$release" 'available'
+    fi
+  done < <(jq -r '.[]' <<<"$RELEASES_JSON" | sort -r)
+
+  if [[ -n "$current" && "$found_current" == false ]]; then
+    printf '%-42s %s\n' "$current" 'current (missing from storage)'
+  elif [[ -z "$current" ]]; then
+    printf '%-42s %s\n' '-' 'no managed edge target'
+  fi
+}
+
+release_name() {
+  local commit suffix
+  commit="${GITHUB_SHA:-}"
+  if [[ -z "$commit" ]] && command -v git >/dev/null 2>&1 &&
+    git -c "safe.directory=${WORKSPACE}" -C "$WORKSPACE" rev-parse --git-dir >/dev/null 2>&1; then
+    commit="$(git -c "safe.directory=${WORKSPACE}" -C "$WORKSPACE" rev-parse HEAD)"
+  fi
+  suffix="${commit:0:12}"
+  if [[ -n "$suffix" ]]; then
+    printf '%s-%s\n' "$(date -u +%Y-%m-%dT%H%M%SZ)" "$suffix"
+  else
+    printf '%s\n' "$(date -u +%Y-%m-%dT%H%M%SZ)"
+  fi
+}
+
+build_site() {
+  local output="$1" hugo_cache_dir hugo_resource_dir
+  require_command hugo
+  [[ -f "$WORKSPACE/config.toml" ]] || die "Hugo source not found at $WORKSPACE"
+  [[ -f "$WORKSPACE/themes/VHS/theme.toml" || -f "$WORKSPACE/themes/VHS/hugo.toml" ]] ||
+    die "theme submodule is missing; initialize repository submodules"
+
+  hugo_cache_dir="$HUGO_CACHE_ROOT/downloads"
+  hugo_resource_dir="$HUGO_CACHE_ROOT/resources"
+  mkdir -p "$output" "$hugo_cache_dir" "$hugo_resource_dir"
+  log "Building Hugo site"
+  HUGO_ENV=production \
+    HUGO_RESOURCEDIR="$hugo_resource_dir" \
+    hugo \
+    --source "$WORKSPACE" \
+    --destination "$output" \
+    --cacheDir "$hugo_cache_dir" \
+    --noBuildLock \
+    --minify \
+    --gc \
+    --templateMetrics \
+    --templateMetricsHints
+  [[ -s "$output/index.html" ]] || die "Hugo build did not produce index.html"
+}
+
+upload_one() {
+  local file="$1" relative remote_path url checksum content_type status
+  [[ -n "${BUNNY_UPLOAD_ROOT:-}" ]] || die "internal upload root is missing"
+  [[ "$file" == "$BUNNY_UPLOAD_ROOT/"* ]] || die "upload file is outside the build root"
+  relative="${file#"$BUNNY_UPLOAD_ROOT/"}"
+  remote_path="${BUNNY_UPLOAD_PREFIX}/${relative}"
+  url="$(urlencode_path "$remote_path")"
+  checksum="$(sha256sum "$file" | cut -d ' ' -f 1 | tr '[:lower:]' '[:upper:]')"
+  content_type="$(file --brief --mime-type "$file")"
+
+  status="$(curl --silent --show-error \
+    --retry 3 --retry-all-errors \
+    --request PUT \
+    --header "AccessKey: $BUNNY_UPLOAD_PASSWORD" \
+    --header "Checksum: $checksum" \
+    --header "Content-Type: $content_type" \
+    --upload-file "$file" \
+    --output /dev/null \
+    --write-out '%{http_code}' \
+    "${BUNNY_UPLOAD_BASE_URL}/${url}")" || return 1
+  [[ "$status" == "201" ]] || {
+    log "Upload failed for '$relative' (HTTP $status)"
+    return 1
+  }
+}
+
+upload_release() {
+  local output="$1" release="$2" count storage_zone_path
+  require_command find
+  require_command sha256sum
+  require_command file
+  require_command xargs
+
+  count="$(find "$output" -type f | wc -l | tr -d ' ')"
+  (( count > 0 )) || die "build output is empty"
+  log "Uploading $count files to ${STORAGE_ZONE}/${SITE}/${release}/"
+
+  export BUNNY_UPLOAD_ROOT="$output"
+  export BUNNY_UPLOAD_PREFIX="${SITE}/${release}"
+  export BUNNY_UPLOAD_PASSWORD="$STORAGE_PASSWORD"
+  storage_zone_path="$(urlencode "$STORAGE_ZONE")"
+  export BUNNY_UPLOAD_BASE_URL="https://${STORAGE_HOSTNAME}/${storage_zone_path}"
+
+  if ! find "$output" -type f -print0 |
+    xargs -0 -r -n 1 -P "$UPLOAD_CONCURRENCY" "$0" __upload-one; then
+    log "Upload failed; removing the incomplete release"
+    delete_release "$release" || log "Warning: could not remove incomplete release '$release'"
+    return 1
+  fi
+}
+
+delete_release() {
+  local release="$1" url
+  validate_release "$release"
+  # Bunny treats the release directory as the object name for recursive DELETE.
+  url="$(storage_url "${SITE}/${release}")"
+  request "$STORAGE_PASSWORD" DELETE "$url" >/dev/null
+}
+
+edge_rule_payload() {
+  local release="$1" guid order path pattern payload
+  path="/${SITE}/${release}/"
+  pattern="$EDGE_RULE_PATTERN"
+  guid=""
+  order=""
+  if [[ -n "$MANAGED_RULE_JSON" ]]; then
+    guid="$(jq -r '.Guid // empty' <<<"$MANAGED_RULE_JSON")"
+    order="$(jq -r '.OrderIndex // empty' <<<"$MANAGED_RULE_JSON")"
+  fi
+  if [[ "$EDGE_RULE_ORDER" != "preserve" ]]; then
+    order="$EDGE_RULE_ORDER"
+  fi
+
+  payload="$(jq -n \
+    --arg storage_id "$STORAGE_ZONE_ID" \
+    --arg storage_name "$STORAGE_ZONE" \
+    --arg path "$path" \
+    --arg description "$EDGE_RULE_DESCRIPTION" \
+    --arg pattern "$pattern" \
+    '{
+      ActionType: 17,
+      ActionParameter1: $storage_id,
+      ActionParameter2: $storage_name,
+      ActionParameter3: $path,
+      ExtraActions: [],
+      TriggerMatchingType: 0,
+      Triggers: [{Type: 0, PatternMatches: [$pattern], PatternMatchingType: 0}],
+      Description: $description,
+      Enabled: true
+    }')"
+  if [[ -n "$guid" ]]; then
+    payload="$(jq --arg guid "$guid" '. + {Guid: $guid}' <<<"$payload")"
+  fi
+  if [[ -n "$order" ]]; then
+    [[ "$order" =~ ^[0-9]+$ ]] || die "invalid params.bunny.edge_rule_order: $order"
+    payload="$(jq --argjson order "$order" '. + {OrderIndex: $order}' <<<"$payload")"
+  fi
+  printf '%s\n' "$payload"
+}
+
+switch_release() {
+  local release="$1" payload attempt observed
+  validate_release "$release"
+  refresh_pull_zone
+  select_managed_rule
+  payload="$(edge_rule_payload "$release")"
+
+  log "Switching ${SITE_HOSTNAME} to ${STORAGE_ZONE}/${SITE}/${release}/"
+  core_request POST "/pullzone/${PULL_ZONE_ID}/edgerules/addOrUpdate" "$payload" >/dev/null
+
+  for attempt in 1 2 3 4 5; do
+    refresh_pull_zone
+    select_managed_rule
+    observed="$(current_release)"
+    [[ "$observed" == "$release" ]] && return 0
+    log "Waiting for edge rule update (${attempt}/5)"
+    sleep 1
+  done
+  die "edge rule update was not observable after five attempts"
+}
+
+purge_cache() {
+  log "Purging the full cache for pull zone $PULL_ZONE_ID"
+  core_request POST "/pullzone/${PULL_ZONE_ID}/purgeCache" '{}' >/dev/null
+}
+
+prune_releases() {
+  local current release keep_count=0 keep=false
+  local -a keep_releases=()
+
+  refresh_pull_zone
+  select_managed_rule
+  refresh_releases
+  current="$(current_release)"
+  [[ -n "$current" ]] || die "refusing to prune without a current managed edge target"
+  release_exists "$current" || die "refusing to prune because current release '$current' is missing"
+
+  keep_releases+=("$current")
+  keep_count=1
+  while IFS= read -r release; do
+    [[ -n "$release" ]] || continue
+    [[ "$release" == "$current" ]] && continue
+    if (( keep_count < RETAIN_RELEASES )); then
+      keep_releases+=("$release")
+      ((keep_count += 1))
+    fi
+  done < <(jq -r '.[]' <<<"$RELEASES_JSON" | sort -r)
+
+  while IFS= read -r release; do
+    [[ -n "$release" ]] || continue
+    keep=false
+    for current in "${keep_releases[@]}"; do
+      [[ "$release" == "$current" ]] && keep=true
+    done
+    if [[ "$keep" == false ]]; then
+      log "Deleting expired release ${SITE}/${release}/"
+      delete_release "$release"
+    fi
+  done < <(jq -r '.[]' <<<"$RELEASES_JSON")
+}
+
+command_list() {
+  resolve_remote_context
+  refresh_releases
+  print_releases
+}
+
+command_deploy() {
+  local release="${1:-}" output metadata commit="${GITHUB_SHA:-}" created_at
+  validate_build_configuration
+  resolve_remote_context
+  refresh_releases
+
+  [[ -n "$release" ]] || release="$(release_name)"
+  validate_release "$release"
+  release_exists "$release" && die "release '$release' already exists; releases are immutable"
+
+  output="$(mktemp -d)"
+  DEPLOY_TEMP_DIR="$output"
+  trap '[[ -z "$DEPLOY_TEMP_DIR" ]] || rm -rf -- "$DEPLOY_TEMP_DIR"' EXIT
+  build_site "$output"
+
+  if [[ -z "$commit" ]] && command -v git >/dev/null 2>&1; then
+    commit="$(git -c "safe.directory=${WORKSPACE}" -C "$WORKSPACE" rev-parse HEAD 2>/dev/null || true)"
+  fi
+  created_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  metadata="$output/.bunny-release.json"
+  jq -n --arg release "$release" --arg site "$SITE" --arg commit "$commit" --arg created_at "$created_at" \
+    '{release: $release, site: $site, commit: $commit, created_at: $created_at}' >"$metadata"
+
+  upload_release "$output" "$release"
+  switch_release "$release"
+  purge_cache
+  prune_releases
+  refresh_releases
+  log "Deployment completed"
+  print_releases
+}
+
+command_rollback() {
+  local release="${1:-}" current
+  [[ -n "$release" ]] || die "rollback requires a release; use '$PROGRAM rollback list'"
+  [[ "$release" != "list" ]] || {
+    command_list
+    return
+  }
+  validate_release "$release"
+  resolve_remote_context
+  refresh_releases
+  release_exists "$release" || die "release '$release' is not an available rollback target"
+  current="$(current_release)"
+  if [[ "$current" == "$release" ]]; then
+    log "Release '$release' is already current; nothing to do"
+    print_releases
+    return
+  fi
+
+  switch_release "$release"
+  purge_cache
+  prune_releases
+  refresh_releases
+  log "Rollback completed"
+  print_releases
+}
+
+main() {
+  local command="${1:-help}"
+  shift || true
+
+  case "$command" in
+    __upload-one)
+      upload_one "$@"
+      return
+      ;;
+    help|-h|--help)
+      usage
+      return
+      ;;
+    deploy|list|rollback|prune|purge) ;;
+    *) usage >&2; die "unknown command '$command'" ;;
+  esac
+
+  load_configuration
+  case "$command" in
+    deploy) command_deploy "$@" ;;
+    list) command_list "$@" ;;
+    rollback) command_rollback "$@" ;;
+    prune)
+      resolve_remote_context
+      prune_releases
+      refresh_releases
+      print_releases
+      ;;
+    purge)
+      resolve_remote_context
+      purge_cache
+      ;;
+  esac
+}
+
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  main "$@"
+fi

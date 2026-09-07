@@ -3,83 +3,34 @@ on:
     branches:
       - main
   workflow_dispatch: {}
+concurrency:
+  group: blog-bunny-production
+  cancel-in-progress: false
 jobs:
-  Build:
-    runs-on: ubuntu-24.04
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-      - name: Docker login
-        uses: docker/login-action@v3
-        with:
-          registry: git2.riper.fr
-          username: ${{ vars.DOCKER_LOGIN }}
-          password: ${{ vars.DOCKER_TOKEN }}
-      - name: Docker build builder
-        run: docker buildx build -f Dockerfile.builder -t git2.riper.fr/ztec/blog-builder:${{ github.ref_name }}-${{ github.run_id }} .
-      - name: Docker push
-        run: docker push git2.riper.fr/ztec/blog-builder:${{ github.ref_name }}-${{ github.run_id }}
   Deploy:
     runs-on: ubuntu-24.04
-    needs: Build
     steps:
       - name: checkout code
         uses: actions/checkout@v4
+      - name: checkout theme submodule
+        env:
+          FORGEJO_TOKEN: ${{ github.token }}
+        run: >-
+          git -c
+          url."https://token:${FORGEJO_TOKEN}@git2.riper.fr/".insteadOf="ssh://git@git.riper.fr:22023/"
+          submodule update --init --recursive
+      - name: Restore Hugo build cache
+        uses: actions/cache@v4
         with:
-          path: code
-      - name: checkout prod branch
-        uses: actions/checkout@v4
-        with:
-          path: prod
-          ref: 'prod'
-      - name: "prepare deployment"
-        run: |
-          cat <<EOF > ./kustomization.yaml
-          apiVersion: kustomize.config.k8s.io/v1beta1
-          kind: Kustomization
-          resources:
-            - code/k8s/
-          patches:
-            - target:
-                kind: CronJob
-                name: blog-build
-              patch: |
-                - op: replace
-                  path: /spec/jobTemplate/spec/template/spec/initContainers/0/env/0/value
-                  value: "${{ github.sha }}"
-          images:
-            - name: git2.riper.fr/ztec/blog-builder
-              newName: git2.riper.fr/ztec/blog-builder
-              newTag: "${{ github.ref_name }}-${{ github.run_id }}"
-          EOF
-      - name: "clean prod branch"
-        run: rm -vf prod/*.yaml prod/*.yml
-      - name: "generate resources"
-        uses: https://github.com/steebchen/kubectl@v2.0.0
-        with:
-          version: v1.27.15
-          config: ${{ vars.KUBE_CONFIG_TRANTOR }}
-          command: kustomize ./ -o prod/
-      - name: "generate PostSync job from CronJob"
-        run: |
-          yq eval '{
-            "apiVersion": "batch/v1",
-            "kind": "Job",
-            "metadata": {
-              "name": "blog-deploy-build",
-              "labels": .metadata.labels,
-              "annotations": {
-                "argocd.argoproj.io/hook": "PostSync",
-                "argocd.argoproj.io/hook-delete-policy": "BeforeHookCreation"
-              }
-            },
-            "spec": .spec.jobTemplate.spec
-          }' prod/batch_v1_cronjob_blog-build.yaml > prod/batch_v1_job_blog-deploy-build.yaml
-      - name: "commit and push manifests"
-        run: |
-            cd prod
-            git config --global user.name "Butler"
-            git config --global user.email "butler[bot]@riper.fr"
-            git add -A
-            git commit -m "Deploy blog:${{ github.ref_name }}-${{ github.run_id }}" || echo "No changes to commit"
-            git push --force origin prod
+          path: .cache/hugo
+          key: hugo-v1-0.152.2-${{ runner.os }}-${{ hashFiles('config.toml', 'assets/**', 'layouts/**', 'content/**', 'themes/VHS/**') }}
+          restore-keys: |
+            hugo-v1-0.152.2-${{ runner.os }}-
+      - name: Build and deploy to BunnyCDN
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          BUNNY_DEPLOY_COPY_MODE: 'true'
+          GITHUB_SHA: ${{ github.sha }}
+          PP_HOST: ${{ secrets.PP_HOST }}
+          PP_TOKEN: ${{ secrets.PP_TOKEN }}
+        run: ./bin/deploy.sh deploy

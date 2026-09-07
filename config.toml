@@ -43,6 +43,21 @@ anchorLineNos=true
     description = "Développeur, Architecte, DevOps et Site Reliability Engineer"
     images = []
     custom_css = ["css/blog.css"]
+
+# Authoritative non-secret configuration for bin/bunny-deploy.
+[params.bunny]
+    api_url = "https://api.bunny.net"
+    storage_zone = "ztec-fr-web"
+    site_folder = "blog"
+    site_hostname = "blog.ztec.fr"
+    pull_zone_id = 4889935
+    edge_rule_description = "Managed storage release for blog.ztec.fr"
+    edge_rule_guid = "" # Empty means resolve by description and create when absent.
+    edge_rule_order = "preserve" # Preserve an existing rule's order; let Bunny place a new rule.
+    edge_rule_pattern = "*://blog.ztec.fr/*"
+    retain_releases = 3 # Current release plus two rollback targets.
+    upload_concurrency = 8
+
 [languages]
     [languages.fr]
         languageName="Français"

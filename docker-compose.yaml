@@ -1,18 +1,29 @@
-version: '3'
-
 services:
   dev:
-    image: klakegg/hugo:0.105.0-ext
-    command: "server -p 8080"
-    volumes:
-      - "./:/src/"
-    ports:
-      - "8080:8080"
-  prod:
+    image: ztec-blog-dev:local
     build:
-     context: ./
-     dockerfile: Dockerfile
+      context: ./bin
+      dockerfile: ../Dockerfile
+    entrypoint: hugo
+    working_dir: /workspace
+    command:
+      - server
+      - --port
+      - "${PORT:-1313}"
+      - --baseURL
+      - "${BASEURL:-http://localhost:1313/}"
+      - --appendPort=false
+      - --bind=0.0.0.0
+      - --noBuildLock
+      - --destination
+      - /tmp/hugo-public
+      - --templateMetrics
+      - --templateMetricsHints
+    environment:
+      HUGO_RESOURCEDIR: /tmp/hugo-resources
+      PP_HOST: "${PP_HOST:-}"
+      PP_TOKEN: "${PP_TOKEN:-}"
     volumes:
-      - "./logs:/var/log/nginx/"
+      - ./:/workspace:ro,Z
     ports:
-      - "8080:80"
+      - "${PORT:-1313}:${PORT:-1313}"
