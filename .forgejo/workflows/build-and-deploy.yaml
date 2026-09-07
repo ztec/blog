@@ -23,9 +23,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/hugo
-          key: hugo-v1-0.152.2-${{ runner.os }}-${{ hashFiles('config.toml', 'assets/**', 'layouts/**', 'content/**', 'themes/VHS/**') }}
+          key: hugo-v1-0.162.0-${{ runner.os }}-${{ hashFiles('config.toml', 'assets/**', 'layouts/**', 'content/**', 'themes/VHS/**') }}
           restore-keys: |
-            hugo-v1-0.152.2-${{ runner.os }}-
+            hugo-v1-0.162.0-${{ runner.os }}-
       - name: Build and deploy to BunnyCDN
         env:
           BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}

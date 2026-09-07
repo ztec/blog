@@ -27,6 +27,36 @@ test_canonical_dockerfile() {
     fail 'deployment wrapper does not use the canonical Dockerfile'
 }
 
+test_theme_rss_uses_supported_language_api() {
+  local rss_template="$ROOT/themes/VHS/layouts/_default/index.xml"
+  [[ -f "$rss_template" ]] || fail 'theme RSS template is missing'
+  if grep -F -- 'site.Language.Locale' "$rss_template" >/dev/null; then
+    fail 'theme RSS template uses unsupported site.Language.Locale'
+  fi
+  grep -F -- 'site.Language.Lang' "$rss_template" >/dev/null ||
+    fail 'theme RSS template does not emit the configured language code'
+}
+
+test_hugo_version_satisfies_theme_minimum() {
+  local image_version theme_minimum oldest
+  image_version="$(sed -nE 's/^FROM floryn90\/hugo:([^ -]+)-ext$/\1/p' "$ROOT/Dockerfile")"
+  theme_minimum="$(sed -nE 's/^min_version[[:space:]]*=[[:space:]]*"([^"]+)"$/\1/p' "$ROOT/themes/VHS/theme.toml")"
+  [[ -n "$image_version" ]] || fail 'could not read Hugo image version'
+  [[ -n "$theme_minimum" ]] || fail 'could not read theme minimum Hugo version'
+  oldest="$(printf '%s\n%s\n' "$image_version" "$theme_minimum" | sort -V | head -n 1)"
+  [[ "$oldest" == "$theme_minimum" ]] ||
+    fail "Hugo $image_version is older than the theme minimum $theme_minimum"
+  grep -F -- "hugo-v1-${image_version}-" "$ROOT/.forgejo/workflows/build-and-deploy.yaml" >/dev/null ||
+    fail 'Forgejo Hugo cache key does not match the deployment image version'
+}
+
+test_hugo_language_configuration_is_current() {
+  if grep -R -nE 'languageCode|languageName|\.LanguageName' \
+    "$ROOT/config.toml" "$ROOT/layouts" >/dev/null; then
+    fail 'deprecated Hugo language configuration remains'
+  fi
+}
+
 test_compose_launcher_starts_podman_socket() {
   local temporary fake_bin calls
   temporary="$(mktemp -d)"
@@ -62,6 +92,50 @@ EOF
   if grep -Fx -- 'systemctl <--user stop podman.socket>' "$calls" >/dev/null; then
     fail 'Compose launcher stopped the socket before Compose cleanup completed'
   fi
+}
+
+test_make_clear_cache_uses_compose_volume_cleanup() {
+  local temporary fake_engine calls
+  temporary="$(mktemp -d)"
+  fake_engine="$temporary/docker"
+  calls="$temporary/calls"
+  trap 'rm -rf -- "$temporary"' RETURN
+
+  cat >"$fake_engine" <<'EOF'
+#!/usr/bin/env bash
+set -Eeuo pipefail
+printf '<%s>\n' "$*" >>"$MOCK_CLEAR_CACHE_CALLS"
+EOF
+  chmod +x "$fake_engine"
+
+  MOCK_CLEAR_CACHE_CALLS="$calls" \
+    make --no-print-directory --directory "$ROOT" \
+      CONTAINER_ENGINE="$fake_engine" clear-cache >/dev/null
+
+  grep -Fx -- '<compose down --volumes --remove-orphans>' "$calls" >/dev/null ||
+    fail 'make clear-cache did not remove Compose volumes'
+}
+
+test_make_dev_rebuilds_compose_image() {
+  local temporary fake_engine calls
+  temporary="$(mktemp -d)"
+  fake_engine="$temporary/docker"
+  calls="$temporary/calls"
+  trap 'rm -rf -- "$temporary"' RETURN
+
+  cat >"$fake_engine" <<'EOF'
+#!/usr/bin/env bash
+set -Eeuo pipefail
+printf '<%s>\n' "$*" >>"$MOCK_DEV_CALLS"
+EOF
+  chmod +x "$fake_engine"
+
+  MOCK_DEV_CALLS="$calls" \
+    make --no-print-directory --directory "$ROOT" \
+      CONTAINER_ENGINE="$fake_engine" dev >/dev/null
+
+  grep -Fx -- '<compose up --build --remove-orphans dev>' "$calls" >/dev/null ||
+    fail 'make dev did not rebuild the Compose image'
 }
 
 test_release_validation() {
@@ -473,7 +547,12 @@ EOF
 }
 
 test_canonical_dockerfile
+test_theme_rss_uses_supported_language_api
+test_hugo_version_satisfies_theme_minimum
+test_hugo_language_configuration_is_current
 test_compose_launcher_starts_podman_socket
+test_make_clear_cache_uses_compose_volume_cleanup
+test_make_dev_rebuilds_compose_image
 test_release_validation
 test_configuration_is_authoritative
 test_missing_configuration_fails

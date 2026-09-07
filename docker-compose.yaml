@@ -20,10 +20,15 @@ services:
       - --templateMetrics
       - --templateMetricsHints
     environment:
-      HUGO_RESOURCEDIR: /tmp/hugo-resources
+      HUGO_CACHEDIR: /cache/downloads
+      HUGO_RESOURCEDIR: /cache/resources
       PP_HOST: "${PP_HOST:-}"
       PP_TOKEN: "${PP_TOKEN:-}"
     volumes:
       - ./:/workspace:ro,Z
+      - hugo-cache:/cache
     ports:
       - "${PORT:-1313}:${PORT:-1313}"
+
+volumes:
+  hugo-cache:

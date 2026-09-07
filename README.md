@@ -19,7 +19,7 @@ it. If you want to suggest modification anonymously (specify it) or do not wish 
 
 #### with Compose
 
-The default development target runs Hugo 0.152.2 through Compose. Make prefers
+The default development target runs Hugo 0.162.0 through Compose. Make prefers
 Podman when it is installed and falls back to Docker:
 
 ```cmd
@@ -39,6 +39,15 @@ Podman API socket automatically. It remains active for the user session so
 Compose can finish stopping its containers cleanly; it is not enabled across
 login sessions. Stop it manually with `systemctl --user stop podman.socket` if
 desired.
+
+Hugo's development cache is stored in a named Compose volume. To stop the
+development service and remove that cache, run:
+
+```sh
+make clear-cache
+```
+
+The following `make dev` recreates an empty cache automatically.
 
 #### directly with Hugo
 

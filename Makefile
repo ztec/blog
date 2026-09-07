@@ -2,7 +2,7 @@ SHELL := /bin/bash
 PORT ?= 1313
 CONTAINER_ENGINE ?= $(shell if command -v podman >/dev/null 2>&1; then printf podman; elif command -v docker >/dev/null 2>&1; then printf docker; fi)
 
-.PHONY: check-container-engine dev local-dev update-theme push sync convert-type-icons docker docker-build docker-run docker-shell deploy releases rollback prune purge test-deploy
+.PHONY: check-container-engine dev clear-cache local-dev update-theme push sync convert-type-icons docker docker-build docker-run docker-shell deploy releases rollback prune purge test-deploy
 
 ifeq ($(origin VSCODE_PROXY_URI), environment)
 BASEURL := $(shell echo $${VSCODE_PROXY_URI/\{\{port\}\}/$(PORT)})
@@ -20,7 +20,10 @@ check-container-engine:
 	fi
 
 dev: check-container-engine
-	PORT="$(PORT)" BASEURL="$(BASEURL)" ./bin/compose.sh "$(CONTAINER_ENGINE)" up --remove-orphans dev
+	PORT="$(PORT)" BASEURL="$(BASEURL)" ./bin/compose.sh "$(CONTAINER_ENGINE)" up --build --remove-orphans dev
+
+clear-cache: check-container-engine
+	PORT="$(PORT)" BASEURL="$(BASEURL)" ./bin/compose.sh "$(CONTAINER_ENGINE)" down --volumes --remove-orphans
 
 local-dev:
 	hugo server -p $(PORT) --baseURL "$(BASEURL)" --appendPort=false --bind 0.0.0.0 --templateMetrics --templateMetricsHints

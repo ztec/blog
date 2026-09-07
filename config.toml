@@ -7,7 +7,7 @@ googleAnalytics = ""
 enableGitInfo = true
 staticDir = ["assets"]
 timeout = "1200s"
-languageCode = "fr-fr"
+locale = "fr-FR"
 DefaultContentLanguage = "fr"
 enableEmoji = true
 summaryLength = 10
@@ -60,9 +60,9 @@ anchorLineNos=true
 
 [languages]
     [languages.fr]
-        languageName="Français"
+        label="Français"
     [languages.en]
-        languageName="English"
+        label="English"
         title = "Zed's place"
     [languages.en.params]
         description = "Developer, Architect, DevOps and Site Reliability Engineer"
