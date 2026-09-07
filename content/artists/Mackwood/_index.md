@@ -1,4 +1,0 @@
----
-title: Mackwood
-instruments: [ "drums" ]
----

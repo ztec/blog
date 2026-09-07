@@ -1,4 +1,0 @@
----
-title: Thylacine
-instruments: [ "saxophone" ]
----

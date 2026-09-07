@@ -58,7 +58,7 @@ quality="70"
 
 ## Music
 
-While making the entry {{< link "concert/2025/04-18-Makoto Ozone" >}} I discovered the recording of this concert. 
+While making the entry [Makoto Ozone - TRiNFiNiTY at Le Duc des Lombards](https://db.ztec.fr/en/concert/2025/04/18/makoto-ozone-trinfinity-at-le-duc-des-lombards/) I discovered the recording of this concert.
 Very happy to be able to watch and listen to it again. You can hear me clapping. :clown_face:
 
 - https://philharmoniedeparis.fr/fr/live/concert/1163708-avishai-cohen-makoto-ozone

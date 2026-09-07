@@ -1,3 +1,0 @@
----
-title: Sunset Sunside
----

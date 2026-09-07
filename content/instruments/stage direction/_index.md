@@ -1,3 +1,0 @@
----
-title: mise en scène
----

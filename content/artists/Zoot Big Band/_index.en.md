@@ -1,3 +1,0 @@
----
-title: Zoot Big Band
----

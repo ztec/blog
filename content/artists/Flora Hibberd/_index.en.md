@@ -1,3 +1,0 @@
----
-title: Flora Hibberd
----

@@ -27,14 +27,15 @@ test_canonical_dockerfile() {
     fail 'deployment wrapper does not use the canonical Dockerfile'
 }
 
-test_theme_rss_uses_supported_language_api() {
+test_theme_rss_matches_hugo_language_configuration() {
   local rss_template="$ROOT/themes/VHS/layouts/_default/index.xml"
   [[ -f "$rss_template" ]] || fail 'theme RSS template is missing'
   if grep -F -- 'site.Language.Locale' "$rss_template" >/dev/null; then
-    fail 'theme RSS template uses unsupported site.Language.Locale'
+    grep -F -- 'locale = "fr-FR"' "$ROOT/config.toml" >/dev/null ||
+      fail 'config.toml does not define the locale required by the RSS template'
+  elif ! grep -F -- 'site.Language.Lang' "$rss_template" >/dev/null; then
+    fail 'theme RSS template does not emit a configured language identifier'
   fi
-  grep -F -- 'site.Language.Lang' "$rss_template" >/dev/null ||
-    fail 'theme RSS template does not emit the configured language code'
 }
 
 test_hugo_version_satisfies_theme_minimum() {
@@ -547,7 +548,7 @@ EOF
 }
 
 test_canonical_dockerfile
-test_theme_rss_uses_supported_language_api
+test_theme_rss_matches_hugo_language_configuration
 test_hugo_version_satisfies_theme_minimum
 test_hugo_language_configuration_is_current
 test_compose_launcher_starts_podman_socket

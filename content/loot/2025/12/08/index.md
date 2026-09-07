@@ -63,7 +63,7 @@ quality="70"
 
 ## Music
 
-En faisant la fiche {{< link "concert/2025/04-18-Makoto Ozone" >}} j'ai découvert l'enregistrement de ce concert. Très heureux de pouvoir le revoir et le réécouter. Vous pouvez m'entendre applaudir. :clown_face:
+En faisant la fiche [Makoto Ozone - TRiNFiNiTY au Duc des Lombards](https://db.ztec.fr/concert/2025/04/18/makoto-ozone-trinfinity-au-duc-des-lombards/) j'ai découvert l'enregistrement de ce concert. Très heureux de pouvoir le revoir et le réécouter. Vous pouvez m'entendre applaudir. :clown_face:
 
  - https://philharmoniedeparis.fr/fr/live/concert/1163708-avishai-cohen-makoto-ozone
 

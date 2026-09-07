@@ -26,6 +26,11 @@ lineNumbersInTable = false
 lineNos = true
 anchorLineNos=true
 
+[[menu.main]]
+    identifier = "concerts"
+    name = "Concerts"
+    url = "https://db.ztec.fr/concert/"
+    weight = 70
 
 [[menu.footer]]
     name = "Mentions légales"
@@ -70,6 +75,11 @@ anchorLineNos=true
         name = "Legals"
         url = "https://www.ztec.fr/en/legals/"
         weight = 60
+    [[languages.en.menu.main]]
+        identifier = "concerts"
+        name = "Concerts"
+        url = "https://db.ztec.fr/en/concert/"
+        weight = 70
 
 
 
@@ -78,21 +88,15 @@ anchorLineNos=true
   quick = "/:year/:month/:slug/"
   post = "/:year/:section/:slug/"
   loot = "/:year/:month/:day/:sections/:slug/"
-  concert = "/:year/:month/:day/:sections[first]/:slug/"
   godzilla = "/godzilla/:slug/"
 [permalinks.term]
   sources = "/:sections/:slug/"
-  artist = "/artists/:slug/"
-  place = "/place/:slug/"
 
 
 [taxonomies]
 tag = 'tags'
 source = 'sources'
 resources = 'resources'
-artist = 'artists'
-place = 'places'
-instrument = 'instruments'
 
 [caches]
     [caches.assets]

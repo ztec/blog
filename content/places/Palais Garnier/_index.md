@@ -1,3 +1,0 @@
----
-title: Palais Garnier
----

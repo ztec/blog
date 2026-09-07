@@ -1,3 +1,0 @@
----
-title: EVI synthesizer
----

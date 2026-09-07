@@ -1,4 +1,0 @@
----
-title: Casino de Paris
----
-

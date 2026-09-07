@@ -1,3 +1,0 @@
----
-title: Duc des lombards
----

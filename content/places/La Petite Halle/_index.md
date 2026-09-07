@@ -1,3 +1,0 @@
----
-title: La Petite Halle
----
