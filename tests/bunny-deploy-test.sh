@@ -266,8 +266,44 @@ test_delete_release_uses_directory_object_url() {
   request() { requested_url="$3"; }
 
   delete_release '2026-09-07T120000Z-old'
-  [[ "$requested_url" == 'https://storage.test/ztec-fr-web/blog/2026-09-07T120000Z-old' ]] ||
+  [[ "$requested_url" == 'https://storage.test/ztec-fr-web/blog/2026-09-07T120000Z-old/' ]] ||
     fail "unexpected recursive delete URL: $requested_url"
+}
+
+test_delete_release_tolerates_only_not_found() {
+  local temporary fake_bin
+  temporary="$(mktemp -d)"
+  fake_bin="$temporary/bin"
+  mkdir -p "$fake_bin"
+  trap 'rm -rf -- "$temporary"' RETURN
+
+  cat >"$fake_bin/curl" <<'EOF'
+#!/usr/bin/env bash
+set -Eeuo pipefail
+output=''
+while (($#)); do
+  case "$1" in
+    --output) output="$2"; shift 2 ;;
+    --request|--header|--write-out) shift 2 ;;
+    --silent|--show-error) shift ;;
+    *) shift ;;
+  esac
+done
+printf '%s' '{"Message":"Object not found"}' >"$output"
+printf '%s' "$MOCK_HTTP_STATUS"
+EOF
+  chmod +x "$fake_bin/curl"
+
+  PATH="$fake_bin:$PATH" MOCK_HTTP_STATUS=404 BUNNY_WORKSPACE="$ROOT" \
+    bash -c 'source "$1"; load_configuration; STORAGE_HOSTNAME=storage.test; STORAGE_PASSWORD=test; delete_release "$2"' \
+      _ "$DEPLOYER" '2026-09-07T120000Z-missing' ||
+    fail 'a missing expired release should be treated as already deleted'
+
+  if PATH="$fake_bin:$PATH" MOCK_HTTP_STATUS=500 BUNNY_WORKSPACE="$ROOT" \
+    bash -c 'source "$1"; load_configuration; STORAGE_HOSTNAME=storage.test; STORAGE_PASSWORD=test; delete_release "$2"' \
+      _ "$DEPLOYER" '2026-09-07T120000Z-failed' >/dev/null 2>&1; then
+    fail 'a genuine release deletion error should remain fatal'
+  fi
 }
 
 test_retention_keeps_selected_and_two_newest() {
@@ -563,6 +599,7 @@ test_edge_payload
 test_current_release_listing
 test_storage_zone_resolution
 test_delete_release_uses_directory_object_url
+test_delete_release_tolerates_only_not_found
 test_retention_keeps_selected_and_two_newest
 test_hugo_cache_is_reused
 test_wrapper_mounts_writable_cache

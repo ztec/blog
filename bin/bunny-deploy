@@ -188,6 +188,7 @@ request() {
   local method="$2"
   local url="$3"
   local data="${4-}"
+  local accepted_status="${5-}"
   local response_file status curl_status
   local -a args
 
@@ -214,7 +215,7 @@ request() {
     rm -f "$response_file"
     die "request failed before receiving an HTTP response: $method $url"
   fi
-  if [[ ! "$status" =~ ^2[0-9][0-9]$ ]]; then
+  if [[ ! "$status" =~ ^2[0-9][0-9]$ && ( -z "$accepted_status" || "$status" != "$accepted_status" ) ]]; then
     log "Request failed: $method $url (HTTP $status)"
     sed -n '1,40p' "$response_file" >&2
     rm -f "$response_file"
@@ -503,9 +504,10 @@ upload_release() {
 delete_release() {
   local release="$1" url
   validate_release "$release"
-  # Bunny treats the release directory as the object name for recursive DELETE.
-  url="$(storage_url "${SITE}/${release}")"
-  request "$STORAGE_PASSWORD" DELETE "$url" >/dev/null
+  # A trailing slash identifies the target as a directory. A missing release is
+  # already in the desired state, which also makes concurrent pruning safe.
+  url="$(storage_url "${SITE}/${release}/")"
+  request "$STORAGE_PASSWORD" DELETE "$url" "" 404 >/dev/null
 }
 
 edge_rule_payload() {
